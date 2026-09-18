@@ -14,13 +14,8 @@ def rows(connection, sql, parameters=()):
     return [dict(row) for row in connection.execute(sql, parameters)]
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser(description="Export canonical SQLite spell data as nested JSON.")
-    parser.add_argument("--database", type=Path, default=ROOT / "data" / "spellbook.sqlite")
-    parser.add_argument("--output", type=Path, default=ROOT / "data" / "export" / "spells.json")
-    args = parser.parse_args()
-
-    with closing(sqlite3.connect(args.database)) as connection:
+def export_database(database: Path, output: Path) -> int:
+    with closing(sqlite3.connect(database)) as connection:
         connection.row_factory = sqlite3.Row
         result = []
         for spell in rows(connection, "SELECT * FROM spells ORDER BY alphabet, name_en COLLATE NOCASE, id"):
@@ -67,9 +62,18 @@ def main() -> None:
             result.append(spell)
 
     payload = {"schema_version": 1, "spell_count": len(result), "spells": result}
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"Exported {len(result)} spells to {args.output}")
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    return len(result)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Export canonical SQLite spell data as nested JSON.")
+    parser.add_argument("--database", type=Path, default=ROOT / "data" / "spellbook.sqlite")
+    parser.add_argument("--output", type=Path, default=ROOT / "data" / "export" / "spells.json")
+    args = parser.parse_args()
+    count = export_database(args.database, args.output)
+    print(f"Exported {count} spells to {args.output}")
 
 
 if __name__ == "__main__":

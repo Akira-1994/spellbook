@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spellbook 校對工作台</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='/app.css') }}">
+</head>
+<body data-csrf="{{ csrf_token }}" data-editor-confirmed="{{ 'true' if settings.confirmed else 'false' }}">
+  <header class="masthead">
+    <div class="brand-lockup">
+      <span class="folio-mark">SB</span>
+      <div><p class="eyebrow">{{ project_name }} · 本機資料庫</p><h1>法術校勘工作台</h1></div>
+    </div>
+    <div class="session-strip">
+      <span id="connection-status" class="status-dot">離線可用</span>
+      <button id="commit-button" class="commit-button" type="button">建立校對 Commit</button>
+      <button id="editor-button" class="text-button" type="button">校對者：<strong id="editor-label">{{ settings.editor_name or '尚未確認' }}</strong></button>
+    </div>
+  </header>
+
+  <main class="workspace" aria-label="法術校對工作台">
+    <aside class="queue-pane" aria-label="法術佇列">
+      <div class="pane-heading"><span>01</span><div><p>COLLECTION</p><h2>條目索引</h2></div></div>
+      <label class="search-box"><span class="sr-only">搜尋法術</span><input id="search" type="search" placeholder="搜尋中英文、ID 或正文…" autocomplete="off"><kbd>/</kbd></label>
+      <div id="summary" class="summary-grid" aria-label="校對進度"></div>
+      <div class="filter-row" role="group" aria-label="狀態篩選">
+        <button class="filter active" data-status="">全部</button>
+        <button class="filter" data-status="unreviewed">未校對</button>
+        <button class="filter" data-status="needs_review">待複核</button>
+        <button class="filter" data-status="reviewed">已通過</button>
+      </div>
+      <div class="filter-row compact" role="group" aria-label="問題篩選">
+        <button class="issue-filter" data-issue="generated">生成翻譯</button>
+        <button class="issue-filter" data-issue="duplicate">同名</button>
+        <button class="issue-filter" data-issue="conflict">衝突</button>
+      </div>
+      <nav id="alphabet" class="alphabet" aria-label="字母篩選"></nav>
+      <div id="spell-list" class="spell-list" role="listbox" aria-label="法術清單"></div>
+    </aside>
+
+    <section class="editor-pane" aria-label="內容編輯器">
+      <div id="empty-state" class="empty-state"><span>✦</span><h2>從左側選取一筆法術</h2><p>比對名稱、規則、正文與 PDF 來源，再完成四項核對。</p></div>
+      <form id="spell-form" hidden>
+        <div class="record-header">
+          <div><p id="record-id" class="mono"></p><h2 id="record-title"></h2><p id="record-subtitle" class="english-title"></p></div>
+          <div class="record-meta"><span id="review-badge" class="badge"></span><span id="draft-state" class="draft-state">已同步</span></div>
+        </div>
+        <div class="source-ribbon"><span>PDF</span><strong id="page-ribbon">—</strong><span>原典對照</span><i></i><span id="revision-label" class="mono"></span></div>
+
+        <fieldset class="field-section"><legend><span>名稱</span> Canonical names</legend>
+          <div class="two-col"><label>中文名稱<input name="spell.name_zh" required></label><label>英文名稱<input name="spell.name_en" required></label></div>
+        </fieldset>
+        <fieldset class="field-section"><legend><span>規則欄位</span> Rules</legend>
+          <div class="rule-grid">
+            <label>學派<input name="entry.school"></label><label>子學派<input name="entry.subschool"></label>
+            <label class="wide">成分<input name="entry.components"></label><label>施法時間<input name="entry.casting_time"></label>
+            <label>距離<input name="entry.range_text"></label><label class="wide">目標<input name="entry.target_text"></label>
+            <label>區域<input name="entry.area_text"></label><label>效果<input name="entry.effect_text"></label>
+            <label>持續時間<input name="entry.duration"></label><label>豁免<input name="entry.saving_throw"></label>
+            <label>法術抗力<input name="entry.spell_resistance"></label><label>額外代價<input name="entry.additional_costs"></label>
+          </div>
+          <div id="taxonomy" class="taxonomy"></div>
+        </fieldset>
+        <fieldset class="field-section prose-section"><legend><span>法術正文</span> Description</legend>
+          <label>中文正文<textarea name="entry.description_zh" rows="12"></textarea></label>
+          <label>英文正文<textarea name="entry.description_en" rows="8"></textarea></label>
+          <details><summary>顯示擷取原文</summary><pre id="raw-text"></pre></details>
+        </fieldset>
+        <label class="note-field">本次校對備註<textarea id="review-note" rows="2" placeholder="選填：記錄判斷依據或待確認事項"></textarea></label>
+
+        <section class="review-gate" aria-labelledby="gate-title">
+          <div><p class="eyebrow">REVIEW GATE</p><h3 id="gate-title">完成四項核對才能通過</h3></div>
+          <div id="checks" class="check-grid">
+            <label><input type="checkbox" value="names"><span>名稱</span><small>中英文標準名</small></label>
+            <label><input type="checkbox" value="rules"><span>規則</span><small>數值與欄位</small></label>
+            <label><input type="checkbox" value="descriptions"><span>正文</span><small>中英文內容</small></label>
+            <label><input type="checkbox" value="source"><span>來源</span><small>PDF 與頁碼</small></label>
+          </div>
+        </section>
+        <div class="action-bar"><button id="save-button" class="secondary" type="submit">儲存修改</button><button id="approve-button" class="primary" type="button" disabled>通過並前往下一筆 <span>→</span></button></div>
+      </form>
+    </section>
+
+    <aside class="source-pane" aria-label="來源與歷程">
+      <div class="pane-heading"><span>03</span><div><p>EVIDENCE</p><h2>來源與歷程</h2></div></div>
+      <div class="pdf-toolbar"><button id="pdf-prev" type="button" aria-label="上一頁">←</button><strong id="pdf-page">PDF —</strong><button id="pdf-next" type="button" aria-label="下一頁">→</button><a id="pdf-open" target="_blank" rel="noopener">另開</a></div>
+      <iframe id="pdf-frame" title="來源 PDF" loading="lazy"></iframe>
+      <section class="evidence-block"><h3>資料來源</h3><div id="sources"></div></section>
+      <section class="evidence-block"><h3>解析與問題</h3><div id="issues"></div></section>
+      <section id="duplicate-block" class="evidence-block" hidden><h3>同名判定</h3><button id="duplicate-button" class="secondary" type="button">比較同名條目</button></section>
+      <section id="conflict-block" class="evidence-block" hidden><h3>欄位衝突</h3><div id="conflicts"></div></section>
+      <section class="evidence-block history-block"><h3>修改歷程</h3><ol id="history"></ol></section>
+    </aside>
+  </main>
+
+  <dialog id="editor-dialog">
+    <form method="dialog" id="editor-form">
+      <p class="eyebrow">LOCAL IDENTITY</p><h2>確認校對者名稱</h2>
+      <p>此名稱會寫入每一筆不可變校對事件，供 Git 協作者追蹤。</p>
+      <label>校對者名稱<input id="editor-name" value="{{ settings.editor_name }}" maxlength="100" required autofocus></label>
+      <div class="dialog-actions"><button value="cancel" class="text-button">取消</button><button id="confirm-editor" value="default" class="primary">確認使用</button></div>
+    </form>
+  </dialog>
+  <dialog id="commit-dialog">
+    <form method="dialog" id="commit-form">
+      <p class="eyebrow">VERSION CONTROL</p><h2>建立校對 Commit</h2>
+      <div id="commit-preview" class="commit-preview"></div>
+      <p class="dialog-hint">只會加入校對事件、SQLite、JSON 匯出與報告；不會自動 push。</p>
+      <div class="dialog-actions"><button value="cancel" class="text-button">取消</button><button id="confirm-commit" value="default" class="primary">建立 Commit</button></div>
+    </form>
+  </dialog>
+  <dialog id="duplicate-dialog" class="wide-dialog">
+    <form method="dialog" id="duplicate-form">
+      <p class="eyebrow">DUPLICATE REVIEW</p><h2>同名條目比較</h2>
+      <div id="duplicate-comparison" class="duplicate-comparison"></div>
+      <div class="two-col duplicate-controls">
+        <label>判定<select id="duplicate-decision"><option value="variant">不同規則版本</option><option value="merge">同一法術，合併目前條目</option><option value="name_error">名稱解析錯誤</option><option value="uncertain">暫不確定</option></select></label>
+        <label>關聯／保留條目<select id="duplicate-related"></select></label>
+      </div>
+      <label>判定備註<textarea id="duplicate-note" rows="2"></textarea></label>
+      <div class="dialog-actions"><button value="cancel" class="text-button">取消</button><button id="confirm-duplicate" value="default" class="primary">記錄判定</button></div>
+    </form>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="{{ url_for('static', path='/app.js') }}" defer></script>
+</body>
+</html>
