@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-09-18T07:38:10.125836+00:00",
+  "source_pdf": "spellbook_doc_v1.1.pdf",
+  "included_pdf_pages": {
+    "start": 192,
+    "end": 1144
+  },
+  "excluded_pdf_pages": [
+    {
+      "start": 1145,
+      "end": 1148,
+      "reason": "curse appendix"
+    },
+    {
+      "start": 1149,
+      "end": 1162,
+      "reason": "summon appendix"
+    }
+  ],
+  "spell_count": 2360,
+  "fts_row_count": 2360,
+  "alphabet_counts": {
+    "A": 140,
+    "B": 149,
+    "C": 213,
+    "D": 194,
+    "E": 104,
+    "F": 127,
+    "G": 58,
+    "H": 98,
+    "I": 101,
+    "J": 10,
+    "K": 17,
+    "L": 70,
+    "M": 132,
+    "N": 34,
+    "O": 33,
+    "P": 115,
+    "Q": 7,
+    "R": 144,
+    "S": 351,
+    "T": 86,
+    "U": 30,
+    "V": 38,
+    "W": 100,
+    "X": 1,
+    "Y": 1,
+    "Z": 7
+  },
+  "generated_translation_count": 71,
+  "needs_review_count": 123,
+  "class_count": 207,
+  "source_count": 23,
+  "descriptor_count": 88
+}

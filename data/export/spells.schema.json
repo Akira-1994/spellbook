@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/spellbook/spells.schema.json",
+  "title": "Spellbook A-Z Export",
+  "type": "object",
+  "required": ["schema_version", "spell_count", "spells"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "spell_count": { "type": "integer", "minimum": 0 },
+    "spells": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name_zh", "name_en", "alphabet", "review_status", "entries"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^spl_[0-9A-HJKMNP-TV-Z]{26}$" },
+          "name_zh": { "type": "string", "minLength": 1 },
+          "name_en": { "type": "string", "minLength": 1 },
+          "alphabet": { "type": "string", "pattern": "^[A-Z]$" },
+          "review_status": { "enum": ["unreviewed", "needs_review", "reviewed"] },
+          "aliases": { "type": "array" },
+          "entries": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "spell_id",
+                "description_zh",
+                "pdf_page_start",
+                "pdf_page_end",
+                "raw_text",
+                "review_status",
+                "translation_status"
+              ],
+              "properties": {
+                "id": { "type": "string", "pattern": "^ent_[0-9A-HJKMNP-TV-Z]{26}$" },
+                "spell_id": { "type": "string" },
+                "description_zh": { "type": "string" },
+                "description_en": { "type": ["string", "null"] },
+                "pdf_page_start": { "type": "integer", "minimum": 192, "maximum": 1144 },
+                "pdf_page_end": { "type": "integer", "minimum": 192, "maximum": 1144 },
+                "raw_text": { "type": "string", "minLength": 1 },
+                "review_status": { "enum": ["unreviewed", "needs_review", "reviewed"] },
+                "translation_status": { "enum": ["not_required", "generated", "reviewed"] },
+                "levels": { "type": "array" },
+                "sources": { "type": "array", "items": { "type": "string" } },
+                "descriptors": { "type": "array", "items": { "type": "string" } },
+                "issues": { "type": "array" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

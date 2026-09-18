@@ -1,0 +1,124 @@
+﻿spell_id,name_zh,name_en,pdf_pages,parse_confidence,translation_status,issues
+spl_01M2SPSHAX9V1BM16M4FTMS9CP,活化積雪,Animate Snow,218,1.000,not_required,duplicate_english_name
+spl_01M2SPSHAXHZK2QW7K1B08HEWN,活化積雪,Animate Snow,218,1.000,not_required,duplicate_english_name
+spl_01M2SPSHBAKPKJV9P744Q793FP,刃火術,Blades of Fire,275,1.000,not_required,duplicate_english_name
+spl_01M2SPSHBAXWGZ785X7V2GV1KW,火焰之刃,Blades Of Fire,276,1.000,not_required,duplicate_english_name
+spl_01M2SPSHBEKG72308E00FEKYBB,著魔之矢,Bolts Of Bedevilment,296,1.000,not_required,duplicate_english_name
+spl_01M2SPSHBEKX2SZF7C8NTJ5N4T,昏亂彈,Bolts Of Bedevilment,296,1.000,not_required,duplicate_english_name
+spl_01M2SPSHCB7JPB575X76BZW69W,致命打擊,Critical Strike,379-380,1.000,not_required,duplicate_english_name
+spl_01M2SPSHCBX9J02WQ8256T14FN,致命打擊,Critical Strike,380,1.000,not_required,duplicate_english_name
+spl_01M2SPSHCB1CNF4NSPR1NNBEH8,榮耀之冠,Crown Of Glory,381-382,1.000,not_required,duplicate_english_name
+spl_01M2SPSHCCJEEM0CPVRK3PCEAH,榮耀之冠,Crown Of Glory,382,1.000,generated,duplicate_english_name
+spl_01M2SPSHCF48MBJXWBN8ZA8RT0,舞空之刃,Dancing Blade,395-396,1.000,not_required,duplicate_english_name
+spl_01M2SPSHCFF1FMR7VRGER617QM,旋舞之刃,Dancing Blade,396,1.000,not_required,duplicate_english_name
+spl_01M2SPSHCFTGBHVQQE79A87Q3D,黑暗箭,Darkbolt,398,1.000,not_required,duplicate_english_name
+spl_01M2SPSHCGN05DVZMBBHNRDWS5,黑暗之矢,Darkbolt,398-399,1.000,not_required,duplicate_english_name
+spl_01M2SPSHCSRPRB4NZDV8QB1EWB,偵測異怪,Detect Aberration,421,1.000,not_required,duplicate_english_name
+spl_01M2SPSHCSS196AVBHWS5G2H16,偵測異形,Detect Aberration,421-422,1.000,not_required,duplicate_english_name
+spl_01M2SPSHD1SKSXJ77FB4XPGXBH,聖能奉獻,Divine Sacrifice,456-457,1.000,not_required,duplicate_english_name
+spl_01M2SPSHD1STG06VDF3BQVF4WM,神聖犧牲,Divine Sacrifice,456,1.000,not_required,duplicate_english_name
+spl_01M2SPSHD22WAFF1EHE8N5EFZ7,龍之吐息,Dragon Breath,465,1.000,not_required,duplicate_english_name
+spl_01M2SPSHD2RGZJC80235YW2EP9,龍息術,Dragon Breath,466,1.000,not_required,duplicate_english_name
+spl_01M2SPSHE6MEHXD57VZXBE6AG8,碎心術,Heart Ripper,607-608,1.000,not_required,duplicate_english_name
+spl_01M2SPSHE6AX4BT5BFJZN6B3F7,心臟破碎,Heart Ripper,608,1.000,not_required,duplicate_english_name
+spl_01M2SPSHEKJGYBGRBFV24XBH2T,冰刀術,Ice Knife,634,1.000,not_required,duplicate_english_name
+spl_01M2SPSHEKPJ089C7YYE3G05ZH,冰之短刃,Ice Knife,634,1.000,not_required,duplicate_english_name
+spl_01M2SPSHEM65DZ3WZYH2TJKA51,幻影陷阱,Illusory Pit,637,1.000,not_required,duplicate_english_name
+spl_01M2SPSHEMQMJK1CT19KDAV5RW,幻影坑穴,Illusory Pit,637,1.000,not_required,duplicate_english_name
+spl_01M2SPSHEMPPC0HGJD7MV4MAVT,魔寵灌法術,Imbue Familiar With Spell Ability,638-639,1.000,not_required,duplicate_english_name
+spl_01M2SPSHEM47VC7Y4AN9P9GSCT,魔寵注法,Imbue Familiar With Spell Ability,639,1.000,not_required,duplicate_english_name
+spl_01M2SPSHENRYN1GBVTKQE9P02S,虛體強化,Incorporeal Enhancement,645,1.000,not_required,duplicate_english_name
+spl_01M2SPSHEPVJAFGE8DSKMWWT5A,增強虛體,Incorporeal Enhancement,645-646,1.000,not_required,duplicate_english_name
+spl_01M2SPSHFBB74WTFQ7S8K11DS3,大師之觸,Master’S Touch,732,1.000,not_required,duplicate_english_name
+spl_01M2SPSHFBJEAXAXYHC3SZR0NB,神來一筆,Master’s Touch,732,1.000,not_required,duplicate_english_name
+spl_01M2SPSHGF6FREEBAJX2GQ9ZBT,赤潮術,Red Tide,857-858,1.000,not_required,duplicate_english_name
+spl_01M2SPSHGFETDRJN3XFE6VXG8X,赤潮術,Red Tide,858,1.000,not_required,duplicate_english_name
+spl_01M2SPSHGQN2A3HK5B0BCHVSQW,神聖庇護,Sacred Haven,891-892,1.000,not_required,duplicate_english_name
+spl_01M2SPSHGQRK3QFW8H0PXTZ1EX,聖靈蔽護所,Sacred Haven,891,1.000,not_required,duplicate_english_name
+spl_01M2SPSHGT9DQSM5EWEN6FFYXC,提振元氣,Second Wind,908-909,1.000,not_required,duplicate_english_name
+spl_01M2SPSHGTJFMBGZAH3RDBZA00,重振精神,Second Wind,909,1.000,not_required,duplicate_english_name
+spl_01M2SPSHGW24QME8DBYWSG5V8V,幻術系,Shadow,918,1.000,not_required,duplicate_english_name
+spl_01M2SPSHGXVSDNVKKKW31CK1PZ,幻術系,Shadow,918,1.000,not_required,duplicate_english_name
+spl_01M2SPSHGXZDW641WXSCKFD32S,幻影之景,Shadow Landscape,920-921,1.000,generated,generated_translation
+spl_01M2SPSHGYSG431EKSFYVB39GX,陰影面具,SHADOW MASK,922,0.850,generated,generated_translation
+spl_01M2SPSHGYHYAJR5ZWK8CKV6DM,暗影相位,Shadow Phase,921-922,1.000,generated,generated_translation
+spl_01M2SPSHGYCTD3QXG909CX0CWS,陰影輝光,SHADOW RADIANCE,922-923,0.850,generated,generated_translation
+spl_01M2SPSHGYEQH9V1ZHN0FXB7F8,陰影之井,SHADOW WELL,924,0.850,generated,generated_translation
+spl_01M2SPSHGYNMJE78ZHKACVK9GZ,陰影爆破,SHADOWBLAST,924-925,0.850,generated,generated_translation
+spl_01M2SPSHGYF99N5H176C42Y5XW,陰影消退,SHADOWFADE,925,0.850,generated,generated_translation
+spl_01M2SPSHGZZWG9TC6KY91W1VTN,陰影擒抱者,SHADOWY GRAPPLER,925-926,0.850,generated,generated_translation
+spl_01M2SPSHGZBNN3BF01070MDYYN,碎片風暴,SHARD STORM,927,0.850,generated,generated_translation
+spl_01M2SPSHGZ15FB1TGDC9K6T2XE,共享軀殼,SHARE HUSK,927-928,0.850,generated,generated_translation
+spl_01M2SPSHGZNKF7K4RH9RC88KSJ,銳齒術,SHARPTOOTH,928-929,0.850,generated,generated_translation
+spl_01M2SPSHH0F4TJ7Q12JDCGMXS2,碎地術,SHATTERFLOOR,929,0.850,generated,generated_translation
+spl_01M2SPSHH06KXGS1AB5ZNX8M6P,結界之盾,Shield Of Warding,932,1.000,generated,generated_translation
+spl_01M2SPSHH09VT9S1M7DQ3X9YQN,持盾者,SHIELDBEARER,932-933,0.850,generated,generated_translation
+spl_01M2SPSHH0N1PN09P255SXZM0W,易位路徑,SHIFTING PATHS,933-934,0.850,generated,generated_translation
+spl_01M2SPSHH1Q3C3CYZ9S57S4RK6,火焰罩衣,SHROUD OF FLAME,936,0.850,generated,generated_translation
+spl_01M2SPSHH1MFFTTNE3JTP3SFSG,不死罩衣,SHROUD OF UNDEATH,936-937,0.850,generated,generated_translation
+spl_01M2SPSHH1176157159KQRZTZK,徵兆術,SIGN,937,0.850,generated,generated_translation
+spl_01M2SPSHH2Z8NZV8Z84SKZ5QG0,寂靜門扉,SILENT PORTAL,939,0.850,generated,generated_translation
+spl_01M2SPSHH2JSKZE70XY8EQX68P,銀鬚術,SILVERBEARD,939-940,0.850,generated,generated_translation
+spl_01M2SPSHH2K71GZC8XCBHAMCNX,沉陷術,SINK,941,0.850,generated,duplicate_english_name
+spl_01M2SPSHH2QHPYQN5ZN204ZQDV,沉沒術,Sink,941-942,1.000,not_required,duplicate_english_name
+spl_01M2SPSHH3NW0R9BTWXB7Q6VND,骸骨守衛,SKELETAL GUARD,943-944,0.850,generated,generated_translation
+spl_01M2SPSHH3EXKXR3AVJF6G49DA,骷髏警戒,SKULL WATCH,944,0.850,generated,generated_translation
+spl_01M2SPSHH3JNF1Y516MWF7895Q,掌摑之手,SLAPPING HAND,945-946,0.850,generated,generated_translation
+spl_01M2SPSHH35FEWTQEC86PAZT3N,斬裂黑暗,SLASHING DARKNESS,946,0.850,generated,generated_translation
+spl_01M2SPSHH4XM4JSY8SJHQW0S9K,滑移術,SLIDE,948,0.850,generated,generated_translation
+spl_01M2SPSHH4J774E4TVAJY18X03,高等滑移術,"SLIDE, GREATER",948,0.850,generated,generated_translation
+spl_01M2SPSHH4HCH8HPV03S3Z7XEA,黏液浪潮,SLIME WAVE,948-949,0.850,generated,generated_translation
+spl_01M2SPSHH4KQKQ3G0A4GQBNTJT,緩燃術,SLOW BURN,950,0.850,generated,generated_translation
+spl_01M2SPSHH45E9F3EKPM2FETXQ3,恐懼氣味,SMELL OF FEAR,950-951,0.850,generated,generated_translation
+spl_01M2SPSHH5Q7VQKPTRMDN8TJJF,蛇咬術,SNAKEBITE,953-954,0.850,generated,generated_translation
+spl_01M2SPSHH5MQ3SFVWC2BC2HPVZ,蛇之迅捷,SNAKE’S SWIFTNESS,953,0.850,generated,generated_translation
+spl_01M2SPSHH55C4EJ3J1ZWM35DVX,群體蛇之迅捷,"SNAKE’S SWIFTNESS,MASS",953,0.850,generated,generated_translation
+spl_01M2SPSHH5TMM4T5MCD8Q3KTHN,雪球群,SNOWBALL SWARM,955,0.850,generated,generated_translation
+spl_01M2SPSHH5BT5TRNGK925GV73A,雪鞋術,SNOWSHOES,955-956,0.850,generated,generated_translation
+spl_01M2SPSHH5DSN5MWCQR8R8VW7Y,群體雪鞋術,"SNOWSHOES, MASS",956,0.850,generated,generated_translation
+spl_01M2SPSHH6TCP7P6Z8BQWG0RDT,唯我論,SOLIPSISM,957,0.850,generated,generated_translation
+spl_01M2SPSHH6EZX2ZKB97BTTDTSM,音波爆破,SONIC BLAST,958,0.850,generated,generated_translation
+spl_01M2SPSHH6RVTY1KAHXYT0QA8B,音波轟鳴,SONIC RUMBLE,959,0.850,generated,generated_translation
+spl_01M2SPSHH64S3MQRTNCE27MXF8,音爆術,SONIC SNAP,959-960,0.850,generated,generated_translation
+spl_01M2SPSHH7735FKXC8GJPF8QMJ,音波長槍,SOUND LANCE,964,0.850,generated,generated_translation
+spl_01M2SPSHH9KK7F9YQRBASKJPQ0,高等法術矩陣,"SPELL MATRIX,GREATER",971-972,0.850,generated,generated_translation
+spl_01M2SPSHHAXBBN1ET8ESHW8N9C,蜘蛛詛咒,SPIDER CURSE,975-976,0.850,generated,generated_translation
+spl_01M2SPSHHBPTGNYBARB4V0PMEY,靈魂之顎,SPIRITJAWS,983-985,0.850,generated,generated_translation
+spl_01M2SPSHHC97S3RQSX2S2R4MP8,勇武契約,Stalwart Pact,987-988,1.000,not_required,duplicate_english_name
+spl_01M2SPSHHCAG7MPYEYBSE6VHHQ,堅韌之契,Stalwart Pact,988,1.000,not_required,duplicate_english_name
+spl_01M2SPSHHEA1RT77WH243E23H2,高等關照術,"Status, Greater",991-992,1.000,not_required,duplicate_english_name
+spl_01M2SPSHHE9ZK7G9AZ9JJ5CYEC,高等關照術,"Status, Greater",992,1.000,not_required,duplicate_english_name
+spl_01M2SPSHHFQFEMW353491N0B54,黏固馬鞍,STICKY SADDLE,994-995,0.850,generated,generated_translation
+spl_01M2SPSHHFHBKWBFZJ1ZTA569Q,竊息術,STOLEN BREATH,996-997,0.850,generated,generated_translation
+spl_01M2SPSHHFHT40FD6Y2MY64QCC,石軀術,STONE BODY,997,0.850,generated,generated_translation
+spl_01M2SPSHHF0M5S76F2VF1M6YFK,石骨術,STONE BONES,997,0.850,generated,generated_translation
+spl_01M2SPSHHGQYXF2SWRW8QEZKV4,石球術,STONE SPHERE,998-999,0.850,generated,generated_translation
+spl_01M2SPSHHGJ3YYXH9D5075Q2YZ,石蜘蛛,STONE SPIDERS,999,0.850,generated,generated_translation
+spl_01M2SPSHHGF17FPWGJYEQ5G79S,石牢術,STONEHOLD,1001,0.850,generated,generated_translation
+spl_01M2SPSHHG1YY7GHFP33N9DC2T,元素狂怒風暴,STORM OF ELEMENTAL FURY,1001-1002,0.850,generated,generated_translation
+spl_01M2SPSHHHM7HNEXKV6XPH4GST,風暴之塔,STORM TOWER,1004-1005,0.850,generated,generated_translation
+spl_01M2SPSHHJ3H0PJC39T0F313H1,震懾射線,STUN RAY,1007,0.850,generated,generated_translation
+spl_01M2SPSHHJAKXSD268BAZ8FRW5,震懾吐息,STUNNING BREATH,1007,0.850,generated,generated_translation
+spl_01M2SPSHHJHAYQ18PFJV0K6DRR,高等震懾吐息,"STUNNING BREATH,GREATER",1007-1008,0.850,generated,generated_translation
+spl_01M2SPSHHJSBYMEGYGB5QCT3KE,潛沒船隻,SUBMERGE SHIP,1009,0.850,generated,generated_translation
+spl_01M2SPSHHK10RDM7R1TNCNJRDW,突發石筍,SUDDEN STALAGMITE,1010,0.850,generated,generated_translation
+spl_01M2SPSHHKF30GKEBPDBARYN23,召喚巴布魔,SUMMON BABAU DEMON,1011-1012,0.850,generated,generated_translation
+spl_01M2SPSHHKK56V0B7FM8FQJSBJ,召喚鬚魔,SUMMON BEARDED DEVIL,1012,0.850,generated,generated_translation
+spl_01M2SPSHHK3VG0AYPQPXDCW9JR,召喚布拉尼愛剌天族,SUMMON BRALANI ELADRIN,1012,0.850,generated,generated_translation
+spl_01M2SPSHHKAGAWGMHY6HR4DFNH,召喚元素微粒群,SUMMON ELEMENTITE SWARM,1014,0.850,generated,generated_translation
+spl_01M2SPSHHM4TCFYZBBZKJWG0YW,召喚高等元素,SUMMON GREATER ELEMENTAL,1015,0.850,generated,generated_translation
+spl_01M2SPSHHM5XCX8XEBPGVY6CJ8,召喚犬首神使,SUMMON HOUND ARCHON,1016,0.850,generated,generated_translation
+spl_01M2SPSHHNFZXJ15Y9C63623CR,壓制刻文,SUPPRESS GLYPH,1020,0.850,generated,generated_translation
+spl_01M2SPSHHNDPDSK0XW9VESBFR1,穩固步伐,SUREFOOT,1021,0.850,generated,generated_translation
+spl_01M2SPSHHNQ59A6AQVXMH2W3KF,懸置沉默,SUSPENDED SILENCE,1022-1023,0.850,generated,generated_translation
+spl_01M2SPSHHPRYPP5GQTHZWK4FKB,沼肺術,SWAMP LUNG,1023,0.850,generated,generated_translation
+spl_01M2SPSHHPQYDZS38W3R2X3NP3,沼澤步行,SWAMP STRIDE,1023-1024,0.850,generated,generated_translation
+spl_01M2SPSHHQF1WBJCRXN8VGJ2J8,法術失落徽記,SYMBOL OF SPELL LOSS,1028-1029,0.850,generated,generated_translation
+spl_01M2SPSHJ6VG0SFNC0JMRYSZ0H,徽記轉錄,Transcribe Symbol,1052-1053,1.000,not_required,duplicate_english_name
+spl_01M2SPSHJ7JGMZPWWD4B433JX9,摘取徽記,Transcribe Symbol,1053,1.000,not_required,duplicate_english_name
+spl_01M2SPSHJ94P1E7Y0XB5961FFF,真實造物術,True Creation,1063-1064,1.000,not_required,duplicate_english_name
+spl_01M2SPSHJ9T2VMPHQ6C6K9QKAJ,真實造物術,True Creation,1063,1.000,not_required,duplicate_english_name
+spl_01M2SPSHJMDS07H8R7FW6QP3AF,沙牆術,Wall Of Sand,1104,1.000,not_required,duplicate_english_name
+spl_01M2SPSHJMPG8G7HEN61CVJC1N,沙牆術,Wall Of Sand,1104-1105,1.000,not_required,duplicate_english_name
+spl_01M2SPSHJNVMN13JAPG99E5NKB,水牆術,Wall Of Water,1107-1108,1.000,not_required,duplicate_english_name
+spl_01M2SPSHJN73VMZ5QEQB3YX6J2,水牆術,Wall Of Water,1108,1.000,not_required,duplicate_english_name
