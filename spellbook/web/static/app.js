@@ -11,7 +11,11 @@
   const STAT_FIELDS = ["components", "casting_time", "range_text", "target_text", "area_text", "effect_text", "duration", "saving_throw", "spell_resistance", "additional_costs"];
   const REPLACED_BY = { edit: "編輯", rollback: "還原版本", restore_original: "還原原始內容" };
 
-  const state = { items: [], hasMore: false, loadingMore: false, listToken: 0, letter: "", current: null, editing: false, formOriginal: null };
+  const FILTER_STORAGE_KEY = "spellbook.filters";
+  const state = {
+    items: [], hasMore: false, loadingMore: false, listToken: 0, total: 0, letter: "", current: null, editing: false, formOriginal: null,
+    summary: null, schools: [], classes: [], filters: { schools: new Set(), classId: "", levels: new Set() },
+  };
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
   const form = $("#spell-form");
@@ -74,21 +78,57 @@
   // ---- Index list -------------------------------------------------------
 
   async function loadSummary() {
-    const data = await api("/api/summary");
-    $("#summary").textContent = `共 ${data.total} 個法術${data.edited ? `，已修改 ${data.edited} 個` : ""}`;
+    state.summary = await api("/api/summary");
+    renderSummary();
+  }
+
+  function isFiltered() {
+    const f = state.filters;
+    return Boolean($("#search").value.trim() || state.letter || $("#edited-only").checked || f.schools.size || f.classId || f.levels.size);
+  }
+
+  function renderSummary() {
+    if (!state.summary) return;
+    const { total, edited } = state.summary;
+    $("#summary").textContent = isFiltered()
+      ? `符合 ${state.total} 個法術（共 ${total} 個）`
+      : `共 ${total} 個法術${edited ? `，已修改 ${edited} 個` : ""}`;
   }
 
   async function fetchPage(offset) {
     const params = new URLSearchParams({ q: $("#search").value, letter: state.letter, edited: $("#edited-only").checked, limit: PAGE_SIZE, offset });
-    return (await api(`/api/spells?${params}`)).items;
+    state.filters.schools.forEach(school => params.append("school", school));
+    if (state.filters.classId) params.set("class", state.filters.classId);
+    state.filters.levels.forEach(level => params.append("level", level));
+    const data = await api(`/api/spells?${params}`);
+    state.total = data.total;
+    return data.items;
+  }
+
+  function schoolName(key) {
+    return state.schools.find(school => school.key === key)?.name ?? "未分類";
+  }
+
+  function schoolChips(keys, size = "") {
+    return (keys?.length ? keys : ["unclassified"]).map(key =>
+      `<span class="school-chip ${size}" data-school="${escapeHtml(key)}">${escapeHtml(schoolName(key))}</span>`).join("");
+  }
+
+  function selectedClassName() {
+    return state.classes.find(c => String(c.id) === String(state.filters.classId))?.name ?? "";
   }
 
   function cardHtml(item) {
+    const level = item.class_level ?? null;
     return `
       <button type="button" class="spell-card ${item.id === state.current?.id ? "active" : ""}" data-id="${item.id}" role="option">
         <span class="letter">${escapeHtml(item.alphabet)}</span>
         <span class="names"><strong>${escapeHtml(item.name_zh)}</strong><small>${escapeHtml(item.name_en)}</small></span>
-        ${item.edited ? '<i class="edited-mark" title="已修改">已修改</i>' : ""}
+        <span class="card-tags">
+          ${level !== null ? `<i class="level-badge" title="${escapeHtml(selectedClassName())} ${level} 級">${escapeHtml(selectedClassName())} ${level}</i>` : ""}
+          ${schoolChips(item.schools, "mini")}
+          ${item.edited ? '<i class="edited-mark" title="已修改">已修改</i>' : ""}
+        </span>
       </button>`;
   }
 
@@ -115,6 +155,7 @@
     } while (page.length === PAGE_SIZE && items.length < target);
     state.items = items;
     state.hasMore = page.length === PAGE_SIZE;
+    renderSummary();
     const list = $("#spell-list");
     const scroll = list.scrollTop;
     list.innerHTML = items.length ? "" : '<p class="list-empty">沒有符合的法術。</p>';
@@ -148,7 +189,7 @@
   function refreshCard(spell) {
     const index = state.items.findIndex(item => item.id === spell.id);
     if (index < 0) return;
-    Object.assign(state.items[index], { name_zh: spell.name_zh, name_en: spell.name_en, alphabet: spell.alphabet, edited: Boolean(spell.edited_at) });
+    Object.assign(state.items[index], { name_zh: spell.name_zh, name_en: spell.name_en, alphabet: spell.alphabet, schools: spell.schools, edited: Boolean(spell.edited_at) });
     const card = $(`.spell-card[data-id="${spell.id}"]`);
     if (!card) return;
     card.outerHTML = cardHtml(state.items[index]);
@@ -176,7 +217,9 @@
 
   function renderView(spell) {
     $("#empty-state").hidden = true;
-    $("#view-meta").textContent = [spell.school, spell.subschool && `［${spell.subschool}］`].filter(Boolean).join(" ") || "未標示學派";
+    $("#view-schools").innerHTML = schoolChips(spell.schools, "large") +
+      (spell.subschool ? `<span class="subschool">${escapeHtml(spell.subschool)}</span>` : "");
+    $("#view-schools").title = spell.school ? `原文：${spell.school}` : "原文未標示學派";
     $("#view-name-zh").textContent = spell.name_zh;
     $("#view-name-en").textContent = spell.name_en;
     const badges = [];
@@ -185,13 +228,17 @@
     $("#view-badges").innerHTML = badges.join("");
     $("#view-stats").innerHTML = STAT_FIELDS.filter(field => spell[field]).map(field =>
       `<div><dt>${FIELD_LABELS[field]}</dt><dd>${escapeHtml(spell[field])}</dd></div>`).join("");
+    const levelChips = (spell.levels || []).map(v =>
+      `<button type="button" class="chip level-chip ${v.kind === "domain" ? "domain" : ""}" data-class-id="${v.class_id}" data-level="${v.spell_level}" title="篩選所有${escapeHtml(v.class_name)} ${v.spell_level} 級法術">${escapeHtml(v.class_name)} ${v.spell_level}${v.note ? `（${escapeHtml(v.note)}）` : ""}</button>`);
+    const plain = values => values.map(v => `<span class="chip">${escapeHtml(v)}</span>`);
     const groups = [
-      ["等級", (spell.levels || []).map(v => `${v.class_name} ${v.spell_level}${v.note ? `（${v.note}）` : ""}`)],
-      ["描述詞", spell.descriptors || []],
-      ["出處", [...(spell.sources || []), `原書 P.${spell.pdf_page_start}${spell.pdf_page_end !== spell.pdf_page_start ? `–${spell.pdf_page_end}` : ""}`]],
+      ["等級", levelChips],
+      ["描述詞", plain(spell.descriptors || [])],
+      ["出處", plain([...(spell.sources || []), `原書 P.${spell.pdf_page_start}${spell.pdf_page_end !== spell.pdf_page_start ? `–${spell.pdf_page_end}` : ""}`])],
     ];
-    $("#view-taxonomy").innerHTML = groups.filter(([, values]) => values.length).map(([label, values]) =>
-      `<div><span class="taxonomy-label">${label}</span>${values.map(v => `<span class="chip">${escapeHtml(v)}</span>`).join("")}</div>`).join("");
+    $("#view-taxonomy").innerHTML = groups.filter(([, chips]) => chips.length).map(([label, chips]) =>
+      `<div><span class="taxonomy-label">${label}</span>${chips.join("")}</div>`).join("");
+    $$("#view-taxonomy .level-chip").forEach(chip => chip.addEventListener("click", () => filterByLevel(chip.dataset.classId, Number(chip.dataset.level))));
     $("#view-description").innerHTML = paragraphs(spell.description_zh) || '<p class="muted">（沒有說明）</p>';
     $("#view-english").hidden = !spell.description_en;
     $("#view-description-en").innerHTML = paragraphs(spell.description_en);
@@ -251,8 +298,70 @@
   }
 
   async function afterChange(spell) {
-    await loadSummary();
-    if ($("#edited-only").checked) await loadList({ keepLoaded: true }); else refreshCard(spell);
+    await Promise.all([loadSummary(), loadTaxonomy()]);
+    // Edits can move a spell in or out of the "edited" or school filters.
+    if ($("#edited-only").checked || state.filters.schools.size) await loadList({ keepLoaded: true }); else refreshCard(spell);
+  }
+
+  // ---- Filters ----------------------------------------------------------
+
+  async function loadTaxonomy() {
+    const data = await api("/api/taxonomy");
+    state.schools = data.schools;
+    state.classes = data.classes;
+    renderFilterOptions();
+  }
+
+  function renderFilterOptions() {
+    const f = state.filters;
+    $("#school-filters").innerHTML = state.schools.map(school =>
+      `<button type="button" class="school-chip filter ${f.schools.has(school.key) ? "selected" : ""}" data-school="${school.key}" aria-pressed="${f.schools.has(school.key)}">${escapeHtml(school.name)}<small>${school.count}</small></button>`).join("");
+    const groups = [["class", "職業"], ["domain", "領域"], ["other", "其他"]];
+    $("#class-filter").innerHTML = '<option value="">全部職業與領域</option>' + groups.map(([kind, label]) => {
+      const options = state.classes.filter(c => c.kind === kind).map(c =>
+        `<option value="${c.id}">${escapeHtml(c.name)}（${c.count}）</option>`).join("");
+      return options ? `<optgroup label="${label}">${options}</optgroup>` : "";
+    }).join("");
+    $("#class-filter").value = f.classId;
+    $("#level-filters").innerHTML = Array.from({ length: 10 }, (_, level) =>
+      `<button type="button" class="level-button ${f.levels.has(level) ? "selected" : ""}" data-level="${level}" aria-pressed="${f.levels.has(level)}">${level}</button>`).join("");
+    const active = f.schools.size + (f.classId ? 1 : 0) + f.levels.size;
+    $("#filter-count").hidden = !active;
+    $("#filter-count").textContent = active ? `${active} 項` : "";
+    $("#clear-filters").hidden = !active;
+  }
+
+  function saveFilters() {
+    const f = state.filters;
+    try { localStorage.setItem(FILTER_STORAGE_KEY, JSON.stringify({ schools: [...f.schools], classId: f.classId, levels: [...f.levels] })); } catch { /* storage unavailable */ }
+  }
+
+  function restoreFilters() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(FILTER_STORAGE_KEY) || "null");
+      if (!saved) return;
+      const schools = new Set(state.schools.map(s => s.key));
+      state.filters.schools = new Set((saved.schools || []).filter(key => schools.has(key)));
+      state.filters.classId = state.classes.some(c => String(c.id) === String(saved.classId)) ? String(saved.classId) : "";
+      state.filters.levels = new Set((saved.levels || []).filter(level => Number.isInteger(level) && level >= 0 && level <= 9));
+    } catch { /* ignore corrupt or unavailable storage */ }
+  }
+
+  function filtersChanged() {
+    saveFilters();
+    renderFilterOptions();
+    loadList();
+  }
+
+  function filterByLevel(classId, level) {
+    $("#search").value = "";
+    $("#edited-only").checked = false;
+    state.letter = "";
+    $$("#alphabet button").forEach(button => button.classList.toggle("active", button.dataset.letter === ""));
+    state.filters = { schools: new Set(), classId: String(classId), levels: new Set([level]) };
+    $("#filters").open = true;
+    filtersChanged();
+    toast(`已篩選：${selectedClassName()} ${level} 級`);
   }
 
   // ---- Version history --------------------------------------------------
@@ -332,6 +441,26 @@
       loadList();
     }));
     $("#search").addEventListener("input", () => { clearTimeout(state.searchTimer); state.searchTimer = setTimeout(() => loadList(), 220); });
+    $("#school-filters").addEventListener("click", event => {
+      const chip = event.target.closest("[data-school]");
+      if (!chip) return;
+      const schools = state.filters.schools;
+      if (schools.has(chip.dataset.school)) schools.delete(chip.dataset.school); else schools.add(chip.dataset.school);
+      filtersChanged();
+    });
+    $("#class-filter").addEventListener("change", event => { state.filters.classId = event.target.value; filtersChanged(); });
+    $("#level-filters").addEventListener("click", event => {
+      const button = event.target.closest("[data-level]");
+      if (!button) return;
+      const level = Number(button.dataset.level), levels = state.filters.levels;
+      if (levels.has(level)) levels.delete(level); else levels.add(level);
+      filtersChanged();
+    });
+    $("#clear-filters").addEventListener("click", () => {
+      state.filters = { schools: new Set(), classId: "", levels: new Set() };
+      filtersChanged();
+    });
+    if (matchMedia("(max-width: 760px)").matches) $("#filters").open = false;
     $("#edited-only").addEventListener("change", () => loadList());
     $("#spell-list").addEventListener("scroll", event => {
       const list = event.currentTarget;
@@ -366,7 +495,10 @@
     setInterval(ping, 30000);
     document.addEventListener("visibilitychange", () => { if (!document.hidden) ping(); });
     try {
-      await Promise.all([loadSummary(), loadList()]);
+      await Promise.all([loadSummary(), loadTaxonomy()]);
+      restoreFilters();
+      renderFilterOptions();
+      await loadList();
       if (state.items.length) await selectSpell(state.items[0].id);
     } catch (error) { toast(error.message, true); }
   }

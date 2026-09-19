@@ -20,10 +20,26 @@
   <main class="workspace" aria-label="法術書">
     <aside class="index-pane" aria-label="法術索引">
       <label class="search-box"><span class="sr-only">搜尋法術</span><input id="search" type="search" placeholder="搜尋中英文名稱或內文…" autocomplete="off"><kbd>/</kbd></label>
-      <div class="index-tools">
-        <p id="summary" class="summary" aria-live="polite"></p>
-        <label class="toggle"><input id="edited-only" type="checkbox"><span>只看我修改過的</span></label>
-      </div>
+      <details id="filters" class="filters" open>
+        <summary><span>篩選</span><span id="filter-count" class="filter-count" hidden></span></summary>
+        <div class="filter-group">
+          <p class="filter-label">學派</p>
+          <div id="school-filters" class="school-filters" role="group" aria-label="學派篩選"></div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label" for="class-filter">職業／領域</label>
+          <select id="class-filter"><option value="">全部職業與領域</option></select>
+        </div>
+        <div class="filter-group">
+          <p class="filter-label">等級</p>
+          <div id="level-filters" class="level-filters" role="group" aria-label="等級篩選"></div>
+        </div>
+        <div class="filter-actions">
+          <label class="toggle"><input id="edited-only" type="checkbox"><span>只看我修改過的</span></label>
+          <button id="clear-filters" class="text-button" type="button" hidden>清除篩選</button>
+        </div>
+      </details>
+      <p id="summary" class="summary" aria-live="polite"></p>
       <nav id="alphabet" class="alphabet" aria-label="字母篩選"></nav>
       <div id="spell-list" class="spell-list" role="listbox" aria-label="法術清單"></div>
     </aside>
@@ -34,7 +50,7 @@
       <article id="spell-view" class="spell-view" hidden>
         <header class="spell-header">
           <div>
-            <p id="view-meta" class="eyebrow"></p>
+            <div id="view-schools" class="school-line"></div>
             <h2 id="view-name-zh"></h2>
             <p id="view-name-en" class="english-title"></p>
           </div>

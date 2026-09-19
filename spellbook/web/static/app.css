@@ -13,6 +13,19 @@
   --shadow: 0 12px 35px rgba(18, 32, 50, .12);
 }
 
+/* ---- School colours: ink for text on the light tint, solid for filled chips ---- */
+[data-school] { --school: #475467; --school-tint: #e8ecf1; }
+[data-school="abjuration"] { --school: #1f5fae; --school-tint: #e2ecf9; }
+[data-school="conjuration"] { --school: #7a5a00; --school-tint: #faf0c8; }
+[data-school="divination"] { --school: #0b6770; --school-tint: #d8eff0; }
+[data-school="enchantment"] { --school: #a1245f; --school-tint: #f9e1ec; }
+[data-school="evocation"] { --school: #b42318; --school-tint: #fde3df; }
+[data-school="illusion"] { --school: #6941c6; --school-tint: #ece5fb; }
+[data-school="necromancy"] { --school: #2e5b2a; --school-tint: #e0edda; }
+[data-school="transmutation"] { --school: #a4450a; --school-tint: #fce7d6; }
+[data-school="universal"] { --school: #475467; --school-tint: #e8ecf1; }
+[data-school="unclassified"] { --school: #667085; --school-tint: #f2f4f7; }
+
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 body { margin: 0; color: var(--ink); background: var(--paper); font: 14px/1.6 "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif; }
@@ -44,8 +57,35 @@ button:focus-visible, input:focus-visible, textarea:focus-visible, summary:focus
 .search-box { position: relative; margin: 14px 14px 8px; }
 .search-box input { width: 100%; padding: 9px 35px 9px 11px; border: 1px solid #c7c0b2; border-radius: 2px; background: #fffdf8; }
 .search-box kbd { position: absolute; right: 9px; top: 8px; padding: 0 6px; border: 1px solid var(--line); background: var(--paper-2); color: var(--muted); font-size: 12px; }
-.index-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 10px; padding: 0 14px 8px; }
-.summary { margin: 0; color: var(--muted); font-size: 12px; }
+.summary { margin: 0; padding: 6px 14px 8px; color: var(--muted); font-size: 12px; }
+
+/* ---- Filters ---- */
+.filters { margin: 0 14px 4px; border: 1px solid var(--line); background: rgba(255,255,255,.45); }
+.filters > summary { display: flex; align-items: center; gap: 8px; padding: 6px 10px; color: var(--ink-2); font-size: 12px; font-weight: 650; cursor: pointer; }
+.filters[open] > summary { border-bottom: 1px solid var(--line); }
+.filter-count { padding: 0 6px; color: #fff; background: var(--blue); font-size: 11px; }
+.filter-group { padding: 7px 10px 0; }
+.filter-label { display: block; margin: 0 0 4px; color: var(--muted); font-size: 11px; font-weight: 650; }
+.school-filters { display: flex; flex-wrap: wrap; gap: 4px; }
+.level-filters { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 3px; }
+.level-button { height: 26px; padding: 0; border: 1px solid #c8c1b4; background: #fffdf8; color: var(--ink-2); font: 12px "Cascadia Mono", Consolas, monospace; cursor: pointer; }
+.level-button:hover { border-color: var(--blue); }
+.level-button.selected { border-color: var(--blue); color: #fff; background: var(--blue); }
+#class-filter { width: 100%; padding: 5px 6px; border: 1px solid #c8c1b4; border-radius: 2px; background: #fffdf8; color: var(--ink); font-size: 12px; }
+.filter-actions { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 10px; }
+.text-button { padding: 0; border: 0; color: var(--blue); background: none; font-size: 12px; font-weight: 650; cursor: pointer; }
+.toggle input { width: auto; }
+
+/* ---- School chips ---- */
+.school-chip { display: inline-flex; align-items: center; gap: 4px; padding: 1px 8px; border: 1px solid color-mix(in srgb, var(--school) 35%, transparent); border-radius: 999px; color: var(--school); background: var(--school-tint); font-size: 12px; font-weight: 650; line-height: 1.5; white-space: nowrap; }
+.school-chip.filter { cursor: pointer; }
+.school-chip.filter small { font-weight: 400; opacity: .75; }
+.school-chip.filter:hover { border-color: var(--school); }
+.school-chip.selected, .school-chip.large { border-color: var(--school); color: #fff; background: var(--school); }
+.school-chip.large { padding: 2px 11px; font-size: 13px; letter-spacing: .04em; }
+.school-chip.mini { padding: 0 5px; font-size: 10px; line-height: 1.6; }
+.school-line { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 6px; }
+.subschool { color: var(--muted); font-size: 12px; }
 .toggle { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; font-weight: 400; color: var(--ink-2); font-size: 12px; cursor: pointer; }
 .alphabet { display: flex; flex-wrap: wrap; gap: 2px; padding: 8px 14px; border-block: 1px solid var(--line); }
 .alphabet button { min-width: 22px; height: 24px; padding: 0 4px; border: 0; background: transparent; color: #5d6b7b; font: 11px "Cascadia Mono", Consolas, monospace; cursor: pointer; }
@@ -59,6 +99,8 @@ button:focus-visible, input:focus-visible, textarea:focus-visible, summary:focus
 .spell-card .names { min-width: 0; }
 .spell-card strong { display: block; font-size: 13px; font-weight: 600; }
 .spell-card small { display: block; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card-tags { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 3px; max-width: 110px; }
+.level-badge { padding: 0 5px; border: 1px solid #9eb2cd; color: var(--blue); background: var(--blue-soft); font: normal 10px/1.6 "Cascadia Mono", Consolas, monospace; white-space: nowrap; }
 .edited-mark { padding: 1px 5px; border: 1px solid #c6aa75; color: var(--amber); background: #faf3e2; font: normal 10px/1.4 inherit; }
 .list-empty { padding: 20px; color: var(--muted); text-align: center; }
 
@@ -81,7 +123,10 @@ button:focus-visible, input:focus-visible, textarea:focus-visible, summary:focus
 .taxonomy { display: grid; gap: 6px; margin: 16px 0 0; }
 .taxonomy > div { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px; }
 .taxonomy-label { min-width: 48px; color: var(--muted); font-size: 11px; font-weight: 650; }
-.chip { padding: 1px 7px; border: 1px solid #bdc7d4; background: #edf1f5; font-size: 12px; }
+.chip { padding: 1px 7px; border: 1px solid #bdc7d4; background: #edf1f5; color: var(--ink); font-size: 12px; }
+.level-chip { cursor: pointer; }
+.level-chip:hover { border-color: var(--blue); background: var(--blue-soft); }
+.level-chip.domain { border-style: dashed; }
 .prose { margin-top: 22px; font-size: 15px; line-height: 1.9; }
 .prose p { margin: 0 0 .9em; }
 .english-block { margin-top: 10px; padding: 10px 14px; border: 1px solid var(--line); background: rgba(255,255,255,.6); }
