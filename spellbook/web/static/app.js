@@ -1,18 +1,29 @@
 (() => {
   const csrf = document.body.dataset.csrf;
-  const state = { items: [], hasMore: false, loadingMore: false, listToken: 0, current: null, original: {}, status: "", issue: "", letter: "", dirty: false, pdfPage: 0, draftTimer: null };
+  const PAGE_SIZE = 200;
+  const FIELD_LABELS = {
+    name_zh: "中文名稱", name_en: "英文名稱", school: "學派", subschool: "子學派", components: "成分",
+    casting_time: "施法時間", range_text: "距離", target_text: "目標", area_text: "區域", effect_text: "效果",
+    duration: "持續時間", saving_throw: "豁免", spell_resistance: "法術抗力", additional_costs: "額外代價",
+    description_zh: "中文說明", description_en: "英文原文",
+  };
+  const FIELDS = Object.keys(FIELD_LABELS);
+  const STAT_FIELDS = ["components", "casting_time", "range_text", "target_text", "area_text", "effect_text", "duration", "saving_throw", "spell_resistance", "additional_costs"];
+  const REPLACED_BY = { edit: "編輯", rollback: "還原版本", restore_original: "還原原始內容" };
+
+  const state = { items: [], hasMore: false, loadingMore: false, listToken: 0, letter: "", current: null, editing: false, formOriginal: null };
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
   const form = $("#spell-form");
-  const editable = ["spell.name_zh", "spell.name_en", "entry.school", "entry.subschool", "entry.components", "entry.casting_time", "entry.range_text", "entry.target_text", "entry.area_text", "entry.effect_text", "entry.duration", "entry.saving_throw", "entry.spell_resistance", "entry.additional_costs", "entry.description_zh", "entry.description_en"];
 
   async function api(url, options = {}) {
-    const response = await fetch(url, {
-      ...options,
-      headers: { "Content-Type": "application/json", "X-CSRF-Token": csrf, ...(options.headers || {}) },
-    });
+    const response = await fetch(url, { ...options, headers: { "Content-Type": "application/json", "X-CSRF-Token": csrf, ...(options.headers || {}) } });
     const payload = response.headers.get("content-type")?.includes("json") ? await response.json() : null;
-    if (!response.ok) throw new Error(payload?.detail || `操作失敗（${response.status}）`);
+    if (!response.ok) {
+      const error = new Error(payload?.detail || `操作失敗（${response.status}）`);
+      error.status = response.status;
+      throw error;
+    }
     return payload;
   }
 
@@ -21,24 +32,54 @@
     element.textContent = message;
     element.className = `toast show${error ? " error" : ""}`;
     clearTimeout(element.timer);
-    element.timer = setTimeout(() => element.className = "toast", 2600);
+    element.timer = setTimeout(() => element.className = "toast", 2800);
   }
 
   function escapeHtml(value) {
-    return String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+    return String(value ?? "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
   }
+
+  function formatTime(value) {
+    if (!value) return "";
+    const d = new Date(value);
+    const pad = n => String(n).padStart(2, "0");
+    return `${d.getFullYear()}/${pad(d.getMonth() + 1)}/${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+  }
+
+  // Text extracted from the PDF keeps its hard line wraps. Re-join wrapped lines
+  // and only break paragraphs after sentence-ending punctuation or blank lines.
+  function paragraphs(text) {
+    const result = [];
+    let current = "";
+    for (const raw of String(text || "").split("\n")) {
+      const line = raw.trim();
+      if (!line) { if (current) result.push(current); current = ""; continue; }
+      const needsSpace = /[A-Za-z0-9,;]$/.test(current) && /^[A-Za-z0-9(]/.test(line);
+      current += (current && needsSpace ? " " : "") + line;
+      if (/[。！？」』）)!?.:：]$/.test(line)) { result.push(current); current = ""; }
+    }
+    if (current) result.push(current);
+    return result.map(p => `<p>${escapeHtml(p)}</p>`).join("");
+  }
+
+  function confirmDialog(title, body) {
+    const dialog = $("#confirm-dialog");
+    $("#confirm-title").textContent = title;
+    $("#confirm-body").textContent = body;
+    dialog.returnValue = "";
+    dialog.showModal();
+    return new Promise(resolve => dialog.addEventListener("close", () => resolve(dialog.returnValue === "ok"), { once: true }));
+  }
+
+  // ---- Index list -------------------------------------------------------
 
   async function loadSummary() {
     const data = await api("/api/summary");
-    $("#summary").innerHTML = [
-      [data.total, "全部"], [data.unreviewed, "未校對"], [data.needs_review, "待複核"], [data.reviewed, "已通過"]
-    ].map(([n, label]) => `<div><strong>${n}</strong><small>${label}</small></div>`).join("");
+    $("#summary").textContent = `共 ${data.total} 個法術${data.edited ? `，已修改 ${data.edited} 個` : ""}`;
   }
 
-  const PAGE_SIZE = 200;
-
   async function fetchPage(offset) {
-    const params = new URLSearchParams({ q: $("#search").value, status: state.status, issue: state.issue, letter: state.letter, limit: String(PAGE_SIZE), offset: String(offset) });
+    const params = new URLSearchParams({ q: $("#search").value, letter: state.letter, edited: $("#edited-only").checked, limit: PAGE_SIZE, offset });
     return (await api(`/api/spells?${params}`)).items;
   }
 
@@ -46,8 +87,8 @@
     return `
       <button type="button" class="spell-card ${item.id === state.current?.id ? "active" : ""}" data-id="${item.id}" role="option">
         <span class="letter">${escapeHtml(item.alphabet)}</span>
-        <span><strong>${escapeHtml(item.name_zh)}</strong><small>${escapeHtml(item.name_en)}</small>${item.duplicate_name ? '<em class="dup">英文同名待判定</em>' : ""}</span>
-        <i class="state ${item.review_status}" title="${item.review_status}"></i>
+        <span class="names"><strong>${escapeHtml(item.name_zh)}</strong><small>${escapeHtml(item.name_en)}</small></span>
+        ${item.edited ? '<i class="edited-mark" title="已修改">已修改</i>' : ""}
       </button>`;
   }
 
@@ -62,7 +103,7 @@
 
   // keepLoaded reloads at least as many rows as are already shown, so refreshing
   // after an edit does not collapse the list back to the first page.
-  async function loadList(selectId = null, { keepLoaded = false } = {}) {
+  async function loadList({ keepLoaded = false } = {}) {
     const token = ++state.listToken;
     const target = keepLoaded ? Math.max(state.items.length, PAGE_SIZE) : PAGE_SIZE;
     const items = [];
@@ -75,9 +116,10 @@
     state.items = items;
     state.hasMore = page.length === PAGE_SIZE;
     const list = $("#spell-list");
-    list.innerHTML = items.length ? "" : '<div class="empty-state"><p>目前篩選沒有條目。</p></div>';
+    const scroll = list.scrollTop;
+    list.innerHTML = items.length ? "" : '<p class="list-empty">沒有符合的法術。</p>';
     appendCards(items);
-    if (selectId && state.items.some(item => item.id === selectId)) await selectSpell(selectId);
+    if (keepLoaded) list.scrollTop = scroll; else list.scrollTop = 0;
   }
 
   async function loadMore() {
@@ -103,248 +145,210 @@
     return state.items[index];
   }
 
-  function formValues() {
-    return Object.fromEntries(editable.map(name => [name, form.elements.namedItem(name).value]));
+  function refreshCard(spell) {
+    const index = state.items.findIndex(item => item.id === spell.id);
+    if (index < 0) return;
+    Object.assign(state.items[index], { name_zh: spell.name_zh, name_en: spell.name_en, alphabet: spell.alphabet, edited: Boolean(spell.edited_at) });
+    const card = $(`.spell-card[data-id="${spell.id}"]`);
+    if (!card) return;
+    card.outerHTML = cardHtml(state.items[index]);
+    appendCards([]);
   }
 
-  function setDirty(value) {
-    state.dirty = value;
-    $("#draft-state").textContent = value ? "未儲存 · 草稿保護中" : "已同步";
-    $("#draft-state").classList.toggle("dirty", value);
-  }
-
-  async function saveDraft() {
-    if (!state.current || !state.dirty) return;
-    try {
-      await api(`/api/spells/${state.current.id}/draft`, { method: "PUT", body: JSON.stringify({ revision_hash: state.current.revision_hash, fields: formValues() }) });
-      $("#draft-state").textContent = "草稿已保存於本機";
-    } catch (error) { toast(error.message, true); }
-  }
+  // ---- Spell page -------------------------------------------------------
 
   async function selectSpell(id) {
-    if (state.dirty && !confirm("目前條目有尚未正式儲存的修改。草稿已保存在本機，仍要切換嗎？")) return;
+    if (state.editing && isDirty() && !(await confirmDialog("放棄未儲存的修改？", "目前的編輯內容尚未儲存，切換後會遺失。"))) return;
     try {
       const spell = await api(`/api/spells/${id}`);
-      state.current = spell;
-      state.pdfPage = spell.pdf_page_start;
-      renderSpell(spell);
+      showSpell(spell);
       $$(".spell-card").forEach(card => card.classList.toggle("active", card.dataset.id === id));
+      $(".spell-card.active")?.scrollIntoView({ block: "nearest" });
     } catch (error) { toast(error.message, true); }
   }
 
-  function renderSpell(spell) {
+  function showSpell(spell) {
+    state.current = spell;
+    setEditing(false);
+    renderView(spell);
+    loadVersions();
+  }
+
+  function renderView(spell) {
     $("#empty-state").hidden = true;
-    form.hidden = false;
-    $("#record-id").textContent = `${spell.id} · ${spell.entry_id}`;
-    $("#record-title").textContent = spell.name_zh;
-    $("#record-subtitle").textContent = spell.name_en;
-    $("#review-badge").textContent = ({ reviewed: "已通過", needs_review: "需要校對", unreviewed: "尚未校對" })[spell.review_status];
-    $("#review-badge").className = `badge ${spell.review_status}`;
-    $("#revision-label").textContent = `rev ${spell.revision_hash.slice(0, 10)}`;
-    $("#page-ribbon").textContent = `P. ${spell.pdf_page_start}${spell.pdf_page_end !== spell.pdf_page_start ? `–${spell.pdf_page_end}` : ""}`;
-    editable.forEach(path => {
-      const key = path.split(".")[1];
-      form.elements.namedItem(path).value = spell[key] ?? "";
-    });
-    state.original = formValues();
-    if (spell.draft?.payload && spell.draft.revision_hash === spell.revision_hash) {
-      Object.entries(spell.draft.payload).forEach(([path, value]) => { if (form.elements.namedItem(path)) form.elements.namedItem(path).value = value ?? ""; });
-      setDirty(JSON.stringify(formValues()) !== JSON.stringify(state.original));
-      if (state.dirty) $("#draft-state").textContent = "已復原本機草稿";
-    } else {
-      setDirty(false);
-      if (spell.draft) toast("偵測到舊版本草稿；為避免覆蓋新內容，未自動套用", true);
+    $("#view-meta").textContent = [spell.school, spell.subschool && `［${spell.subschool}］`].filter(Boolean).join(" ") || "未標示學派";
+    $("#view-name-zh").textContent = spell.name_zh;
+    $("#view-name-en").textContent = spell.name_en;
+    const badges = [];
+    if (spell.edited_at) badges.push(`<span class="badge edited">已修改 · ${escapeHtml(formatTime(spell.edited_at))}</span>`);
+    if (spell.translation_status === "generated") badges.push('<span class="badge generated" title="原書只有英文，此條中文為機器翻譯">機器翻譯</span>');
+    $("#view-badges").innerHTML = badges.join("");
+    $("#view-stats").innerHTML = STAT_FIELDS.filter(field => spell[field]).map(field =>
+      `<div><dt>${FIELD_LABELS[field]}</dt><dd>${escapeHtml(spell[field])}</dd></div>`).join("");
+    const groups = [
+      ["等級", (spell.levels || []).map(v => `${v.class_name} ${v.spell_level}${v.note ? `（${v.note}）` : ""}`)],
+      ["描述詞", spell.descriptors || []],
+      ["出處", [...(spell.sources || []), `原書 P.${spell.pdf_page_start}${spell.pdf_page_end !== spell.pdf_page_start ? `–${spell.pdf_page_end}` : ""}`]],
+    ];
+    $("#view-taxonomy").innerHTML = groups.filter(([, values]) => values.length).map(([label, values]) =>
+      `<div><span class="taxonomy-label">${label}</span>${values.map(v => `<span class="chip">${escapeHtml(v)}</span>`).join("")}</div>`).join("");
+    $("#view-description").innerHTML = paragraphs(spell.description_zh) || '<p class="muted">（沒有說明）</p>';
+    $("#view-english").hidden = !spell.description_en;
+    $("#view-description-en").innerHTML = paragraphs(spell.description_en);
+    $("#restore-original").disabled = !spell.edited_at;
+  }
+
+  // ---- Editing ----------------------------------------------------------
+
+  function formValues() {
+    return Object.fromEntries(FIELDS.map(name => [name, form.elements.namedItem(name).value]));
+  }
+
+  function isDirty() {
+    return state.editing && JSON.stringify(formValues()) !== JSON.stringify(state.formOriginal);
+  }
+
+  function setEditing(editing) {
+    state.editing = editing;
+    $("#spell-view").hidden = editing || !state.current;
+    form.hidden = !editing;
+    if (editing) {
+      FIELDS.forEach(name => { form.elements.namedItem(name).value = state.current[name] ?? ""; });
+      state.formOriginal = formValues();
+      updateFormState();
+      form.elements.namedItem("name_zh").focus();
     }
-    $("#raw-text").textContent = spell.raw_text || "";
-    const tags = [...(spell.descriptors || []), ...(spell.levels || []).map(v => `${v.class_name} ${v.spell_level}`)];
-    $("#taxonomy").innerHTML = tags.map(tag => `<span>${escapeHtml(tag)}</span>`).join("");
-    const checked = new Set((spell.checks || []).filter(c => c.revision_hash === spell.revision_hash).map(c => c.check_type));
-    $$("#checks input").forEach(input => input.checked = checked.has(input.value));
-    updateApproval();
-    renderEvidence(spell);
+    $(".page-pane").scrollTop = 0;
   }
 
-  function renderEvidence(spell) {
-    updatePdf();
-    $("#sources").innerHTML = (spell.sources || []).map(source => `<span class="chip">${escapeHtml(source)}</span>`).join("") || '<span class="chip">未標示</span>';
-    const confidence = `<span class="chip">解析信心 ${Math.round((spell.parse_confidence || 0) * 100)}%</span>`;
-    const translation = spell.translation_status === "generated" ? '<div class="issue-card">此正文為生成翻譯，需人工確認。</div>' : "";
-    $("#issues").innerHTML = confidence + translation + (spell.issues || []).map(issue => `<div class="issue-card"><strong>${escapeHtml(issue.issue_type)}</strong><br>${escapeHtml(issue.message)}</div>`).join("");
-    $("#duplicate-block").hidden = !(spell.issues || []).some(issue => issue.issue_type === "duplicate_english_name");
-    $("#conflict-block").hidden = !(spell.conflicts || []).length;
-    $("#conflicts").innerHTML = (spell.conflicts || []).map(conflict => {
-      const current = JSON.parse(conflict.value_a_json), incoming = JSON.parse(conflict.value_b_json);
-      return `<article class="conflict-card" data-conflict="${conflict.id}"><code>${escapeHtml(conflict.field_path)}</code><small>目前值</small><p>${escapeHtml(current)}</p><small>合併進來的值</small><p>${escapeHtml(incoming)}</p><div class="conflict-actions"><button data-resolution="current">保留目前值</button><button data-resolution="incoming">採用合併值</button></div></article>`;
-    }).join("");
-    $$(".conflict-actions button").forEach(button => button.addEventListener("click", () => resolveConflict(button.closest(".conflict-card").dataset.conflict, button.dataset.resolution)));
-    $("#history").innerHTML = (spell.history || []).map(item => `<li><strong>${actionLabel(item.action)} · ${escapeHtml(item.editor_name)}</strong><time>${new Date(item.occurred_at_utc).toLocaleString("zh-TW")}</time></li>`).join("") || "<li>尚無校對事件</li>";
+  function updateFormState() {
+    const changed = FIELDS.filter(name => formValues()[name] !== state.formOriginal[name]).length;
+    $("#form-state").textContent = changed ? `已修改 ${changed} 個欄位` : "尚未修改";
+    $("#save-button").disabled = !changed;
   }
 
-  function actionLabel(action) {
-    return ({ update_fields: "儲存修改", set_check: "更新核對", approve_review: "通過校對", merge_spell: "合併條目", resolve_conflict: "解決衝突" })[action] || action;
+  async function cancelEdit() {
+    if (isDirty() && !(await confirmDialog("放棄修改？", "尚未儲存的內容會遺失。"))) return;
+    setEditing(false);
   }
 
-  function updatePdf() {
-    if (!state.pdfPage) return;
-    const url = `/source/pdf#page=${state.pdfPage}&view=FitH`;
-    $("#pdf-frame").src = url;
-    $("#pdf-open").href = url;
-    $("#pdf-page").textContent = `PDF ${state.pdfPage}`;
-  }
-
-  function updateApproval() {
-    $("#approve-button").disabled = state.dirty || $$("#checks input:checked").length !== 4;
-  }
-
-  async function saveChanges(event) {
+  async function saveEdit(event) {
     event.preventDefault();
-    if (!state.current) return;
     const values = formValues();
-    const changes = Object.fromEntries(Object.entries(values).filter(([key, value]) => value !== state.original[key]));
-    if (!Object.keys(changes).length) return toast("沒有需要儲存的內容變更");
+    const fields = Object.fromEntries(FIELDS.filter(name => values[name] !== state.formOriginal[name]).map(name => [name, values[name]]));
+    if (!Object.keys(fields).length) return;
+    $("#save-button").disabled = true;
     try {
-      const result = await api(`/api/spells/${state.current.id}/changes`, { method: "POST", body: JSON.stringify({ revision_hash: state.current.revision_hash, fields: changes, note: $("#review-note").value }) });
-      state.current = result.spell;
-      renderSpell(result.spell);
-      await Promise.all([loadSummary(), loadList(null, { keepLoaded: true })]);
-      toast(`修改已記錄：${result.event_id}`);
+      const spell = await api(`/api/spells/${state.current.id}`, { method: "PUT", body: JSON.stringify({ revision_hash: state.current.revision_hash, fields }) });
+      showSpell(spell);
+      await afterChange(spell);
+      toast("已儲存，舊內容保留在版本紀錄中");
+    } catch (error) {
+      toast(error.message, true);
+      updateFormState();
+      if (error.status === 409) state.current = await api(`/api/spells/${state.current.id}`);
+    }
+  }
+
+  async function afterChange(spell) {
+    await loadSummary();
+    if ($("#edited-only").checked) await loadList({ keepLoaded: true }); else refreshCard(spell);
+  }
+
+  // ---- Version history --------------------------------------------------
+
+  async function loadVersions() {
+    const spell = state.current;
+    const data = await api(`/api/spells/${spell.id}/versions`);
+    if (state.current !== spell) return;
+    const now = Object.fromEntries(FIELDS.map(name => [name, spell[name] ?? ""]));
+    const currentItem = `<li class="version current"><div class="version-head"><strong>目前內容</strong><span>${spell.edited_at ? escapeHtml(formatTime(spell.edited_at)) + " 儲存" : "原始內容"}</span></div></li>`;
+    const items = data.items.map(version => {
+      const changed = FIELDS.filter(name => (version.content[name] ?? "") !== now[name]);
+      const diff = changed.map(name => `
+        <div class="diff-row"><p class="diff-label">${FIELD_LABELS[name]}</p>
+          <p class="diff-old"><span>此版本</span>${escapeHtml(truncate(version.content[name]))}</p>
+          <p class="diff-new"><span>目前</span>${escapeHtml(truncate(now[name]))}</p></div>`).join("");
+      return `<li class="version">
+        <div class="version-head"><strong>${version.content_saved_at ? escapeHtml(formatTime(version.content_saved_at)) + " 的版本" : "原始內容"}</strong>
+          <span>${escapeHtml(formatTime(version.replaced_at))} 因${REPLACED_BY[version.replaced_by]}被取代</span></div>
+        <details><summary>${changed.length ? `與目前相差 ${changed.length} 個欄位` : "與目前內容相同"}</summary>${diff}</details>
+        <button type="button" class="secondary small" data-version="${version.id}" ${changed.length ? "" : "disabled"}>還原到此版本</button>
+      </li>`;
+    }).join("");
+    $("#history").innerHTML = `<ol class="version-list">${currentItem}${items}</ol>${data.items.length ? "" : '<p class="muted">這個法術還沒有修改過。</p>'}`;
+    $$("#history [data-version]").forEach(button => button.addEventListener("click", () => rollback(Number(button.dataset.version))));
+  }
+
+  function truncate(value, length = 160) {
+    const text = String(value ?? "").replace(/\s+/g, " ").trim();
+    if (!text) return "（空白）";
+    return text.length > length ? `${text.slice(0, length)}…` : text;
+  }
+
+  async function rollback(versionId) {
+    if (!(await confirmDialog("還原到這個版本？", "目前的內容會先存進版本紀錄，之後仍可以再還原回來。"))) return;
+    await replaceWith(`/api/spells/${state.current.id}/rollback`, { version_id: versionId }, "已還原到選取的版本");
+  }
+
+  async function restoreOriginal() {
+    if (!(await confirmDialog("還原成原始內容？", "法術會回到原書擷取的內容。目前的內容會先存進版本紀錄。"))) return;
+    await replaceWith(`/api/spells/${state.current.id}/restore-original`, {}, "已還原成原始內容");
+  }
+
+  async function replaceWith(url, body, message) {
+    if (state.editing && isDirty() && !(await confirmDialog("放棄未儲存的修改？", "還原會取代目前編輯中的內容。"))) return;
+    try {
+      const spell = await api(url, { method: "POST", body: JSON.stringify({ revision_hash: state.current.revision_hash, ...body }) });
+      showSpell(spell);
+      await afterChange(spell);
+      toast(message);
     } catch (error) { toast(error.message, true); }
   }
 
-  async function toggleCheck(input) {
+  // ---- Wiring -----------------------------------------------------------
+
+  async function step(offset) {
     if (!state.current) return;
-    input.disabled = true;
-    try {
-      const result = await api(`/api/spells/${state.current.id}/checks`, { method: "POST", body: JSON.stringify({ revision_hash: state.current.revision_hash, check_type: input.value, checked: input.checked }) });
-      state.current = result.spell;
-      renderSpell(result.spell);
-      toast(`${input.closest("label").querySelector("span").textContent}核對已${input.checked ? "完成" : "取消"}`);
-    } catch (error) { input.checked = !input.checked; toast(error.message, true); }
-    finally { input.disabled = false; }
+    const index = state.items.findIndex(item => item.id === state.current.id);
+    const next = await itemAt(index + offset);
+    if (next && index + offset >= 0) selectSpell(next.id);
   }
 
-  async function approve() {
-    try {
-      const currentIndex = state.items.findIndex(item => item.id === state.current.id);
-      const result = await api(`/api/spells/${state.current.id}/approve`, { method: "POST", body: JSON.stringify({ revision_hash: state.current.revision_hash, note: $("#review-note").value }) });
-      toast(`已通過校對：${result.event_id}`);
-      await Promise.all([loadSummary(), loadList(null, { keepLoaded: true })]);
-      const next = (await itemAt(currentIndex + 1)) || state.items[state.items.length - 1];
-      if (next && next.id !== state.current.id) await selectSpell(next.id); else renderSpell(result.spell);
-    } catch (error) { toast(error.message, true); }
-  }
-
-  function openEditorDialog() { $("#editor-name").value = $("#editor-label").textContent === "尚未確認" ? "" : $("#editor-label").textContent; $("#editor-dialog").showModal(); }
-
-  async function confirmEditor(event) {
-    event.preventDefault();
-    const name = $("#editor-name").value.trim();
-    if (!name) return;
-    try {
-      await api("/api/settings/editor", { method: "POST", body: JSON.stringify({ editor_name: name }) });
-      $("#editor-label").textContent = name;
-      $("#editor-dialog").close();
-      toast(`校對事件將署名為 ${name}`);
-    } catch (error) { toast(error.message, true); }
-  }
-
-  async function openCommitDialog() {
-    try {
-      const preview = await api("/api/git/preview");
-      state.commitPreview = preview;
-      const warnings = [
-        preview.operation_in_progress ? "Git 正在進行合併或 rebase。" : "",
-        preview.staged.length ? `暫存區已有 ${preview.staged.length} 個檔案。` : "",
-        !preview.identity_matches ? `校對者「${escapeHtml(preview.editor_name)}」與 Git 作者「${escapeHtml(preview.identity.name || "未設定")}」不同。` : "",
-      ].filter(Boolean);
-      $("#commit-preview").innerHTML = `
-        <dl><dt>分支</dt><dd>${escapeHtml(preview.branch)}</dd><dt>Git 作者</dt><dd>${escapeHtml(preview.identity.name || "未設定")} &lt;${escapeHtml(preview.identity.email || "未設定")}&gt;</dd><dt>校對事件</dt><dd>${preview.event_count} 筆</dd><dt>檔案</dt><dd>${preview.files.length} 個</dd></dl>
-        ${warnings.map(v => `<p class="commit-warning">${v}</p>`).join("")}
-        <strong>將納入：</strong><ul>${preview.files.map(path => `<li>${escapeHtml(path)}</li>`).join("") || "<li>目前沒有校對變更</li>"}</ul>
-        ${preview.other_changes.length ? `<strong>不會納入：</strong><ul>${preview.other_changes.map(path => `<li>${escapeHtml(path)}</li>`).join("")}</ul>` : ""}`;
-      $("#confirm-commit").disabled = preview.operation_in_progress || preview.staged.length > 0 || preview.files.length === 0;
-      $("#commit-dialog").showModal();
-    } catch (error) { toast(error.message, true); }
-  }
-
-  async function createCommit(event) {
-    event.preventDefault();
-    const mismatch = !state.commitPreview.identity_matches;
-    if (mismatch && !confirm("Git 作者與校對者名稱不同。確定以目前 Git 作者建立 commit，並保留事件中的校對者署名嗎？")) return;
-    const button = $("#confirm-commit"); button.disabled = true; button.textContent = "驗證並建立中…";
-    try {
-      const result = await api("/api/git/commit", { method: "POST", body: JSON.stringify({ confirm_identity_mismatch: mismatch }) });
-      $("#commit-dialog").close();
-      toast(`Commit 已建立：${result.commit_hash.slice(0, 10)}；請自行檢查後 push`);
-    } catch (error) { toast(error.message, true); }
-    finally { button.disabled = false; button.textContent = "建立 Commit"; }
-  }
-
-  async function openDuplicateDialog() {
-    try {
-      const result = await api(`/api/spells/${state.current.id}/duplicates`);
-      state.duplicateGroup = result.items;
-      $("#duplicate-comparison").innerHTML = result.items.map(item => `<article class="duplicate-card ${item.id === state.current.id ? "current" : ""}"><p class="mono">${escapeHtml(item.id)} · PDF ${item.pdf_page_start}</p><h3>${escapeHtml(item.name_zh)}</h3><p><strong>${escapeHtml(item.name_en)}</strong></p><p>${escapeHtml(item.school || "未標示學派")} · ${escapeHtml(item.components || "未標示成分")}</p><p class="excerpt">${escapeHtml(item.description_zh || item.description_en || "")}</p></article>`).join("");
-      const others = result.items.filter(item => item.id !== state.current.id);
-      $("#duplicate-related").innerHTML = others.map(item => `<option value="${item.id}">${escapeHtml(item.name_zh)} · PDF ${item.pdf_page_start} · ${item.id}</option>`).join("");
-      $("#duplicate-note").value = "";
-      $("#duplicate-dialog").showModal();
-    } catch (error) { toast(error.message, true); }
-  }
-
-  async function saveDuplicateDecision(event) {
-    event.preventDefault();
-    const decision = $("#duplicate-decision").value;
-    const related = ["merge", "variant"].includes(decision) ? $("#duplicate-related").value : null;
-    if (decision === "merge" && !confirm("目前條目將標記為 merged 並指向保留條目；舊 ID 與歷程仍會保留。確定繼續？")) return;
-    try {
-      const result = await api(`/api/spells/${state.current.id}/duplicate-decision`, { method: "POST", body: JSON.stringify({ revision_hash: state.current.revision_hash, decision, related_spell_id: related, note: $("#duplicate-note").value }) });
-      $("#duplicate-dialog").close();
-      toast(`同名判定已記錄：${result.event_id}`);
-      await Promise.all([loadSummary(), loadList(null, { keepLoaded: true })]);
-      if (decision !== "merge") await selectSpell(state.current.id);
-      else if (state.items.length) await selectSpell(state.items[0].id);
-    } catch (error) { toast(error.message, true); }
-  }
-
-  async function resolveConflict(conflictId, resolution) {
-    if (!confirm(`確定${resolution === "current" ? "保留目前值" : "採用合併值"}？此決定會建立新的解決事件。`)) return;
-    try {
-      const result = await api(`/api/conflicts/${conflictId}/resolve`, { method: "POST", body: JSON.stringify({ spell_id: state.current.id, revision_hash: state.current.revision_hash, resolution, note: "於校對介面解決欄位衝突" }) });
-      state.current = result.spell; renderSpell(result.spell); await loadSummary(); toast(`衝突已解決：${result.event_id}`);
-    } catch (error) { toast(error.message, true); }
+  function placeHistory(narrow) {
+    const pane = $(".history-pane");
+    if (narrow) $(".page-pane").append(pane); else $(".workspace").append(pane);
   }
 
   function bind() {
-    $("#alphabet").innerHTML = [''].concat("ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")).map(letter => `<button data-letter="${letter}" class="${!letter ? "active" : ""}" title="${letter || "全部字母"}">${letter || "•"}</button>`).join("");
-    $("#spell-list").addEventListener("scroll", event => { const list = event.currentTarget; if (list.scrollTop + list.clientHeight >= list.scrollHeight - 300) loadMore(); });
-    $("#search").addEventListener("input", () => { clearTimeout(state.searchTimer); state.searchTimer = setTimeout(loadList, 220); });
-    $$(".filter").forEach(button => button.addEventListener("click", () => { state.status = button.dataset.status; $$(".filter").forEach(v => v.classList.toggle("active", v === button)); loadList(); }));
-    $$(".issue-filter").forEach(button => button.addEventListener("click", () => { state.issue = state.issue === button.dataset.issue ? "" : button.dataset.issue; $$(".issue-filter").forEach(v => v.classList.toggle("active", v.dataset.issue === state.issue)); loadList(); }));
-    $$("#alphabet button").forEach(button => button.addEventListener("click", () => { state.letter = button.dataset.letter; $$("#alphabet button").forEach(v => v.classList.toggle("active", v === button)); loadList(); }));
-    form.addEventListener("input", event => {
-      if (!event.target.matches("input,textarea") || event.target.closest("#checks")) return;
-      setDirty(JSON.stringify(formValues()) !== JSON.stringify(state.original));
-      updateApproval();
-      clearTimeout(state.draftTimer); state.draftTimer = setTimeout(saveDraft, 700);
+    const narrow = matchMedia("(max-width: 1180px)");
+    narrow.addEventListener("change", event => placeHistory(event.matches));
+    placeHistory(narrow.matches);
+    $("#alphabet").innerHTML = [""].concat("ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")).map(letter =>
+      `<button type="button" data-letter="${letter}" class="${letter ? "" : "active"}" title="${letter || "全部字母"}">${letter || "全"}</button>`).join("");
+    $$("#alphabet button").forEach(button => button.addEventListener("click", () => {
+      state.letter = button.dataset.letter;
+      $$("#alphabet button").forEach(v => v.classList.toggle("active", v === button));
+      loadList();
+    }));
+    $("#search").addEventListener("input", () => { clearTimeout(state.searchTimer); state.searchTimer = setTimeout(() => loadList(), 220); });
+    $("#edited-only").addEventListener("change", () => loadList());
+    $("#spell-list").addEventListener("scroll", event => {
+      const list = event.currentTarget;
+      if (list.scrollTop + list.clientHeight >= list.scrollHeight - 300) loadMore();
     });
-    form.addEventListener("submit", saveChanges);
-    $$("#checks input").forEach(input => input.addEventListener("change", () => toggleCheck(input)));
-    $("#approve-button").addEventListener("click", approve);
-    $("#editor-button").addEventListener("click", openEditorDialog);
-    $("#commit-button").addEventListener("click", openCommitDialog);
-    $("#confirm-commit").addEventListener("click", createCommit);
-    $("#duplicate-button").addEventListener("click", openDuplicateDialog);
-    $("#confirm-duplicate").addEventListener("click", saveDuplicateDecision);
-    $("#confirm-editor").addEventListener("click", confirmEditor);
-    $("#pdf-prev").addEventListener("click", () => { state.pdfPage = Math.max(1, state.pdfPage - 1); updatePdf(); });
-    $("#pdf-next").addEventListener("click", () => { state.pdfPage += 1; updatePdf(); });
-    window.addEventListener("beforeunload", event => { if (state.dirty) { event.preventDefault(); event.returnValue = ""; } });
+    $("#edit-button").addEventListener("click", () => setEditing(true));
+    $("#cancel-button").addEventListener("click", cancelEdit);
+    form.addEventListener("submit", saveEdit);
+    form.addEventListener("input", updateFormState);
+    $("#restore-original").addEventListener("click", restoreOriginal);
+    window.addEventListener("beforeunload", event => { if (isDirty()) { event.preventDefault(); event.returnValue = ""; } });
     document.addEventListener("keydown", event => {
-      if (event.key === "/" && !/INPUT|TEXTAREA/.test(document.activeElement.tagName)) { event.preventDefault(); $("#search").focus(); }
-      if (event.altKey && ["ArrowUp", "ArrowDown"].includes(event.key) && state.current) {
-        event.preventDefault(); const i = state.items.findIndex(item => item.id === state.current.id); itemAt(i + (event.key === "ArrowDown" ? 1 : -1)).then(next => { if (next) selectSpell(next.id); });
-      }
+      const typing = /INPUT|TEXTAREA/.test(document.activeElement.tagName);
+      if (event.key === "/" && !typing) { event.preventDefault(); $("#search").focus(); }
+      if (state.editing && event.key === "Escape" && !$("#confirm-dialog").open) { event.preventDefault(); cancelEdit(); }
+      if (state.editing && (event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "s") { event.preventDefault(); form.requestSubmit(); }
+      if (event.altKey && ["ArrowUp", "ArrowDown"].includes(event.key)) { event.preventDefault(); step(event.key === "ArrowDown" ? 1 : -1); }
     });
   }
 
@@ -353,7 +357,6 @@
     try {
       await Promise.all([loadSummary(), loadList()]);
       if (state.items.length) await selectSpell(state.items[0].id);
-      if (document.body.dataset.editorConfirmed !== "true") openEditorDialog();
     } catch (error) { toast(error.message, true); }
   }
   start();

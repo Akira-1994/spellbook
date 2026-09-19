@@ -16,8 +16,8 @@ if sys.stderr is None:
 
 import uvicorn
 
-from spellbook.app import create_app, default_project_root
-from spellbook.config import ProjectPaths
+from spellbook.app import create_app
+from spellbook.config import AppPaths
 
 
 def _free_port() -> int:
@@ -53,23 +53,23 @@ def _show_error(message: str) -> None:
     if os.name == "nt":
         import ctypes
 
-        ctypes.windll.user32.MessageBoxW(0, message, "Spellbook 校對工作台", 0x10)
+        ctypes.windll.user32.MessageBoxW(0, message, "法術書", 0x10)
     else:
         print(message, file=sys.stderr)
 
 
 def main() -> None:
-    root = default_project_root()
-    lock = _acquire_project_lock(ProjectPaths.from_root(root).local_state / "project.lock")
+    paths = AppPaths.default()
+    lock = _acquire_project_lock(paths.lock_file)
     if lock is None:
-        _show_error("此專案的校對工作台已在執行。請切換到既有的瀏覽器視窗。")
+        _show_error("法術書已在執行中，請切換到已開啟的瀏覽器分頁。")
         return
     port = _free_port()
     address = f"http://127.0.0.1:{port}/"
     if not os.getenv("SPELLBOOK_NO_BROWSER"):
         threading.Timer(0.8, lambda: webbrowser.open(address)).start()
     try:
-        uvicorn.run(create_app(root), host="127.0.0.1", port=port, log_level="warning")
+        uvicorn.run(create_app(paths), host="127.0.0.1", port=port, log_level="warning")
     finally:
         lock.close()
 

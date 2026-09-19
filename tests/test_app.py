@@ -1,58 +1,59 @@
-import shutil
-
 from fastapi.testclient import TestClient
 
 from spellbook.app import create_app
 
 
-def make_project(tmp_path, monkeypatch):
-    (tmp_path / "data").mkdir()
-    (tmp_path / "migrations").mkdir()
-    shutil.copy2("data/spellbook.sqlite", tmp_path / "data" / "spellbook.sqlite")
-    shutil.copy2("migrations/002_review_workflow.sql", tmp_path / "migrations" / "002_review_workflow.sql")
-    (tmp_path / "spellbook_doc_v1.1.pdf").write_bytes(b"%PDF-1.4\n%%EOF")
-    monkeypatch.setenv("LOCALAPPDATA", str(tmp_path / "local"))
-    return tmp_path
+def client_for(paths):
+    app = create_app(paths)
+    client = TestClient(app)
+    client.get("/")  # sets the CSRF cookie
+    return client, {"X-CSRF-Token": app.state.csrf_token}
 
 
-def test_health_index_and_spell_query(tmp_path, monkeypatch):
-    app = create_app(make_project(tmp_path, monkeypatch))
-    with TestClient(app) as client:
-        assert client.get("/health").json()["status"] == "ok"
+def test_index_list_and_paging(paths):
+    client, _ = client_for(paths)
+    with client:
         page = client.get("/")
-        assert page.status_code == 200
-        assert "法術校勘工作台" in page.text
-        result = client.get("/api/spells", params={"q": "Acid", "limit": 5}).json()
-        assert result["items"]
+        assert page.status_code == 200 and "法術書" in page.text
+        assert client.get("/api/summary").json() == {"total": 2360, "edited": 0}
+        first = client.get("/api/spells", params={"limit": 200}).json()["items"]
+        second = client.get("/api/spells", params={"limit": 200, "offset": 200}).json()["items"]
+        assert len(first) == len(second) == 200
+        assert not {i["id"] for i in first} & {i["id"] for i in second}
+        assert len(client.get("/api/spells", params={"letter": "S", "limit": 200}).json()["items"]) == 200
+        assert client.get("/api/spells", params={"q": "Acid"}).json()["items"]
+        assert client.get("/api/spells/spl_missing").status_code == 404
 
 
-def test_write_routes_require_csrf_and_confirmed_editor(tmp_path, monkeypatch):
-    app = create_app(make_project(tmp_path, monkeypatch))
-    with TestClient(app) as client:
-        assert client.post("/api/settings/editor", json={"editor_name": "校對者"}).status_code == 403
-        client.get("/")
-        headers = {"X-CSRF-Token": app.state.csrf_token}
-        assert client.post("/api/settings/editor", json={"editor_name": "校對者"}, headers=headers).status_code == 200
-        item = client.get("/api/spells", params={"limit": 1}).json()["items"][0]
-        spell = client.get(f"/api/spells/{item['id']}").json()
-        response = client.put(
-            f"/api/spells/{item['id']}/draft",
-            json={"revision_hash": spell["revision_hash"], "fields": {"spell.name_zh": spell["name_zh"]}},
+def test_edit_versions_and_rollback_round_trip(paths):
+    client, headers = client_for(paths)
+    with client:
+        spell_id = client.get("/api/spells", params={"limit": 1}).json()["items"][0]["id"]
+        spell = client.get(f"/api/spells/{spell_id}").json()
+        body = {"revision_hash": spell["revision_hash"], "fields": {"duration": "1 小時"}}
+        assert client.put(f"/api/spells/{spell_id}", json=body).status_code == 403  # CSRF required
+        edited = client.put(f"/api/spells/{spell_id}", json=body, headers=headers)
+        assert edited.status_code == 200 and edited.json()["duration"] == "1 小時"
+        assert client.put(f"/api/spells/{spell_id}", json=body, headers=headers).status_code == 409  # stale
+        assert client.get("/api/spells", params={"edited": True}).json()["items"][0]["id"] == spell_id
+
+        versions = client.get(f"/api/spells/{spell_id}/versions").json()
+        assert versions["max_versions"] == 5 and len(versions["items"]) == 1
+        rolled = client.post(
+            f"/api/spells/{spell_id}/rollback",
+            json={"revision_hash": edited.json()["revision_hash"], "version_id": versions["items"][0]["id"]},
             headers=headers,
         )
-        assert response.status_code == 200
+        assert rolled.status_code == 200 and rolled.json()["duration"] == spell["duration"]
+
+        restore = client.post(
+            f"/api/spells/{spell_id}/restore-original",
+            json={"revision_hash": rolled.json()["revision_hash"]},
+            headers=headers,
+        )
+        assert restore.status_code == 422  # already identical to the original
 
 
-def test_rejects_non_local_host(tmp_path, monkeypatch):
-    app = create_app(make_project(tmp_path, monkeypatch))
-    with TestClient(app, base_url="http://example.invalid") as client:
+def test_rejects_non_local_host(paths):
+    with TestClient(create_app(paths), base_url="http://example.invalid") as client:
         assert client.get("/health").status_code == 400
-
-
-def test_source_pdf_is_served_inline(tmp_path, monkeypatch):
-    app = create_app(make_project(tmp_path, monkeypatch))
-    with TestClient(app) as client:
-        response = client.get("/source/pdf")
-        assert response.status_code == 200
-        assert response.headers["content-type"] == "application/pdf"
-        assert response.headers["content-disposition"].startswith("inline")
