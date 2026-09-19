@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import shutil
 import socket
 import sys
 import threading
@@ -19,6 +20,7 @@ if sys.stderr is None:
 
 import uvicorn
 
+from spellbook import __version__
 from spellbook.app import create_app
 from spellbook.config import AppPaths
 from spellbook.lifecycle import Lifecycle
@@ -99,6 +101,17 @@ def _supervise(server: uvicorn.Server, lifecycle: Lifecycle, address: str) -> No
             server.should_exit = True
 
 
+def _remove_old_unpacked_versions() -> None:
+    """The Nuitka onefile build unpacks to %LOCALAPPDATA%/Spellbook/app/<version>
+    (see packaging/build-portable.ps1); drop the folders of older versions."""
+    local = os.getenv("LOCALAPPDATA")
+    if "__compiled__" not in globals() or not local:
+        return
+    for folder in (Path(local) / "Spellbook" / "app").glob("*"):
+        if folder.is_dir() and folder.name != __version__:
+            shutil.rmtree(folder, ignore_errors=True)
+
+
 def main() -> None:
     paths = AppPaths.default()
     lock = _acquire_lock(paths.lock_file)
@@ -106,6 +119,7 @@ def main() -> None:
         if not _reopen_running_instance(paths):
             _show_error("法術書已在執行中，但無法連線。請稍候幾秒後再開啟一次。")
         return
+    _remove_old_unpacked_versions()
     try:
         try:
             lifecycle = Lifecycle(idle_timeout=IDLE_TIMEOUT_SECONDS, close_grace=CLOSE_GRACE_SECONDS)

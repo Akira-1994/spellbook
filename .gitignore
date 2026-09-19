@@ -10,3 +10,4 @@ __pycache__/
 .spellbook-local/
 
 .claude/launch.json
+nuitka-crash-report.xml

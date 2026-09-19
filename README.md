@@ -40,7 +40,7 @@ python -m venv .venv
 .\.venv\Scripts\python.exe packaging\make_icon.py
 ```
 
-打包成單一執行檔（輸出 `dist/Spellbook.exe` 與 `.sha256`）：
+打包成單一執行檔（輸出 `dist/Spellbook.exe` 與 `.sha256`）。打包使用 Nuitka 把程式編譯成原生執行檔，需要先安裝 Visual Studio 2022 Build Tools 的「使用 C++ 的桌面開發」工作負載；第一次打包約需數分鐘：
 
 ```powershell
 .\packaging\build-portable.ps1

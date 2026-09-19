@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "spellbook"
-version = "0.3.3"
+version = "0.3.4"
 description = "Offline personal spellbook for browsing and editing A-Z spells"
 requires-python = ">=3.12"
 dependencies = [
@@ -20,7 +20,9 @@ dev = [
   "pytest-cov>=6,<7",
   "openpyxl>=3.1,<4",
   "pillow>=10,<13",
-  "pyinstaller>=6.11,<7",
+  "nuitka>=2.5,<3",
+  "ordered-set>=4.1",
+  "zstandard>=0.23",
   "pypdf>=4,<7",
 ]
 

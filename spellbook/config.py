@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import os
-import sys
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -11,9 +10,9 @@ APP_DIR_NAME = "Spellbook"
 
 
 def bundle_root() -> Path:
-    """Directory holding bundled read-only data (PyInstaller extract dir or the repo root)."""
-    if getattr(sys, "frozen", False):
-        return Path(getattr(sys, "_MEIPASS", Path(sys.executable).resolve().parent))
+    """Directory holding bundled read-only data: the repo root in development,
+    the unpacked app directory in the Nuitka build (data files keep their
+    repo-relative paths there)."""
     return PACKAGE_ROOT.parent
 
 
