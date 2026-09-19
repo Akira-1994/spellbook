@@ -1,6 +1,6 @@
 (() => {
   const csrf = document.body.dataset.csrf;
-  const state = { items: [], current: null, original: {}, status: "", issue: "", letter: "", dirty: false, pdfPage: 0, draftTimer: null };
+  const state = { items: [], hasMore: false, loadingMore: false, listToken: 0, current: null, original: {}, status: "", issue: "", letter: "", dirty: false, pdfPage: 0, draftTimer: null };
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
   const form = $("#spell-form");
@@ -35,19 +35,72 @@
     ].map(([n, label]) => `<div><strong>${n}</strong><small>${label}</small></div>`).join("");
   }
 
-  async function loadList(selectId = null) {
-    const params = new URLSearchParams({ q: $("#search").value, status: state.status, issue: state.issue, letter: state.letter, limit: "200" });
-    const data = await api(`/api/spells?${params}`);
-    state.items = data.items;
-    const list = $("#spell-list");
-    list.innerHTML = state.items.length ? state.items.map(item => `
+  const PAGE_SIZE = 200;
+
+  async function fetchPage(offset) {
+    const params = new URLSearchParams({ q: $("#search").value, status: state.status, issue: state.issue, letter: state.letter, limit: String(PAGE_SIZE), offset: String(offset) });
+    return (await api(`/api/spells?${params}`)).items;
+  }
+
+  function cardHtml(item) {
+    return `
       <button type="button" class="spell-card ${item.id === state.current?.id ? "active" : ""}" data-id="${item.id}" role="option">
         <span class="letter">${escapeHtml(item.alphabet)}</span>
         <span><strong>${escapeHtml(item.name_zh)}</strong><small>${escapeHtml(item.name_en)}</small>${item.duplicate_name ? '<em class="dup">英文同名待判定</em>' : ""}</span>
         <i class="state ${item.review_status}" title="${item.review_status}"></i>
-      </button>`).join("") : '<div class="empty-state"><p>目前篩選沒有條目。</p></div>';
-    $$(".spell-card", list).forEach(card => card.addEventListener("click", () => selectSpell(card.dataset.id)));
+      </button>`;
+  }
+
+  function appendCards(items) {
+    const list = $("#spell-list");
+    list.insertAdjacentHTML("beforeend", items.map(cardHtml).join(""));
+    $$(".spell-card:not([data-bound])", list).forEach(card => {
+      card.dataset.bound = "";
+      card.addEventListener("click", () => selectSpell(card.dataset.id));
+    });
+  }
+
+  // keepLoaded reloads at least as many rows as are already shown, so refreshing
+  // after an edit does not collapse the list back to the first page.
+  async function loadList(selectId = null, { keepLoaded = false } = {}) {
+    const token = ++state.listToken;
+    const target = keepLoaded ? Math.max(state.items.length, PAGE_SIZE) : PAGE_SIZE;
+    const items = [];
+    let page;
+    do {
+      page = await fetchPage(items.length);
+      if (token !== state.listToken) return;
+      items.push(...page);
+    } while (page.length === PAGE_SIZE && items.length < target);
+    state.items = items;
+    state.hasMore = page.length === PAGE_SIZE;
+    const list = $("#spell-list");
+    list.innerHTML = items.length ? "" : '<div class="empty-state"><p>目前篩選沒有條目。</p></div>';
+    appendCards(items);
     if (selectId && state.items.some(item => item.id === selectId)) await selectSpell(selectId);
+  }
+
+  async function loadMore() {
+    if (!state.hasMore || state.loadingMore) return;
+    state.loadingMore = true;
+    const token = state.listToken;
+    try {
+      const page = await fetchPage(state.items.length);
+      if (token !== state.listToken) return;
+      state.items.push(...page);
+      state.hasMore = page.length === PAGE_SIZE;
+      appendCards(page);
+    } catch (error) { toast(error.message, true); }
+    finally { state.loadingMore = false; }
+  }
+
+  async function itemAt(index) {
+    while (index >= state.items.length && state.hasMore) {
+      const before = state.items.length;
+      await loadMore();
+      if (state.items.length === before) break;
+    }
+    return state.items[index];
   }
 
   function formValues() {
@@ -153,7 +206,7 @@
       const result = await api(`/api/spells/${state.current.id}/changes`, { method: "POST", body: JSON.stringify({ revision_hash: state.current.revision_hash, fields: changes, note: $("#review-note").value }) });
       state.current = result.spell;
       renderSpell(result.spell);
-      await Promise.all([loadSummary(), loadList()]);
+      await Promise.all([loadSummary(), loadList(null, { keepLoaded: true })]);
       toast(`修改已記錄：${result.event_id}`);
     } catch (error) { toast(error.message, true); }
   }
@@ -175,8 +228,8 @@
       const currentIndex = state.items.findIndex(item => item.id === state.current.id);
       const result = await api(`/api/spells/${state.current.id}/approve`, { method: "POST", body: JSON.stringify({ revision_hash: state.current.revision_hash, note: $("#review-note").value }) });
       toast(`已通過校對：${result.event_id}`);
-      await Promise.all([loadSummary(), loadList()]);
-      const next = state.items[Math.min(currentIndex + 1, state.items.length - 1)];
+      await Promise.all([loadSummary(), loadList(null, { keepLoaded: true })]);
+      const next = (await itemAt(currentIndex + 1)) || state.items[state.items.length - 1];
       if (next && next.id !== state.current.id) await selectSpell(next.id); else renderSpell(result.spell);
     } catch (error) { toast(error.message, true); }
   }
@@ -248,7 +301,7 @@
       const result = await api(`/api/spells/${state.current.id}/duplicate-decision`, { method: "POST", body: JSON.stringify({ revision_hash: state.current.revision_hash, decision, related_spell_id: related, note: $("#duplicate-note").value }) });
       $("#duplicate-dialog").close();
       toast(`同名判定已記錄：${result.event_id}`);
-      await Promise.all([loadSummary(), loadList()]);
+      await Promise.all([loadSummary(), loadList(null, { keepLoaded: true })]);
       if (decision !== "merge") await selectSpell(state.current.id);
       else if (state.items.length) await selectSpell(state.items[0].id);
     } catch (error) { toast(error.message, true); }
@@ -264,6 +317,7 @@
 
   function bind() {
     $("#alphabet").innerHTML = [''].concat("ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")).map(letter => `<button data-letter="${letter}" class="${!letter ? "active" : ""}" title="${letter || "全部字母"}">${letter || "•"}</button>`).join("");
+    $("#spell-list").addEventListener("scroll", event => { const list = event.currentTarget; if (list.scrollTop + list.clientHeight >= list.scrollHeight - 300) loadMore(); });
     $("#search").addEventListener("input", () => { clearTimeout(state.searchTimer); state.searchTimer = setTimeout(loadList, 220); });
     $$(".filter").forEach(button => button.addEventListener("click", () => { state.status = button.dataset.status; $$(".filter").forEach(v => v.classList.toggle("active", v === button)); loadList(); }));
     $$(".issue-filter").forEach(button => button.addEventListener("click", () => { state.issue = state.issue === button.dataset.issue ? "" : button.dataset.issue; $$(".issue-filter").forEach(v => v.classList.toggle("active", v.dataset.issue === state.issue)); loadList(); }));
@@ -289,7 +343,7 @@
     document.addEventListener("keydown", event => {
       if (event.key === "/" && !/INPUT|TEXTAREA/.test(document.activeElement.tagName)) { event.preventDefault(); $("#search").focus(); }
       if (event.altKey && ["ArrowUp", "ArrowDown"].includes(event.key) && state.current) {
-        event.preventDefault(); const i = state.items.findIndex(item => item.id === state.current.id); const next = state.items[i + (event.key === "ArrowDown" ? 1 : -1)]; if (next) selectSpell(next.id);
+        event.preventDefault(); const i = state.items.findIndex(item => item.id === state.current.id); itemAt(i + (event.key === "ArrowDown" ? 1 : -1)).then(next => { if (next) selectSpell(next.id); });
       }
     });
   }
