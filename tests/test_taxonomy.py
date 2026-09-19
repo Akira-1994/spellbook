@@ -4,7 +4,7 @@ from contextlib import closing
 import pytest
 
 from spellbook import taxonomy
-from spellbook.database import prepare_database
+from spellbook.database import SCHEMA_VERSION, prepare_database
 from spellbook.repositories.spell_repository import SpellRepository
 from spellbook.services.edit_service import EditService
 
@@ -97,5 +97,5 @@ def test_upgrading_a_v2_database_builds_taxonomy(paths):
         connection.execute("DELETE FROM schema_migrations WHERE version=4")
     prepare_database(paths)
     with closing(sqlite3.connect(paths.database)) as connection:
-        assert connection.execute("SELECT COUNT(*) FROM spell_schools").fetchone()[0] >= 2373
-        assert connection.execute("SELECT MAX(version) FROM schema_migrations").fetchone()[0] == 4
+        assert connection.execute("SELECT COUNT(*) FROM spell_schools").fetchone()[0] >= 2405
+        assert connection.execute("SELECT MAX(version) FROM schema_migrations").fetchone()[0] == SCHEMA_VERSION

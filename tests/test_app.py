@@ -15,7 +15,7 @@ def test_index_list_and_paging(paths):
     with client:
         page = client.get("/")
         assert page.status_code == 200 and "法術書" in page.text
-        assert client.get("/api/summary").json() == {"total": 2373, "edited": 0}
+        assert client.get("/api/summary").json() == {"total": 2405, "edited": 0}
         first = client.get("/api/spells", params={"limit": 200}).json()["items"]
         second = client.get("/api/spells", params={"limit": 200, "offset": 200}).json()["items"]
         assert len(first) == len(second) == 200

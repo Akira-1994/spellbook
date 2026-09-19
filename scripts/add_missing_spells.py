@@ -96,6 +96,43 @@ def check_levels(added: list[ParsedSpell]) -> None:
             raise SystemExit(f"{entry.name_zh}: levels need attention: {entry.levels!r} unknown={unknown}")
 
 
+def insert_spell(connection: sqlite3.Connection, entry: ParsedSpell, levels: str, now: str) -> str:
+    """Insert one extracted spell into the seed the way build_database does."""
+    spell_id, entry_id, key = "spl_" + new_ulid(), "ent_" + new_ulid(), _identity_key(entry)
+    name_en = clean_name_en(entry.name_en)
+    connection.execute(
+        """INSERT INTO spells(id,source_key,name_zh,name_en,alphabet,variant_group_id,review_status,created_at,updated_at)
+           VALUES(?,?,?,?,?,NULL,'unreviewed',?,?)""",
+        (spell_id, key, entry.name_zh, name_en, entry.alphabet, now, now),
+    )
+    connection.execute(
+        """INSERT INTO spell_entries(id,spell_id,source_key,heading,school,subschool,components,casting_time,range_text,
+             target_text,area_text,effect_text,duration,saving_throw,spell_resistance,description_zh,description_en,
+             additional_costs,pdf_page_start,pdf_page_end,raw_text,parse_confidence,review_status,translation_status,translation_method)
+           VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NULL,'',?,?,?,1.0,'unreviewed','not_required',NULL)""",
+        (entry_id, spell_id, key, entry.heading, entry.school, entry.subschool, entry.components, entry.casting_time,
+         entry.range_text, entry.target_text, entry.area_text, entry.effect_text, entry.duration, entry.saving_throw,
+         entry.spell_resistance, entry.description_zh, entry.page_start, entry.page_end, entry.raw_text),
+    )
+    for language, name in (("zh", entry.name_zh), ("en", name_en)):
+        connection.execute("INSERT INTO spell_names(spell_id,language,name,name_type) VALUES(?,?,?,'canonical')",
+                           (spell_id, language, name))
+    for class_name, level, note in _parse_levels(levels):
+        class_id = connection.execute("SELECT id FROM classes WHERE name=?", (class_name,)).fetchone()[0]
+        connection.execute("INSERT OR IGNORE INTO spell_levels VALUES(?,?,?,?)", (entry_id, class_id, level, note))
+    for table, link, values in (("sources", "spell_sources", entry.sources), ("descriptors", "spell_descriptors", entry.descriptors)):
+        for value in values:
+            connection.execute(f"INSERT OR IGNORE INTO {table}(name) VALUES(?)", (value,))
+            value_id = connection.execute(f"SELECT id FROM {table} WHERE name=?", (value,)).fetchone()[0]
+            connection.execute(f"INSERT OR IGNORE INTO {link} VALUES(?,?)", (entry_id, value_id))
+    connection.execute(
+        "INSERT INTO spell_search VALUES(?,?,?,?,?,?,?,?,?)",
+        (spell_id, entry.name_zh, name_en, "", entry.description_zh, "", entry.school,
+         " ".join(entry.descriptors), " ".join(entry.sources)),
+    )
+    return spell_id
+
+
 def apply(connection: sqlite3.Connection, work: dict) -> dict:
     now = datetime.now(timezone.utc).isoformat()
     fixes = {"id": FIX_ID, "entries": {}, "spells": {}, "added_spells": []}
@@ -132,38 +169,7 @@ def apply(connection: sqlite3.Connection, work: dict) -> dict:
         fixes["entries"][row["id"]] = entry_diff
 
     for entry in work["added"]:
-        spell_id, entry_id, key = "spl_" + new_ulid(), "ent_" + new_ulid(), _identity_key(entry)
-        name_en = clean_name_en(entry.name_en)
-        connection.execute(
-            """INSERT INTO spells(id,source_key,name_zh,name_en,alphabet,variant_group_id,review_status,created_at,updated_at)
-               VALUES(?,?,?,?,?,NULL,'unreviewed',?,?)""",
-            (spell_id, key, entry.name_zh, name_en, entry.alphabet, now, now),
-        )
-        connection.execute(
-            """INSERT INTO spell_entries(id,spell_id,source_key,heading,school,subschool,components,casting_time,range_text,
-                 target_text,area_text,effect_text,duration,saving_throw,spell_resistance,description_zh,description_en,
-                 additional_costs,pdf_page_start,pdf_page_end,raw_text,parse_confidence,review_status,translation_status,translation_method)
-               VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NULL,'',?,?,?,1.0,'unreviewed','not_required',NULL)""",
-            (entry_id, spell_id, key, entry.heading, entry.school, entry.subschool, entry.components, entry.casting_time,
-             entry.range_text, entry.target_text, entry.area_text, entry.effect_text, entry.duration, entry.saving_throw,
-             entry.spell_resistance, entry.description_zh, entry.page_start, entry.page_end, entry.raw_text),
-        )
-        for language, name in (("zh", entry.name_zh), ("en", name_en)):
-            connection.execute("INSERT INTO spell_names(spell_id,language,name,name_type) VALUES(?,?,?,'canonical')",
-                               (spell_id, language, name))
-        for class_name, level, note in _parse_levels(LEVEL_OVERRIDES.get(entry.name_en, entry.levels)):
-            class_id = connection.execute("SELECT id FROM classes WHERE name=?", (class_name,)).fetchone()[0]
-            connection.execute("INSERT OR IGNORE INTO spell_levels VALUES(?,?,?,?)", (entry_id, class_id, level, note))
-        for table, link, values in (("sources", "spell_sources", entry.sources), ("descriptors", "spell_descriptors", entry.descriptors)):
-            for value in values:
-                connection.execute(f"INSERT OR IGNORE INTO {table}(name) VALUES(?)", (value,))
-                value_id = connection.execute(f"SELECT id FROM {table} WHERE name=?", (value,)).fetchone()[0]
-                connection.execute(f"INSERT OR IGNORE INTO {link} VALUES(?,?)", (entry_id, value_id))
-        connection.execute(
-            "INSERT INTO spell_search VALUES(?,?,?,?,?,?,?,?,?)",
-            (spell_id, entry.name_zh, name_en, "", entry.description_zh, "", entry.school,
-             " ".join(entry.descriptors), " ".join(entry.sources)),
-        )
+        spell_id = insert_spell(connection, entry, LEVEL_OVERRIDES.get(entry.name_en, entry.levels), now)
         fixes["added_spells"].append(spell_id)
     if connection.execute("PRAGMA foreign_key_check").fetchall():
         raise SystemExit("foreign key check failed")

@@ -54,7 +54,8 @@ def compare(connection: sqlite3.Connection) -> list[dict]:
     rows = connection.execute(
         f"""SELECT e.id,s.id AS spell_id,s.name_zh,s.name_en,e.raw_text,e.description_zh,{','.join('e.' + f for f in FIELDS)}
             FROM spell_entries e JOIN spells s ON s.id=e.spell_id
-            WHERE e.translation_status='not_required' ORDER BY s.alphabet,upper(s.name_en)"""
+            WHERE e.translation_status='not_required' AND e.pdf_page_start <= 1144  -- appendix spells are curated
+            ORDER BY s.alphabet,upper(s.name_en)"""
     )
     for row in rows:
         fresh = reparse(row["raw_text"])

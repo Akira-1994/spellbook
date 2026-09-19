@@ -1,3 +1,4 @@
+import re
 import sqlite3
 from contextlib import closing
 
@@ -141,8 +142,8 @@ def test_user_database_from_old_seed_gains_missed_spells_and_renames(paths):
         connection.execute("UPDATE spells SET name_zh=? WHERE id=?", (old_name, renamed_id))
     prepare_database(paths)
     with closing(sqlite3.connect(paths.database)) as connection:
-        assert connection.execute("SELECT COUNT(*) FROM spells").fetchone()[0] == 2373
-        assert connection.execute("SELECT COUNT(*) FROM spell_search").fetchone()[0] == 2373
+        assert connection.execute("SELECT COUNT(*) FROM spells").fetchone()[0] == 2405
+        assert connection.execute("SELECT COUNT(*) FROM spell_search").fetchone()[0] == 2405
         restored = connection.execute(f"SELECT COUNT(*) FROM spell_levels l JOIN spell_entries e ON e.id=l.spell_entry_id WHERE e.spell_id IN ({marks})", added).fetchone()[0]
         assert restored >= len(added)
         assert connection.execute("SELECT name_zh FROM spells WHERE id=?", (renamed_id,)).fetchone()[0] == fix_set["spells"][renamed_id]["name_zh"][1]
@@ -178,3 +179,47 @@ def test_extraction_finds_spells_without_level_labels_and_school_lines_with_engl
     assert "群體" not in ward.description_zh
     assert mass.levels == "牧師 8，德魯伊 9" and mass.target_text == "1 個生物每等級"
     assert shadow.name_zh == "幽影塑能術" and shadow.levels == "吟游詩人 5，術士/法師 5"
+
+
+def test_summon_appendix_spells(paths):
+    from spellbook.repositories.spell_repository import SpellRepository
+
+    prepare_database(paths)
+    repo = SpellRepository(paths.database)
+    items = repo.list_spells(query="Summon", limit=200)["items"]
+    summons = {i["name_en"]: i for i in items if re.match(r"^Summon (Monster|Nature's Ally|Undead|Desert Ally) [IVX]+$", i["name_en"])}
+    assert len(summons) == 32
+    third = repo.get_spell(summons["Summon Monster III"]["id"])
+    assert third["name_zh"] == "三級召喚怪物術" and third["schools"] == ["conjuration"]
+    assert third["casting_time"] == "1 輪" and third["duration"]  # inherited from level I
+    assert "召喚怪物列表（3 級）" in third["description_zh"] and "地獄犬（Hell hound）" in third["description_zh"]
+    ninth = repo.get_spell(summons["Summon Monster IX"]["id"])
+    assert ("秩序", 9) in {(l["class_name"], l["spell_level"]) for l in ninth["levels"]}
+    assert "列表（1 級）" not in ninth["description_zh"]
+    desert = repo.get_spell(summons["Summon Desert Ally I"]["id"])
+    assert desert["name_zh"] == "一級召喚沙漠盟友" and "豺狼（Jackal）＊" in desert["description_zh"]
+
+
+def test_old_user_database_gets_appendix_pages_and_summons(paths):
+    prepare_database(paths)
+    fix_set = next(s for s in seed_fixes.data()["sets"] if s["id"] == "2026-09-summon-appendix")
+    added = fix_set["added_spells"]
+    marks = ",".join("?" * len(added))
+    with closing(sqlite3.connect(paths.database)) as connection:
+        connection.execute("PRAGMA foreign_keys = ON")
+        with connection:
+            connection.execute(f"DELETE FROM spell_search WHERE spell_id IN ({marks})", added)
+            connection.execute(f"DELETE FROM spells WHERE id IN ({marks})", added)
+        # Restore the original page CHECK, as in databases copied before 0.3.3.
+        sql = connection.execute("SELECT sql FROM sqlite_master WHERE name='spell_entries'").fetchone()[0]
+        connection.execute("PRAGMA foreign_keys = OFF")
+        with connection:
+            connection.execute(re.sub(r'^CREATE TABLE\s+"?spell_entries"?', "CREATE TABLE old_entries", sql.replace("AND 1162", "AND 1144"), count=1))
+            connection.execute("INSERT INTO old_entries SELECT * FROM spell_entries")
+            connection.execute("DROP TABLE spell_entries")
+            connection.execute("ALTER TABLE old_entries RENAME TO spell_entries")
+    prepare_database(paths)
+    with closing(sqlite3.connect(paths.database)) as connection:
+        assert "AND 1162" in connection.execute("SELECT sql FROM sqlite_master WHERE name='spell_entries'").fetchone()[0]
+        assert connection.execute("SELECT COUNT(*) FROM spells").fetchone()[0] == 2405
+        assert connection.execute("PRAGMA foreign_key_check").fetchall() == []

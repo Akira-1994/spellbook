@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import re
 import sqlite3
 from contextlib import closing
 from datetime import datetime, timezone
@@ -9,7 +10,11 @@ from spellbook import seed_fixes, taxonomy
 from spellbook.config import AppPaths
 
 
-SCHEMA_VERSION = 4
+SCHEMA_VERSION = 5
+
+# Pages 1149-1162 hold the summon appendix; the first schema only allowed the
+# A-Z section (192-1144).
+LAST_PDF_PAGE = 1162
 
 # Tables left over from the retired review workflow. They were never populated
 # in shipped data, so dropping them loses nothing.
@@ -58,8 +63,39 @@ def _copy_seed(paths: AppPaths) -> None:
     os.replace(temporary, paths.database)
 
 
+def widen_page_range(connection: sqlite3.Connection) -> None:
+    """Rebuild spell_entries so its page CHECKs allow the appendix pages.
+
+    SQLite cannot alter a CHECK constraint, so this follows SQLite's documented
+    table rebuild: foreign keys off, copy into a new table, swap, verify.
+    """
+    sql = connection.execute("SELECT sql FROM sqlite_master WHERE type='table' AND name='spell_entries'").fetchone()[0]
+    if "AND 1144" not in sql:
+        return
+    connection.commit()
+    connection.execute("PRAGMA foreign_keys = OFF")
+    try:
+        connection.execute("BEGIN")
+        # The stored name may be quoted once the table has been renamed before.
+        new_sql = re.sub(r'^CREATE TABLE\s+"?spell_entries"?', "CREATE TABLE spell_entries_widened",
+                         sql.replace("AND 1144", f"AND {LAST_PDF_PAGE}"), count=1)
+        connection.execute(new_sql)
+        connection.execute("INSERT INTO spell_entries_widened SELECT * FROM spell_entries")
+        connection.execute("DROP TABLE spell_entries")
+        connection.execute("ALTER TABLE spell_entries_widened RENAME TO spell_entries")
+        if connection.execute("PRAGMA foreign_key_check").fetchall():
+            raise RuntimeError("foreign key check failed after rebuilding spell_entries")
+        connection.commit()
+    except Exception:
+        connection.rollback()
+        raise
+    finally:
+        connection.execute("PRAGMA foreign_keys = ON")
+
+
 def migrate(database, seed_database=None) -> None:
     with closing(connect(database)) as connection, connection:
+        widen_page_range(connection)
         columns = {row[1] for row in connection.execute("PRAGMA table_info(spells)")}
         if "edited_at" not in columns:
             connection.execute("ALTER TABLE spells ADD COLUMN edited_at TEXT")

@@ -1,24 +1,27 @@
 {
-  "generated_at": "2026-09-19T15:23:59.746960+00:00",
+  "generated_at": "2026-09-19T15:43:09.249597+00:00",
   "source_pdf": "spellbook_doc_v1.1.pdf",
-  "included_pdf_pages": {
-    "start": 192,
-    "end": 1144
-  },
-  "excluded_pdf_pages": [
+  "included_pdf_pages": [
     {
-      "start": 1145,
-      "end": 1148,
-      "reason": "curse appendix"
+      "start": 192,
+      "end": 1144,
+      "section": "A-Z spells"
     },
     {
       "start": 1149,
       "end": 1162,
-      "reason": "summon appendix"
+      "section": "summon appendix (scripts/add_summon_spells.py)"
     }
   ],
-  "spell_count": 2373,
-  "fts_row_count": 2373,
+  "excluded_pdf_pages": [
+    {
+      "start": 1145,
+      "end": 1148,
+      "reason": "curse appendix (rules, not spells)"
+    }
+  ],
+  "spell_count": 2405,
+  "fts_row_count": 2405,
   "alphabet_counts": {
     "A": 141,
     "B": 153,
@@ -38,7 +41,7 @@
     "P": 115,
     "Q": 7,
     "R": 144,
-    "S": 351,
+    "S": 383,
     "T": 87,
     "U": 30,
     "V": 38,

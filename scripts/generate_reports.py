@@ -109,10 +109,12 @@ def main() -> None:
     summary = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "source_pdf": "spellbook_doc_v1.1.pdf",
-        "included_pdf_pages": {"start": 192, "end": 1144},
+        "included_pdf_pages": [
+            {"start": 192, "end": 1144, "section": "A-Z spells"},
+            {"start": 1149, "end": 1162, "section": "summon appendix (scripts/add_summon_spells.py)"},
+        ],
         "excluded_pdf_pages": [
-            {"start": 1145, "end": 1148, "reason": "curse appendix"},
-            {"start": 1149, "end": 1162, "reason": "summon appendix"},
+            {"start": 1145, "end": 1148, "reason": "curse appendix (rules, not spells)"},
         ],
         "spell_count": len(spells),
         "fts_row_count": fts_count,

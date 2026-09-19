@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "spell_count": 2373,
+  "spell_count": 2405,
   "spells": [
     {
       "id": "spl_01M2SPSHAPWQ7MDCM1S9DH8F6M",
@@ -124369,6 +124369,629 @@
       ]
     },
     {
+      "id": "spl_01M2X5781GNGPYPWVNFYMMHTXA",
+      "source_key": "7a55555e8ac3a785caf6854619cb7d25ca44f7ec83c1c5b6572c00cfcda471ca",
+      "name_zh": "一級召喚沙漠盟友",
+      "name_en": "Summon Desert Ally I",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Desert Ally I",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "一級召喚沙漠盟友",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781G0X1GQC5PF9E4AC8T",
+          "spell_id": "spl_01M2X5781GNGPYPWVNFYMMHTXA",
+          "source_key": "7a55555e8ac3a785caf6854619cb7d25ca44f7ec83c1c5b6572c00cfcda471ca",
+          "heading": "1 級召喚沙漠盟友（Summon Desert Ally I）（沙暴之書）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "V，S，DF",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/2 級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個被召喚的生物",
+          "duration": "1 輪/水準（D）",
+          "saving_throw": "無",
+          "spell_resistance": "無",
+          "description_zh": "這個法術召喚一個沙態生物（見《沙暴之書》161 頁）。它出現在你指定的地點並在你\n的輪立即行動。它會盡全力攻擊你的敵人。如果你能與生物溝通，你可以命令它停止攻擊，\n攻擊特定敵人，或執行其他動作。一個被召喚的生物不能召喚或呼喚另一個生物，也不能使用\n任何傳送或位面旅行的能力。\n生物不能被召喚到一個不支持他們生存的環境。\n這個法術召喚的生物列於 1 級召喚沙漠盟友表中。你選擇哪一種生物的召喚，每次你施放\n法術時可以改變選擇。表中的所有的生物都是標準生物除非另有說明。\n\n召喚沙漠盟友列表（1 級）：\n狒狒（Baboon）\n獾（Badger）\n兇暴鼠（Dire Rat）\n狗（Dog）\n巨火甲蟲（Giant Fire Beetle）\n獵鷹（Hawk）\n豺狼（Jackal）＊\n中型變種蜈蚣（Monstrous Centipede, Medium）\n小型變種蠍（Monstrous Scorpion, Small）\n小型變種蜘蛛（Monstrous Spider, Small）\n貓頭鷹（Owl）\n渡鴉（Raven）\n藪貓（Serval）＊\n小型毒蛇（Snake, Small Viper）\n＊ 新怪物，描述詳見《沙暴之書》第六章。",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1159,
+          "pdf_page_end": 1159,
+          "raw_text": "1 級召喚沙漠盟友（Summon Desert Ally I）（沙暴之書）\n咒法系[召喚]\n等級：德魯伊 1，遊俠 1\n成分：V，S，DF\n施法時間：1 輪\n範圍：近距（25 英尺+5 英尺/2 級）\n效果：一個被召喚的生物\n持續時間：1 輪/水準（D）\n豁免檢定：無\n法術抗力：無\n這個法術召喚一個沙態生物（見《沙暴之書》161 頁）。它出現在你指定的地點並在你\n的輪立即行動。它會盡全力攻擊你的敵人。如果你能與生物溝通，你可以命令它停止攻擊，\n攻擊特定敵人，或執行其他動作。一個被召喚的生物不能召喚或呼喚另一個生物，也不能使用\n任何傳送或位面旅行的能力。\n生物不能被召喚到一個不支持他們生存的環境。\n這個法術召喚的生物列於 1 級召喚沙漠盟友表中。你選擇哪一種生物的召喚，每次你施放\n法術時可以改變選擇。表中的所有的生物都是標準生物除非另有說明。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "德魯伊",
+              "spell_level": 1,
+              "note": ""
+            },
+            {
+              "class_name": "遊俠",
+              "spell_level": 1,
+              "note": ""
+            }
+          ],
+          "sources": [
+            "沙暴之書"
+          ],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781GX5QNXDNFPSDEGGV0",
+      "source_key": "d4b712391408786ebc47204d2c5e3124715e2358d987913db1fd819039aebd30",
+      "name_zh": "二級召喚沙漠盟友",
+      "name_en": "Summon Desert Ally II",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Desert Ally II",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "二級召喚沙漠盟友",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781G118M5R1Q1XNDEFTY",
+          "spell_id": "spl_01M2X5781GX5QNXDNFPSDEGGV0",
+          "source_key": "d4b712391408786ebc47204d2c5e3124715e2358d987913db1fd819039aebd30",
+          "heading": "2 級召喚沙漠盟友（Summon Desert Ally II）（沙暴之書）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "V，S，DF",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/2 級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個或更多的生物，任意兩者間距離不得超過 30 英尺",
+          "duration": "1 輪/水準（D）",
+          "saving_throw": "無",
+          "spell_resistance": "無",
+          "description_zh": "這個法術類似於 1 級召喚沙漠盟友，除了你可以召喚一個 2 級的生物或 1d3 個同類 1\n級生物。\n\n召喚沙漠盟友列表（2 級）：\n驢（Donkey）\n鷹（Eagle）\n弗米工蟻（Formian Worker）\n巨工蟻（Giant Ant, Worker）\n鬣狗（Hyena）\n中型變種蠍（Monstrous Scorpion, Medium）\n中型變種蛛（Monstrous Spider, Medium）\n騎乘用犬（Riding Dog）\n中型毒蛇（Snake, Medium Viper）\n禿鷲（Vulture）＊\n＊ 新怪物，描述詳見《沙暴之書》第六章。",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1159,
+          "pdf_page_end": 1159,
+          "raw_text": "2 級召喚沙漠盟友（Summon Desert Ally II）（沙暴之書）\n咒法系[召喚]\n等級：德魯伊 2，遊俠 2\n效果：一個或更多的生物，任意兩者間距離不得超過 30 英尺\n這個法術類似於 1 級召喚沙漠盟友，除了你可以召喚一個 2 級的生物或 1d3 個同類 1\n級生物。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "德魯伊",
+              "spell_level": 2,
+              "note": ""
+            },
+            {
+              "class_name": "遊俠",
+              "spell_level": 2,
+              "note": ""
+            }
+          ],
+          "sources": [
+            "沙暴之書"
+          ],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781G3142VTE58RHBBJSP",
+      "source_key": "e38761b5067a6bea9e267f080380acda4f274080e1b5620e3113d975b2e86896",
+      "name_zh": "三級召喚沙漠盟友",
+      "name_en": "Summon Desert Ally III",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Desert Ally III",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "三級召喚沙漠盟友",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781G68181BRRSEFJTKBV",
+          "spell_id": "spl_01M2X5781G3142VTE58RHBBJSP",
+          "source_key": "e38761b5067a6bea9e267f080380acda4f274080e1b5620e3113d975b2e86896",
+          "heading": "3 級召喚沙漠盟友（Summon Desert Ally III）（沙暴之書）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "V，S，DF",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/2 級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個或更多的生物，任意兩者間距離不得超過 30 英尺",
+          "duration": "1 輪/水準（D）",
+          "saving_throw": "無",
+          "spell_resistance": "無",
+          "description_zh": "這個法術類似於 1 級召喚沙漠盟友，除了你可以召喚一個 3 級 的 生 物 或 1d3 個同類 2\n級生物，又或 1d4+1 個 同 類 1 級生物。\n\n召喚沙漠盟友列表（3 級）：\n沙蟲（Ashworm）＊\n蝙蝠集群（Bat Swarm）\n駱駝（Camel）\n獵豹（Cheetah）\n兇暴獾（Dire Badger）\n兇暴蝙蝠（Dire Bat）\n巨兵蟻（Giant Ant, Soldier）\n大型變種蜈蚣（Monstrous Centipede, Large）\n大型毒蛇（Snake, Large Viper）\n＊ 新怪物，描述詳見《沙暴之書》第六章。",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1159,
+          "pdf_page_end": 1159,
+          "raw_text": "3 級召喚沙漠盟友（Summon Desert Ally III）（沙暴之書）\n咒法系[召喚]\n等級：德魯伊 3，遊俠 3\n效果：一個或更多的生物，任意兩者間距離不得超過 30 英尺\n這個法術類似於 1 級召喚沙漠盟友，除了你可以召喚一個 3 級 的 生 物 或 1d3 個同類 2\n級生物，又或 1d4+1 個 同 類 1 級生物。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "德魯伊",
+              "spell_level": 3,
+              "note": ""
+            },
+            {
+              "class_name": "遊俠",
+              "spell_level": 3,
+              "note": ""
+            }
+          ],
+          "sources": [
+            "沙暴之書"
+          ],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781GVM2JCN9C0BZTCDXF",
+      "source_key": "291df72f5ca1cff7ddfca2fa9b57ab4d8f2fa34148dfd0a73c2d8b933f4a864b",
+      "name_zh": "四級召喚沙漠盟友",
+      "name_en": "Summon Desert Ally IV",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Desert Ally IV",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "四級召喚沙漠盟友",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781G00EZ209SBZKACX94",
+          "spell_id": "spl_01M2X5781GVM2JCN9C0BZTCDXF",
+          "source_key": "291df72f5ca1cff7ddfca2fa9b57ab4d8f2fa34148dfd0a73c2d8b933f4a864b",
+          "heading": "4 級召喚沙漠盟友（Summon Desert Ally IV）（沙暴之書）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "V，S，DF",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/2 級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個或更多的生物，任意兩者間距離不得超過 30 英尺",
+          "duration": "1 輪/水準（D）",
+          "saving_throw": "無",
+          "spell_resistance": "無",
+          "description_zh": "這個法術類似於 1 級召喚沙漠盟友，除了你可以召喚一個 4 級 的 生 物 或 1d3 個同類 3\n級生物，又或 1d4+1 個更低級的同類生物。\n\n召喚沙漠盟友列表（4 級）：\n掘地蟲（Ankheg）\n恐爪龍（Deinonychus）\n兇暴豺（Dire Jackal）＊\n巨蟻后（Giant Ant, Queen）\n巨鷹（Giant Eagle）\n巨貓頭鷹（Giant Owl）\n大型變種蛛（Monstrous Spider, Large）\n原角龍（Protoceratops）＊\n＊ 新怪物，描述詳見《沙暴之書》第六章。",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1160,
+          "pdf_page_end": 1160,
+          "raw_text": "4 級召喚沙漠盟友（Summon Desert Ally IV）（沙暴之書）\n咒法系[召喚]\n等級：德魯伊 4，遊俠 4\n效果：一個或更多的生物，任意兩者間距離不得超過 30 英尺\n這個法術類似於 1 級召喚沙漠盟友，除了你可以召喚一個 4 級 的 生 物 或 1d3 個同類 3\n級生物，又或 1d4+1 個更低級的同類生物。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "德魯伊",
+              "spell_level": 4,
+              "note": ""
+            },
+            {
+              "class_name": "遊俠",
+              "spell_level": 4,
+              "note": ""
+            }
+          ],
+          "sources": [
+            "沙暴之書"
+          ],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781GGC9Q01AH8TZT3YPF",
+      "source_key": "2b8fde9ce5b0f9021492fc4f2813e92496fb97c8d57fca1a42bc47aaacd90b0d",
+      "name_zh": "九級召喚沙漠盟友",
+      "name_en": "Summon Desert Ally IX",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Desert Ally IX",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "九級召喚沙漠盟友",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781GZN37QHYW0CKACC07",
+          "spell_id": "spl_01M2X5781GGC9Q01AH8TZT3YPF",
+          "source_key": "2b8fde9ce5b0f9021492fc4f2813e92496fb97c8d57fca1a42bc47aaacd90b0d",
+          "heading": "9 級召喚沙漠盟友（Summon Desert Ally IX）（沙暴之書）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "V，S，DF",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/2 級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個或更多的生物，任意兩者間距離不得超過 30 英尺",
+          "duration": "1 輪/水準（D）",
+          "saving_throw": "無",
+          "spell_resistance": "無",
+          "description_zh": "這個法術類似於 1 級召喚沙漠盟友，除了你可以召喚一個 9 級 的 生 物 或 1d3 個同類 8\n級生物，又或 1d4+1 個更低級的同類生物。\n\n召喚沙漠盟友列表（9 級）：\n巨型變種蠍（Monstrous Scorpion, Gargantuan）\n超巨型變種蛛（Monstrous Spider, Colossal）",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1160,
+          "pdf_page_end": 1162,
+          "raw_text": "9 級召喚沙漠盟友（Summon Desert Ally IX）（沙暴之書）\n咒法系[召喚]\n等級：德魯伊 9\n效果：一個或更多的生物，任意兩者間距離不得超過 30 英尺\n這個法術類似於 1 級召喚沙漠盟友，除了你可以召喚一個 9 級 的 生 物 或 1d3 個同類 8\n級生物，又或 1d4+1 個更低級的同類生物。\n\nSummon Desert Ally  沙漠盟友列表\n1st-Level 1 級盟友\nBaboon 狒狒\nBadger 獾\nDire Rat 兇暴鼠\nDog 狗\nGiant Fire Beetle 巨火甲蟲\nHawk 獵鷹\nJackal? 豺狼\nMonstrous Centipede, Medium 中型變種蜈蚣\nMonstrous Scorpion, Small 小型變種蠍\nMonstrous Spider, Small 小型變種蜘蛛\nOwl 貓頭鷹\nRaven 渡鴉\nServal? 藪貓\nSnake, Small Viper 小型毒蛇\n2nd-Level 2 級盟友\nDonkey 驢\nEagle 鷹\nFormian Worker 弗米工蟻\nGiant Ant, Worker 巨工蟻\nHyena 鬣狗\nMonstrous Scorpion, Medium 中型變種蠍\nMonstrous Spider, Medium 中型變種蛛\nRiding Dog 騎乘用犬\nSnake, Medium Viper 中型毒蛇\nVulture? 禿鷲\n3rd-Level 3 級盟友\nAshworm? 沙蟲\nBat Swarm 蝙蝠集群\nCamel 駱駝\nCheetah 獵豹\nDire Badger 兇暴獾\nDire Bat 兇暴蝙蝠\nGiant Ant, Soldier 巨兵蟻\nMonstrous Centipede, Large 大型變種蜈蚣\nSnake, Large Viper 大型毒蛇\n4th-Level 4 級盟友\nAnkheg 掘地蟲\nDeinonychus 恐爪龍\nDire Jackal? 兇暴豺\nGiant Ant, Queen 巨蟻后\nGiant Eagle 巨鷹\nGiant Owl 巨貓頭鷹\n\nMonstrous Spider, Large 大型變種蛛\nProtoceratops? 原角龍\n5th-Level 5 級盟友\nDire Vulture? 兇暴禿鷲\nFormian, Warrior 弗米兵蟻\nLion 獅子\nLocust Swarm 蝗蟲集群\nMonstrous Centipede, Huge 超大型變種蜈蚣\nMonstrous Scorpion, Large 大型變種蠍\nSnake, Huge Viper 超大型毒蛇\n6th-Level 6 級盟友\nDiprotodon? 雙門齒獸\nDire Lion 兇暴獅\nGiant Stag Beetle 巨鍬甲蟲\nHippopotamus? 河馬\nMegaraptor 猛禽龍\nMonstrous Centipede, Gargantuan 巨型變種蜈蚣\nMonstrous Spider, Huge 超大型變種蛛\nRhinoceros 犀牛\n7th-Level 7 級盟友\nElephant 大象\nFormian, Taskmaster 弗米監工蟻\nGiant Banded Lizard? 巨型條紋蜥\nMonstrous Scorpion, Huge 巨型變種蠍\n8th-Level 8 級盟友\nDire Tortoise? 兇暴陸龜\nDunewinder? 沙塵纏繞者\nMonstrous Centipede, Colossal 超巨型變種蜈蚣\nMonstrous Spider, Gargantuan 巨型變種蛛\nTriceratops 三角龍\nTyrannosaurus 暴龍\n9th-Level 9 級盟友\nMonstrous Scorpion, Gargantuan 巨型變種蠍\nMonstrous Spider, Colossal 超巨型變種蛛\n新怪物描述詳見《沙暴之書》第六章",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "德魯伊",
+              "spell_level": 9,
+              "note": ""
+            }
+          ],
+          "sources": [
+            "沙暴之書"
+          ],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781GXJKJW35ZH14PV1DF",
+      "source_key": "d11de47f6576b463a969e5fe37734a9338e039870abf7354904922c309479175",
+      "name_zh": "五級召喚沙漠盟友",
+      "name_en": "Summon Desert Ally V",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Desert Ally V",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "五級召喚沙漠盟友",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781GHE36Z1Y4N3HNZXXR",
+          "spell_id": "spl_01M2X5781GXJKJW35ZH14PV1DF",
+          "source_key": "d11de47f6576b463a969e5fe37734a9338e039870abf7354904922c309479175",
+          "heading": "5 級召喚沙漠盟友（Summon Desert Ally V）（沙暴之書）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "V，S，DF",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/2 級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個或更多的生物，任意兩者間距離不得超過 30 英尺",
+          "duration": "1 輪/水準（D）",
+          "saving_throw": "無",
+          "spell_resistance": "無",
+          "description_zh": "這個法術類似於 1 級召喚沙漠盟友，除了你可以召喚一個 5 級 的 生 物 或 1d3 個同類 4\n級生物，又或 1d4+1 個更低級的同類生物。\n\n召喚沙漠盟友列表（5 級）：\n兇暴禿鷲（Dire Vulture）＊\n弗米兵蟻（Formian, Warrior）\n獅子（Lion）\n蝗蟲集群（Locust Swarm）\n超大型變種蜈蚣（Monstrous Centipede, Huge）\n大型變種蠍（Monstrous Scorpion, Large）\n超大型毒蛇（Snake, Huge Viper）\n＊ 新怪物，描述詳見《沙暴之書》第六章。",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1160,
+          "pdf_page_end": 1160,
+          "raw_text": "5 級召喚沙漠盟友（Summon Desert Ally V）（沙暴之書）\n咒法系[召喚]\n等級：德魯伊 5\n效果：一個或更多的生物，任意兩者間距離不得超過 30 英尺\n這個法術類似於 1 級召喚沙漠盟友，除了你可以召喚一個 5 級 的 生 物 或 1d3 個同類 4\n級生物，又或 1d4+1 個更低級的同類生物。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "德魯伊",
+              "spell_level": 5,
+              "note": ""
+            }
+          ],
+          "sources": [
+            "沙暴之書"
+          ],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781G50M8TFQMZFQABY4X",
+      "source_key": "1bd0d90e3b864934c6daa32b796e1846be2ab7dc99fd80e69221baebfa17b34c",
+      "name_zh": "六級召喚沙漠盟友",
+      "name_en": "Summon Desert Ally VI",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Desert Ally VI",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "六級召喚沙漠盟友",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781GV5X38HWZNB9SK89S",
+          "spell_id": "spl_01M2X5781G50M8TFQMZFQABY4X",
+          "source_key": "1bd0d90e3b864934c6daa32b796e1846be2ab7dc99fd80e69221baebfa17b34c",
+          "heading": "6 級召喚沙漠盟友（Summon Desert Ally VI）（沙暴之書）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "V，S，DF",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/2 級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個或更多的生物，任意兩者間距離不得超過 30 英尺",
+          "duration": "1 輪/水準（D）",
+          "saving_throw": "無",
+          "spell_resistance": "無",
+          "description_zh": "這個法術類似於 1 級召喚沙漠盟友，除了你可以召喚一個 6 級 的 生 物 或 1d3 個同類 5\n級生物，又或 1d4+1 個更低級的同類生物。\n\n召喚沙漠盟友列表（6 級）：\n雙門齒獸（Diprotodon）＊\n兇暴獅（Dire Lion）\n巨鍬甲蟲（Giant Stag Beetle）\n河馬（Hippopotamus）＊\n猛禽龍（Megaraptor）\n巨型變種蜈蚣（Monstrous Centipede, Gargantuan）\n超大型變種蛛（Monstrous Spider, Huge）\n犀牛（Rhinoceros）\n＊ 新怪物，描述詳見《沙暴之書》第六章。",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1160,
+          "pdf_page_end": 1160,
+          "raw_text": "6 級召喚沙漠盟友（Summon Desert Ally VI）（沙暴之書）\n咒法系[召喚]\n等級：德魯伊 6\n效果：一個或更多的生物，任意兩者間距離不得超過 30 英尺\n這個法術類似於 1 級召喚沙漠盟友，除了你可以召喚一個 6 級 的 生 物 或 1d3 個同類 5\n級生物，又或 1d4+1 個更低級的同類生物。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "德魯伊",
+              "spell_level": 6,
+              "note": ""
+            }
+          ],
+          "sources": [
+            "沙暴之書"
+          ],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781G5TJ4XVRGJWM43Z4R",
+      "source_key": "da6e8ef5767b81630aa46f535c52b2510099e9a7b0ed24c5e64752735bbc5211",
+      "name_zh": "七級召喚沙漠盟友",
+      "name_en": "Summon Desert Ally VII",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Desert Ally VII",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "七級召喚沙漠盟友",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781GJ5MM37VD1R69Q1ZS",
+          "spell_id": "spl_01M2X5781G5TJ4XVRGJWM43Z4R",
+          "source_key": "da6e8ef5767b81630aa46f535c52b2510099e9a7b0ed24c5e64752735bbc5211",
+          "heading": "7 級召喚沙漠盟友（Summon Desert Ally VII）（沙暴之書）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "V，S，DF",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/2 級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個或更多的生物，任意兩者間距離不得超過 30 英尺",
+          "duration": "1 輪/水準（D）",
+          "saving_throw": "無",
+          "spell_resistance": "無",
+          "description_zh": "這個法術類似於 1 級召喚沙漠盟友，除了你可以召喚一個 7 級 的 生 物 或 1d3 個同類 6\n級生物，又或 1d4+1 個更低級的同類生物。\n\n召喚沙漠盟友列表（7 級）：\n大象（Elephant）\n弗米監工蟻（Formian, Taskmaster）\n巨型條紋蜥（Giant Banded Lizard）＊\n巨型變種蠍（Monstrous Scorpion, Huge）\n＊ 新怪物，描述詳見《沙暴之書》第六章。",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1160,
+          "pdf_page_end": 1160,
+          "raw_text": "7 級召喚沙漠盟友（Summon Desert Ally VII）（沙暴之書）\n咒法系[召喚]\n等級：德魯伊 7\n效果：一個或更多的生物，任意兩者間距離不得超過 30 英尺\n這個法術類似於 1 級召喚沙漠盟友，除了你可以召喚一個 7 級 的 生 物 或 1d3 個同類 6\n級生物，又或 1d4+1 個更低級的同類生物。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "德魯伊",
+              "spell_level": 7,
+              "note": ""
+            }
+          ],
+          "sources": [
+            "沙暴之書"
+          ],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781G1W7104WCD707VDRX",
+      "source_key": "0ac5d108119cff69a1e341cae638f9ab3200eff7d11faa2e68b51fd2c6990867",
+      "name_zh": "八級召喚沙漠盟友",
+      "name_en": "Summon Desert Ally VIII",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Desert Ally VIII",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "八級召喚沙漠盟友",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781GPD4JVDN7DR864YGM",
+          "spell_id": "spl_01M2X5781G1W7104WCD707VDRX",
+          "source_key": "0ac5d108119cff69a1e341cae638f9ab3200eff7d11faa2e68b51fd2c6990867",
+          "heading": "8 級召喚沙漠盟友（Summon Desert Ally VIII）（沙暴之書）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "V，S，DF",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/2 級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個或更多的生物，任意兩者間距離不得超過 30 英尺",
+          "duration": "1 輪/水準（D）",
+          "saving_throw": "無",
+          "spell_resistance": "無",
+          "description_zh": "這個法術類似於 1 級召喚沙漠盟友，除了你可以召喚一個 8 級 的 生 物 或 1d3 個同類 7\n級生物，又或 1d4+1 個更低級的同類生物。\n\n召喚沙漠盟友列表（8 級）：\n兇暴陸龜（Dire Tortoise）＊\n沙塵纏繞者（Dunewinder）＊\n超巨型變種蜈蚣（Monstrous Centipede, Colossal）\n巨型變種蛛（Monstrous Spider, Gargantuan）\n三角龍（Triceratops）\n暴龍（Tyrannosaurus）\n＊ 新怪物，描述詳見《沙暴之書》第六章。",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1160,
+          "pdf_page_end": 1160,
+          "raw_text": "8 級召喚沙漠盟友（Summon Desert Ally VIII）（沙暴之書）\n咒法系[召喚]\n等級：德魯伊 8\n效果：一個或更多的生物，任意兩者間距離不得超過 30 英尺\n這個法術類似於 1 級召喚沙漠盟友，除了你可以召喚一個 8 級 的 生 物 或 1d3 個同類 7\n級生物，又或 1d4+1 個更低級的同類生物。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "德魯伊",
+              "spell_level": 8,
+              "note": ""
+            }
+          ],
+          "sources": [
+            "沙暴之書"
+          ],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
       "id": "spl_01M2SPSHHK2E3Y6TMAS92JZ5MS",
       "source_key": "65f9b5dccc08482c99f1f5b61ea2dae28fbc970cdf657529e02b5bea152067eb",
       "name_zh": "忠實鵬鳥召喚",
@@ -124973,6 +125596,1301 @@
       ]
     },
     {
+      "id": "spl_01M2X5781AAB9ZNJR43W7G2WAV",
+      "source_key": "6e94f2c0f4e099fa82cb8e49634ad6420c8acb0deb2502fad8433aa0cf116550",
+      "name_zh": "一級召喚怪物術",
+      "name_en": "Summon Monster I",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Monster I",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "一級召喚怪物術",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781AYHB5TCJWME0SXJV1",
+          "spell_id": "spl_01M2X5781AAB9ZNJR43W7G2WAV",
+          "source_key": "6e94f2c0f4e099fa82cb8e49634ad6420c8acb0deb2502fad8433aa0cf116550",
+          "heading": "一級召喚怪物術（ Summon Monster I ）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "言語，姿勢，器材/法器",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/每 2 等級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個召喚來的生物",
+          "duration": "1 輪/等級（可解消）",
+          "saving_throw": "無",
+          "spell_resistance": "不可",
+          "description_zh": "此法術可以召喚一個跨位面生物（通常來說是些異界生物、元素生物，或源自其他位面\n的魔法獸）。在你的回合裡，它出現在你指定的位置並立即開始行動。它將盡全力攻擊你的敵\n人。如果你可以與該生物交流，你可以讓它不進行攻擊，攻擊特定目標，或進行其他行動。\n此法術可召喚出召喚怪物列表中 1 級列表內的一個生物。你可以選擇召喚生物的種類，\n並且每次施法時都可以改變選擇。\n被召喚來的生物不能再召喚其他生物，也不可以使用任何傳送或位面旅行能力。生物不\n會被召喚進入不支持它的環境中。\n當你召喚氣，混亂，土，邪惡，火，善良，守序或水類生物時，法術類型即為該類型。\n奧術器材成分：一個微型包和一根小蠟燭（不必點燃）。\n\n召喚怪物列表（1 級）：\n天界犬（Celestial dog） 守序善良\n天界梟（Celestial owl） 守序善良\n天界巨火甲蟲（Celestial giant fire beetle） 中立善良\n天界海豚¹（Celestial porpoise） 中立善良\n天界獾（Celestial badger） 混亂善良\n天界猴（Celestial monkey） 混亂善良\n煉獄兇暴鼠（Fiendish dire rat） 守序邪惡\n煉獄渡鴉（Fiendish raven） 守序邪惡\n中型煉獄變異蜈蚣（Fiendish monstrous centipede, Medium） 中立邪惡\n小型煉獄變異蠍（Fiendish monstrous scorpion, Small） 中立邪惡\n煉獄獵鷹（Fiendish hawk） 混亂邪惡\n小型煉獄變異蜘蛛（Fiendish monstrous spider, Small） 混亂邪惡\n煉獄章魚¹（Fiendish octopus） 混亂邪惡\n小型煉獄毒蛇（Fiendish snake, Small viper） 混亂邪惡\n¹ 只能在有水的環境中召喚。",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1149,
+          "pdf_page_end": 1149,
+          "raw_text": "一級召喚怪物術（ Summon Monster I ）\n咒法系（召喚）[見正文]\n等級：吟游詩人 1，牧師 1，術士/法師 1\n法術成分：言語，姿勢，器材/法器\n施法時間：1 輪\n距離：近距（25 英尺+5 英尺/每 2 等級）\n效果：一個召喚來的生物\n持續時間：1 輪/等級（可解消）\n豁免檢定：無\n法術抗力：不可\n此法術可以召喚一個跨位面生物（通常來說是些異界生物、元素生物，或源自其他位面\n的魔法獸）。在你的回合裡，它出現在你指定的位置並立即開始行動。它將盡全力攻擊你的敵\n人。如果你可以與該生物交流，你可以讓它不進行攻擊，攻擊特定目標，或進行其他行動。\n此法術可召喚出召喚怪物列表中 1 級列表內的一個生物。你可以選擇召喚生物的種類，\n並且每次施法時都可以改變選擇。\n被召喚來的生物不能再召喚其他生物，也不可以使用任何傳送或位面旅行能力。生物不\n會被召喚進入不支持它的環境中。\n當你召喚氣，混亂，土，邪惡，火，善良，守序或水類生物時，法術類型即為該類型。\n奧術器材成分：一個微型包和一根小蠟燭（不必點燃）。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "吟游詩人",
+              "spell_level": 1,
+              "note": ""
+            },
+            {
+              "class_name": "牧師",
+              "spell_level": 1,
+              "note": ""
+            },
+            {
+              "class_name": "術士/法師",
+              "spell_level": 1,
+              "note": ""
+            }
+          ],
+          "sources": [],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781CW57NGTR0ZHSDJ61T",
+      "source_key": "ff873154324acf2e3ca0f44d58da9e2daa29ffcc884b37a694d73e561cbd91a4",
+      "name_zh": "二級召喚怪物術",
+      "name_en": "Summon Monster II",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Monster II",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "二級召喚怪物術",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781CBHZPM97Z48V92EDT",
+          "spell_id": "spl_01M2X5781CW57NGTR0ZHSDJ61T",
+          "source_key": "ff873154324acf2e3ca0f44d58da9e2daa29ffcc884b37a694d73e561cbd91a4",
+          "heading": "二級召喚怪物術（ Summon Monster II ）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "言語，姿勢，器材/法器",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/每 2 等級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個或多個召喚來生物，生物之間最多不超過 30 尺",
+          "duration": "1 輪/等級（可解消）",
+          "saving_throw": "無",
+          "spell_resistance": "不可",
+          "description_zh": "和一級召喚怪物術一樣，不過你可以從 2 級列表中召喚一個怪物，或者從 1 級列表中召\n喚 1d3 個同種怪物。\n\n召喚怪物列表（2 級）：\n巨型天界蜂（Celestial giant bee） 守序善良\n天界巨投彈甲蟲（Celestial giant bombardier beetle） 中立善良\n天界騎乘犬（Celestial riding dog） 中立善良\n天界鷹（Celestial eagle） 混亂善良\n劣魔（魔鬼）（Lemure (devil)） 守序邪惡\n煉獄烏賊¹（Fiendish squid） 守序邪惡\n煉獄狼（Fiendish wolf） 守序邪惡\n大型煉獄變異蜈蚣（Fiendish monstrous centipede, Large） 中立邪惡\n中型煉獄變異蠍（Fiendish monstrous scorpion, Medium） 中立邪惡\n中型煉獄鯊¹（Fiendish shark, Medium） 中立邪惡\n中型煉獄變異蛛（Fiendish monstrous spider, Medium） 混亂邪惡\n中型煉獄毒蛇（Fiendish snake, Medium viper） 混亂邪惡\n¹ 只能在有水的環境中召喚。",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1149,
+          "pdf_page_end": 1149,
+          "raw_text": "二級召喚怪物術（ Summon Monster II ）\n咒法系 （召喚）[見一級召喚怪物術說明]\n等級：吟游詩人 2，牧師 2，術士/法師 2\n效果：一個或多個召喚來生物，生物之間最多不超過 30 尺\n和一級召喚怪物術一樣，不過你可以從 2 級列表中召喚一個怪物，或者從 1 級列表中召\n喚 1d3 個同種怪物。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "吟游詩人",
+              "spell_level": 2,
+              "note": ""
+            },
+            {
+              "class_name": "牧師",
+              "spell_level": 2,
+              "note": ""
+            },
+            {
+              "class_name": "術士/法師",
+              "spell_level": 2,
+              "note": ""
+            }
+          ],
+          "sources": [],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781CYTQFP7PHWFRMS8N9",
+      "source_key": "e2bcc3db713505ed803ab5a29e9a2bc5707bb730856ef04103ccb868ccf3338d",
+      "name_zh": "三級召喚怪物術",
+      "name_en": "Summon Monster III",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Monster III",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "三級召喚怪物術",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781C2YRDE8Y25V384Z9J",
+          "spell_id": "spl_01M2X5781CYTQFP7PHWFRMS8N9",
+          "source_key": "e2bcc3db713505ed803ab5a29e9a2bc5707bb730856ef04103ccb868ccf3338d",
+          "heading": "三級召喚怪物術（ Summon Monster III ）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "言語，姿勢，器材/法器",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/每 2 等級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個或多個召喚來生物，生物之間最多不超過 30 尺",
+          "duration": "1 輪/等級（可解消）",
+          "saving_throw": "無",
+          "spell_resistance": "不可",
+          "description_zh": "和一級召喚怪物術一樣，不過你可以從 3 級列表中召喚一個怪物，或者從 2 級列表中召\n喚 1d3 個同種怪物，或者從 1 級列表中召喚 1d4+1 個同種怪物。\n\n召喚怪物列表（3 級）：\n天界黑熊（Celestial black bear） 守序善良\n天界野牛（Celestial bison） 中立善良\n天界兇暴獾（Celestial dire badger） 混亂善良\n天界鷲馬（Celestial hippogriff） 混亂善良\n小型元素（任何種類）（Elemental, Small (any)） 中立\n煉獄猿（Fiendish ape） 守序邪惡\n煉獄兇暴鼬（Fiendish dire weasel） 守序邪惡\n地獄犬（Hell hound） 守序邪惡\n煉獄蟒（Fiendish snake, constrictor ） 守序邪惡\n煉獄野豬（Fiendish boar） 中立邪惡\n煉獄兇暴蝙蝠（Fiendish dire bat） 中立邪惡\n超大型煉獄變異蜈蚣（Fiendish monstrous centipede, Huge） 中立邪惡\n煉獄鱷魚（Fiendish crocodile） 混亂邪惡\n攫屈魔（惡魔）（Dretch (demon)） 混亂邪惡\n大型煉獄毒蛇（Fiendish snake, Large viper） 混亂邪惡\n煉獄狼獾（Fiendish wolverine） 混亂邪惡",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1149,
+          "pdf_page_end": 1149,
+          "raw_text": "三級召喚怪物術（ Summon Monster III ）\n咒法系 （召喚）[見一級召喚怪物術說明]\n等級：吟游詩人 3，牧師 3，術士/法師 3\n效果：一個或多個召喚來生物，生物之間最多不超過 30 尺\n和一級召喚怪物術一樣，不過你可以從 3 級列表中召喚一個怪物，或者從 2 級列表中召\n喚 1d3 個同種怪物，或者從 1 級列表中召喚 1d4+1 個同種怪物。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "吟游詩人",
+              "spell_level": 3,
+              "note": ""
+            },
+            {
+              "class_name": "牧師",
+              "spell_level": 3,
+              "note": ""
+            },
+            {
+              "class_name": "術士/法師",
+              "spell_level": 3,
+              "note": ""
+            }
+          ],
+          "sources": [],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781C3S3JDH69V17HP36S",
+      "source_key": "366b674a89a8619c1509437c5e92d892dda245edddf1fce49f7d93e7a5b61bb5",
+      "name_zh": "四級召喚怪物術",
+      "name_en": "Summon Monster IV",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Monster IV",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "四級召喚怪物術",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781C63M219W1QFK96XF4",
+          "spell_id": "spl_01M2X5781C3S3JDH69V17HP36S",
+          "source_key": "366b674a89a8619c1509437c5e92d892dda245edddf1fce49f7d93e7a5b61bb5",
+          "heading": "四級召喚怪物術（ Summon Monster IV ）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "言語，姿勢，器材/法器",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/每 2 等級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個或多個召喚來生物，生物之間最多不超過 30 尺",
+          "duration": "1 輪/等級（可解消）",
+          "saving_throw": "無",
+          "spell_resistance": "不可",
+          "description_zh": "和一級召喚怪物術一樣，不過你可以從 4 級列表中召喚一個怪物，或者從 3 級列表中召\n喚 1d3 個同種怪物，或者從更低等級清單中召喚 1d4+1 個同種怪物。\n\n召喚怪物列表（4 級）：\n聖光神使（Archon, lantern） 守序善良\n巨型天界梟（Celestial giant owl） 守序善良\n巨型天界鷹（Celestial giant eagle） 混亂善良\n天界獅（Celestial lion） 混亂善良\n魔蝠（任何種類）（Mephit (any)） 中立\n煉獄兇暴狼（Fiendish dire wolf） 守序邪惡\n巨形煉獄蜂（Fiendish giant wasp） 守序邪惡\n煉獄巨螳螂（Fiendish giant praying mantis） 中立邪惡\n大型煉獄鯊¹（Fiendish shark, Large） 中立邪惡\n夜魔犬（Yeth hound） 中立邪惡\n大型煉獄變異蛛（Fiendish monstrous spider, Large） 混亂邪惡\n超大型煉獄毒蛇（Fiendish snake, Huge viper） 混亂邪惡\n嚎獸（Howler） 混亂邪惡\n¹ 只能在有水的環境中召喚。",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1149,
+          "pdf_page_end": 1149,
+          "raw_text": "四級召喚怪物術（ Summon Monster IV ）\n咒法系 （召喚）[見一級召喚怪物術說明]\n等級：吟游詩人 4，牧師 4，術士/法師 4\n效果：一個或多個召喚來生物，生物之間最多不超過 30 尺\n和一級召喚怪物術一樣，不過你可以從 4 級列表中召喚一個怪物，或者從 3 級列表中召\n喚 1d3 個同種怪物，或者從更低等級清單中召喚 1d4+1 個同種怪物。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "吟游詩人",
+              "spell_level": 4,
+              "note": ""
+            },
+            {
+              "class_name": "牧師",
+              "spell_level": 4,
+              "note": ""
+            },
+            {
+              "class_name": "術士/法師",
+              "spell_level": 4,
+              "note": ""
+            }
+          ],
+          "sources": [],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781D71F4WR1NPDPCZ0A1",
+      "source_key": "c7cc7b7697dad54c6600baee7672302725a471ec6d12a096e82bdc10895999b4",
+      "name_zh": "九級召喚怪物術",
+      "name_en": "Summon Monster IX",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Monster IX",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "九級召喚怪物術",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781D09JEQA9CSAFQKKTM",
+          "spell_id": "spl_01M2X5781D71F4WR1NPDPCZ0A1",
+          "source_key": "c7cc7b7697dad54c6600baee7672302725a471ec6d12a096e82bdc10895999b4",
+          "heading": "九級召喚怪物術（ Summon Monster IX ）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "言語，姿勢，器材/法器",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/每 2 等級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個召喚來的生物",
+          "duration": "1 輪/等級（可解消）",
+          "saving_throw": "無",
+          "spell_resistance": "不可",
+          "description_zh": "和一級召喚怪物術一樣，不過你可以從 9 級列表中召喚一個怪物，或者從 8 級列表中召\n喚 1d3 個同種怪物，或者從更低等級清單中召喚 1d4+1 個同種怪物。\n\n召喚怪物列表（9 級）：\n羽蛇（Couatl） 守序善良\nLeonal（鵬羽天）（Leonal (guardinal)） 中立善良\n天界鵬（Celestial roc） 混亂善良\n元素長老（任何種類）（Elemental, elder (any)） 中立\n刺魔（Devil, barbed） 守序邪惡\n煉獄兇暴鯊¹（Fiendish dire shark） 中立邪惡\n巨型煉獄變種蠍（Fiendish monstrous scorpion, Gargantuan） 中立邪惡\n老鬼婆（Night hag） 中立邪惡\n狩魔蛛（惡魔）（Bebilith (demon)） 混亂邪惡\n超巨型煉獄變種蛛（Fiendish monstrous spider, Colossal） 混亂邪惡\n狂戰魔（惡魔）（Hezrou (demon)） 混亂邪惡\n¹ 只能在有水的環境中召喚。",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1150,
+          "pdf_page_end": 1153,
+          "raw_text": "九級召喚怪物術（ Summon Monster IX ）\n咒法系 （召喚）[見一級召喚怪物術說明]\n等級：混亂 9，牧師 9，邪惡 9，善良 9，守序 9，術士/法師 9\n和一級召喚怪物術一樣，不過你可以從 9 級列表中召喚一個怪物，或者從 8 級列表中召\n喚 1d3 個同種怪物，或者從更低等級清單中召喚 1d4+1 個同種怪物。\n\n召喚怪物\n1 級\n天界犬（Celestial dog） 守序善良\n天界梟（Celestial owl） 守序善良\n天界巨火甲蟲（Celestial giant fire beetle） 中立善良\n天界海豚\n1\n（Celestial porpoise1） 中立善良\n天界獾（Celestial badger） 混亂善良\n天界猴（Celestial monkey） 混亂善良\n煉獄兇暴鼠（Fiendish dire rat） 守序邪惡\n煉獄渡鴉（Fiendish raven） 守序邪惡\n中型煉獄變異蜈蚣（Fiendish monstrous centipede, Medium） 中立邪惡\n小型煉獄變異蠍（Fiendish monstrous scorpion, Small） 中立邪惡\n煉獄獵鷹（Fiendish hawk） 混亂邪惡\n小型煉獄變異蜘蛛（Fiendish monstrous spider, Small） 混亂邪惡\n煉獄章魚\n1\n（Fiendish octopus） 混亂邪惡\n小型煉獄毒蛇（Fiendish snake, Small viper） 混亂邪惡\n2 級\n巨型天界蜂（Celestial giant bee） 守序善良\n天界巨投彈甲蟲（Celestial giant bombardier beetle） 中立善良\n天界騎乘犬（Celestial riding dog） 中立善良\n天界鷹（Celestial eagle） 混亂善良\n劣魔（魔鬼）（Lemure (devil)） 守序邪惡\n煉獄烏賊\n1\n（Fiendish squid） 守序邪惡\n煉獄狼（Fiendish wolf） 守序邪惡\n大型煉獄變異蜈蚣（Fiendish monstrous centipede, Large） 中立邪惡\n中型煉獄變異蠍（Fiendish monstrous scorpion, Medium） 中立邪惡\n中型煉獄鯊\n1\n（Fiendish shark, Medium） 中立邪惡\n中型煉獄變異蛛（Fiendish monstrous spider, Medium） 混亂邪惡\n中型煉獄毒蛇（Fiendish snake, Medium viper） 混亂邪惡\n3 級\n天界黑熊（Celestial black bear） 守序善良\n天界野牛（Celestial bison） 中立善良\n天界兇暴獾（Celestial dire badger） 混亂善良\n天界鷲馬（Celestial hippogriff） 混亂善良\n小型元素（任何種類）（Elemental, Small (any)） 中立\n煉獄猿（Fiendish ape） 守序邪惡\n煉獄兇暴鼬（Fiendish dire weasel） 守序邪惡\n地獄犬（Hell hound） 守序邪惡\n煉獄蟒（Fiendish snake, constrictor ） 守序邪惡\n煉獄野豬（Fiendish boar） 中立邪惡\n煉獄兇暴蝙蝠（Fiendish dire bat） 中立邪惡\n超大型煉獄變異蜈蚣（Fiendish monstrous centipede, Huge） 中立邪惡\n煉獄鱷魚（Fiendish crocodile） 混亂邪惡\n攫屈魔（惡魔）（Dretch (demon)） 混亂邪惡\n大型煉獄毒蛇（Fiendish snake, Large viper） 混亂邪惡\n煉獄狼獾（Fiendish wolverine） 混亂邪惡\n4 級\n聖光神使（Archon, lantern） 守序善良\n巨型天界梟（Celestial giant owl） 守序善良\n巨型天界鷹（Celestial giant eagle） 混亂善良\n天界獅（Celestial lion） 混亂善良\n魔蝠（任何種類）（Mephit (any)） 中立\n煉獄兇暴狼（Fiendish dire wolf） 守序邪惡\n巨形煉獄蜂（Fiendish giant wasp） 守序邪惡\n\n煉獄巨螳螂（Fiendish giant praying mantis） 中立邪惡\n大型煉獄鯊\n1\n（Fiendish shark, Large） 中立邪惡\n夜魔犬（Yeth hound） 中立邪惡\n大型煉獄變異蛛（Fiendish monstrous spider, Large） 混亂邪惡\n超大型煉獄毒蛇（Fiendish snake, Huge viper） 混亂邪惡\n嚎獸（Howler） 混亂邪惡\n5 級\n獒首神使（Archon, hound） 守序善良\n天界棕熊（Celestial brown bear） 守序善良\n天界巨鍬甲蟲（Celestial giant stag beetle） 中立善良\n天界海貓\n1\n（Celestial sea cat1） 中立善良\n天界獅鷲（Celestial griffon） 混亂善良\n中型元素（任何種類）（Elemental, Medium (any)） 中立\n鸚哥獸（Achaierai） 守序邪惡\n須魔（Devil, bearded） 守序邪惡\n煉獄恐爪龍（Fiendish deinonychus） 守序邪惡\n煉獄兇暴猿（Fiendish dire ape） 守序邪惡\n煉獄兇暴野豬（Fiendish dire boar） 中立邪惡\n超大型煉獄鯊（Fiendish shark, Huge） 中立邪惡\n大型煉獄變異蠍（Fiendish monstrous scorpion, Large） 中立邪惡\n影獒（Shadow mastiff） 中立邪惡\n煉獄兇暴狼獾（Fiendish dire wolverine） 混亂邪惡\n煉獄巨鱷魚（Fiendish giant crocodile） 混亂邪惡\n煉獄虎（Fiendish tiger） 混亂邪惡\n6 級\n天界北極熊（Celestial polar bear） 守序善良\n天界逆戟鯨\n1\n（Celestial orca whale1） 中立善良\nBralani （迦勒天)（Bralani (eladrin)） 混亂善良\n天界兇暴獅（Celestial dire lion） 混亂善良\n大型元素（任何種類）（Elemental, Large (any)） 中立\n小巨靈（巨靈）（Janni (genie)） 中立\n混沌獸（Chaos beast） 混亂中立\n鏈魔（Devil, chain） 守序邪惡\n錫爾族（Xill） 守序邪惡\n巨型煉獄變異蜈蚣（Fiendish monstrous centipede, Gargantuan） 中立邪惡\n煉獄犀牛（Fiendish rhinoceros） 中立邪惡\n煉獄薄板龍\n1\n（Fiendish elasmosaurus） 混亂邪惡\n超大型煉獄變異蛛（Fiendish monstrous spider, Huge） 混亂邪惡\n煉獄巨蟒（Fiendish snake, giant constrictor） 混亂邪惡\n7 級\n天界象（Celestial elephant） 守序善良\n鵬羽天使（蓋丁天族)（Avoral (guardinal)） 中立善良\n天界須鯨\n1\n（Celestial baleen whale） 中立善良\n\n風巨靈（巨靈）（Djinni (genie)） 混亂善良\n巨型元素生物（任何種類）（Elemental, Huge (any)） 中立\n隱形潛伏怪（Invisible stalker） 中立\n骨魔（Devil, bone） 守序邪惡\n煉獄猛禽龍（Fiendish megaraptor） 守序邪惡\n超大型煉獄變種蠍（Fiendish monstrous scorpion, Huge） 中立邪惡\nBabau（惡魔）（Babau (demon）） 混亂邪惡\n煉獄巨章魚\n1\n（Fiendish giant octopus） 混亂邪惡\n煉獄四臂猩猩（Fiendish girallon） 混亂邪惡\n8 級\n天界兇暴熊（Celestial dire bear） 守序善良\n天界抹香鯨\n1\n（Celestial cachalot whale） 中立善良\n天界三角龍（Celestial triceratops） 中立善良\n翼蛇人（Lillend） 混亂善良\n超大型元素（任何種類）（Elemental, greater (any)） 中立\n煉獄巨烏賊\n1\n（Fiendish giant squid） 守序邪惡\n地獄貓（Hellcat） 守序邪惡\n超巨型煉獄變種蜈蚣（Fiendish monstrous centipede, Colossal） 中立邪惡\n煉獄兇暴虎（Fiendish dire tiger） 混亂邪惡\n巨型煉獄變種蛛（Fiendish monstrous spider, Gargantuan） 混亂邪惡\n煉獄暴龍（Fiendish tyrannosaurus） 混亂邪惡\n弗洛魔（惡魔）（Vrock (demon)） 混亂邪惡\n9 級\n羽蛇（Couatl） 守序善良\nLeonal（鵬羽天）（Leonal (guardinal)） 中立善良\n天界鵬（Celestial roc） 混亂善良\n元素長老（任何種類）（Elemental, elder (any)） 中立\n刺魔（Devil, barbed） 守序邪惡\n煉獄兇暴鯊\n1\n（Fiendish dire shark） 中立邪惡\n巨型煉獄變種蠍（Fiendish monstrous scorpion, Gargantuan） 中立邪惡\n老鬼婆（Night hag） 中立邪惡\n狩魔蛛（惡魔）（Bebilith (demon)） 混亂邪惡\n超巨型煉獄變種蛛（Fiendish monstrous spider, Colossal） 混亂邪惡\n狂戰魔（惡魔）（Hezrou (demon)） 混亂邪惡",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "善良",
+              "spell_level": 9,
+              "note": ""
+            },
+            {
+              "class_name": "混亂",
+              "spell_level": 9,
+              "note": ""
+            },
+            {
+              "class_name": "牧師",
+              "spell_level": 9,
+              "note": ""
+            },
+            {
+              "class_name": "秩序",
+              "spell_level": 9,
+              "note": ""
+            },
+            {
+              "class_name": "術士/法師",
+              "spell_level": 9,
+              "note": ""
+            },
+            {
+              "class_name": "邪惡",
+              "spell_level": 9,
+              "note": ""
+            }
+          ],
+          "sources": [],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781C3EMFE4VH5FRTEZB7",
+      "source_key": "d1acd4a8589ddb6b885d7875e20dcb850b798ae0381dcf0ac0766628bcdf9e1d",
+      "name_zh": "五級召喚怪物術",
+      "name_en": "Summon Monster V",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Monster V",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "五級召喚怪物術",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781C0PBT1P0AJ8EQD1FX",
+          "spell_id": "spl_01M2X5781C3EMFE4VH5FRTEZB7",
+          "source_key": "d1acd4a8589ddb6b885d7875e20dcb850b798ae0381dcf0ac0766628bcdf9e1d",
+          "heading": "五級召喚怪物術（ Summon Monster V ）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "言語，姿勢，器材/法器",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/每 2 等級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個或多個召喚來生物，生物之間最多不超過 30 尺",
+          "duration": "1 輪/等級（可解消）",
+          "saving_throw": "無",
+          "spell_resistance": "不可",
+          "description_zh": "和一級召喚怪物術一樣，不過你可以從 5 級列表中召喚一個怪物，或者從 4 級列表中召\n喚 1d3 個同種怪物，或者從更低等級清單中召喚 1d4+1 個同種怪物。\n\n召喚怪物列表（5 級）：\n獒首神使（Archon, hound） 守序善良\n天界棕熊（Celestial brown bear） 守序善良\n天界巨鍬甲蟲（Celestial giant stag beetle） 中立善良\n天界海貓¹（Celestial sea cat） 中立善良\n天界獅鷲（Celestial griffon） 混亂善良\n中型元素（任何種類）（Elemental, Medium (any)） 中立\n鸚哥獸（Achaierai） 守序邪惡\n須魔（Devil, bearded） 守序邪惡\n煉獄恐爪龍（Fiendish deinonychus） 守序邪惡\n煉獄兇暴猿（Fiendish dire ape） 守序邪惡\n煉獄兇暴野豬（Fiendish dire boar） 中立邪惡\n超大型煉獄鯊（Fiendish shark, Huge） 中立邪惡\n大型煉獄變異蠍（Fiendish monstrous scorpion, Large） 中立邪惡\n影獒（Shadow mastiff） 中立邪惡\n煉獄兇暴狼獾（Fiendish dire wolverine） 混亂邪惡\n煉獄巨鱷魚（Fiendish giant crocodile） 混亂邪惡\n煉獄虎（Fiendish tiger） 混亂邪惡\n¹ 只能在有水的環境中召喚。",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1150,
+          "pdf_page_end": 1150,
+          "raw_text": "五級召喚怪物術（ Summon Monster V ）\n咒法系 （召喚）[見一級召喚怪物術說明]\n等級：吟游詩人 5，牧師 5，術士/法師 5\n效果：一個或多個召喚來生物，生物之間最多不超過 30 尺\n和一級召喚怪物術一樣，不過你可以從 5 級列表中召喚一個怪物，或者從 4 級列表中召\n喚 1d3 個同種怪物，或者從更低等級清單中召喚 1d4+1 個同種怪物。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "吟游詩人",
+              "spell_level": 5,
+              "note": ""
+            },
+            {
+              "class_name": "牧師",
+              "spell_level": 5,
+              "note": ""
+            },
+            {
+              "class_name": "術士/法師",
+              "spell_level": 5,
+              "note": ""
+            }
+          ],
+          "sources": [],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781DC4PKG23J2D1FG7Y3",
+      "source_key": "d46c93afc280c3d5458b2f9a33873b3f4ea5753f275c0e310297c79bd3de4e48",
+      "name_zh": "六級召喚怪物術",
+      "name_en": "Summon Monster VI",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Monster VI",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "六級召喚怪物術",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781DEXD4X296K4HRBKJ5",
+          "spell_id": "spl_01M2X5781DC4PKG23J2D1FG7Y3",
+          "source_key": "d46c93afc280c3d5458b2f9a33873b3f4ea5753f275c0e310297c79bd3de4e48",
+          "heading": "六級召喚怪物術（ Summon Monster VI ）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "言語，姿勢，器材/法器",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/每 2 等級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個或多個召喚來生物，生物之間最多不超過 30 尺",
+          "duration": "1 輪/等級（可解消）",
+          "saving_throw": "無",
+          "spell_resistance": "不可",
+          "description_zh": "和一級召喚怪物術一樣，不過你可以從 6 級列表中召喚一個怪物，或者從 5 級列表中召\n喚 1d3 個同種怪物，或者從更低等級清單中召喚 1d4+1 個同種怪物。\n\n召喚怪物列表（6 級）：\n天界北極熊（Celestial polar bear） 守序善良\n天界逆戟鯨¹（Celestial orca whale） 中立善良\nBralani （迦勒天)（Bralani (eladrin)） 混亂善良\n天界兇暴獅（Celestial dire lion） 混亂善良\n大型元素（任何種類）（Elemental, Large (any)） 中立\n小巨靈（巨靈）（Janni (genie)） 中立\n混沌獸（Chaos beast） 混亂中立\n鏈魔（Devil, chain） 守序邪惡\n錫爾族（Xill） 守序邪惡\n巨型煉獄變異蜈蚣（Fiendish monstrous centipede, Gargantuan） 中立邪惡\n煉獄犀牛（Fiendish rhinoceros） 中立邪惡\n煉獄薄板龍¹（Fiendish elasmosaurus） 混亂邪惡\n超大型煉獄變異蛛（Fiendish monstrous spider, Huge） 混亂邪惡\n煉獄巨蟒（Fiendish snake, giant constrictor） 混亂邪惡\n¹ 只能在有水的環境中召喚。",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1150,
+          "pdf_page_end": 1150,
+          "raw_text": "六級召喚怪物術（ Summon Monster VI ）\n咒法系 （召喚）[見一級召喚怪物術說明]\n等級：吟游詩人 6，牧師 6，術士/法師 6\n效果：一個或多個召喚來生物，生物之間最多不超過 30 尺\n和一級召喚怪物術一樣，不過你可以從 6 級列表中召喚一個怪物，或者從 5 級列表中召\n喚 1d3 個同種怪物，或者從更低等級清單中召喚 1d4+1 個同種怪物。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "吟游詩人",
+              "spell_level": 6,
+              "note": ""
+            },
+            {
+              "class_name": "牧師",
+              "spell_level": 6,
+              "note": ""
+            },
+            {
+              "class_name": "術士/法師",
+              "spell_level": 6,
+              "note": ""
+            }
+          ],
+          "sources": [],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781D1YK92Y2F2J12QB08",
+      "source_key": "d3568994d845793e5cfce6f8d460b2c02feb81640fb417b8a2908917422e7bfa",
+      "name_zh": "七級召喚怪物術",
+      "name_en": "Summon Monster VII",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Monster VII",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "七級召喚怪物術",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781DK73EKEW48QAM5JF7",
+          "spell_id": "spl_01M2X5781D1YK92Y2F2J12QB08",
+          "source_key": "d3568994d845793e5cfce6f8d460b2c02feb81640fb417b8a2908917422e7bfa",
+          "heading": "七級召喚怪物術（ Summon Monster VII ）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "言語，姿勢，器材/法器",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/每 2 等級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個召喚來的生物",
+          "duration": "1 輪/等級（可解消）",
+          "saving_throw": "無",
+          "spell_resistance": "不可",
+          "description_zh": "和一級召喚怪物術一樣，不過你可以從 7 級列表中召喚一個怪物，或者從 6 級列表中召\n喚 1d3 個同種怪物，或者從更低等級清單中召喚 1d4+1 個同種怪物。\n\n召喚怪物列表（7 級）：\n天界象（Celestial elephant） 守序善良\n鵬羽天使（蓋丁天族)（Avoral (guardinal)） 中立善良\n天界須鯨¹（Celestial baleen whale） 中立善良\n風巨靈（巨靈）（Djinni (genie)） 混亂善良\n巨型元素生物（任何種類）（Elemental, Huge (any)） 中立\n隱形潛伏怪（Invisible stalker） 中立\n骨魔（Devil, bone） 守序邪惡\n煉獄猛禽龍（Fiendish megaraptor） 守序邪惡\n超大型煉獄變種蠍（Fiendish monstrous scorpion, Huge） 中立邪惡\nBabau（惡魔）（Babau (demon）） 混亂邪惡\n煉獄巨章魚¹（Fiendish giant octopus） 混亂邪惡\n煉獄四臂猩猩（Fiendish girallon） 混亂邪惡\n¹ 只能在有水的環境中召喚。",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1150,
+          "pdf_page_end": 1150,
+          "raw_text": "七級召喚怪物術（ Summon Monster VII ）\n咒法系 （召喚）[見一級召喚怪物術 說明]\n等級：牧師 7，術士/法師 7\n和一級召喚怪物術一樣，不過你可以從 7 級列表中召喚一個怪物，或者從 6 級列表中召\n喚 1d3 個同種怪物，或者從更低等級清單中召喚 1d4+1 個同種怪物。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "牧師",
+              "spell_level": 7,
+              "note": ""
+            },
+            {
+              "class_name": "術士/法師",
+              "spell_level": 7,
+              "note": ""
+            }
+          ],
+          "sources": [],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781DEPZNCTCMGQK4AZV1",
+      "source_key": "b711080cb8779bfb805e34d104504c5c1b079b9d5867425f243743637e449139",
+      "name_zh": "八級召喚怪物術",
+      "name_en": "Summon Monster VIII",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Monster VIII",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "八級召喚怪物術",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781DDY1H1YE657AYEMWM",
+          "spell_id": "spl_01M2X5781DEPZNCTCMGQK4AZV1",
+          "source_key": "b711080cb8779bfb805e34d104504c5c1b079b9d5867425f243743637e449139",
+          "heading": "八級召喚怪物術（ Summon Monster VIII ）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "言語，姿勢，器材/法器",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/每 2 等級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個召喚來的生物",
+          "duration": "1 輪/等級（可解消）",
+          "saving_throw": "無",
+          "spell_resistance": "不可",
+          "description_zh": "和一級召喚怪物術一樣，不過你可以從 8 級列表中召喚一個怪物，或者從 7 級列表中召\n喚 1d3 個同種怪物，或者從更低等級清單中召喚 1d4+1 個同種怪物。\n\n召喚怪物列表（8 級）：\n天界兇暴熊（Celestial dire bear） 守序善良\n天界抹香鯨¹（Celestial cachalot whale） 中立善良\n天界三角龍（Celestial triceratops） 中立善良\n翼蛇人（Lillend） 混亂善良\n超大型元素（任何種類）（Elemental, greater (any)） 中立\n煉獄巨烏賊¹（Fiendish giant squid） 守序邪惡\n地獄貓（Hellcat） 守序邪惡\n超巨型煉獄變種蜈蚣（Fiendish monstrous centipede, Colossal） 中立邪惡\n煉獄兇暴虎（Fiendish dire tiger） 混亂邪惡\n巨型煉獄變種蛛（Fiendish monstrous spider, Gargantuan） 混亂邪惡\n煉獄暴龍（Fiendish tyrannosaurus） 混亂邪惡\n弗洛魔（惡魔）（Vrock (demon)） 混亂邪惡\n¹ 只能在有水的環境中召喚。",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1150,
+          "pdf_page_end": 1150,
+          "raw_text": "八級召喚怪物術（ Summon Monster VIII ）\n咒法系 （召喚）[見一級召喚怪物術 說明]\n等級：牧師 8，術士/法師 8\n和一級召喚怪物術一樣，不過你可以從 8 級列表中召喚一個怪物，或者從 7 級列表中召\n喚 1d3 個同種怪物，或者從更低等級清單中召喚 1d4+1 個同種怪物。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "牧師",
+              "spell_level": 8,
+              "note": ""
+            },
+            {
+              "class_name": "術士/法師",
+              "spell_level": 8,
+              "note": ""
+            }
+          ],
+          "sources": [],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781D6SMGQ3SH47FNAGNA",
+      "source_key": "823d4d315441590f80391b1c0e0959da1676f3d5765c9024bfd67263f7891a13",
+      "name_zh": "一級召喚自然盟友術",
+      "name_en": "Summon Nature's Ally I",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Nature's Ally I",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "一級召喚自然盟友術",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781D6CAZQ17WHCPMRBR0",
+          "spell_id": "spl_01M2X5781D6SMGQ3SH47FNAGNA",
+          "source_key": "823d4d315441590f80391b1c0e0959da1676f3d5765c9024bfd67263f7891a13",
+          "heading": "一級召喚自然盟友術（ Summon Nature’s Ally I ）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "言語，姿勢，法器",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/每 2 等級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個召喚來的生物",
+          "duration": "1 輪/等級（可解消）",
+          "saving_throw": "無",
+          "spell_resistance": "不可",
+          "description_zh": "此法術可以召喚一個自然生物。它在你的回合出現在你指定的位置，並且立即展開行動。它\n會盡全力攻擊你的敵人。如果你能與該生物交流，你可以讓他停止攻擊，攻擊特定目標或展開\n其他行動。\n召喚來的怪物不會召喚其他生物，也不能使用傳送或位面旅行能力。生物不能被召喚到\n它們無法生存的位置。\n此法術可召喚出召喚自然盟友列表中 1 級列表內的一個生物。你可以選擇要召喚的生\n物，每次施法時都可以改變選擇。表格中的所有生物均為絕對中立，除非另有標注。\n\n召喚自然盟友列表（1 級）：\n兇暴鼠（Dire rat）\n鷹（動物）（Eagle (animal)）\n猴（動物）（Monkey (animal)）\n章魚¹（動物）（Octopus (animal)）\n貓頭鷹（動物）（Owl (animal)）\n海豚¹（動物）（Porpoise (animal)）\n小型毒蛇（動物）（Snake, Small viper (animal)）\n狼（動物）（Wolf (animal)）\n¹ 只能在有水的環境中召喚。",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1153,
+          "pdf_page_end": 1154,
+          "raw_text": "一級召喚自然盟友術（ Summon Nature’s Ally I ）\n咒法系（召喚）\n等級：德魯伊 1, 巡林客 1\n法術成分：言語，姿勢，法器\n施法時間：1 輪\n距離：近距（25 英尺+5 英尺/每 2 等級）\n效果：一個召喚來的生物\n持續時間：1 輪/等級（可解消）\n豁免檢定：無\n法術抗力：不可\n此法術可以召喚一個自然生物。它在你的回合出現在你指定的位置，並且立即展開行動。它\n會盡全力攻擊你的敵人。如果你能與該生物交流，你可以讓他停止攻擊，攻擊特定目標或展開\n其他行動。\n召喚來的怪物不會召喚其他生物，也不能使用傳送或位面旅行能力。生物不能被召喚到\n它們無法生存的位置。\n此法術可召喚出召喚自然盟友列表中 1 級列表內的一個生物。你可以選擇要召喚的生\n物，每次施法時都可以改變選擇。表格中的所有生物均為絕對中立，除非另有標注。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "巡林客",
+              "spell_level": 1,
+              "note": ""
+            },
+            {
+              "class_name": "德魯伊",
+              "spell_level": 1,
+              "note": ""
+            }
+          ],
+          "sources": [],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781DCMXAM3NNKQFQWB05",
+      "source_key": "6392045f2c70a07f8799ba71f2d7ffe36139a3ca94cd82614e3a17853cd58993",
+      "name_zh": "二級召喚自然盟友術",
+      "name_en": "Summon Nature's Ally II",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Nature's Ally II",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "二級召喚自然盟友術",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781D9HKF0Q947WZ8GNPZ",
+          "spell_id": "spl_01M2X5781DCMXAM3NNKQFQWB05",
+          "source_key": "6392045f2c70a07f8799ba71f2d7ffe36139a3ca94cd82614e3a17853cd58993",
+          "heading": "二級召喚自然盟友術（ Summon Nature’s Ally II ）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "言語，姿勢，法器",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/每 2 等級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個或多個召喚來的生物，生物之間相距不超過 30 英尺。",
+          "duration": "1 輪/等級（可解消）",
+          "saving_throw": "無",
+          "spell_resistance": "不可",
+          "description_zh": "同一級召喚自然盟友術（summon nature’s ally I），不過你可以召喚一個 2 級生物，\n或 1d3 個 1 級的同種生物。\n\n召喚自然盟友列表（2 級）：\n黑熊（動物）（Bear, black (animal)）\n鱷魚（動物）（Crocodile (animal)）\n兇暴獾（Dire badger）\n兇暴蝙蝠（Dire bat）\n小型元素生物（任何種類）（Elemental, Small (any)）\n鷲馬（Hippogriff）\n中型鯊魚¹（動物）（Shark, Medium (animal)）\n中型毒蛇（動物）（Snake, Medium viper (animal)）\n烏賊¹（動物）（Squid (animal)）\n狼獾（動物）（Wolverine (animal)）\n¹ 只能在有水的環境中召喚。",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1154,
+          "pdf_page_end": 1154,
+          "raw_text": "二級召喚自然盟友術（ Summon Nature’s Ally II ）\n咒法系（召喚）\n等級：德魯伊 2，巡林客 2\n效果：\n一個或多個召喚來的生物，生物之間相距不超過 30 英尺。\n同一級召喚自然盟友術（summon nature’s ally I），不過你可以召喚一個 2 級生物，\n或 1d3 個 1 級的同種生物。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "巡林客",
+              "spell_level": 2,
+              "note": ""
+            },
+            {
+              "class_name": "德魯伊",
+              "spell_level": 2,
+              "note": ""
+            }
+          ],
+          "sources": [],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781D9D2BVVRPH1FWJQZE",
+      "source_key": "63033b6e5c9938f9ac6dac82b8f1017313d634c38cb43003e5cb3e4ded47a661",
+      "name_zh": "三級召喚自然盟友術",
+      "name_en": "Summon Nature's Ally III",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Nature's Ally III",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "三級召喚自然盟友術",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781D8QBBRRTG9GWJHKZE",
+          "spell_id": "spl_01M2X5781D9D2BVVRPH1FWJQZE",
+          "source_key": "63033b6e5c9938f9ac6dac82b8f1017313d634c38cb43003e5cb3e4ded47a661",
+          "heading": "三級召喚自然盟友術（ Summon Nature ’s Ally III）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "言語，姿勢，法器",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/每 2 等級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個或多個召喚來的生物，生物之間相距不超過 30 英尺。",
+          "duration": "1 輪/等級（可解消）",
+          "saving_throw": "無",
+          "spell_resistance": "不可",
+          "description_zh": "同一級召喚自然盟友術（summon nature’s ally I），不過你可以召喚一個 3 級生物，\n或 1d3 個 2 級的同種生物，或 1d4+1 個 1 級的同種生物。\n當你召喚氣，混亂，土，邪惡，火，善良，守序或水類生物時，法術類型即為該類型。\n\n召喚自然盟友列表（3 級）：\n猿（動物）（Ape (animal)）\n兇暴鼬（Dire weasel）\n兇暴狼（Dire wolf）\n巨鷹（中立善良）（Eagle, giant [NG]）\n獅（Lion）\n巨貓頭鷹（中立善良）（Owl, giant [NG]）\n半羊人[無序善良；無牧笛]（Satyr [CN; without pipes]）\n大型鯊¹（動物）（Shark, Large (animal)）\n蟒蛇（動物）（Snake, constrictor (animal)）\n大型毒蛇（動物）（Snake, Large viper (animal)）\n土焢蟲（Thoqqua）\n¹ 只能在有水的環境中召喚。",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1154,
+          "pdf_page_end": 1154,
+          "raw_text": "三級召喚自然盟友術（ Summon Nature ’s Ally III）\n咒法系（召喚）[見說明]\n等級：德魯伊 3，巡林客 3\n效果：一個或多個召喚來的生物，生物之間相距不超過 30 英尺。\n同一級召喚自然盟友術（summon nature’s ally I），不過你可以召喚一個 3 級生物，\n或 1d3 個 2 級的同種生物，或 1d4+1 個 1 級的同種生物。\n當你召喚氣，混亂，土，邪惡，火，善良，守序或水類生物時，法術類型即為該類型。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "巡林客",
+              "spell_level": 3,
+              "note": ""
+            },
+            {
+              "class_name": "德魯伊",
+              "spell_level": 3,
+              "note": ""
+            }
+          ],
+          "sources": [],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781D5GRPKH7A9BZ6S6PQ",
+      "source_key": "a3178656c2102115771c240306793c6c038ffff0acba9be1f0d440aa423f4501",
+      "name_zh": "四級召喚自然盟友術",
+      "name_en": "Summon Nature's Ally IV",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Nature's Ally IV",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "四級召喚自然盟友術",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781DVD182DJ0V113ERN1",
+          "spell_id": "spl_01M2X5781D5GRPKH7A9BZ6S6PQ",
+          "source_key": "a3178656c2102115771c240306793c6c038ffff0acba9be1f0d440aa423f4501",
+          "heading": "四級召喚自然盟友術（ Summon Nature ’s Ally IV）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "言語，姿勢，法器",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/每 2 等級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個或多個召喚來的生物，生物之間相距不超過 30 英尺。",
+          "duration": "1 輪/等級（可解消）",
+          "saving_throw": "無",
+          "spell_resistance": "不可",
+          "description_zh": "同一級召喚自然盟友術（summon nature’s ally I），不過你可以召喚一個 4 級生物，\n或 1d3 個 3 級的同種生物，或 1d4+1 個更低等級的同種生物。\n當你召喚氣，混亂，土，邪惡，火，善良，守序或水類生物時，法術類型即為該類型。\n\n召喚自然盟友列表（4 級）：\n幼年箭鷹（Arrowhawk, juvenile）\n棕熊（動物）（Bear, brown (animal)）\n巨型鱷魚（動物）（Crocodile, giant (animal)）\n恐爪龍 （恐龍）（Deinonychus (dinosaur)）\n兇暴猿（Dire ape）\n兇暴熊（Dire boar）\n兇暴狼獾（Dire wolverine）\n中型元素生物（任何種類）（Elemental, Medium (any)）\n烈焰火蜥蜴 [中立邪惡]（Salamander, flamebrother [NE]）\n海貓¹（Sea cat）\n超大型鯊魚¹（動物）（Shark, Huge (animal)）\n超大型毒蛇（動物）（Snake, Huge viper (animal)）\n虎（動物）（Tiger (animal)）\n幼年突蟹龜¹（Tojanida, juvenile）\n獨角獸 [混亂善良]（Unicorn [CG]）\n小型索爾石怪（Xorn, minor）\n¹ 只能在有水的環境中召喚。",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1154,
+          "pdf_page_end": 1154,
+          "raw_text": "四級召喚自然盟友術（ Summon Nature ’s Ally IV）\n咒法系（召喚）[見說明]\n等級：動物 4，德魯伊 4，巡林客 4\n效果：一個或多個召喚來的生物，生物之間相距不超過 30 英尺。\n同一級召喚自然盟友術（summon nature’s ally I），不過你可以召喚一個 4 級生物，\n或 1d3 個 3 級的同種生物，或 1d4+1 個更低等級的同種生物。\n當你召喚氣，混亂，土，邪惡，火，善良，守序或水類生物時，法術類型即為該類型。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "動物",
+              "spell_level": 4,
+              "note": ""
+            },
+            {
+              "class_name": "巡林客",
+              "spell_level": 4,
+              "note": ""
+            },
+            {
+              "class_name": "德魯伊",
+              "spell_level": 4,
+              "note": ""
+            }
+          ],
+          "sources": [],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781FF7X3R55CWAG36VRC",
+      "source_key": "af19eaf5375f61306eae51306da2be98d823acbb376273c08484d30051180ed0",
+      "name_zh": "九級召喚自然盟友術",
+      "name_en": "Summon Nature's Ally IX",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Nature's Ally IX",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "九級召喚自然盟友術",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781FNMVYXXEDHYTZ4W9P",
+          "spell_id": "spl_01M2X5781FF7X3R55CWAG36VRC",
+          "source_key": "af19eaf5375f61306eae51306da2be98d823acbb376273c08484d30051180ed0",
+          "heading": "九級召喚自然盟友術（ Summon Nature ’s Ally IX）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "言語，姿勢，法器",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/每 2 等級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個或多個召喚來的生物，生物之間相距不超過 30 英尺。",
+          "duration": "1 輪/等級（可解消）",
+          "saving_throw": "無",
+          "spell_resistance": "不可",
+          "description_zh": "同一級召喚自然盟友術（summon nature’s ally I），不過你可以召喚一個 9 級生物，\n或 1d3 個 8 級的同種生物，或 1d4+1 個更低等級的同種生物。\n當你召喚氣，混亂，土，邪惡，火，善良，守序或水類生物時，法術類型即為該類型。\n\n召喚自然盟友列表（9 級）：\n元素長老（Elemental, elder）\n格利精[中立善良；帶拉提琴]（精怪）（Grig [NG; with fiddle] (sprite) ）\n皮克精*（精怪） [中立善良；帶昏睡箭和失憶箭]（Pixie* (sprite) [NG; with sleep and memory loss arrows]）\n獨角獸，天界衝鋒者（Unicorn, celestial charger）\n*可施展迷舞（irresistible dance ）",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1155,
+          "pdf_page_end": 1158,
+          "raw_text": "九級召喚自然盟友術（ Summon Nature ’s Ally IX）\n咒法系（召喚）[見說明]\n等級：德魯伊 9\n效果：一個或多個召喚來的生物，生物之間相距不超過 30 英尺。\n同一級召喚自然盟友術（summon nature’s ally I），不過你可以召喚一個 9 級生物，\n或 1d3 個 8 級的同種生物，或 1d4+1 個更低等級的同種生物。\n當你召喚氣，混亂，土，邪惡，火，善良，守序或水類生物時，法術類型即為該類型。\n召喚自然盟友\n1 级\n凶暴鼠（Dire rat）\n鹰（动物）（Eagle (animal)）\n猴（动物）（Monkey (animal)）\n章鱼\n1\n（动物）（Octopus (animal)）\n猫头鹰（动物）（Owl (animal)）\n海豚\n1\n（动物）（Porpoise (animal)）\n小型毒蛇（动物）（Snake, Small viper (animal)）\n狼（动物）（Wolf (animal)）\n2 级\n黑熊（动物）（Bear, black (animal)）\n鳄鱼（动物）（Crocodile (animal)）\n凶暴獾（Dire badger）\n\n兇暴蝙蝠（Dire bat）\n小型元素生物（任何種類）（Elemental, Small (any)）\n鷲馬（Hippogriff）\n中型鯊魚\n1\n（動物）（Shark, Medium (animal)）\n中型毒蛇（動物）（Snake, Medium viper (animal)）\n烏賊\n1\n（動物）（Squid (animal)）\n狼獾（動物）（Wolverine (animal)）\n3 級\n猿（動物）（Ape (animal)）\n兇暴鼬（Dire weasel）\n兇暴狼（Dire wolf）\n巨鷹（中立善良）（Eagle, giant [NG]）\n獅（Lion）\n巨貓頭鷹（中立善良）（Owl, giant [NG]）\n半羊人[無序善良；無牧笛]（Satyr [CN; without pipes]）\n大型鯊\n1\n（動物）（Shark, Large (animal)）\n蟒蛇（動物）（Snake, constrictor (animal)）\n大型毒蛇（動物）（Snake, Large viper (animal)）\n土焢蟲（Thoqqua）\n4 級\n幼年箭鷹（Arrowhawk, juvenile）\n棕熊（動物）（Bear, brown (animal)）\n巨型鱷魚（動物）（Crocodile, giant (animal)）\n恐爪龍 （恐龍）（Deinonychus (dinosaur)）\n兇暴猿（Dire ape）\n兇暴熊（Dire boar）\n兇暴狼獾（Dire wolverine）\n中型元素生物（任何種類）（Elemental, Medium (any)）\n烈焰火蜥蜴 [中立邪惡]（Salamander, flamebrother [NE]）\n海貓\n1\n（Sea cat1）\n超大型鯊魚\n1\n（動物）（Shark, Huge1 (animal)）\n超大型毒蛇（動物）（Snake, Huge viper (animal)）\n虎（動物）（Tiger (animal)）\n幼年突蟹龜\n1\n（Tojanida, juvenile1）\n獨角獸 [混亂善良]（Unicorn [CG]）\n小型索爾石怪（Xorn, minor）\n5 級\n成年箭鷹（Arrowhawk, adult）\n北極熊（動物）（Bear, polar (animal)）\n兇暴獅（Dire lion）\n薄板龍\n1\n(恐龍）（Elasmosaurus1 (dinosaur)）\n大型元素生物（任何種類）（Elemental, Large (any)）\n獅鷲（Griffon）\n\n小巨靈（巨靈）（Janni (genie)）\n犀牛（動物）（Rhinoceros (animal)）\n半羊人 [混亂中立；有笛]（Satyr [CN; with pipes]）\n巨蟒（動物）（Snake, giant constrictor (animal)）\n尼克精（精怪）（Nixie (sprite)）\n成年突蟹龜\n1\n（Tojanida, adult）\n逆戟鯨\n1\n（動物）（Whale, orca (animal)）\n6 級\n兇暴熊（Dire bear）\n大型元素生物（任何種類）（Elemental, Huge (any)）\n象（動物）（Elephant (animal)）\n四臂猩猩（Girallon）\n猛禽龍（恐龍）（Megaraptor (dinosaur)）\n巨章魚\n1\n（動物）（Octopus, giant1 (animal)）\n皮克精*（精怪） [中立善良；無特殊箭]（Pixie* (sprite) [NG; no special arrows]）\n普通火蜥蜴 [中立邪惡]（Salamander, average [NE]）\n須鯨\n1\n（Whale, baleen1）\n普通索爾石怪（Xorn, average）\n*不可施展迷舞（irresistible dance）\n7 級\n老年箭鷹（Arrowhawk, elder）\n兇暴虎（Dire tiger）\n超大型元素生物（任何種類）（Elemental, greater (any)）\n風巨靈 （巨靈） [中立善良]（Djinni (genie) [NG]）\n隱形潛伏怪（Invisible stalker）\n皮克精*（精怪） [中立善良; 帶昏睡箭]（Pixie* (sprite) [NG; with sleep arrows]）\n巨烏賊\n1\n（動物）（Squid, giant1 (animal)）\n三角龍（恐龍）（Triceratops (dinosaur)）\n暴龍 （恐龍）（Tyrannosaurus (dinosaur)）\n抹香鯨\n1\n（動物）（Whale, cachalot1 (animal)）\n老年索爾石怪（Xorn, elder）\n*不可施展迷舞（irresistible dance）\n8 級\n兇暴鯊\n1\n（Dire shark）\n鵬鳥（Roc）\n火蜥蜴貴族[中立邪惡]（Salamander, noble [NE]）\n老年突蟹龜（Tojanida, elder）\n9 級\n元素長老（Elemental, elder）\n格利精[中立善良；帶拉提琴]（精怪）（Grig [NG; with fiddle] (sprite) ）\n皮克精*（精怪） [中立善良；帶昏睡箭和失憶箭]（Pixie* (sprite) [NG; with sleep and memory\nloss arrows]）\n獨角獸，天界衝鋒者（Unicorn, celestial charger）\n\n*可施展迷舞（irresistible dance ）\n1 只能在有水的環境中召喚",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "德魯伊",
+              "spell_level": 9,
+              "note": ""
+            }
+          ],
+          "sources": [],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781D4ESPRH83XKQ15FFV",
+      "source_key": "1fd0767f9b26f2f86409b1d3eb48807be3b95add706e52ccd17f3576a4d8c517",
+      "name_zh": "五級召喚自然盟友術",
+      "name_en": "Summon Nature's Ally V",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Nature's Ally V",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "五級召喚自然盟友術",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781D6Z4QKGSBKKT28XBW",
+          "spell_id": "spl_01M2X5781D4ESPRH83XKQ15FFV",
+          "source_key": "1fd0767f9b26f2f86409b1d3eb48807be3b95add706e52ccd17f3576a4d8c517",
+          "heading": "五級召喚自然盟友術（ Summon Nature ’s Ally V）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "言語，姿勢，法器",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/每 2 等級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個或多個召喚來的生物，生物之間相距不超過 30 英尺。",
+          "duration": "1 輪/等級（可解消）",
+          "saving_throw": "無",
+          "spell_resistance": "不可",
+          "description_zh": "同一級召喚自然盟友術（summon nature’s ally I），不過你可以召喚一個 5 級生物，\n或 1d3 個 4 級的同種生物，或 1d4+1 個更低等級的同種生物。\n當你召喚氣，混亂，土，邪惡，火，善良，守序或水類生物時，法術類型即為該類型。\n\n召喚自然盟友列表（5 級）：\n成年箭鷹（Arrowhawk, adult）\n北極熊（動物）（Bear, polar (animal)）\n兇暴獅（Dire lion）\n薄板龍¹(恐龍）（Elasmosaurus (dinosaur)）\n大型元素生物（任何種類）（Elemental, Large (any)）\n獅鷲（Griffon）\n小巨靈（巨靈）（Janni (genie)）\n犀牛（動物）（Rhinoceros (animal)）\n半羊人 [混亂中立；有笛]（Satyr [CN; with pipes]）\n巨蟒（動物）（Snake, giant constrictor (animal)）\n尼克精（精怪）（Nixie (sprite)）\n成年突蟹龜¹（Tojanida, adult）\n逆戟鯨¹（動物）（Whale, orca (animal)）\n¹ 只能在有水的環境中召喚。",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1154,
+          "pdf_page_end": 1154,
+          "raw_text": "五級召喚自然盟友術（ Summon Nature ’s Ally V）\n咒法系（召喚）[見說明]\n等級：德魯伊 5\n效果：一個或多個召喚來的生物，生物之間相距不超過 30 英尺。\n同一級召喚自然盟友術（summon nature’s ally I），不過你可以召喚一個 5 級生物，\n或 1d3 個 4 級的同種生物，或 1d4+1 個更低等級的同種生物。\n當你召喚氣，混亂，土，邪惡，火，善良，守序或水類生物時，法術類型即為該類型。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "德魯伊",
+              "spell_level": 5,
+              "note": ""
+            }
+          ],
+          "sources": [],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781DCG2C82HN7D48NQYW",
+      "source_key": "2cc4e810a7cc0cc12b9661af4d2abe4bf0963a4ecf542e4be1c77945082e2b23",
+      "name_zh": "六級召喚自然盟友術",
+      "name_en": "Summon Nature's Ally VI",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Nature's Ally VI",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "六級召喚自然盟友術",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781D9C15FT6YG14CECPZ",
+          "spell_id": "spl_01M2X5781DCG2C82HN7D48NQYW",
+          "source_key": "2cc4e810a7cc0cc12b9661af4d2abe4bf0963a4ecf542e4be1c77945082e2b23",
+          "heading": "六級召喚自然盟友術（ Summon Nature ’s Ally VI）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "言語，姿勢，法器",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/每 2 等級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個或多個召喚來的生物，生物之間相距不超過 30 英尺。",
+          "duration": "1 輪/等級（可解消）",
+          "saving_throw": "無",
+          "spell_resistance": "不可",
+          "description_zh": "同一級召喚自然盟友術（summon nature’s ally I），不過你可以召喚一個 6 級生物，\n或 1d3 個 5 級的同種生物，或 1d4+1 個更低等級的同種生物。\n當你召喚氣，混亂，土，邪惡，火，善良，守序或水類生物時，法術類型即為該類型。\n\n召喚自然盟友列表（6 級）：\n兇暴熊（Dire bear）\n大型元素生物（任何種類）（Elemental, Huge (any)）\n象（動物）（Elephant (animal)）\n四臂猩猩（Girallon）\n猛禽龍（恐龍）（Megaraptor (dinosaur)）\n巨章魚¹（動物）（Octopus, giant (animal)）\n皮克精*（精怪） [中立善良；無特殊箭]（Pixie* (sprite) [NG; no special arrows]）\n普通火蜥蜴 [中立邪惡]（Salamander, average [NE]）\n須鯨¹（Whale, baleen）\n普通索爾石怪（Xorn, average）\n*不可施展迷舞（irresistible dance）\n¹ 只能在有水的環境中召喚。",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1154,
+          "pdf_page_end": 1155,
+          "raw_text": "六級召喚自然盟友術（ Summon Nature ’s Ally VI）\n咒法系（召喚）[見說明]\n等級：德魯伊 6\n效果：一個或多個召喚來的生物，生物之間相距不超過 30 英尺。\n同一級召喚自然盟友術（summon nature’s ally I），不過你可以召喚一個 6 級生物，\n或 1d3 個 5 級的同種生物，或 1d4+1 個更低等級的同種生物。\n當你召喚氣，混亂，土，邪惡，火，善良，守序或水類生物時，法術類型即為該類型。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "德魯伊",
+              "spell_level": 6,
+              "note": ""
+            }
+          ],
+          "sources": [],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781FERSP3X6Z5BDCJZP3",
+      "source_key": "a4288f269853975f36697763ed0c37fcb9eec9ffe68dc4e81801d2f1abbe28c7",
+      "name_zh": "七級召喚自然盟友術",
+      "name_en": "Summon Nature's Ally VII",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Nature's Ally VII",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "七級召喚自然盟友術",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781FRH9R5CJS8HGB0Z47",
+          "spell_id": "spl_01M2X5781FERSP3X6Z5BDCJZP3",
+          "source_key": "a4288f269853975f36697763ed0c37fcb9eec9ffe68dc4e81801d2f1abbe28c7",
+          "heading": "七級召喚自然盟友術（ Summon Nature ’s Ally VII）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "言語，姿勢，法器",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/每 2 等級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個或多個召喚來的生物，生物之間相距不超過 30 英尺。",
+          "duration": "1 輪/等級（可解消）",
+          "saving_throw": "無",
+          "spell_resistance": "不可",
+          "description_zh": "同一級召喚自然盟友術（summon nature’s ally I），不過你可以召喚一個 7 級生物，\n或 1d3 個 6 級的同種生物，或 1d4+1 個更低等級的同種生物。\n當你召喚氣，混亂，土，邪惡，火，善良，守序或水類生物時，法術類型即為該類型。\n\n召喚自然盟友列表（7 級）：\n老年箭鷹（Arrowhawk, elder）\n兇暴虎（Dire tiger）\n超大型元素生物（任何種類）（Elemental, greater (any)）\n風巨靈 （巨靈） [中立善良]（Djinni (genie) [NG]）\n隱形潛伏怪（Invisible stalker）\n皮克精*（精怪） [中立善良; 帶昏睡箭]（Pixie* (sprite) [NG; with sleep arrows]）\n巨烏賊¹（動物）（Squid, giant (animal)）\n三角龍（恐龍）（Triceratops (dinosaur)）\n暴龍 （恐龍）（Tyrannosaurus (dinosaur)）\n抹香鯨¹（動物）（Whale, cachalot (animal)）\n老年索爾石怪（Xorn, elder）\n*不可施展迷舞（irresistible dance）\n¹ 只能在有水的環境中召喚。",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1155,
+          "pdf_page_end": 1155,
+          "raw_text": "七級召喚自然盟友術（ Summon Nature ’s Ally VII）\n咒法系（召喚）[見說明]\n等級：德魯伊 7\n效果：一個或多個召喚來的生物，生物之間相距不超過 30 英尺。\n同一級召喚自然盟友術（summon nature’s ally I），不過你可以召喚一個 7 級生物，\n或 1d3 個 6 級的同種生物，或 1d4+1 個更低等級的同種生物。\n當你召喚氣，混亂，土，邪惡，火，善良，守序或水類生物時，法術類型即為該類型。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "德魯伊",
+              "spell_level": 7,
+              "note": ""
+            }
+          ],
+          "sources": [],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781FCXFAVS4GNM5V8S0Z",
+      "source_key": "1c2ce56274ae3a53e838ddbc5c68e5180d4bf3646e78ca3cd9eae00e2c29c6ed",
+      "name_zh": "八級召喚自然盟友術",
+      "name_en": "Summon Nature's Ally VIII",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Nature's Ally VIII",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "八級召喚自然盟友術",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781F1JN61A44XP7MK2Y5",
+          "spell_id": "spl_01M2X5781FCXFAVS4GNM5V8S0Z",
+          "source_key": "1c2ce56274ae3a53e838ddbc5c68e5180d4bf3646e78ca3cd9eae00e2c29c6ed",
+          "heading": "八級召喚自然盟友術（ Summon Nature ’s Ally VIII）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "言語，姿勢，法器",
+          "casting_time": "1 輪",
+          "range_text": "近距（25 英尺+5 英尺/每 2 等級）",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個或多個召喚來的生物，生物之間相距不超過 30 英尺。",
+          "duration": "1 輪/等級（可解消）",
+          "saving_throw": "無",
+          "spell_resistance": "不可",
+          "description_zh": "同一級召喚自然盟友術（summon nature’s ally I），不過你可以召喚一個 8 級生物，\n或 1d3 個 7 級的同種生物，或 1d4+1 個更低等級的同種生物。\n當你召喚氣，混亂，土，邪惡，火，善良，守序或水類生物時，法術類型即為該類型。\n\n召喚自然盟友列表（8 級）：\n兇暴鯊¹（Dire shark）\n鵬鳥（Roc）\n火蜥蜴貴族[中立邪惡]（Salamander, noble [NE]）\n老年突蟹龜（Tojanida, elder）\n¹ 只能在有水的環境中召喚。",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1155,
+          "pdf_page_end": 1155,
+          "raw_text": "八級召喚自然盟友術（ Summon Nature ’s Ally VIII）\n咒法系（召喚）[見說明]\n等級：動物 8，德魯伊 8\n效果：一個或多個召喚來的生物，生物之間相距不超過 30 英尺。\n同一級召喚自然盟友術（summon nature’s ally I），不過你可以召喚一個 8 級生物，\n或 1d3 個 7 級的同種生物，或 1d4+1 個更低等級的同種生物。\n當你召喚氣，混亂，土，邪惡，火，善良，守序或水類生物時，法術類型即為該類型。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "動物",
+              "spell_level": 8,
+              "note": ""
+            },
+            {
+              "class_name": "德魯伊",
+              "spell_level": 8,
+              "note": ""
+            }
+          ],
+          "sources": [],
+          "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
       "id": "spl_01M2SPSHHM89A85MP4S7GNP7KV",
       "source_key": "586a856bcf33ca9b5c32a11868a7cff1b34658429310c872bb541710796b8b74",
       "name_zh": "飛蟲走獸",
@@ -125032,6 +126950,396 @@
           ],
           "sources": [],
           "descriptors": [],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781FXJMV47RGQESRQDW9",
+      "source_key": "c6abbba624deb92853f7420363303b1c0e6a63f3e42c8711d37742fe601fd6d4",
+      "name_zh": "一級召喚亡靈",
+      "name_en": "Summon Undead I",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Undead I",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "一級召喚亡靈",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781F0F3K6G0JV2P6AVHW",
+          "spell_id": "spl_01M2X5781FXJMV47RGQESRQDW9",
+          "source_key": "c6abbba624deb92853f7420363303b1c0e6a63f3e42c8711d37742fe601fd6d4",
+          "heading": "一級召喚亡靈 (Summon Undead I) （死者之書）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "言語、姿勢、器材",
+          "casting_time": "1 整輪",
+          "range_text": "近距(25 呎+5 呎/每 2 等級)",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個被召喚的生物",
+          "duration": "1 輪/每等級",
+          "saving_throw": "無",
+          "spell_resistance": "不可",
+          "description_zh": "如同一級召喚怪物術，但你召喚出的是不死生物。此法術召引一個召喚不死生物表格內\n1 級列表中的生物。你選擇要召喚哪一個生物，而且你每次施法時都可以改變。召喚來的不死\n生物，不記入你那些藉由操縱死屍或是牧師的負能量來控制的不死生物總生命骰數。\n器材：一個超小型袋子、一支蠟燭(不點亮)和一個來自任何人型生物的雕刻骨頭。\n\n召喚不死生物列表（1 級）：\n人類戰士骷髏（Human warrior skeleton, MM 226）\n狗頭人殭屍（Kobold zombie, MM 266）\n（原書註：由於死者之書列表曖昧不清，故使用萬法大全列表。）",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1158,
+          "pdf_page_end": 1158,
+          "raw_text": "一級召喚亡靈 (Summon Undead I) （死者之書）\n咒法系(召喚)[邪惡]\n等級：暗黑衛士 1，牧師 1，術士/法師 1\n法術成分：言語、姿勢、器材\n施法時間：1 整輪\n距離：近距(25 呎+5 呎/每 2 等級)\n效果：一個被召喚的生物\n持續時間：1 輪/每等級\n豁免檢定：無\n法術抗力：不可\n如同一級召喚怪物術，但你召喚出的是不死生物。此法術召引一個召喚不死生物表格內\n1 級列表中的生物。你選擇要召喚哪一個生物，而且你每次施法時都可以改變。召喚來的不死\n生物，不記入你那些藉由操縱死屍或是牧師的負能量來控制的不死生物總生命骰數。\n器材：一個超小型袋子、一支蠟燭(不點亮)和一個來自任何人型生物的雕刻骨頭。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "暗黑衛士",
+              "spell_level": 1,
+              "note": ""
+            },
+            {
+              "class_name": "牧師",
+              "spell_level": 1,
+              "note": ""
+            },
+            {
+              "class_name": "術士/法師",
+              "spell_level": 1,
+              "note": ""
+            }
+          ],
+          "sources": [
+            "死者之書"
+          ],
+          "descriptors": [
+            "邪惡"
+          ],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781FQ3KK29MAA0DKMSKK",
+      "source_key": "b333ae8e1520f3bddba85e58ecec74b5ca381a97d29e6d358adef1535978971b",
+      "name_zh": "二級召喚亡靈",
+      "name_en": "Summon Undead II",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Undead II",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "二級召喚亡靈",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781F1Y9CX9BKXQ60CZFS",
+          "spell_id": "spl_01M2X5781FQ3KK29MAA0DKMSKK",
+          "source_key": "b333ae8e1520f3bddba85e58ecec74b5ca381a97d29e6d358adef1535978971b",
+          "heading": "二級召喚亡靈 (Summon Undead II) （死者之書）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "言語、姿勢、器材",
+          "casting_time": "1 整輪",
+          "range_text": "近距(25 呎+5 呎/每 2 等級)",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個或多個被召喚的生物，彼此間距離 30 呎以內。",
+          "duration": "1 輪/每等級",
+          "saving_throw": "無",
+          "spell_resistance": "不可",
+          "description_zh": "如同一級召喚不死生物，但你可召喚一個 2 級列表中的不死生物或二個 1 級列表中相同\n類型的不死生物。\n\n召喚不死生物列表（2 級）：\n梟熊骷髏（Owlbear skeleton, MM 226）\n熊地精殭屍（Bugbear zombie, MM 267）\n（原書註：由於死者之書列表曖昧不清，故使用萬法大全列表。）",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1158,
+          "pdf_page_end": 1158,
+          "raw_text": "二級召喚亡靈 (Summon Undead II) （死者之書）\n咒法系(召喚)[邪惡]\n等級：暗黑衛士 2，牧師 2，術士/法師 2\n效果：一個或多個被召喚的生物，彼此間距離 30 呎以內。\n如同一級召喚不死生物，但你可召喚一個 2 級列表中的不死生物或二個 1 級列表中相同\n類型的不死生物。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "暗黑衛士",
+              "spell_level": 2,
+              "note": ""
+            },
+            {
+              "class_name": "牧師",
+              "spell_level": 2,
+              "note": ""
+            },
+            {
+              "class_name": "術士/法師",
+              "spell_level": 2,
+              "note": ""
+            }
+          ],
+          "sources": [
+            "死者之書"
+          ],
+          "descriptors": [
+            "邪惡"
+          ],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781F5KJ2TG7XAGQJSZE6",
+      "source_key": "6e92138c873138f60654cfe1b4b83e1f1b1d0f372d9c5a31f412584a15b692ff",
+      "name_zh": "三級召喚亡靈",
+      "name_en": "Summon Undead III",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Undead III",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "三級召喚亡靈",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781FRCW6F9QSAM40YT0C",
+          "spell_id": "spl_01M2X5781F5KJ2TG7XAGQJSZE6",
+          "source_key": "6e92138c873138f60654cfe1b4b83e1f1b1d0f372d9c5a31f412584a15b692ff",
+          "heading": "三級召喚亡靈 (Summon Undead III)（死者之書）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "言語、姿勢、器材",
+          "casting_time": "1 整輪",
+          "range_text": "近距(25 呎+5 呎/每 2 等級)",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個或多個被召喚的生物，彼此間距離 30 呎以內。",
+          "duration": "1 輪/每等級",
+          "saving_throw": "無",
+          "spell_resistance": "不可",
+          "description_zh": "如同一級召喚不死生物，但你可召喚一個 3 級列表中的不死生物、二個 2 級列表中相同\n類型的不死生物或四個 1 級列表中相同類型的不死生物。\n\n召喚不死生物列表（3 級）：\n食屍鬼（Ghoul, MM 118）\n巨魔骷髏（Troll skeleton, MM 227）\n食人魔殭屍（Ogre zombie, MM 267）\n（原書註：由於死者之書列表曖昧不清，故使用萬法大全列表。）",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1158,
+          "pdf_page_end": 1158,
+          "raw_text": "三級召喚亡靈 (Summon Undead III)（死者之書）\n咒法系(召喚)[邪惡]\n等級：暗黑衛士 3，牧師 3，術士/法師 3\n效果：一個或多個被召喚的生物，彼此間距離 30 呎以內。\n如同一級召喚不死生物，但你可召喚一個 3 級列表中的不死生物、二個 2 級列表中相同\n類型的不死生物或四個 1 級列表中相同類型的不死生物。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "暗黑衛士",
+              "spell_level": 3,
+              "note": ""
+            },
+            {
+              "class_name": "牧師",
+              "spell_level": 3,
+              "note": ""
+            },
+            {
+              "class_name": "術士/法師",
+              "spell_level": 3,
+              "note": ""
+            }
+          ],
+          "sources": [
+            "死者之書"
+          ],
+          "descriptors": [
+            "邪惡"
+          ],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781FX27R71A3EPXDN6XT",
+      "source_key": "41d9235f585411d04fdfb3ffef35ceda5c162f85b19ad567da205bb55bf103ab",
+      "name_zh": "四級召喚亡靈",
+      "name_en": "Summon Undead IV",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Undead IV",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "四級召喚亡靈",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781FH6JKNHAQQS3NHBQQ",
+          "spell_id": "spl_01M2X5781FX27R71A3EPXDN6XT",
+          "source_key": "41d9235f585411d04fdfb3ffef35ceda5c162f85b19ad567da205bb55bf103ab",
+          "heading": "四級召喚亡靈 (Summon Undead IV) （死者之書）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "言語、姿勢、器材",
+          "casting_time": "1 整輪",
+          "range_text": "近距(25 呎+5 呎/每 2 等級)",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個或多個被召喚的生物，彼此間距離 30 呎以內。",
+          "duration": "1 輪/每等級",
+          "saving_throw": "無",
+          "spell_resistance": "不可",
+          "description_zh": "如同一級召喚不死生物，但你可召喚一個 4 級列表中的不死生物、二個 3 級列表中相同\n類型的不死生物或四個次級列表中相同類型的不死生物。\n\n召喚不死生物列表（4 級）：\n怨魂（Allip, MM 10）\n妖鬼（Ghast, MM 119）\n翼龍殭屍（Wyvern zombie, MM 267）\n（原書註：由於死者之書列表曖昧不清，故使用萬法大全列表。）",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1158,
+          "pdf_page_end": 1158,
+          "raw_text": "四級召喚亡靈 (Summon Undead IV) （死者之書）\n咒法系(召喚)[邪惡]\n等級：暗黑衛士 4，牧師 4，術士/法師 4\n效果：一個或多個被召喚的生物，彼此間距離 30 呎以內。\n如同一級召喚不死生物，但你可召喚一個 4 級列表中的不死生物、二個 3 級列表中相同\n類型的不死生物或四個次級列表中相同類型的不死生物。",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "暗黑衛士",
+              "spell_level": 4,
+              "note": ""
+            },
+            {
+              "class_name": "牧師",
+              "spell_level": 4,
+              "note": ""
+            },
+            {
+              "class_name": "術士/法師",
+              "spell_level": 4,
+              "note": ""
+            }
+          ],
+          "sources": [
+            "死者之書"
+          ],
+          "descriptors": [
+            "邪惡"
+          ],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "spl_01M2X5781GEBQNE4XFHZ1QKHRK",
+      "source_key": "f0b4dee8bd475ac1e75e401ddb2f774f18c7554e76d94e44b35ca573cfc7d72b",
+      "name_zh": "五級召喚不死生物",
+      "name_en": "Summon Undead V",
+      "alphabet": "S",
+      "variant_group_id": null,
+      "review_status": "unreviewed",
+      "created_at": "2026-09-19T15:40:37.802161+00:00",
+      "updated_at": "2026-09-19T15:40:37.802161+00:00",
+      "merged_into_id": null,
+      "record_status": "active",
+      "reviewed_revision_hash": null,
+      "aliases": [
+        {
+          "language": "en",
+          "name": "Summon Undead V",
+          "name_type": "canonical"
+        },
+        {
+          "language": "zh",
+          "name": "五級召喚不死生物",
+          "name_type": "canonical"
+        }
+      ],
+      "entries": [
+        {
+          "id": "ent_01M2X5781G31ZTWS91KMJ78T4R",
+          "spell_id": "spl_01M2X5781GEBQNE4XFHZ1QKHRK",
+          "source_key": "f0b4dee8bd475ac1e75e401ddb2f774f18c7554e76d94e44b35ca573cfc7d72b",
+          "heading": "五級召喚不死生物 (Summon Undead V) （死者之書）",
+          "school": "咒法系",
+          "subschool": "召喚",
+          "components": "言語、姿勢、器材",
+          "casting_time": "1 整輪",
+          "range_text": "近距(25 呎+5 呎/每 2 等級)",
+          "target_text": "",
+          "area_text": "",
+          "effect_text": "一個或多個被召喚的生物，彼此間距離 30 呎以內。",
+          "duration": "1 輪/每等級",
+          "saving_throw": "無",
+          "spell_resistance": "不可",
+          "description_zh": "如同一級召喚不死生物，但你可召喚一個 5 級列表中的不死生物、二個 4 列表中相同類\n型的不死生物或四個次級列表中相同類型的不死生物。\n\n召喚不死生物列表（5 級）：\n木乃伊（Mummy, MM 190）\n幽影（Shadow, MM 221）\n屍妖（Wight, MM 255）\n吸血衍體（Vampire spawn, MM 253）\n（原書註：由於死者之書列表曖昧不清，故使用萬法大全列表。）",
+          "description_en": null,
+          "additional_costs": "",
+          "pdf_page_start": 1158,
+          "pdf_page_end": 1159,
+          "raw_text": "五級召喚不死生物 (Summon Undead V) （死者之書）\n咒法系(召喚)[邪惡]\n等級：牧師 5，術士/法師 5\n效果：一個或多個被召喚的生物，彼此間距離 30 呎以內。\n如同一級召喚不死生物，但你可召喚一個 5 級列表中的不死生物、二個 4 列表中相同類\n型的不死生物或四個次級列表中相同類型的不死生物。\n\n召喚不死生物列表（由於死者之書列表曖昧不清，故使用萬法大全列表）\n1 级 2 级 3 级 4 级 5 级\n人类战士骷髅\nHuman warrior\n枭雄骷髅\nOwlbear\n食尸鬼\nGhoul (MM 118),\n怨魂\nAllip (MM 10),\n木乃伊\nMummy(MM 190),\n\nskeleton (MM 226) skeleton (MM\n226)\n\n狗頭人僵屍\nkobold zombie\n(MM 266)\n熊地精僵屍\nbugbear zombie\n(MM 267)\n巨魔骷髏\ntroll skeleton (MM\n227),\n妖鬼\nghast (MM 119),\n幽影\nshadow (MM 221),\n  食人魔僵屍\nogre zombie (MM\n267).\n翼龍僵屍\nwyvern zombie\n(MM 267).\n屍妖\nwight\n(MM 255).\n    吸血衍體\nvampire spawn\n(MM 253),",
+          "parse_confidence": 1.0,
+          "review_status": "unreviewed",
+          "translation_status": "not_required",
+          "translation_method": null,
+          "levels": [
+            {
+              "class_name": "牧師",
+              "spell_level": 5,
+              "note": ""
+            },
+            {
+              "class_name": "術士/法師",
+              "spell_level": 5,
+              "note": ""
+            }
+          ],
+          "sources": [
+            "死者之書"
+          ],
+          "descriptors": [
+            "邪惡"
+          ],
           "issues": []
         }
       ]
