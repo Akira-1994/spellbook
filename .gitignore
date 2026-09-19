@@ -9,3 +9,4 @@ __pycache__/
 .pytest_cache/
 .spellbook-local/
 
+.claude/launch.json

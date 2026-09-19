@@ -47,3 +47,12 @@ def test_rejects_non_local_host(tmp_path, monkeypatch):
     app = create_app(make_project(tmp_path, monkeypatch))
     with TestClient(app, base_url="http://example.invalid") as client:
         assert client.get("/health").status_code == 400
+
+
+def test_source_pdf_is_served_inline(tmp_path, monkeypatch):
+    app = create_app(make_project(tmp_path, monkeypatch))
+    with TestClient(app) as client:
+        response = client.get("/source/pdf")
+        assert response.status_code == 200
+        assert response.headers["content-type"] == "application/pdf"
+        assert response.headers["content-disposition"].startswith("inline")

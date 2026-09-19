@@ -262,7 +262,12 @@ def create_app(project_root: Path | str | None = None) -> FastAPI:
     def source_pdf():
         if not paths.source_pdf.is_file() or paths.source_pdf.parent.resolve() != root:
             raise HTTPException(status_code=404, detail="找不到來源 PDF")
-        return FileResponse(paths.source_pdf, media_type="application/pdf", filename=paths.source_pdf.name)
+        return FileResponse(
+            paths.source_pdf,
+            media_type="application/pdf",
+            filename=paths.source_pdf.name,
+            content_disposition_type="inline",
+        )
 
     return app
 
