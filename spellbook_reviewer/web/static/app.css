@@ -75,12 +75,12 @@ button:focus-visible, input:focus-visible, textarea:focus-visible, summary:focus
 .alphabet button { width: 18px; height: 21px; padding: 0; border: 0; background: transparent; color: #5d6b7b; font: 10px "Cascadia Mono", monospace; cursor: pointer; }
 .alphabet button.active { color: #fff; background: var(--blue); }
 .spell-list { flex: 1; overflow-y: auto; padding-bottom: 40px; }
-.spell-card { width: 100%; display: grid; grid-template-columns: 28px 1fr auto; gap: 8px; padding: 10px 13px; border: 0; border-bottom: 1px solid var(--line); text-align: left; background: transparent; cursor: pointer; }
+.spell-card { width: 100%; display: grid; grid-template-columns: 28px minmax(0, 1fr) auto; gap: 8px; padding: 10px 13px; border: 0; border-bottom: 1px solid var(--line); text-align: left; background: transparent; cursor: pointer; }
 .spell-card:hover { background: rgba(255,255,255,.58); }
 .spell-card.active { background: #fff; box-shadow: inset 4px 0 var(--blue); }
 .spell-card .letter { color: #8691a0; font: 18px Georgia, serif; }
 .spell-card strong { display: block; font-size: 13px; }
-.spell-card small { display: block; max-width: 170px; color: #68778a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.spell-card small { display: block; max-width: 100%; color: #68778a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .spell-card .state { align-self: center; width: 8px; height: 8px; border-radius: 50%; background: #8d98a5; }
 .spell-card .state.reviewed { background: var(--green); }
 .spell-card .state.needs_review { background: var(--amber); }
@@ -184,4 +184,25 @@ dialog p { color: #5f6d7e; }
   .editor-pane { padding-inline: 25px; }
   .source-ribbon, .action-bar { margin-left: -25px; margin-right: -25px; padding-inline: 25px; }
   .check-grid { grid-template-columns: repeat(2, 105px); }
+}
+
+@media (max-width: 1180px) {
+  .masthead { padding: 0 16px; }
+  .session-strip { gap: 10px; }
+  .workspace { min-width: 0; grid-template-columns: 230px minmax(0, 1fr) 310px; }
+  .editor-pane { padding-inline: 18px; }
+  .source-ribbon, .action-bar { margin-left: -18px; margin-right: -18px; padding-inline: 18px; }
+  .rule-grid { grid-template-columns: repeat(2, 1fr); }
+  .record-header h2 { font-size: 26px; }
+  .review-gate { flex-direction: column; align-items: stretch; gap: 12px; }
+}
+
+@media (max-width: 860px) {
+  .masthead { height: auto; min-height: 68px; flex-wrap: wrap; gap: 8px; padding-block: 10px; }
+  .workspace { height: auto; grid-template-columns: minmax(0, 1fr); }
+  .queue-pane { height: 75vh; min-height: 480px; border-right: 0; border-bottom: 1px solid #c7c0b2; }
+  .editor-pane { overflow: visible; padding-bottom: 0; }
+  .action-bar { bottom: 0; margin-bottom: 0; }
+  .source-pane { border-left: 0; border-top: 1px solid #c7c0b2; }
+  #pdf-frame { height: 75vh; }
 }
