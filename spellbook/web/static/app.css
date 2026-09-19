@@ -32,6 +32,8 @@ button:focus-visible, input:focus-visible, textarea:focus-visible, summary:focus
 .masthead-note { display: flex; gap: 14px; align-items: center; margin: 0; color: #c9d6e8; font-size: 12px; }
 .status-dot::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%; background: #8bc9a9; }
 
+.offline-banner { padding: 10px 20px; color: #fff; background: var(--red); font-weight: 650; }
+
 /* ---- Layout ---- */
 .workspace { height: calc(100vh - 60px); display: grid; grid-template-columns: 290px minmax(0, 1fr) 330px; grid-template-areas: "index page history"; }
 .index-pane { grid-area: index; min-height: 0; display: flex; flex-direction: column; background: var(--paper-2); border-right: 1px solid #c7c0b2; }

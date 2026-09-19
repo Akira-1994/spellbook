@@ -352,8 +352,19 @@
     });
   }
 
+  // Keeps the desktop launcher alive while a page is open, and tells the user
+  // when the app has already exited.
+  async function ping() {
+    try {
+      const response = await fetch("/api/ping", { cache: "no-store" });
+      $("#offline-banner").hidden = response.ok;
+    } catch { $("#offline-banner").hidden = false; }
+  }
+
   async function start() {
     bind();
+    setInterval(ping, 30000);
+    document.addEventListener("visibilitychange", () => { if (!document.hidden) ping(); });
     try {
       await Promise.all([loadSummary(), loadList()]);
       if (state.items.length) await selectSpell(state.items[0].id);

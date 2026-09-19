@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import time
 from typing import Any
 
 from fastapi import Depends, FastAPI, HTTPException, Query, Request
@@ -40,6 +41,13 @@ def create_app(paths: AppPaths | None = None) -> FastAPI:
     templates = Jinja2Templates(directory=PACKAGE_ROOT / "web" / "templates")
     app.state.csrf_token = new_csrf_token()
     app.state.paths = paths
+    app.state.last_activity = time.monotonic()
+
+    @app.middleware("http")
+    async def track_activity(request: Request, call_next):
+        # The desktop launcher exits once no open page has been seen for a while.
+        app.state.last_activity = time.monotonic()
+        return await call_next(request)
 
     @app.exception_handler(EditError)
     async def edit_error_handler(_request: Request, exc: EditError):
@@ -55,6 +63,10 @@ def create_app(paths: AppPaths | None = None) -> FastAPI:
     @app.get("/health")
     def health():
         return {"status": "ok", "version": __version__}
+
+    @app.get("/api/ping")
+    def ping():
+        return {"status": "ok"}
 
     @app.get("/")
     def index(request: Request):
