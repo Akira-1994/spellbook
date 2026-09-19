@@ -57,3 +57,13 @@ def test_edit_versions_and_rollback_round_trip(paths):
 def test_rejects_non_local_host(paths):
     with TestClient(create_app(paths), base_url="http://example.invalid") as client:
         assert client.get("/health").status_code == 400
+
+
+def test_serves_favicon(paths):
+    with TestClient(create_app(paths)) as client:
+        page = client.get("/").text
+        assert "favicon.svg" in page and "favicon.ico" in page
+        icon = client.get("/favicon.ico")
+        assert icon.status_code == 200 and icon.headers["content-type"] == "image/x-icon"
+        assert icon.content[:4] == b"\x00\x00\x01\x00"  # ICO header
+        assert client.get("/static/favicon.svg").status_code == 200

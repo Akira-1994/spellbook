@@ -34,6 +34,12 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m pytest -q
 ```
 
+應用程式圖示（exe 與網頁 favicon）由 `packaging/make_icon.py` 繪製，修改設計後重新產生：
+
+```powershell
+.\.venv\Scripts\python.exe packaging\make_icon.py
+```
+
 打包成單一執行檔（輸出 `dist/Spellbook.exe` 與 `.sha256`）：
 
 ```powershell

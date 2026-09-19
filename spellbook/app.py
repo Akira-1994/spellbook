@@ -5,7 +5,7 @@ import secrets
 from typing import Any
 
 from fastapi import Depends, FastAPI, HTTPException, Query, Request
-from fastapi.responses import JSONResponse, Response
+from fastapi.responses import FileResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel, Field
@@ -60,6 +60,11 @@ def create_app(paths: AppPaths | None = None, lifecycle: Lifecycle | None = None
             return spells.get_spell(spell_id)
         except KeyError:
             raise HTTPException(status_code=404, detail="找不到法術") from None
+
+    @app.get("/favicon.ico", include_in_schema=False)
+    def favicon():
+        # Browsers request this path directly, outside the <link> tags.
+        return FileResponse(PACKAGE_ROOT / "web" / "static" / "favicon.ico", media_type="image/x-icon")
 
     @app.get("/health")
     def health():
