@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from spellbook import taxonomy
 from spellbook.database import connect
 from spellbook.repositories.spell_repository import (
     EDITABLE_FIELDS,
@@ -160,6 +161,8 @@ class EditService:
             "UPDATE spells SET alphabet=?,updated_at=?,edited_at=? WHERE id=?",
             (alphabet, now, None if restored else now, spell_id),
         )
+        if "school" in changed:
+            taxonomy.set_schools(connection, entry_id, after["school"])
         search_changes = [field for field in changed if field in SEARCH_FIELDS]
         if search_changes:
             connection.execute(

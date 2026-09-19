@@ -82,15 +82,27 @@ def create_app(paths: AppPaths | None = None) -> FastAPI:
     def summary():
         return spells.summary()
 
+    @app.get("/api/taxonomy")
+    def taxonomy():
+        return spells.taxonomy()
+
     @app.get("/api/spells")
     def list_spells(
         q: str = "",
         letter: str = Query(default="", max_length=1),
         edited: bool = False,
+        school: list[str] = Query(default=[]),
+        class_id: int | None = Query(default=None, alias="class"),
+        level: list[int] = Query(default=[]),
         limit: int = Query(default=PAGE_LIMIT, ge=1, le=PAGE_LIMIT),
         offset: int = Query(default=0, ge=0),
     ):
-        return {"items": spells.list_spells(query=q.strip(), letter=letter, edited_only=edited, limit=limit, offset=offset)}
+        if any(value < 0 or value > 9 for value in level):
+            raise HTTPException(status_code=422, detail="等級必須介於 0 到 9")
+        return spells.list_spells(
+            query=q.strip(), letter=letter, edited_only=edited, schools=school,
+            class_id=class_id, levels=level, limit=limit, offset=offset,
+        )
 
     @app.get("/api/spells/{spell_id}")
     def get_spell(spell_id: str):

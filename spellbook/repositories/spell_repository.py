@@ -7,6 +7,7 @@ from contextlib import closing, contextmanager
 from pathlib import Path
 from typing import Any, Iterator
 
+from spellbook import taxonomy
 from spellbook.database import connect
 
 
@@ -18,6 +19,7 @@ ENTRY_FIELDS = (
 )
 EDITABLE_FIELDS = (*SPELL_FIELDS, *ENTRY_FIELDS)
 PAGE_LIMIT = 200
+SCHOOL_ORDER = {school["key"]: index for index, school in enumerate(taxonomy.schools())}
 
 
 def normalize(value: Any) -> str:
@@ -55,15 +57,15 @@ class SpellRepository:
             ).fetchone()
             return {"total": total, "edited": edited}
 
-    def list_spells(
-        self,
-        *,
-        query: str = "",
-        letter: str = "",
-        edited_only: bool = False,
-        limit: int = PAGE_LIMIT,
-        offset: int = 0,
-    ) -> list[dict[str, Any]]:
+    @staticmethod
+    def _filters(
+        query: str,
+        letter: str,
+        edited_only: bool,
+        schools: list[str],
+        class_id: int | None,
+        levels: list[int],
+    ) -> tuple[str, list[Any]]:
         where = ["s.record_status='active'"]
         params: list[Any] = []
         if query:
@@ -74,17 +76,79 @@ class SpellRepository:
             params.append(letter.upper())
         if edited_only:
             where.append("s.edited_at IS NOT NULL")
-        params.extend([max(1, min(limit, PAGE_LIMIT)), max(0, offset)])
+        if schools:
+            where.append(f"EXISTS(SELECT 1 FROM spell_schools ss WHERE ss.spell_entry_id=e.id AND ss.school IN ({','.join('?' * len(schools))}))")
+            params.extend(schools)
+        if class_id is not None or levels:
+            # Class and level describe the same row: "wizard 3" must not match a
+            # spell that is wizard 5 and cleric 3.
+            conditions = ["cl.spell_entry_id=e.id"]
+            if class_id is not None:
+                conditions.append("cl.class_id=?")
+                params.append(class_id)
+            if levels:
+                conditions.append(f"cl.level IN ({','.join('?' * len(levels))})")
+                params.extend(levels)
+            where.append(f"EXISTS(SELECT 1 FROM spell_class_levels cl WHERE {' AND '.join(conditions)})")
+        return " AND ".join(where), params
+
+    def list_spells(
+        self,
+        *,
+        query: str = "",
+        letter: str = "",
+        edited_only: bool = False,
+        schools: list[str] | None = None,
+        class_id: int | None = None,
+        levels: list[int] | None = None,
+        limit: int = PAGE_LIMIT,
+        offset: int = 0,
+    ) -> dict[str, Any]:
+        schools, levels = schools or [], levels or []
+        where, params = self._filters(query, letter, edited_only, schools, class_id, levels)
+        level_column = "NULL"
+        level_params: list[Any] = []
+        if class_id is not None:
+            level_filter = f" AND level IN ({','.join('?' * len(levels))})" if levels else ""
+            level_column = f"(SELECT MIN(level) FROM spell_class_levels WHERE spell_entry_id=e.id AND class_id=?{level_filter})"
+            level_params = [class_id, *levels]
         sql = f"""
-            SELECT s.id,s.name_zh,s.name_en,s.alphabet,e.school,
-                   s.edited_at IS NOT NULL AS edited
+            SELECT s.id,s.name_zh,s.name_en,s.alphabet,
+                   s.edited_at IS NOT NULL AS edited,
+                   (SELECT GROUP_CONCAT(school) FROM spell_schools WHERE spell_entry_id=e.id) AS schools,
+                   {level_column} AS class_level
             FROM spells s JOIN spell_entries e ON e.spell_id=s.id
-            WHERE {' AND '.join(where)}
+            WHERE {where}
             ORDER BY s.alphabet,upper(s.name_en),e.pdf_page_start
             LIMIT ? OFFSET ?
         """
+        page = [max(1, min(limit, PAGE_LIMIT)), max(0, offset)]
         with closing(self.connect()) as connection:
-            return [dict(row) for row in connection.execute(sql, params)]
+            items = [dict(row) for row in connection.execute(sql, [*level_params, *params, *page])]
+            total = connection.execute(
+                f"SELECT COUNT(*) FROM spells s JOIN spell_entries e ON e.spell_id=s.id WHERE {where}", params
+            ).fetchone()[0]
+        for item in items:
+            item["schools"] = sorted((item["schools"] or "").split(","), key=SCHOOL_ORDER.get) if item["schools"] else []
+        return {"items": items, "total": total}
+
+    def taxonomy(self) -> dict[str, Any]:
+        with closing(self.connect()) as connection:
+            school_counts = dict(connection.execute(
+                """SELECT ss.school,COUNT(DISTINCT s.id) FROM spell_schools ss
+                   JOIN spell_entries e ON e.id=ss.spell_entry_id JOIN spells s ON s.id=e.spell_id
+                   WHERE s.record_status='active' GROUP BY ss.school"""
+            ).fetchall())
+            classes = [dict(row) for row in connection.execute(
+                """SELECT c.id,c.name,c.kind,c.name_en,COUNT(DISTINCT s.id) AS count
+                   FROM class_catalog c
+                   JOIN spell_class_levels l ON l.class_id=c.id
+                   JOIN spell_entries e ON e.id=l.spell_entry_id JOIN spells s ON s.id=e.spell_id
+                   WHERE s.record_status='active'
+                   GROUP BY c.id ORDER BY count DESC,c.sort_order"""
+            )]
+        schools = [dict(school, count=school_counts.get(school["key"], 0)) for school in taxonomy.schools()]
+        return {"schools": [s for s in schools if s["count"] or s["key"] != taxonomy.UNCLASSIFIED], "classes": classes}
 
     def get_spell(self, spell_id: str, connection: sqlite3.Connection | None = None) -> dict[str, Any]:
         owns_connection = connection is None
@@ -106,10 +170,15 @@ class SpellRepository:
             result = dict(row)
             entry_id = result["entry_id"]
             result["levels"] = [dict(value) for value in connection.execute(
-                """SELECT c.name AS class_name,l.spell_level,l.note FROM spell_levels l
-                   JOIN classes c ON c.id=l.class_id WHERE l.spell_entry_id=? ORDER BY c.name,l.spell_level""",
+                """SELECT c.id AS class_id,c.name AS class_name,c.kind,l.level AS spell_level,l.note
+                   FROM spell_class_levels l JOIN class_catalog c ON c.id=l.class_id
+                   WHERE l.spell_entry_id=? ORDER BY c.kind='domain',c.kind='other',c.sort_order,l.level""",
                 (entry_id,),
             )]
+            result["schools"] = sorted(
+                (row[0] for row in connection.execute("SELECT school FROM spell_schools WHERE spell_entry_id=?", (entry_id,))),
+                key=SCHOOL_ORDER.get,
+            )
             result["sources"] = [value[0] for value in connection.execute(
                 """SELECT so.name FROM spell_sources ss JOIN sources so ON so.id=ss.source_id
                    WHERE ss.spell_entry_id=? ORDER BY so.name""",

@@ -1,0 +1,1620 @@
+{
+ "schools": [
+  {
+   "key": "abjuration",
+   "name": "防護",
+   "pattern": "防護|放棄"
+  },
+  {
+   "key": "conjuration",
+   "name": "咒法",
+   "pattern": "咒法|召喚"
+  },
+  {
+   "key": "divination",
+   "name": "預言",
+   "pattern": "預言|占卜"
+  },
+  {
+   "key": "enchantment",
+   "name": "惑控",
+   "pattern": "惑控|附魔|魅控|魅力"
+  },
+  {
+   "key": "evocation",
+   "name": "塑能",
+   "pattern": "塑能|招魂"
+  },
+  {
+   "key": "illusion",
+   "name": "幻術",
+   "pattern": "幻術|幻覺|錯覺"
+  },
+  {
+   "key": "necromancy",
+   "name": "死靈",
+   "pattern": "死靈"
+  },
+  {
+   "key": "transmutation",
+   "name": "變化",
+   "pattern": "變化|嬗變|變形|變身"
+  },
+  {
+   "key": "universal",
+   "name": "通用",
+   "pattern": "共通|通用"
+  }
+ ],
+ "classes": [
+  {
+   "name": "術士",
+   "kind": "class",
+   "name_en": "Sorcerer"
+  },
+  {
+   "name": "法師",
+   "kind": "class",
+   "name_en": "Wizard"
+  },
+  {
+   "name": "牧師",
+   "kind": "class",
+   "name_en": "Cleric"
+  },
+  {
+   "name": "德魯伊",
+   "kind": "class",
+   "name_en": "Druid"
+  },
+  {
+   "name": "吟遊詩人",
+   "kind": "class",
+   "name_en": "Bard"
+  },
+  {
+   "name": "遊俠",
+   "kind": "class",
+   "name_en": "Ranger"
+  },
+  {
+   "name": "聖武士",
+   "kind": "class",
+   "name_en": "Paladin"
+  },
+  {
+   "name": "巫覡",
+   "kind": "class",
+   "name_en": "Wu Jen"
+  },
+  {
+   "name": "刺客",
+   "kind": "class",
+   "name_en": "Assassin"
+  },
+  {
+   "name": "暗黑衛士",
+   "kind": "class",
+   "name_en": "Blackguard"
+  },
+  {
+   "name": "暮刃",
+   "kind": "class",
+   "name_en": "Duskblade"
+  },
+  {
+   "name": "戰法師",
+   "kind": "class",
+   "name_en": "Warmage"
+  },
+  {
+   "name": "和平使者",
+   "kind": "class",
+   "name_en": "Apostle of Peace"
+  },
+  {
+   "name": "欺瞞者",
+   "kind": "class",
+   "name_en": "Beguiler"
+  },
+  {
+   "name": "魔劍客",
+   "kind": "class",
+   "name_en": "Hexblade"
+  },
+  {
+   "name": "崇善秘法師",
+   "kind": "class",
+   "name_en": ""
+  },
+  {
+   "name": "機關術士",
+   "kind": "class",
+   "name_en": "Artificer"
+  },
+  {
+   "name": "修驗者",
+   "kind": "class",
+   "name_en": "Shugenja"
+  },
+  {
+   "name": "格溫哈威夫鬥士",
+   "kind": "class",
+   "name_en": "Champion of Gwynharwyf"
+  },
+  {
+   "name": "法爾賴恩的愛人",
+   "kind": "class",
+   "name_en": "Beloved of Valarian"
+  },
+  {
+   "name": "信使",
+   "kind": "class",
+   "name_en": ""
+  },
+  {
+   "name": "多米艾爾的屠戮者",
+   "kind": "class",
+   "name_en": "Slayer of Domiel"
+  },
+  {
+   "name": "巴拉契艾爾的密使",
+   "kind": "class",
+   "name_en": "Emissary of Barachiel"
+  },
+  {
+   "name": "巴哈姆特封臣",
+   "kind": "class",
+   "name_en": "Vassal of Bahamut"
+  },
+  {
+   "name": "治療師",
+   "kind": "class",
+   "name_en": "Healer"
+  },
+  {
+   "name": "天界騎士",
+   "kind": "class",
+   "name_en": ""
+  },
+  {
+   "name": "保護",
+   "kind": "domain",
+   "name_en": "Protection"
+  },
+  {
+   "name": "力量",
+   "kind": "domain",
+   "name_en": "Strength"
+  },
+  {
+   "name": "土",
+   "kind": "domain",
+   "name_en": "Earth"
+  },
+  {
+   "name": "城市",
+   "kind": "domain",
+   "name_en": "City"
+  },
+  {
+   "name": "太陽",
+   "kind": "domain",
+   "name_en": "Sun"
+  },
+  {
+   "name": "戰爭",
+   "kind": "domain",
+   "name_en": "War"
+  },
+  {
+   "name": "旅行",
+   "kind": "domain",
+   "name_en": "Travel"
+  },
+  {
+   "name": "植物",
+   "kind": "domain",
+   "name_en": "Plant"
+  },
+  {
+   "name": "機運",
+   "kind": "domain",
+   "name_en": "Luck"
+  },
+  {
+   "name": "死亡",
+   "kind": "domain",
+   "name_en": "Death"
+  },
+  {
+   "name": "水",
+   "kind": "domain",
+   "name_en": "Water"
+  },
+  {
+   "name": "混亂",
+   "kind": "domain",
+   "name_en": "Chaos"
+  },
+  {
+   "name": "火",
+   "kind": "domain",
+   "name_en": "Fire"
+  },
+  {
+   "name": "知識",
+   "kind": "domain",
+   "name_en": "Knowledge"
+  },
+  {
+   "name": "詭術",
+   "kind": "domain",
+   "name_en": "Trickery"
+  },
+  {
+   "name": "醫療",
+   "kind": "domain",
+   "name_en": "Healing"
+  },
+  {
+   "name": "魔法",
+   "kind": "domain",
+   "name_en": "Magic"
+  },
+  {
+   "name": "榮耀",
+   "kind": "domain",
+   "name_en": "Glory"
+  },
+  {
+   "name": "氣",
+   "kind": "domain",
+   "name_en": "Air"
+  },
+  {
+   "name": "淨化",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "秩序",
+   "kind": "domain",
+   "name_en": "Law"
+  },
+  {
+   "name": "邪惡",
+   "kind": "domain",
+   "name_en": "Evil"
+  },
+  {
+   "name": "乾渴",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "動物",
+   "kind": "domain",
+   "name_en": "Animal"
+  },
+  {
+   "name": "善良",
+   "kind": "domain",
+   "name_en": "Good"
+  },
+  {
+   "name": "控死",
+   "kind": "domain",
+   "name_en": "Deathbound"
+  },
+  {
+   "name": "歡娛",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "破壞",
+   "kind": "domain",
+   "name_en": "Destruction"
+  },
+  {
+   "name": "饑餓",
+   "kind": "domain",
+   "name_en": "Hunger"
+  },
+  {
+   "name": "黑水",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "天空",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "水族",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "沙",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "神譴",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "不朽",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "喜樂",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "天族",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "宿命",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "盛夏",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "勇氣",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "工藝",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "平衡",
+   "kind": "domain",
+   "name_en": "Balance"
+  },
+  {
+   "name": "月亮",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "機械界",
+   "kind": "domain",
+   "name_en": "Mechanus"
+  },
+  {
+   "name": "瘋狂",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "卓爾",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "深淵",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "神秘",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "精類",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "腐敗",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "蜘蛛",
+   "kind": "domain",
+   "name_en": "Spider"
+  },
+  {
+   "name": "貪婪",
+   "kind": "domain",
+   "name_en": "Greed"
+  },
+  {
+   "name": "隆冬",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "風暴",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "黑暗",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "冥土",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "契約",
+   "kind": "domain",
+   "name_en": "Pact"
+  },
+  {
+   "name": "心靈",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "支配",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "極樂",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "法術",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "疫病",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "競爭",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "筵席",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "苦難",
+   "kind": "domain",
+   "name_en": "Endurance"
+  },
+  {
+   "name": "解放",
+   "kind": "domain",
+   "name_en": "Liberation"
+  },
+  {
+   "name": "造物",
+   "kind": "domain",
+   "name_en": "Creation"
+  },
+  {
+   "name": "龍",
+   "kind": "domain",
+   "name_en": "Dragon"
+  },
+  {
+   "name": "侏儒",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "傳送",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "原野",
+   "kind": "domain",
+   "name_en": "Arborea"
+  },
+  {
+   "name": "夢境",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "守護",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "岩穴",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "憤怒",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "暴食",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "海洋",
+   "kind": "domain",
+   "name_en": "Ocean"
+  },
+  {
+   "name": "溝通",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "無定界",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "狂亂",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "社會",
+   "kind": "domain",
+   "name_en": "Community"
+  },
+  {
+   "name": "符文",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "誓約",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "貿易",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "迅捷",
+   "kind": "domain",
+   "name_en": "Celerity"
+  },
+  {
+   "name": "黑帝斯",
+   "kind": "domain",
+   "name_en": ""
+  },
+  {
+   "name": "聖潔",
+   "kind": "other",
+   "name_en": "Sanctified"
+  }
+ ],
+ "class_aliases": {
+  "不朽": [
+   "不朽"
+  ],
+  "乾渴領域": [
+   "乾渴"
+  ],
+  "侏儒": [
+   "侏儒"
+  ],
+  "保護": [
+   "保護"
+  ],
+  "保護領域": [
+   "保護"
+  ],
+  "信使": [
+   "信使"
+  ],
+  "修驗者": [
+   "修驗者"
+  ],
+  "傳送": [
+   "傳送"
+  ],
+  "冥土": [
+   "冥土"
+  ],
+  "刺客": [
+   "刺客"
+  ],
+  "創造": [
+   "造物"
+  ],
+  "力": [
+   "力量"
+  ],
+  "力量": [
+   "力量"
+  ],
+  "力量領域": [
+   "力量"
+  ],
+  "勇氣": [
+   "勇氣"
+  ],
+  "動物": [
+   "動物"
+  ],
+  "卓爾": [
+   "卓爾"
+  ],
+  "卓爾領域": [
+   "卓爾"
+  ],
+  "原野領域 Arborea": [
+   "原野"
+  ],
+  "吟 游 詩 人": [
+   "吟遊詩人"
+  ],
+  "吟游詩人": [
+   "吟遊詩人"
+  ],
+  "和平使者": [
+   "和平使者"
+  ],
+  "哈格維夫鬥士": [
+   "格溫哈威夫鬥士"
+  ],
+  "善良": [
+   "善良"
+  ],
+  "喜樂": [
+   "喜樂"
+  ],
+  "土": [
+   "土"
+  ],
+  "土領域": [
+   "土"
+  ],
+  "城市": [
+   "城市"
+  ],
+  "城市領域": [
+   "城市"
+  ],
+  "多米尼爾的屠戮者": [
+   "多米艾爾的屠戮者"
+  ],
+  "多米艾爾的屠戮者": [
+   "多米艾爾的屠戮者"
+  ],
+  "多米艾爾的屠戮者（Slayer Of Domiel）": [
+   "多米艾爾的屠戮者"
+  ],
+  "夢境領域": [
+   "夢境"
+  ],
+  "天 族": [
+   "天族"
+  ],
+  "天族": [
+   "天族"
+  ],
+  "天界騎士（Celestia）": [
+   "天界騎士"
+  ],
+  "天空": [
+   "天空"
+  ],
+  "太陽": [
+   "太陽"
+  ],
+  "契約": [
+   "契約"
+  ],
+  "契約領域": [
+   "契約"
+  ],
+  "守護領域": [
+   "守護"
+  ],
+  "宿命": [
+   "宿命"
+  ],
+  "寒冷": [
+   "隆冬"
+  ],
+  "導師": [
+   "修驗者"
+  ],
+  "岩穴": [
+   "岩穴"
+  ],
+  "崇善秘法師": [
+   "崇善秘法師"
+  ],
+  "巡林客": [
+   "遊俠"
+  ],
+  "工匠領域": [
+   "工藝"
+  ],
+  "工藝": [
+   "工藝"
+  ],
+  "巫覡": [
+   "巫覡"
+  ],
+  "巴哈姆特封臣": [
+   "巴哈姆特封臣"
+  ],
+  "巴哈姆特封臣（Vassal Of Bahamut)": [
+   "巴哈姆特封臣"
+  ],
+  "巴拉契艾爾的密使": [
+   "巴拉契艾爾的密使"
+  ],
+  "巴拉契艾爾的密使 emissary of Barachiel": [
+   "巴拉契艾爾的密使"
+  ],
+  "平衡": [
+   "平衡"
+  ],
+  "平衡（Balance ）": [
+   "平衡"
+  ],
+  "平衡（Balance）": [
+   "平衡"
+  ],
+  "德 魯 伊": [
+   "德魯伊"
+  ],
+  "德魯伊": [
+   "德魯伊"
+  ],
+  "德魯伊的": [
+   "德魯伊"
+  ],
+  "德魯依": [
+   "德魯伊"
+  ],
+  "心智": [
+   "心靈"
+  ],
+  "心靈": [
+   "心靈"
+  ],
+  "憤怒": [
+   "憤怒"
+  ],
+  "戰法師": [
+   "戰法師"
+  ],
+  "戰爭": [
+   "戰爭"
+  ],
+  "戰爭領域": [
+   "戰爭"
+  ],
+  "控死領域": [
+   "控死"
+  ],
+  "控死領域（Deathbound）": [
+   "控死"
+  ],
+  "支配": [
+   "支配"
+  ],
+  "旅行": [
+   "旅行"
+  ],
+  "晦暗": [
+   "黑暗"
+  ],
+  "暗黑衛士": [
+   "暗黑衛士"
+  ],
+  "暮刃": [
+   "暮刃"
+  ],
+  "暴食領域": [
+   "暴食"
+  ],
+  "月亮": [
+   "月亮"
+  ],
+  "月亮領域": [
+   "月亮"
+  ],
+  "格溫哈威夫鬥士": [
+   "格溫哈威夫鬥士"
+  ],
+  "格溫哈威夫鬥士（Champion Of Gwynharwyf）": [
+   "格溫哈威夫鬥士"
+  ],
+  "植物": [
+   "植物"
+  ],
+  "植物領域": [
+   "植物"
+  ],
+  "極樂": [
+   "極樂"
+  ],
+  "極樂境": [
+   "極樂"
+  ],
+  "榮耀": [
+   "榮耀"
+  ],
+  "機械界": [
+   "機械界"
+  ],
+  "機械領域（Mechanus）": [
+   "機械界"
+  ],
+  "機運": [
+   "機運"
+  ],
+  "機運領域": [
+   "機運"
+  ],
+  "機關術士": [
+   "機關術士"
+  ],
+  "欺瞞者": [
+   "欺瞞者"
+  ],
+  "歡娛": [
+   "歡娛"
+  ],
+  "歡愉": [
+   "歡娛"
+  ],
+  "死亡": [
+   "死亡"
+  ],
+  "毀滅": [
+   "破壞"
+  ],
+  "氣": [
+   "氣"
+  ],
+  "水": [
+   "水"
+  ],
+  "水族領域": [
+   "水族"
+  ],
+  "沙領域": [
+   "沙"
+  ],
+  "治療": [
+   "醫療"
+  ],
+  "治療師": [
+   "治療師"
+  ],
+  "法師": [
+   "法師"
+  ],
+  "法師/巫師": [
+   "術士",
+   "法師"
+  ],
+  "法師/法師": [
+   "術士",
+   "法師"
+  ],
+  "法師/術士": [
+   "術士",
+   "法師"
+  ],
+  "法爾賴恩的愛人": [
+   "法爾賴恩的愛人"
+  ],
+  "法爾賴恩的愛人（Beloved of Valarian ）": [
+   "法爾賴恩的愛人"
+  ],
+  "法術領域": [
+   "法術"
+  ],
+  "海洋領域": [
+   "海洋"
+  ],
+  "淨化": [
+   "淨化"
+  ],
+  "淨化領域": [
+   "淨化"
+  ],
+  "深淵": [
+   "深淵"
+  ],
+  "混亂": [
+   "混亂"
+  ],
+  "混沌": [
+   "混亂"
+  ],
+  "溝通": [
+   "溝通"
+  ],
+  "火": [
+   "火"
+  ],
+  "無定界": [
+   "無定界"
+  ],
+  "牧師": [
+   "牧師"
+  ],
+  "狂亂": [
+   "狂亂"
+  ],
+  "疫病": [
+   "疫病"
+  ],
+  "瘋狂": [
+   "瘋狂"
+  ],
+  "瘟疫": [
+   "疫病"
+  ],
+  "瘟疫領域": [
+   "疫病"
+  ],
+  "盛夏領域": [
+   "盛夏"
+  ],
+  "督依德": [
+   "德魯伊"
+  ],
+  "知識": [
+   "知識"
+  ],
+  "砂領域（Sand ）": [
+   "沙"
+  ],
+  "破壞": [
+   "破壞"
+  ],
+  "社會 Community": [
+   "社會"
+  ],
+  "神秘": [
+   "神秘"
+  ],
+  "神譴": [
+   "神譴"
+  ],
+  "秩序": [
+   "秩序"
+  ],
+  "秩序領域": [
+   "秩序"
+  ],
+  "競爭": [
+   "競爭"
+  ],
+  "競爭領域": [
+   "競爭"
+  ],
+  "符文領域": [
+   "符文"
+  ],
+  "筵席": [
+   "筵席"
+  ],
+  "精類": [
+   "精類"
+  ],
+  "聖武士": [
+   "聖武士"
+  ],
+  "聖潔": [
+   "聖潔"
+  ],
+  "聖騎士": [
+   "聖武士"
+  ],
+  "腐 敗": [
+   "腐敗"
+  ],
+  "腐敗": [
+   "腐敗"
+  ],
+  "苦難": [
+   "苦難"
+  ],
+  "苦難 Endurance": [
+   "苦難"
+  ],
+  "薄暮劍士": [
+   "暮刃"
+  ],
+  "蜘蛛": [
+   "蜘蛛"
+  ],
+  "蜘蛛領域": [
+   "蜘蛛"
+  ],
+  "術 士/法師": [
+   "術士",
+   "法師"
+  ],
+  "術/法": [
+   "術士",
+   "法師"
+  ],
+  "術士": [
+   "術士"
+  ],
+  "術士/法師": [
+   "術士",
+   "法師"
+  ],
+  "術士/法術": [
+   "術士",
+   "法師"
+  ],
+  "術士法師": [
+   "術士",
+   "法師"
+  ],
+  "術者/法師": [
+   "術士",
+   "法師"
+  ],
+  "解放領域": [
+   "解放"
+  ],
+  "解放領域（Liberation）": [
+   "解放"
+  ],
+  "詩人": [
+   "吟遊詩人"
+  ],
+  "詭術": [
+   "詭術"
+  ],
+  "詭術領域": [
+   "詭術"
+  ],
+  "詭計": [
+   "詭術"
+  ],
+  "誓約": [
+   "誓約"
+  ],
+  "貪婪": [
+   "貪婪"
+  ],
+  "貪婪領域（Greed）": [
+   "貪婪"
+  ],
+  "貿易領域": [
+   "貿易"
+  ],
+  "迅捷領域（Celerity domain）": [
+   "迅捷"
+  ],
+  "造物領域（Creation Domain）": [
+   "造物"
+  ],
+  "遊俠": [
+   "遊俠"
+  ],
+  "邪惡": [
+   "邪惡"
+  ],
+  "醫療": [
+   "醫療"
+  ],
+  "隆冬": [
+   "隆冬"
+  ],
+  "風": [
+   "氣"
+  ],
+  "風暴": [
+   "風暴"
+  ],
+  "饑餓領域": [
+   "饑餓"
+  ],
+  "饑餓領域（Hunger）": [
+   "饑餓"
+  ],
+  "魔劍": [
+   "魔劍客"
+  ],
+  "魔劍士": [
+   "魔劍客"
+  ],
+  "魔劍客": [
+   "魔劍客"
+  ],
+  "魔法": [
+   "魔法"
+  ],
+  "魔法師/巫師": [
+   "術士",
+   "法師"
+  ],
+  "魔法領域": [
+   "魔法"
+  ],
+  "黑帝斯": [
+   "黑帝斯"
+  ],
+  "黑暗": [
+   "黑暗"
+  ],
+  "黑暗守衛": [
+   "暗黑衛士"
+  ],
+  "黑暗衛士": [
+   "暗黑衛士"
+  ],
+  "黑水領域": [
+   "黑水"
+  ],
+  "黑衛": [
+   "暗黑衛士"
+  ],
+  "黑衛士": [
+   "暗黑衛士"
+  ],
+  "龍": [
+   "龍"
+  ],
+  "龍領域": [
+   "龍"
+  ],
+  "（Deathbound）控死領域": [
+   "控死"
+  ],
+  "（風暴之書）黑水領域": [
+   "黑水"
+  ]
+ },
+ "dropped_class_aliases": [],
+ "level_fixes": {
+  "ent_01M2SPSHB7MRZQZVBWVTSE88EY": [
+   [
+    "吟遊詩人",
+    6
+   ],
+   [
+    "牧師",
+    7
+   ],
+   [
+    "宿命",
+    7
+   ],
+   [
+    "術士",
+    8
+   ],
+   [
+    "法師",
+    8
+   ]
+  ],
+  "ent_01M2SPSHBA0PY7T7A02FRE3957": [
+   [
+    "暗黑衛士",
+    4
+   ],
+   [
+    "牧師",
+    5
+   ],
+   [
+    "德魯伊",
+    5
+   ]
+  ],
+  "ent_01M2SPSHBBJCJ7C68YSSMGDEMT": [
+   [
+    "暗黑衛士",
+    1
+   ],
+   [
+    "牧師",
+    1
+   ],
+   [
+    "聖武士",
+    1
+   ]
+  ],
+  "ent_01M2SPSHBFX6EGG8TFZ5K5FJYJ": [
+   [
+    "牧師",
+    7
+   ],
+   [
+    "心靈",
+    7
+   ]
+  ],
+  "ent_01M2SPSHBGGD63GPK34T1QR2DX": [
+   [
+    "牧師",
+    8
+   ],
+   [
+    "德魯伊",
+    7
+   ],
+   [
+    "術士",
+    6
+   ],
+   [
+    "法師",
+    6
+   ]
+  ],
+  "ent_01M2SPSHC2EX04R6K2YE4FX47Y": [
+   [
+    "牧師",
+    2
+   ]
+  ],
+  "ent_01M2SPSHCTZBQ5GMFR4ES5EW56": [
+   [
+    "吟遊詩人",
+    4
+   ],
+   [
+    "術士",
+    4
+   ],
+   [
+    "法師",
+    4
+   ]
+  ],
+  "ent_01M2SPSHDA12C9XDEWWJKDFVJT": [
+   [
+    "牧師",
+    3
+   ],
+   [
+    "德魯伊",
+    3
+   ]
+  ],
+  "ent_01M2SPSHDKPTA6D6P86AY6V4M1": [
+   [
+    "術士",
+    2
+   ],
+   [
+    "法師",
+    2
+   ],
+   [
+    "水族",
+    2
+   ],
+   [
+    "德魯伊",
+    2
+   ]
+  ],
+  "ent_01M2SPSHFF9JR4WW4X2M4VP29W": [
+   [
+    "聖武士",
+    1
+   ]
+  ],
+  "ent_01M2SPSHFTDAJCVYCZ9DRPK52A": [
+   [
+    "貪婪",
+    8
+   ],
+   [
+    "術士",
+    5
+   ],
+   [
+    "法師",
+    5
+   ]
+  ],
+  "ent_01M2SPSHGQKN78RK4ZXMRSX7TZ": [
+   [
+    "牧師",
+    4
+   ],
+   [
+    "聖武士",
+    4
+   ]
+  ],
+  "ent_01M2SPSHHC5A8QQ626FHAVXDJY": [
+   [
+    "牧師",
+    5
+   ],
+   [
+    "契約",
+    5
+   ]
+  ],
+  "ent_01M2SPSHJCQY7VS6Q6V8TDP3SX": [
+   [
+    "吟遊詩人",
+    4
+   ],
+   [
+    "術士",
+    4
+   ],
+   [
+    "法師",
+    4
+   ]
+  ],
+  "ent_01M2SPSHJP6473RE9S600VF27R": [
+   [
+    "德魯伊",
+    7
+   ],
+   [
+    "海洋",
+    7
+   ],
+   [
+    "術士",
+    7
+   ],
+   [
+    "法師",
+    7
+   ]
+  ]
+ },
+ "school_overrides": {
+  "ent_01M2SPSHAXN25PHVRKPFQ7EDP6": {
+   "text": "",
+   "schools": [
+    "transmutation"
+   ]
+  },
+  "ent_01M2SPSHBG7ME0AG84B30Q2BDX": {
+   "text": "塑能/變化［寒冷］",
+   "schools": [
+    "evocation",
+    "transmutation"
+   ]
+  },
+  "ent_01M2SPSHBGT8KEYJ1DB5J26N1J": {
+   "text": "",
+   "schools": [
+    "evocation"
+   ]
+  },
+  "ent_01M2SPSHC83PFDTAQKCF5CZT05": {
+   "text": "",
+   "schools": [
+    "necromancy"
+   ]
+  },
+  "ent_01M2SPSHCBKAEVR6Y9Z287TX09": {
+   "text": "附魔系[脅迫]（心靈影響）",
+   "schools": [
+    "evocation"
+   ]
+  },
+  "ent_01M2SPSHCCVGCNEGDTXJY04Q23": {
+   "text": "招魂",
+   "schools": [
+    "evocation"
+   ]
+  },
+  "ent_01M2SPSHD1027DHZ717M4W2SCE": {
+   "text": "咒法系/死靈系",
+   "schools": [
+    "conjuration",
+    "necromancy"
+   ]
+  },
+  "ent_01M2SPSHD35XNSJFCSZZPRBSTX": {
+   "text": "幻術系（魅影幻覺）[影響心靈]；見下文",
+   "schools": [
+    "illusion"
+   ]
+  },
+  "ent_01M2SPSHD60YBPY4QBTS1F35KX": {
+   "text": "法術抗力：可 塑能系",
+   "schools": [
+    "evocation"
+   ]
+  },
+  "ent_01M2SPSHDA12C9XDEWWJKDFVJT": {
+   "text": "塑能系 [見下]（完美神力[酸，冷，火，電或音波]）",
+   "schools": [
+    "evocation"
+   ]
+  },
+  "ent_01M2SPSHDHB95E9E8YWPXGB34Y": {
+   "text": "變化/預言",
+   "schools": [
+    "divination",
+    "transmutation"
+   ]
+  },
+  "ent_01M2SPSHDMJFNT73CW8P0MBWRB": {
+   "text": "",
+   "schools": [
+    "transmutation"
+   ]
+  },
+  "ent_01M2SPSHDNFA6MPMXSP2H0H55D": {
+   "text": "咒法（傳送）/塑能［火］",
+   "schools": [
+    "conjuration",
+    "evocation"
+   ]
+  },
+  "ent_01M2SPSHEWDTDXEW2G2N8XASPG": {
+   "text": "",
+   "schools": [
+    "transmutation"
+   ]
+  },
+  "ent_01M2SPSHEY08ZB9S2GAKFAE8SQ": {
+   "text": "咒法系/死靈系",
+   "schools": [
+    "conjuration",
+    "necromancy"
+   ]
+  },
+  "ent_01M2SPSHEY1TZE2XRMJ1N26MGZ": {
+   "text": "咒法系/塑能系",
+   "schools": [
+    "conjuration",
+    "evocation"
+   ]
+  },
+  "ent_01M2SPSHF32H3WBH7V94Y25WF4": {
+   "text": "塑能［電］/變化",
+   "schools": [
+    "evocation",
+    "transmutation"
+   ]
+  },
+  "ent_01M2SPSHFRPNXXZNDH1NW2Y2RF": {
+   "text": "變化系/塑能系［氣］",
+   "schools": [
+    "evocation",
+    "transmutation"
+   ]
+  },
+  "ent_01M2SPSHFYVY19MTZ210T7CV0Y": {
+   "text": "",
+   "schools": [
+    "abjuration"
+   ]
+  },
+  "ent_01M2SPSHGPW97V2BFWYKRGMCWY": {
+   "text": "咒法系（創造）/死靈系",
+   "schools": [
+    "conjuration",
+    "necromancy"
+   ]
+  },
+  "ent_01M2SPSHGWS8V3NWA6VZ53DK92": {
+   "text": "",
+   "schools": [
+    "illusion"
+   ]
+  },
+  "ent_01M2SPSHGX3RVG7F22HEY8XX96": {
+   "text": "",
+   "schools": [
+    "illusion"
+   ]
+  },
+  "ent_01M2SPSHGY5CEK789CY0W4QJ8A": {
+   "text": "招魂",
+   "schools": [
+    "evocation"
+   ]
+  },
+  "ent_01M2SPSHGZZ9HZS0DMP1D1M7HS": {
+   "text": "招魂",
+   "schools": [
+    "evocation"
+   ]
+  },
+  "ent_01M2SPSHH0S9CMFZ7FPENSFNRQ": {
+   "text": "放棄",
+   "schools": [
+    "abjuration"
+   ]
+  },
+  "ent_01M2SPSHH0XW07MDZKSB9WN57E": {
+   "text": "招魂",
+   "schools": [
+    "evocation"
+   ]
+  },
+  "ent_01M2SPSHH1P4CVBJ544GADRSTX": {
+   "text": "招魂",
+   "schools": [
+    "evocation"
+   ]
+  },
+  "ent_01M2SPSHH1ZJ4JF1PA7WKY41N2": {
+   "text": "魅力",
+   "schools": [
+    "enchantment"
+   ]
+  },
+  "ent_01M2SPSHH35TPEXR1K4A70K3VF": {
+   "text": "防護/塑能系",
+   "schools": [
+    "abjuration",
+    "evocation"
+   ]
+  },
+  "ent_01M2SPSHH3CBF8YAAZYZGKRF2Z": {
+   "text": "招魂",
+   "schools": [
+    "evocation"
+   ]
+  },
+  "ent_01M2SPSHHABHY3RGWBMVKZJXH6": {
+   "text": "咒法系 （召喚） [見下文]",
+   "schools": [
+    "conjuration"
+   ]
+  },
+  "ent_01M2SPSHHHAJA9C0YJCDECYCQZ": {
+   "text": "10 10 塑能系",
+   "schools": [
+    "evocation"
+   ]
+  },
+  "ent_01M2SPSHJHPX1AENTSDQ2P23R2": {
+   "text": "預言/塑能［光］",
+   "schools": [
+    "divination",
+    "evocation"
+   ]
+  },
+  "ent_01M2SPSHJRP5DVH3AKPYWR9GZW": {
+   "text": "塑能［氣］/變化",
+   "schools": [
+    "evocation",
+    "transmutation"
+   ]
+  }
+ }
+}

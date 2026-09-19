@@ -11,6 +11,7 @@ a = Analysis(
     binaries=[],
     datas=[
         (str(ROOT / "spellbook" / "web"), "spellbook/web"),
+        (str(ROOT / "spellbook" / "taxonomy.json"), "spellbook"),
         (str(ROOT / "data" / "spellbook.sqlite"), "data"),
     ],
     hiddenimports=[

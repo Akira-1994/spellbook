@@ -18,6 +18,7 @@ dev = [
   "httpx>=0.28,<1",
   "pytest>=8.3,<9",
   "pytest-cov>=6,<7",
+  "openpyxl>=3.1,<4",
   "pyinstaller>=6.11,<7",
 ]
 
@@ -28,7 +29,7 @@ spellbook = "spellbook.launcher:main"
 include = ["spellbook*"]
 
 [tool.setuptools.package-data]
-spellbook = ["web/templates/*.html", "web/static/*"]
+spellbook = ["taxonomy.json", "web/templates/*.html", "web/static/*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

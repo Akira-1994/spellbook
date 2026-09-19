@@ -69,3 +69,13 @@
 | `replaced_by` | 取代它的動作：`edit`、`rollback` 或 `restore_original` |
 
 「還原成原始內容」一律從種子資料庫讀取，所以原始內容永遠不會因為超過 5 個版本而遺失。
+
+## 學派與職業正規化
+
+原始資料的 `school` 有約 100 種寫法、`classes` 有 207 種職業寫法（含領域、錯字與擷取錯誤）。正規化結果由人工審閱的 [taxonomy-review.xlsx](../data/taxonomy/taxonomy-review.xlsx) 決定，再由 `scripts/import_taxonomy.py` 轉成 `spellbook/taxonomy.json`。應用程式每次啟動都依它重建下列衍生表（migration 4），不修改原始文字：
+
+- `class_catalog`：113 個標準職業／領域（`kind` 為 `class`、`domain` 或 `other`）。「術士/法師」這類寫法同時對應術士與法師。
+- `spell_class_levels`：法術在各標準職業的等級。15 個職業與等級黏在一起或混入其他書版本的法術，改用審閱過的正確等級。
+- `spell_schools`：法術的標準學派（`abjuration`、`conjuration`、`divination`、`enchantment`、`evocation`、`illusion`、`necromancy`、`transmutation`、`universal`，無法判斷時為 `unclassified`）。跨學派法術會有多筆。原文把 Evocation 譯成「招魂」、Abjuration 譯成「放棄」、Enchantment 譯成「魅力」，規則已將它們歸回正確學派。使用者編輯學派文字時會立即重新計算。
+
+修改分類的流程：編輯活頁簿 → 執行 `.venv\Scripts\python.exe -m scripts.import_taxonomy` → 重新啟動應用程式。

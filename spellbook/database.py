@@ -5,10 +5,11 @@ import sqlite3
 from contextlib import closing
 from datetime import datetime, timezone
 
+from spellbook import taxonomy
 from spellbook.config import AppPaths
 
 
-SCHEMA_VERSION = 3
+SCHEMA_VERSION = 4
 
 # Tables left over from the retired review workflow. They were never populated
 # in shipped data, so dropping them loses nothing.
@@ -65,7 +66,9 @@ def migrate(database) -> None:
         for table in LEGACY_TABLES:
             connection.execute(f"DROP TABLE IF EXISTS {table}")
         connection.executescript(MIGRATION)
-        connection.execute(
+        taxonomy.refresh(connection)
+        applied = datetime.now(timezone.utc).isoformat()
+        connection.executemany(
             "INSERT OR IGNORE INTO schema_migrations(version,applied_at) VALUES(?,?)",
-            (SCHEMA_VERSION, datetime.now(timezone.utc).isoformat()),
+            [(version, applied) for version in range(3, SCHEMA_VERSION + 1)],
         )

@@ -54,7 +54,7 @@ def test_edit_updates_content_search_and_records_previous_version(service):
     with closing(service.spells.connect()) as connection:
         hit = connection.execute("SELECT spell_id FROM spell_search WHERE spell_search MATCH '魔魚之咒'").fetchall()
     assert [row[0] for row in hit] == [SPELL_ID]
-    assert service.spells.list_spells(edited_only=True)[0]["id"] == SPELL_ID
+    assert service.spells.list_spells(edited_only=True)["items"][0]["id"] == SPELL_ID
 
 
 def test_keeps_only_the_latest_versions(service):
