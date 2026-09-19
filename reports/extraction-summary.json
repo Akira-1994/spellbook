@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T07:38:10.125836+00:00",
+  "generated_at": "2026-09-19T15:23:59.746960+00:00",
   "source_pdf": "spellbook_doc_v1.1.pdf",
   "included_pdf_pages": {
     "start": 192,
@@ -17,17 +17,17 @@
       "reason": "summon appendix"
     }
   ],
-  "spell_count": 2360,
-  "fts_row_count": 2360,
+  "spell_count": 2373,
+  "fts_row_count": 2373,
   "alphabet_counts": {
-    "A": 140,
-    "B": 149,
+    "A": 141,
+    "B": 153,
     "C": 213,
-    "D": 194,
-    "E": 104,
+    "D": 196,
+    "E": 105,
     "F": 127,
     "G": 58,
-    "H": 98,
+    "H": 102,
     "I": 101,
     "J": 10,
     "K": 17,
@@ -39,7 +39,7 @@
     "Q": 7,
     "R": 144,
     "S": 351,
-    "T": 86,
+    "T": 87,
     "U": 30,
     "V": 38,
     "W": 100,

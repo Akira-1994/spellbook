@@ -45,7 +45,7 @@ def prepare_database(paths: AppPaths) -> None:
     paths.data_dir.mkdir(parents=True, exist_ok=True)
     if not paths.database.exists():
         _copy_seed(paths)
-    migrate(paths.database)
+    migrate(paths.database, paths.seed_database)
 
 
 def _copy_seed(paths: AppPaths) -> None:
@@ -58,7 +58,7 @@ def _copy_seed(paths: AppPaths) -> None:
     os.replace(temporary, paths.database)
 
 
-def migrate(database) -> None:
+def migrate(database, seed_database=None) -> None:
     with closing(connect(database)) as connection, connection:
         columns = {row[1] for row in connection.execute("PRAGMA table_info(spells)")}
         if "edited_at" not in columns:
@@ -66,7 +66,7 @@ def migrate(database) -> None:
         for table in LEGACY_TABLES:
             connection.execute(f"DROP TABLE IF EXISTS {table}")
         connection.executescript(MIGRATION)
-        seed_fixes.apply(connection)
+        seed_fixes.apply(connection, seed_database)
         taxonomy.refresh(connection)
         applied = datetime.now(timezone.utc).isoformat()
         connection.executemany(

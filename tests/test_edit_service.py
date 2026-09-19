@@ -36,7 +36,7 @@ def test_first_run_copies_seed_and_drops_review_tables(paths):
     prepare_database(paths)  # idempotent on later launches
     with closing(sqlite3.connect(paths.database)) as connection:
         tables = {row[0] for row in connection.execute("SELECT name FROM sqlite_master WHERE type='table'")}
-        assert connection.execute("SELECT COUNT(*) FROM spells").fetchone()[0] == 2360
+        assert connection.execute("SELECT COUNT(*) FROM spells").fetchone()[0] == 2373
     assert "spell_versions" in tables
     assert not tables & {"review_events", "review_checks", "review_conflicts", "duplicate_decisions"}
     assert seed_digest(paths) == before

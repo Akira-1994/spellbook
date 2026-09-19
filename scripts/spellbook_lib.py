@@ -58,6 +58,9 @@ FIELD_LABELS = {
     "持續": "duration",
     "豁免": "saving_throw",
     "抗力": "spell_resistance",
+    "法術等級": "levels",
+    "作用目標": "target_text",
+    "你的目標": "target_text",
 }
 
 # A few entries use a semicolon instead of a colon, and some labels are typeset
@@ -71,6 +74,14 @@ FIELD_PATTERN = re.compile(r"^\s*(" + _LABEL_ALTERNATIVES + r")\s*" + FIELD_SEPA
 # How far past a non-field line to look for the remaining fields, for tables
 # the PDF layout placed in the middle of the field block.
 FIELD_TABLE_LOOKAHEAD = 30
+# A spell heading on a line of its own: 中文名（English）（source）…
+SPELL_HEADING = re.compile(r"^[\u4e00-\u9fff][\u4e00-\u9fff ／/·‧，,]{0,18}\s*[（(]\s*[A-Za-z][^（）()]{1,60}[）)](\s*[（(][^（）()]{1,20}[）)])*$")
+SCHOOL_LINE = re.compile(
+    r"^(防護|咒法|預言|惑控|附魔|塑能|幻術|死靈|變化|嬗變|共通|通用|召喚|"
+    r"Abjuration|Conjuration|Divination|Enchantment|Evocation|Illusion|Necromancy|Transmutation|Universal)"
+)
+# "死者之書：刺客 2，…" – a level list prefixed by the book it comes from.
+LEVEL_SOURCE_PREFIX = re.compile(r"^[（(]?[^：:（）()]{1,8}[）)]?\s*[：:]\s*")
 RANGE_WORDS = re.compile(r"^(接觸|個人|近距|中距|中等|遠距|長距|無限|視線)")
 LETTER_PATTERN = re.compile(r"^\s*([A-Z])\s*[：:]\s*$")
 PAREN_PATTERN = re.compile(r"[（(]([^()（）]+)[）)]")
@@ -272,6 +283,9 @@ def _looks_like_heading(line: str) -> bool:
         return True
     if SCHOOL_ZH_PATTERN.match(text) or SCHOOL_EN_PATTERN.match(text):
         return False
+    # "幻術系（幽影幻術）（Shadow）" is a school line even with English in it.
+    if SCHOOL_LINE.match(text) and re.match(r"^\S{1,4}系", text):
+        return False
     groups = PAREN_PATTERN.findall(text)
     return bool(groups and any(re.search(r"[A-Za-z]", group) for group in groups))
 
@@ -340,9 +354,27 @@ def _parse_block(alphabet: str, block: Sequence[LineRef], level_index_in_block: 
     name_zh, name_en, sources = _parse_heading(heading)
 
     school_lines = [normalize_space(item.text) for item in block[1:level_index_in_block] if item.text.strip()]
+    field_block = [item.text for item in block[level_index_in_block:]]
+    # A level label wrapped across lines: "…[強酸] 等" / "級：術士/法師 0".
+    if school_lines and school_lines[-1].endswith("等") and field_block and field_block[0].lstrip().startswith("級"):
+        school_lines[-1] = school_lines[-1][:-1].rstrip()
+        field_block[0] = "等" + field_block[0].lstrip()
     school, subschool, descriptors = _parse_school(" ".join(school_lines))
 
-    fields, description_source = parse_fields([item.text for item in block[level_index_in_block:]])
+    # Unlabelled level lines ("牧師 8，德魯伊 9", "死者之書：刺客 2…") precede the
+    # first field; the first gives the levels, other versions stay as text.
+    extra_description: list[str] = []
+    first_field = next((i for i, text in enumerate(field_block) if _field_match(normalize_space(text))), None)
+    if first_field and not any(
+        (m := _field_match(normalize_space(text))) and field_key(m) == "levels" for text in field_block[:first_field + 1]
+    ):
+        unlabelled = [normalize_space(text) for text in field_block[:first_field] if text.strip()]
+        if unlabelled:
+            field_block = ["等級：" + LEVEL_SOURCE_PREFIX.sub("", unlabelled[0])] + field_block[first_field:]
+            extra_description = unlabelled[1:]
+
+    fields, description_source = parse_fields(field_block)
+    description_source = extra_description + list(description_source)
     description_lines = [normalize_space(text) for text in description_source if text.strip() and not LETTER_PATTERN.match(text)]
     description = "\n".join(description_lines).strip()
     description_en = description if _mostly_english(description) else ""
@@ -393,6 +425,33 @@ def _parse_block(alphabet: str, block: Sequence[LineRef], level_index_in_block: 
     )
 
 
+def _nonempty_after(lines: Sequence[LineRef], index: int, count: int) -> list[int]:
+    found = []
+    for position in range(index + 1, len(lines)):
+        if lines[position].text.strip():
+            found.append(position)
+            if len(found) == count:
+                break
+    return found
+
+
+def _headed_spell_start(lines: Sequence[LineRef], index: int) -> int | None:
+    """Detect a spell whose level line has no label ("牧師 8，德魯伊 9") or a
+    wrapped one, which the level-line scan cannot see: a heading, a school
+    line, then fields. Returns the index of the line after the school line."""
+    text = normalize_space(lines[index].text)
+    if len(text) > 80 or not SPELL_HEADING.match(text):
+        return None
+    following = _nonempty_after(lines, index, 6)
+    if not following or not SCHOOL_LINE.match(normalize_space(lines[following[0]].text)):
+        return None
+    field_lines = sum(
+        1 for position in following[1:]
+        if (match := _field_match(normalize_space(lines[position].text))) and field_key(match) != "levels"
+    )
+    return following[0] + 1 if field_lines >= 2 else None
+
+
 def parse_pages(pages: Iterable[tuple[int, str]]) -> list[ParsedSpell]:
     lines: list[LineRef] = []
     for page_number, page_text in pages:
@@ -412,6 +471,22 @@ def parse_pages(pages: Iterable[tuple[int, str]]) -> list[ParsedSpell]:
         if header_index is None:
             continue
         starts.append((header_index, index, current_letter))
+
+    # Spells without a labelled level line, found from heading + school line.
+    letters = {}
+    current_letter = ""
+    for index, item in enumerate(lines):
+        if letter_match := LETTER_PATTERN.match(item.text):
+            current_letter = letter_match.group(1)
+        letters[index] = current_letter
+    known_headers = {start[0] for start in starts}
+    for index in range(len(lines)):
+        if index in known_headers:
+            continue
+        level_index = _headed_spell_start(lines, index)
+        if level_index is not None:
+            starts.append((index, level_index, letters[index]))
+    starts.sort()
 
     unique_starts: list[tuple[int, int, str]] = []
     seen = set()

@@ -121,10 +121,12 @@ def apply(connection: sqlite3.Connection, changes: list[dict]) -> None:
         )
         if "description_zh" in diff:
             connection.execute("UPDATE spell_search SET description_zh=? WHERE spell_id=?", (diff["description_zh"][1], change["spell_id"]))
-    FIXES.write_text(
-        json.dumps({"id": FIX_ID, "entries": {c["entry_id"]: c["diff"] for c in changes}}, ensure_ascii=False, indent=1) + "\n",
-        encoding="utf-8",
-    )
+    # Fix sets apply in order; this one comes first, before any later sets.
+    data = json.loads(FIXES.read_text(encoding="utf-8")) if FIXES.exists() else {"sets": []}
+    fix_set = {"id": FIX_ID, "entries": {c["entry_id"]: c["diff"] for c in changes}}
+    others = [s for s in data["sets"] if s["id"] != FIX_ID]
+    data["sets"] = [fix_set, *others]
+    FIXES.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
 
 def main() -> None:

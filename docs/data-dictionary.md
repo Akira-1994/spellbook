@@ -79,3 +79,13 @@
 - `spell_schools`：法術的標準學派（`abjuration`、`conjuration`、`divination`、`enchantment`、`evocation`、`illusion`、`necromancy`、`transmutation`、`universal`，無法判斷時為 `unclassified`）。跨學派法術會有多筆。原文把 Evocation 譯成「招魂」、Abjuration 譯成「放棄」、Enchantment 譯成「魅力」，規則已將它們歸回正確學派。使用者編輯學派文字時會立即重新計算。
 
 修改分類的流程：編輯活頁簿 → 執行 `.venv\Scripts\python.exe -m scripts.import_taxonomy` → 重新啟動應用程式。
+
+## 種子資料修正
+
+首次擷取有兩類問題，已用目前的擷取程式修正種子資料：
+
+- **欄位混進說明**：欄位名稱被換行切斷、用分號或其他譯法（作用距離、施展時間、時效…），或正文表格排在欄位之間時，後續欄位全被當成說明。`scripts/repair_fields.py` 依每筆的 `raw_text` 重新解析，修正了 310 個法術，逐項變更見 `reports/field-repair.csv`。
+- **漏掉的法術**：等級行寫成「法術等級」、沒有標籤或被換行切斷的法術沒被偵測到，內容留在前一個法術的說明尾端；學派行帶英文括號時被誤當成標題（名稱變成「變化系」「幻術系」）。`scripts/add_missing_spells.py` 比對重新擷取的結果，新增 13 個法術、更正 3 個名稱，並清掉前一個法術說明裡夾帶的內容。
+
+使用者資料庫是首次執行時的種子副本，不會自動得到這些修正，因此 `spellbook/seed_fixes.json` 依序記錄每批修正，應用程式每次啟動時套用：欄位與名稱只在仍是舊值時才更新（使用者編輯過的保留），新增的法術從種子複製。
+
