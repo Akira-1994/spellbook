@@ -10,15 +10,15 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel, Field
 
-from spellbook_reviewer.config import EditorSettings, ProjectPaths
-from spellbook_reviewer.repositories.draft_repository import DraftRepository
-from spellbook_reviewer.repositories.event_repository import EventRepository
-from spellbook_reviewer.repositories.spell_repository import SpellRepository
-from spellbook_reviewer.security import LocalOnlyMiddleware, new_csrf_token, require_csrf
-from spellbook_reviewer.repositories.git_repository import GitError
-from spellbook_reviewer.services.commit_service import CommitService
-from spellbook_reviewer.services.review_service import ReviewError, ReviewService, StaleRevisionError
-from spellbook_reviewer.services.replay_service import ReplayService
+from spellbook.config import EditorSettings, ProjectPaths
+from spellbook.repositories.draft_repository import DraftRepository
+from spellbook.repositories.event_repository import EventRepository
+from spellbook.repositories.spell_repository import SpellRepository
+from spellbook.security import LocalOnlyMiddleware, new_csrf_token, require_csrf
+from spellbook.repositories.git_repository import GitError
+from spellbook.services.commit_service import CommitService
+from spellbook.services.review_service import ReviewError, ReviewService, StaleRevisionError
+from spellbook.services.replay_service import ReplayService
 
 
 PACKAGE_ROOT = Path(__file__).parent

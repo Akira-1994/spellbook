@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from spellbook_reviewer.domain.events import FieldChange, ReviewEvent
+from spellbook.domain.events import FieldChange, ReviewEvent
 
 
 class ReviewEventTests(unittest.TestCase):

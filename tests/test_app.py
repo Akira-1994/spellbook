@@ -2,7 +2,7 @@ import shutil
 
 from fastapi.testclient import TestClient
 
-from spellbook_reviewer.app import create_app
+from spellbook.app import create_app
 
 
 def make_project(tmp_path, monkeypatch):

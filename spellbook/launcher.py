@@ -16,8 +16,8 @@ if sys.stderr is None:
 
 import uvicorn
 
-from spellbook_reviewer.app import create_app, default_project_root
-from spellbook_reviewer.config import ProjectPaths
+from spellbook.app import create_app, default_project_root
+from spellbook.config import ProjectPaths
 
 
 def _free_port() -> int:

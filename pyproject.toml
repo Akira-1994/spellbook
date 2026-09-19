@@ -3,7 +3,7 @@ requires = ["setuptools>=75", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "spellbook-reviewer"
+name = "spellbook"
 version = "0.1.0"
 description = "Offline local review workspace for the Spellbook A-Z database"
 requires-python = ">=3.12"
@@ -24,13 +24,13 @@ dev = [
 ]
 
 [project.scripts]
-spellbook-reviewer = "spellbook_reviewer.launcher:main"
+spellbook = "spellbook.launcher:main"
 
 [tool.setuptools.packages.find]
-include = ["spellbook_reviewer*"]
+include = ["spellbook*"]
 
 [tool.setuptools.package-data]
-spellbook_reviewer = ["web/templates/*.html", "web/static/*"]
+spellbook = ["web/templates/*.html", "web/static/*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

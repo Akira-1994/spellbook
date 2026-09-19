@@ -3,10 +3,10 @@ from pathlib import Path
 from PyInstaller.utils.hooks import collect_data_files
 
 ROOT = Path(SPEC).resolve().parents[1]
-datas = collect_data_files("spellbook_reviewer")
+datas = collect_data_files("spellbook")
 
 a = Analysis(
-    [str(ROOT / "spellbook_reviewer" / "launcher.py")],
+    [str(ROOT / "spellbook" / "launcher.py")],
     pathex=[str(ROOT)],
     binaries=[],
     datas=datas,

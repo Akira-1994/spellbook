@@ -3,7 +3,7 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
-from spellbook_reviewer.domain.events import ReviewEvent
+from spellbook.domain.events import ReviewEvent
 
 
 class EventRepository:

@@ -5,8 +5,8 @@ import sqlite3
 from pathlib import Path
 
 from scripts.export_json import export_database
-from spellbook_reviewer.config import ProjectPaths
-from spellbook_reviewer.repositories.git_repository import GitError, GitRepository
+from spellbook.config import ProjectPaths
+from spellbook.repositories.git_repository import GitError, GitRepository
 
 
 def _allowed(path: str) -> bool:

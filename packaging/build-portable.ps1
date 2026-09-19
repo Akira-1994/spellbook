@@ -13,7 +13,7 @@ if (-not $SkipTests) {
     if ($LASTEXITCODE -ne 0) { throw "Tests failed; portable build stopped." }
 }
 
-& $Python -m PyInstaller --noconfirm --clean (Join-Path $PSScriptRoot "spellbook-reviewer.spec")
+& $Python -m PyInstaller --noconfirm --clean (Join-Path $PSScriptRoot "spellbook.spec")
 if ($LASTEXITCODE -ne 0) { throw "PyInstaller build failed." }
 
 foreach ($directory in @("data", "migrations", "schemas", "reports", "scripts")) {

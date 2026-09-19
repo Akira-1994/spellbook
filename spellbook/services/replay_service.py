@@ -5,10 +5,10 @@ import sqlite3
 from datetime import datetime, timezone
 from typing import Any
 
-from spellbook_reviewer.domain.events import ReviewEvent
-from spellbook_reviewer.domain.ids import new_ulid
-from spellbook_reviewer.repositories.event_repository import EventRepository
-from spellbook_reviewer.repositories.spell_repository import ENTRY_FIELDS, SPELL_FIELDS, SpellRepository
+from spellbook.domain.events import ReviewEvent
+from spellbook.domain.ids import new_ulid
+from spellbook.repositories.event_repository import EventRepository
+from spellbook.repositories.spell_repository import ENTRY_FIELDS, SPELL_FIELDS, SpellRepository
 
 
 class ReplayError(RuntimeError):

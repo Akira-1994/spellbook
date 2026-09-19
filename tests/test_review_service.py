@@ -2,10 +2,10 @@ import shutil
 
 import pytest
 
-from spellbook_reviewer.domain.events import CHECK_TYPES
-from spellbook_reviewer.repositories.event_repository import EventRepository
-from spellbook_reviewer.repositories.spell_repository import SpellRepository
-from spellbook_reviewer.services.review_service import ReviewError, ReviewService, StaleRevisionError
+from spellbook.domain.events import CHECK_TYPES
+from spellbook.repositories.event_repository import EventRepository
+from spellbook.repositories.spell_repository import SpellRepository
+from spellbook.services.review_service import ReviewError, ReviewService, StaleRevisionError
 
 
 @pytest.fixture()

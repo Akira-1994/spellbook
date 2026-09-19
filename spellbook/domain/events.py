@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
 
-from spellbook_reviewer.domain.ids import new_ulid
+from spellbook.domain.ids import new_ulid
 
 
 EVENT_SCHEMA_VERSION = 1

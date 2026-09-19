@@ -6,10 +6,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable
 
-from spellbook_reviewer.domain.events import CHECK_TYPES, FieldChange, ReviewEvent
-from spellbook_reviewer.domain.ids import new_ulid
-from spellbook_reviewer.repositories.event_repository import EventRepository
-from spellbook_reviewer.repositories.spell_repository import ENTRY_FIELDS, SPELL_FIELDS, SpellRepository
+from spellbook.domain.events import CHECK_TYPES, FieldChange, ReviewEvent
+from spellbook.domain.ids import new_ulid
+from spellbook.repositories.event_repository import EventRepository
+from spellbook.repositories.spell_repository import ENTRY_FIELDS, SPELL_FIELDS, SpellRepository
 
 
 class ReviewError(ValueError):
