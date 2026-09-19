@@ -5,7 +5,7 @@ import sqlite3
 from contextlib import closing
 from datetime import datetime, timezone
 
-from spellbook import taxonomy
+from spellbook import seed_fixes, taxonomy
 from spellbook.config import AppPaths
 
 
@@ -66,6 +66,7 @@ def migrate(database) -> None:
         for table in LEGACY_TABLES:
             connection.execute(f"DROP TABLE IF EXISTS {table}")
         connection.executescript(MIGRATION)
+        seed_fixes.apply(connection)
         taxonomy.refresh(connection)
         applied = datetime.now(timezone.utc).isoformat()
         connection.executemany(

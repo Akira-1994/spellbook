@@ -1,0 +1,1436 @@
+﻿法術,英文名稱,欄位,修正前,修正後
+活化亡軍,Animate Legion,duration,1 輪/等級 豁免：無,1 輪/等級
+活化亡軍,Animate Legion,saving_throw,,無
+高等傳送預知,Anticipate Teleportation，Greater,casting_time,10 分鐘持,10 分鐘
+高等傳送預知,Anticipate Teleportation，Greater,duration,,24 小時。
+高等傳送預知,Anticipate Teleportation，Greater,description_zh,"續時間：24 小時。
+此法術類似傳送預知，除了高等傳送預知可確認傳送來的生物（以及它的任何同伴）的
+類型，並造成 3 回合的延遲，讓受術者得到更長的預警與準備時間。
+法器：一隻價值為 1000 金幣的小巧沙漏，用白金與水晶製成，內裝鑽石粉。…","此法術類似傳送預知，除了高等傳送預知可確認傳送來的生物（以及它的任何同伴）的
+類型，並造成 3 回合的延遲，讓受術者得到更長的預警與準備時間。
+法器：一隻價值為 1000 金幣的小巧沙漏，用白金與水晶製成，內裝鑽石粉。法術生效時間內，
+受術…"
+多臂術,Arms of Plenty,range_text,,接觸
+多臂術,Arms of Plenty,area_text,接觸,
+贖罪術,Atonement,duration,立即 豁免：無,立即
+贖罪術,Atonement,saving_throw,,無
+血管異變,Avascular Mass,casting_time,1 標準動作 作用距離：近,1 標準動作
+血管異變,Avascular Mass,range_text,,近
+驅血術,Avasculate,casting_time,1 標準動作 作用距離：近,1 標準動作
+驅血術,Avasculate,range_text,,近
+啟蒙不死生物,Awaken Undead,range_text,,近
+啟蒙不死生物,Awaken Undead,target_text,,處於一個半徑為 25+5 英尺每兩個等級的圓內的無意識的不死生物
+啟蒙不死生物,Awaken Undead,duration,,永久（消解）
+啟蒙不死生物,Awaken Undead,saving_throw,,無（無害）
+啟蒙不死生物,Awaken Undead,spell_resistance,,可（無害）
+啟蒙不死生物,Awaken Undead,description_zh,"作用距離：近
+作用物件：處於一個半徑為 25+5 英尺每兩個等級的圓內的無意識的不死生物
+時效：永久（消解）
+豁免檢定：無（無害）
+法術抗力：可（無害）
+本法術給予無意識的不死生物（如骷髏、僵屍等）以智力，已經有智力的則不受影響。
+作用範圍…","本法術給予無意識的不死生物（如骷髏、僵屍等）以智力，已經有智力的則不受影響。
+作用範圍內的無意識不死生物（即無智力值）將獲得 4+1d6 的智力。不死生物的智力無法
+超越其生前的水準。一頭骷髏犬僅能擁有 2 點智力，一個骷髏半獸人可以投骰，…"
+惡意變形術,Baleful Polymorph,duration,永久 豁免：強韌通過則無效，意志通過則部分生效；見正文,永久
+惡意變形術,Baleful Polymorph,saving_throw,,強韌通過則無效，意志通過則部分生效；見正文
+移形換影,Baleful Transposition,target_text,體型在大型以下的兩個生物持 續時間：立即,體型在大型以下的兩個生物
+移形換影,Baleful Transposition,duration,,立即
+絕望術,Bane,duration,1 分鐘/每等級 豁免：意志，通過則無效,1 分鐘/每等級
+絕望術,Bane,saving_throw,,意志，通過則無效
+放逐術,Banishment,duration,立即 豁免：意志，通過則無效,立即
+放逐術,Banishment,saving_throw,,意志，通過則無效
+樹膚術,Barkskin,duration,10 分鐘/每等級 豁免：無,10 分鐘/每等級
+樹膚術,Barkskin,saving_throw,,無
+熊之堅韌,Bear’s Endurance,duration,1 分鐘/每等級 豁免：意志，通過則無效（無害）,1 分鐘/每等級
+熊之堅韌,Bear’s Endurance,saving_throw,,意志，通過則無效（無害）
+污染術,Befoul,components,,語言，姿勢，材料
+污染術,Befoul,casting_time,,1 分鐘
+污染術,Befoul,range_text,,接觸
+污染術,Befoul,area_text,,100 尺/每等級×100 尺/每等級×10 尺/每等級體積的水
+污染術,Befoul,duration,,永久；見描述
+污染術,Befoul,saving_throw,,無；見描述
+污染術,Befoul,spell_resistance,,不可
+污染術,Befoul,description_zh,"術成分：語言，姿勢，材料施
+法時間：1 分鐘
+範圍：接觸
+區域：100 尺/每等級×100 尺/每等級×10 尺/每等級體積的水
+持續時間：永久；見描述
+豁免檢定：無；見描述
+法術抗力：不可
+施法者令水（或其他液體）腐化並產生輕微的毒性。受…","施法者令水（或其他液體）腐化並產生輕微的毒性。受影響水中的所有不大於 1HD 的
+生物在施法完成時立刻死去。 任何引用這些水的人必須通過一個強韌豁免否則將承受 1d4
+點體質傷害。進入水中的任何至少有 2HD 的生物需要進行豁免如同喝下水一…"
+降咒,Bestow Curse,duration,永久 豁免：意志，通過則無效,永久
+降咒,Bestow Curse,saving_throw,,意志，通過則無效
+束縛大法,Binding,duration,見正文（可解消） 豁免：意志，通過則無效；見正文,見正文（可解消）
+束縛大法,Binding,saving_throw,,意志，通過則無效；見正文
+束縛之雪,Binding Snow,components,言語、姿勢、法器，雪地施 法時間：一個標準動作,言語、姿勢、法器，雪地
+束縛之雪,Binding Snow,casting_time,,一個標準動作
+君王之齧,bite of the king,range_text,,接觸
+君王之齧,bite of the king,target_text,,體型不超過施法者的活體生物
+君王之齧,bite of the king,duration,,1 輪/每等級
+君王之齧,bite of the king,saving_throw,,堅韌無效
+君王之齧,bite of the king,spell_resistance,,可
+君王之齧,bite of the king,description_zh,"作用距離：接觸
+作用物件：體型不超過施法者的活體生物
+時效：1 輪/每等級
+豁免：堅韌無效
+抗力：可
+你成功通過近戰接觸攻擊命中目標後，它必須通過檢定，否則將被你整個吞下。在旁觀
+者看來，你的胃突然膨大數倍，在吞下目標後，又立即復原。
+對於…","你成功通過近戰接觸攻擊命中目標後，它必須通過檢定，否則將被你整個吞下。在旁觀
+者看來，你的胃突然膨大數倍，在吞下目標後，又立即復原。
+對於受害者來說，什麼也見不到。它現在身處一個臨時的“腹腔”次元內。在這個次元內，
+受害者每輪受到 2d8+…"
+黑觸手,Black Tentacles,duration,1 輪/每等級（可解消） 豁免：無,1 輪/每等級（可解消）
+黑觸手,Black Tentacles,saving_throw,,無
+劍刃護壁,Blade Barrier,duration,1 分鐘/每等級（可解消） min./level （D） 豁免：反射減半或反射通過則無效；見正文,1 分鐘/每等級（可解消） min./level （D）
+劍刃護壁,Blade Barrier,saving_throw,,反射減半或反射通過則無效；見正文
+瀆神之語,Blasphemy,duration,立即 豁免：無，或意志通過則無效；見正文 or Will negates; see text,立即
+瀆神之語,Blasphemy,saving_throw,,無，或意志通過則無效；見正文 or Will negates; see text
+祝福術,Bless,duration,1 分鐘/每等級 豁免：無,1 分鐘/每等級
+祝福術,Bless,saving_throw,,無
+祝福聖水,Bless Water,duration,立即 豁免：意志，通過則無效（物品）,立即
+祝福聖水,Bless Water,saving_throw,,意志，通過則無效（物品）
+祝福武器,Bless Weapon,duration,1 分鐘/每等級 豁免：無,1 分鐘/每等級
+祝福武器,Bless Weapon,saving_throw,,無
+枯萎術,Blight,duration,立即 豁免：強韌減半；見正文,立即
+枯萎術,Blight,saving_throw,,強韌減半；見正文
+目盲/耳聾術,Blindness/Deafness,duration,永久（可解消） 豁免：強韌，通過則無效,永久（可解消）
+目盲/耳聾術,Blindness/Deafness,saving_throw,,強韌，通過則無效
+朦朧術,Blur,duration,1 分鐘/每等級（可解消） 豁免：意志，通過則無效（無害）,1 分鐘/每等級（可解消）
+朦朧術,Blur,saving_throw,,意志，通過則無效（無害）
+白骨之弦,Bonefiddle,target_text,具有骨骼或是外骨骼的生物持,具有骨骼或是外骨骼的生物
+白骨之弦,Bonefiddle,duration,,專注，直到 1 輪/每等級
+白骨之弦,Bonefiddle,saving_throw,,強韌過則無效
+白骨之弦,Bonefiddle,spell_resistance,,可
+白骨之弦,Bonefiddle,description_zh,"續時間：專注，直到 1 輪/每等級豁
+免檢定：強韌過則無效
+法術抗力：可
+當你哼著刺耳的曲調時，你同時用你的中指摩擦拇指如同琴弓在小提琴上來回一般。你在
+你的周遭看到了一個半透明的白骨小提琴弓出現，並且進入了你目標的身體之中。 它開始來
+回…","當你哼著刺耳的曲調時，你同時用你的中指摩擦拇指如同琴弓在小提琴上來回一般。你在
+你的周遭看到了一個半透明的白骨小提琴弓出現，並且進入了你目標的身體之中。 它開始來
+回摩擦著目標，如同將他當成小提琴般的演奏。
+你在目標生物上方召喚出一個虛體的…"
+破除結界,Break Enchantment,duration,立即 豁免：見正文,立即
+破除結界,Break Enchantment,saving_throw,,見正文
+牛之力量,Bull’s Strength,duration,1 分鐘/每等級 豁免：意志，通過則無效（無害）,1 分鐘/每等級
+牛之力量,Bull’s Strength,saving_throw,,意志，通過則無效（無害）
+燃燒之手,Burning Hands,duration,立即 豁免：反射減半,立即
+燃燒之手,Burning Hands,saving_throw,,反射減半
+寒冰暴怒,Burst Of Glacial Wrath,duration,瞬間 豁免：強韌，減半,瞬間
+寒冰暴怒,Burst Of Glacial Wrath,saving_throw,,強韌，減半
+召喚暮光守護者,Call Of The Twilight Defender,duration,1 回合/等級 豁免：無,1 回合/等級
+召喚暮光守護者,Call Of The Twilight Defender,saving_throw,,無
+充能音爆術,Channeled Sound Burst,components,語言，姿勢 施放時間：見下文,語言，姿勢
+充能音爆術,Channeled Sound Burst,casting_time,,見下文
+墳墓之寒,Chill Of The Grave,casting_time,1 標準動作 作用距離：近,1 標準動作
+墳墓之寒,Chill Of The Grave,range_text,,近
+密封蛛網術,Choking Cobwebs,components,語言，姿勢 施放時間：一個標準動作,語言，姿勢
+密封蛛網術,Choking Cobwebs,casting_time,,一個標準動作
+密封蛛網術,Choking Cobwebs,effect_text,10 尺半徑擴散滿是灰塵的網持 續時間：1 分鐘/等級（可解消）,10 尺半徑擴散滿是灰塵的網
+密封蛛網術,Choking Cobwebs,duration,,1 分鐘/等級（可解消）
+攀升之樹,Climbing Tree,components,語言，姿勢，法器 施放時間：一個整輪動作,語言，姿勢，法器
+攀升之樹,Climbing Tree,casting_time,,一個整輪動作
+勇氣披風,Cloak Of Bravery,duration,10 分鐘/等級 豁免：意志，通過則無效（無害）,10 分鐘/等級
+勇氣披風,Cloak Of Bravery,saving_throw,,意志，通過則無效（無害）
+陰影披風,Cloak Of Shade,range_text,,接觸
+陰影披風,Cloak Of Shade,area_text,接觸,
+奧克斯之攫,Clutch Of Orcus,range_text,,中
+奧克斯之攫,Clutch Of Orcus,target_text,,1 個類人生物
+奧克斯之攫,Clutch Of Orcus,duration,,專注
+奧克斯之攫,Clutch Of Orcus,saving_throw,,堅韌無效
+奧克斯之攫,Clutch Of Orcus,spell_resistance,,可
+奧克斯之攫,Clutch Of Orcus,description_zh,"作用距離：中
+作用物件：1 個類人生物
+時效：專注
+豁免：堅韌無效
+抗力：可
+魔法的力量抓住物件的心臟（或同等作用的生命器官）並開始狠狠的擠壓它。受害者狀
+似突發心臟病（被麻痹），同時每輪受到 1d3 點傷害（（萬法大全）為 1d12 每輪…","魔法的力量抓住物件的心臟（或同等作用的生命器官）並開始狠狠的擠壓它。受害者狀
+似突發心臟病（被麻痹），同時每輪受到 1d3 點傷害（（萬法大全）為 1d12 每輪）。施術者
+必須每輪都保持專注。清醒的受術者每輪都能重新作豁免檢定以擺脫此法術…"
+劍刃外套,Coat Of Arms,components,語言，姿勢 施放時間：一個標準動作,語言，姿勢
+劍刃外套,Coat Of Arms,casting_time,,一個標準動作
+才能融合,Combined Talent,components,語言，姿勢 施放時間：一個標準動作,語言，姿勢
+才能融合,Combined Talent,casting_time,,一個標準動作
+衰亡之域,Consumptive Field,range_text,,個人
+衰亡之域,Consumptive Field,area_text,,以你為中心的半徑 30 英尺的球狀放射領域
+衰亡之域,Consumptive Field,duration,,1 輪每等級
+衰亡之域,Consumptive Field,saving_throw,,意志無效
+衰亡之域,Consumptive Field,spell_resistance,,可
+衰亡之域,Consumptive Field,description_zh,"作用距離：個人
+作用範圍：以你為中心的半徑 30 英尺的球狀放射領域
+持續時間：1 輪每等級
+豁免檢定：意志無效
+法術抗力：可
+你從附近的重傷的生物體內抽離出它們那正在消退的生命力量，並用之以增強自身。施
+法後，你製造出一個吸取能量的死亡領…","你從附近的重傷的生物體內抽離出它們那正在消退的生命力量，並用之以增強自身。施
+法後，你製造出一個吸取能量的死亡領域。範圍內所有 Hp 小於 0 的生物將立即死亡，除非
+通過豁免檢定。每個生物的死亡，都將使你獲得 1d8 點臨時 Hp；你的力…"
+觸發術,Contingency,casting_time,至少 10 分鐘；見說明距 離：個人,至少 10 分鐘；見說明
+觸發術,Contingency,range_text,,個人
+蠕黯幽觸,Crawling Darkness,casting_time,1 整輪距 離：個人,1 整輪
+蠕黯幽觸,Crawling Darkness,range_text,,個人
+造魂術,Create Fetch,components,V、S、M 施法動作：標準動作,V、S、M
+造魂術,Create Fetch,casting_time,,標準動作
+造魂術,Create Fetch,effect_text,一個你的複製品持,一個你的複製品
+造魂術,Create Fetch,duration,,10 分鐘/等級
+造魂術,Create Fetch,saving_throw,,無
+造魂術,Create Fetch,spell_resistance,,不可
+造魂術,Create Fetch,description_zh,"續時間：10 分鐘/等級豁
+免檢定：無
+法術抗力：不可
+你拔下一根你的頭髮，做出一個召喚的手勢，另外一個你出現在附近。
+你在法術的持續時間內，創造出完全與你相似的一個魂魄。它僅僅是一個活靈活現的複製
+品，魂魄沒有心智，但是能模仿你的動作，或…","你拔下一根你的頭髮，做出一個召喚的手勢，另外一個你出現在附近。
+你在法術的持續時間內，創造出完全與你相似的一個魂魄。它僅僅是一個活靈活現的複製
+品，魂魄沒有心智，但是能模仿你的動作，或者完成一些簡單的任務。這個創造物和你一樣大小，
+佔據同樣…"
+榮耀之冠,Crown Of Glory,casting_time,1 整輪距 離：20 尺,1 整輪
+榮耀之冠,Crown Of Glory,range_text,,20 尺
+墓穴守衛之觸,Cryptwarden's Grasp,components,語言，姿勢 施放時間：一個標準動作,語言，姿勢
+墓穴守衛之觸,Cryptwarden's Grasp,casting_time,,一個標準動作
+記憶結晶,Crystalline Memories,components,語言，姿勢 施放時間：一個迅捷動作,語言，姿勢
+記憶結晶,Crystalline Memories,casting_time,,一個迅捷動作
+元素領主的詛咒,Curse Of The Elemental Lords,duration,24 小時 豁免：意志，通過則無效,24 小時
+元素領主的詛咒,Curse Of The Elemental Lords,saving_throw,,意志，通過則無效
+詛咒之刃,Cursed Blade,duration,1 分鐘/等級 豁免：無,1 分鐘/等級
+詛咒之刃,Cursed Blade,saving_throw,,無
+黑暗之矢,Darkbolt,range_text,,中距（100尺+10尺/等級）
+黑暗之矢,Darkbolt,area_text,中距（100尺+10尺/等級）,
+曙光爆發,Dawn Burst,range_text,近距（25 英尺+5 英尺/2 等級） 面積：10 英尺半徑爆發,近距（25 英尺+5 英尺/2 等級）
+曙光爆發,Dawn Burst,area_text,,10 英尺半徑爆發
+致命熔岩,Deadly Lahar,range_text,60 英尺. 面積：錐狀擴散,60 英尺.
+致命熔岩,Deadly Lahar,area_text,,錐狀擴散
+雷鳴震爆,Deafening Blast,range_text,中距（100 英尺+10 英尺/每等級） 面積: 20-ft.半徑擴散,中距（100 英尺+10 英尺/每等級）
+雷鳴震爆,Deafening Blast,area_text,,20-ft.半徑擴散
+雷鳴之刃,Deafening Clang,casting_time,1 迅捷動作目 標：你的武器,1 迅捷動作
+雷鳴之刃,Deafening Clang,target_text,,你的武器
+死亡裝甲,Death Armor,range_text,,個人
+死亡裝甲,Death Armor,area_text,個人,
+死亡契約,Death Pact,range_text,,接觸
+死亡契約,Death Pact,area_text,接觸,
+臨終痛苦,Death Throes,range_text,,個人
+臨終痛苦,Death Throes,area_text,個人,
+死之尖叫,Death's Call,range_text,"10 英尺. 面積：10 英尺半徑爆發, 以你為中心",10 英尺.
+死之尖叫,Death's Call,area_text,,"10 英尺半徑爆發, 以你為中心"
+死亡視線,Deathsight,range_text,,個人
+死亡視線,Deathsight,area_text,個人,
+腐爛,Decomposition,range_text,,50 尺
+腐爛,Decomposition,area_text,50 尺 以你為中心半徑 50 尺放射範圍內的活著的敵人,以你為中心半徑 50 尺放射範圍內的活著的敵人
+誘餌幻象,Decoy Image,range_text,,遠距（400尺+40尺/等級）
+誘餌幻象,Decoy Image,area_text,遠距（400尺+40尺/等級）,
+深呼吸,Deep Breath,range_text,,個人
+深呼吸,Deep Breath,area_text,個人,
+深度暗視,Deeper Darkvision,range_text,,接觸
+深度暗視,Deeper Darkvision,area_text,接觸,
+脫水術,Dehydrate,range_text,,中距（100尺+10尺/等級）
+脫水術,Dehydrate,area_text,中距（100尺+10尺/等級）,
+延緩發病,Delay Disease,range_text,,接觸
+延緩發病,Delay Disease,area_text,接觸,
+自大狂,Delusions Of Grandeur,range_text,,中距（100 尺+10 尺/等級）
+自大狂,Delusions Of Grandeur,area_text,中距（100 尺+10 尺/等級）,
+惡魔挽歌,Demon Dirge,range_text,,近距（25尺/+5尺/2等級）
+惡魔挽歌,Demon Dirge,area_text,近距（25尺/+5尺/2等級）,
+惡魔之皮,Demonhide,range_text,,接觸
+惡魔之皮,Demonhide,area_text,接觸,
+脫水氣泡,Desiccating Bubble,range_text,,中距（100 尺+10 尺/等級）
+脫水氣泡,Desiccating Bubble,area_text,中距（100 尺+10 尺/等級）,
+剝奪術,Despoil,components,,語言，姿勢，材料
+剝奪術,Despoil,casting_time,,1 分鐘
+剝奪術,Despoil,range_text,,接觸
+剝奪術,Despoil,target_text,,100 尺半徑/每等級
+剝奪術,Despoil,duration,,立即
+剝奪術,Despoil,saving_throw,,強韌通過則部分生效（植物）或強韌通過則無效（其他活物）
+剝奪術,Despoil,spell_resistance,,可
+剝奪術,Despoil,description_zh,"術成分：語言，姿勢，材料施
+法時間：1 分鐘
+距離：接觸
+目標：100 尺半徑/每等級
+持續時間：立即
+豁免檢定：強韌通過則部分生效（植物）或強韌通過則無效（其他活物）
+法術抗力：可
+施法者令一大片區域枯萎腐化。1HD 或更少的植物枯萎並死…","施法者令一大片區域枯萎腐化。1HD 或更少的植物枯萎並死去，並且這個區域再也無法
+支援這種植物生存。多於 1HD 的植物必須通過強韌豁免否則死去，即便成功通過豁免仍需
+承受 5d6 傷害。所有範圍內的非植物活物（不包括施法者）必須通過一個強…"
+偵測異形,Detect Aberration,casting_time,標準動作 距 離 ：60 尺,標準動作
+偵測異形,Detect Aberration,range_text,,60 尺
+偵測邪惡,Detect Evil,casting_time,一個標準動作距 離：60 英尺,一個標準動作
+偵測邪惡,Detect Evil,range_text,,60 英尺
+偵測宿敵,Detect Favored Enemy,casting_time,1 標準動作範 圍：60 尺,1 標準動作
+偵測宿敵,Detect Favored Enemy,range_text,,60 尺
+偵測毒素,Detect Poison,range_text,近距（25 英尺+5 英尺/2 等級） 目標或區域：一個生物、物品或 5 立方英尺空間,近距（25 英尺+5 英尺/2 等級）
+偵測毒素,Detect Poison,target_text,,一個生物、物品或 5 立方英尺空間
+偵測探知,Detect Scrying,components,言語，姿勢，材料施 法時間： 一個標準動作,言語，姿勢，材料
+偵測探知,Detect Scrying,casting_time,,一個標準動作
+魔鬼凋亡,Devil Blight,range_text,,近距（25尺+5尺/2等級）
+魔鬼凋亡,Devil Blight,area_text,近距（25尺+5尺/2等級）,
+鑽石鋼鐵,Diamondsteel,range_text,,接觸
+鑽石鋼鐵,Diamondsteel,area_text,接觸,
+植物凋零,Diminish Plants,casting_time,一個標準動作距,一個標準動作
+植物凋零,Diminish Plants,range_text,,見說明
+植物凋零,Diminish Plants,target_text,,見說明
+植物凋零,Diminish Plants,duration,,立即
+植物凋零,Diminish Plants,saving_throw,,無
+植物凋零,Diminish Plants,spell_resistance,,不可
+植物凋零,Diminish Plants,description_zh,"離：見說明
+目標或區域： 見說明
+持續時間：立即
+豁免檢定：無
+法術抗力：不可
+此法術有兩種效用。
+修剪：這種用法使得一個範圍內的植物（法術距離：長，400 英尺+40 英尺/等級）縮到
+原來的 1/3 體積，解開糾纏在一起的枝杈並變得更稀…","此法術有兩種效用。
+修剪：這種用法使得一個範圍內的植物（法術距離：長，400 英尺+40 英尺/等級）縮到
+原來的 1/3 體積，解開糾纏在一起的枝杈並變得更稀疏。被影響的植物看上去就好象被仔細
+修剪過一樣。
+你可以選擇受影響區域為半徑 1…"
+恐龍暴走,Dinosaur Stampede,range_text,,中距（100尺+10尺/等級）
+恐龍暴走,Dinosaur Stampede,area_text,中距（100尺+10尺/等級） 半徑20尺發散,半徑20尺發散
+極度饑渴,Dire Hunger,range_text,,近距（25尺+5尺/2等級）
+極度饑渴,Dire Hunger,area_text,近距（25尺+5尺/2等級）,
+送葬曲,Dirge,casting_time,1 輪範 圍：50 尺,1 輪
+送葬曲,Dirge,range_text,,50 尺
+不諧哀歌,Dirge Of Discord,range_text,,近距（25 尺+5 尺/2 等級）
+不諧哀歌,Dirge Of Discord,area_text,近距（25 尺+5 尺/2 等級） 20 尺半徑發散,20 尺半徑發散
+偽裝五彩池,Discolor Pool,range_text,,近距（25 尺+5 尺/2 等級）
+偽裝五彩池,Discolor Pool,area_text,近距（25 尺+5 尺/2 等級）,
+偽裝不死生物,Disguise Undead,casting_time,1 標準動作範 圍：接觸,1 標準動作
+偽裝不死生物,Disguise Undead,range_text,,接觸
+解除魔法,Dispel Magic,range_text,中距 （100 英尺+10 英尺/等級） 目標或 區域：一個施法者、生物或物體；或半徑 20 英尺爆發範圍,中距 （100 英尺+10 英尺/等級）
+解除魔法,Dispel Magic,target_text,,一個施法者、生物或物體；或半徑 20 英尺爆發範圍
+解除防護,Dispel Ward,range_text,,中距（100 尺+10 尺/等級）
+解除防護,Dispel Ward,area_text,中距（100 尺+10 尺/等級）,
+除水術,Dispel Water,range_text,中距（100 英尺+10 呎/等級） 目標或區域：見下文,中距（100 英尺+10 呎/等級）
+除水術,Dispel Water,target_text,,見下文
+驅魔屏障,Dispelling Screen,range_text,,近距（25 尺+5 尺/2 等級）
+驅魔屏障,Dispelling Screen,area_text,近距（25 尺+5 尺/2 等級）,
+不安,Disquietude,range_text,,近距（25 尺+5 尺/2 等級）
+不安,Disquietude,area_text,近距（25 尺+5 尺/2 等級）,
+高等打擊死靈,"Disrupt Undead,Greater",range_text,,近距（25 尺+5 尺/2 等級）
+高等打擊死靈,"Disrupt Undead,Greater",area_text,近距（25 尺+5 尺/2 等級）,
+不諧詠唱,Dissonant Chant,range_text,,近距（25 尺+5 尺/2 等級）
+不諧詠唱,Dissonant Chant,area_text,近距（25 尺+5 尺/2 等級） 半徑 100 尺散發,半徑 100 尺散發
+不諧和音,Dissonant Chord,range_text,,10 尺
+不諧和音,Dissonant Chord,area_text,10 尺 以你為中心半徑 10 尺爆發,以你為中心半徑 10 尺爆發
+扭曲語言,Distort Speech,range_text,,近距（25 尺+5 尺/2 等級）
+扭曲語言,Distort Speech,area_text,近距（25 尺+5 尺/2 等級）,
+分心,Distract,range_text,,中距（100 尺+10 尺/等級）
+分心,Distract,area_text,中距（100 尺+10 尺/等級）,
+誤導攻擊,Distract Assailant,range_text,,近距（25 尺+5 尺/2 等級）
+誤導攻擊,Distract Assailant,area_text,近距（25 尺+5 尺/2 等級）,
+分心射線,Distracting Ray,range_text,,近距（25 尺+5 尺/2 等級）
+分心射線,Distracting Ray,area_text,近距（25 尺+5 尺/2 等級）,
+神聖靈巧,Divine Agility,range_text,,接觸
+神聖靈巧,Divine Agility,area_text,接觸,
+神恩,Divine Favor,casting_time,一個標準動作距 離：個人,一個標準動作
+神恩,Divine Favor,range_text,,個人
+神聖洞察,Divine Insight,range_text,,個人
+神聖洞察,Divine Insight,area_text,個人,
+神聖封鎖,Divine Interdiction,range_text,,近距（25 尺+5 尺/2 等級）
+神聖封鎖,Divine Interdiction,area_text,近距（25 尺+5 尺/2 等級） 以一個生物，物體或空間中一點為中心 10 吃半徑放射,以一個生物，物體或空間中一點為中心 10 吃半徑放射
+神能,Divine Power,casting_time,一個標準動作距 離：個人,一個標準動作
+神能,Divine Power,range_text,,個人
+聖佑術,Divine Protection,range_text,,中距（100 尺+10 尺/等級）
+聖佑術,Divine Protection,area_text,中距（100 尺+10 尺/等級）,
+哀傷之曲,Dolorous Blow,range_text,,接觸
+哀傷之曲,Dolorous Blow,area_text,接觸,
+厄難聖甲蟲,Doom Scarabs,range_text,60 呎 影響區域；錐形爆發,60 呎
+厄難聖甲蟲,Doom Scarabs,area_text,,錐形爆發
+下降氣流,Downdraft,range_text,,遠距（400 尺+40 尺/等級）
+下降氣流,Downdraft,area_text,遠距（400 尺+40 尺/等級）,
+龍之力量,Draconic Might,range_text,,接觸
+龍之力量,Draconic Might,area_text,接觸,
+次級龍族盟約,"Dragon Ally,Lesser",range_text,,近距（25 尺+5 尺/2 等級）
+次級龍族盟約,"Dragon Ally,Lesser",area_text,近距（25 尺+5 尺/2 等級）,
+龍之吐息,Dragon Breath,range_text,,個人
+龍之吐息,Dragon Breath,area_text,個人,
+龍息術,Dragon Breath,range_text,,個人
+龍息術,Dragon Breath,area_text,個人,
+龍之視野,Dragonsight,range_text,,個人
+龍之視野,Dragonsight,area_text,個人,
+龍膚術,Dragonskin,range_text,,個人
+龍膚術,Dragonskin,area_text,個人,
+溺斃術,Drown,range_text,,近距（25 尺+5 尺/2 等級）
+溺斃術,Drown,area_text,近距（25 尺+5 尺/2 等級）,
+地震術,Earthquake,saving_throw,,見 說 明
+地震術,Earthquake,spell_resistance,,無
+地震術,Earthquake,description_zh,"豁 免 檢 定 ：見 說 明法
+術抗力：無
+當你施展了 地震術後，地面開始劇烈而高度局部化的震動。這震動使生物跌倒，建築物 倒
+塌，地面開裂等。這些效果將持續 1 輪，其間地面上的生物無法移動或攻擊。地面上的施法者
+需通過專注檢定（DC=2…","當你施展了 地震術後，地面開始劇烈而高度局部化的震動。這震動使生物跌倒，建築物 倒
+塌，地面開裂等。這些效果將持續 1 輪，其間地面上的生物無法移動或攻擊。地面上的施法者
+需通過專注檢定（DC=20+法術等級）才能施法，否則會失去嘗試施展的…"
+綠寶石炸裂,Emerald Burst,range_text,近距（25 呎+5 呎/每兩等級） 影響範圍：半徑 20 呎爆發,近距（25 呎+5 呎/每兩等級）
+綠寶石炸裂,Emerald Burst,area_text,,半徑 20 呎爆發
+終結爭執,End of Strife,range_text,80 呎 影響範圍：以你為中心半徑 80 呎彌漫範圍,80 呎
+終結爭執,End of Strife,area_text,,以你為中心半徑 80 呎彌漫範圍
+至高風暴,Exalted Fury,range_text,40 呎 影響範圍：以你為中心半徑 40 呎爆發範圍,40 呎
+至高風暴,Exalted Fury,area_text,,以你為中心半徑 40 呎爆發範圍
+爆裂符文法陣,Explosive Rune Field,range_text,中距（100 呎+10 呎/每等級） 影響範圍：20 呎爆炸半徑,中距（100 呎+10 呎/每等級）
+爆裂符文法陣,Explosive Rune Field,area_text,,20 呎爆炸半徑
+君王之目,eyes of the king,casting_time,1 分鐘 作用距離：無限,1 分鐘
+君王之目,eyes of the king,range_text,,無限
+君王之目,eyes of the king,effect_text,魔法傳感 時效：專注+5 輪，可至每等級 1 分鐘（消解）,魔法傳感
+君王之目,eyes of the king,duration,,專注+5 輪，可至每等級 1 分鐘（消解）
+虛假景象,False Vision,duration,1 小時/每等級豁 免檢定：無,1 小時/每等級
+虛假景象,False Vision,saving_throw,,無
+吸血鬼王之牙,Fangs Of The Vampire King,range_text,,個人
+吸血鬼王之牙,Fangs Of The Vampire King,target_text,,自身
+吸血鬼王之牙,Fangs Of The Vampire King,duration,,1 分鐘每等級
+吸血鬼王之牙,Fangs Of The Vampire King,description_zh,"作用距離：個人
+作用物件：自身
+時效：1 分鐘每等級
+“你發出邪惡的嘶嘶笑聲，露出尖齒來痛飲敵人的血液。”
+你長出吸血鬼般的利齒，並能以之作齧咬攻擊。
+死者之書：你的攻擊檢定為在 10+力量調整值。你的齧咬攻擊造成 1d6 點 傷 害 及 …","“你發出邪惡的嘶嘶笑聲，露出尖齒來痛飲敵人的血液。”
+你長出吸血鬼般的利齒，並能以之作齧咬攻擊。
+死者之書：你的攻擊檢定為在 10+力量調整值。你的齧咬攻擊造成 1d6 點 傷 害 及 1 點體
+質傷害。如果你以其它武器作全回合攻擊，還可以…"
+救世宴,Feast of Champions,duration,1 小時，12 小時；參閱說明 豁 免檢定：無效,1 小時，12 小時；參閱說明
+救世宴,Feast of Champions,saving_throw,,無效
+食屍鬼之域,Field Of Ghouls,range_text,,個人
+食屍鬼之域,Field Of Ghouls,target_text,,以自身為中心的半徑 30 英尺的球狀放射領域
+食屍鬼之域,Field Of Ghouls,duration,,1 輪每等級
+食屍鬼之域,Field Of Ghouls,saving_throw,,意志無效
+食屍鬼之域,Field Of Ghouls,spell_resistance,,可
+食屍鬼之域,Field Of Ghouls,description_zh,"作用距離：個人
+作用物件：以自身為中心的半徑 30 英尺的球狀放射領域
+時效：1 輪每等級
+豁免檢定：意志無效
+抗力：可
+你將周圍生物那正在消退的生命力抽離出來，並用於製造食屍鬼。施法後，你放射出一
+個啟動亡靈的死亡領域。領域內所有 hp<…","你將周圍生物那正在消退的生命力抽離出來，並用於製造食屍鬼。施法後，你放射出一
+個啟動亡靈的死亡領域。領域內所有 hp<0 的生物除非成功通過意志檢定，否則將死亡，並
+立即被喚起成為受你控制的食屍鬼。它們可以跟隨你行動，或者呆在原地並攻擊任何…"
+抗咒領域,Field Of Resistance,range_text,中距（100 呎+10 呎/每等級） 影響範圍：以指定地點為中心 20 呎彌漫半徑的空間,中距（100 呎+10 呎/每等級）
+抗咒領域,Field Of Resistance,area_text,,以指定地點為中心 20 呎彌漫半徑的空間
+塵風爆,Flaywind Burst,range_text,60 英尺範,60 英尺
+塵風爆,Flaywind Burst,area_text,,錐形爆裂
+塵風爆,Flaywind Burst,duration,,暫態
+塵風爆,Flaywind Burst,saving_throw,,見下文
+塵風爆,Flaywind Burst,spell_resistance,,無
+塵風爆,Flaywind Burst,description_zh,"圍：錐形爆裂持
+續時間：暫態
+豁免檢定：見下文
+法術抗力：無
+這個法術產生了短暫的風暴（風速約 70 英里），伴隨著超自然的沙礫瞬間噴發。除了風
+可能造成的影響，範圍內的生物領還須因為沙塵沖刷承受每施法者等級 1d6 點傷害（最高
+10d6…","這個法術產生了短暫的風暴（風速約 70 英里），伴隨著超自然的沙礫瞬間噴發。除了風
+可能造成的影響，範圍內的生物領還須因為沙塵沖刷承受每施法者等級 1d6 點傷害（最高
+10d6）。反射減半。
+在法術區域內的生物必須進行強韌豁免否則就會受到…"
+集中之歌,Focusing Chant,range_text,,個人
+集中之歌,Focusing Chant,area_text,個人,
+森林之眼,Forest Eyes,casting_time,1 分鐘距 離：無限,1 分鐘
+森林之眼,Forest Eyes,range_text,,無限
+森林之聲,Forest Voice,casting_time,1 分鐘距 離：無限,1 分鐘
+森林之聲,Forest Voice,range_text,,無限
+幽光術,Ghost Light,effect_text,一個中型或小型幻光 持續：專注,一個中型或小型幻光
+幽光術,Ghost Light,duration,,專注
+幽魂形體,Ghostform,duration,,1 輪/每等級（解消）
+幽魂形體,Ghostform,description_zh,"持續：1 輪/每等級（解消）
+你呈現為可見的虛體形態，就像一隻真正的幽魂一般。在此狀態下，你不會擁有物理
+形體。你只能被其他虛體生物、魔法武器、能夠以魔法武器般攻擊的生物、法術、類法術能力或
+超自然能力所傷，並且免疫所有非魔法的攻擊方式。即…","你呈現為可見的虛體形態，就像一隻真正的幽魂一般。在此狀態下，你不會擁有物理
+形體。你只能被其他虛體生物、魔法武器、能夠以魔法武器般攻擊的生物、法術、類法術能力或
+超自然能力所傷，並且免疫所有非魔法的攻擊方式。即使被法術或魔法武器擊中，你依然…"
+食屍鬼之手,Ghoul Gauntlet,range_text,,接觸
+食屍鬼之手,Ghoul Gauntlet,target_text,,一個活著的人形生物
+食屍鬼之手,Ghoul Gauntlet,duration,,瞬間
+食屍鬼之手,Ghoul Gauntlet,saving_throw,,堅韌無效
+食屍鬼之手,Ghoul Gauntlet,spell_resistance,,可
+食屍鬼之手,Ghoul Gauntlet,description_zh,"作用距離：接觸
+作用物件：一個活著的人形生物
+持續時間：瞬間
+豁免檢定：堅韌無效
+法術抗力：可
+你的接觸能使一個生物慢慢變成一個嗜血的、饑餓的食屍鬼。轉化從受害者肢體或者被
+接觸處（通常是手或手臂）開始。隨著軀體逐漸的壞死並轉化為食屍鬼那冰…","你的接觸能使一個生物慢慢變成一個嗜血的、饑餓的食屍鬼。轉化從受害者肢體或者被
+接觸處（通常是手或手臂）開始。隨著軀體逐漸的壞死並轉化為食屍鬼那冰冷、不死的軀體，
+期間受害者每輪受到 3d6 點傷害。當 hp 降到 0 時，受害者將變成一個食…"
+食屍鬼手勢,Ghoul Gesture,casting_time,1 標準動作 作用距離：中距（100 尺+10 尺/每等級）,1 標準動作
+食屍鬼手勢,Ghoul Gesture,range_text,,中距（100 尺+10 尺/每等級）
+食屍鬼手勢,Ghoul Gesture,saving_throw,堅韌部分法,堅韌部分
+食屍鬼手勢,Ghoul Gesture,spell_resistance,,可
+食屍鬼手勢,Ghoul Gesture,description_zh,"術抗力：可
+一道綠色射線從你的指尖刺出。你通過遠端接觸攻擊命中目標。目標必須成功通過堅韌
+檢定，否則在法術時效內處於麻痹狀態。成功通過檢定的目標將變得噁心，此效果可以被“中和
+毒素”消除；
+材料：一小片從食屍鬼裹身的衣物上取下的布，或者一點…","一道綠色射線從你的指尖刺出。你通過遠端接觸攻擊命中目標。目標必須成功通過堅韌
+檢定，否則在法術時效內處於麻痹狀態。成功通過檢定的目標將變得噁心，此效果可以被“中和
+毒素”消除；
+材料：一小片從食屍鬼裹身的衣物上取下的布，或者一點食屍鬼巢穴裡…"
+食屍鬼符文結界,Ghoul Glyph,casting_time,1 分鐘 作用距離：接觸,1 分鐘
+食屍鬼符文結界,Ghoul Glyph,range_text,,接觸
+食屍鬼之光,Ghoul Light,range_text,,接觸
+食屍鬼之光,Ghoul Light,target_text,,被接觸物體
+食屍鬼之光,Ghoul Light,effect_text,,無熱的綠色火焰
+食屍鬼之光,Ghoul Light,duration,,10 分鐘每等級
+食屍鬼之光,Ghoul Light,saving_throw,,無
+食屍鬼之光,Ghoul Light,spell_resistance,,不可
+食屍鬼之光,Ghoul Light,description_zh,"作用距離：接觸
+作用物件：被接觸物體
+效果：無熱的綠色火焰
+持續時間：10 分鐘每等級
+豁免檢定：無
+法術抗力：不可
+從被你接觸過的物體上，噴射出亮度同火把一樣的綠色火焰。除發散綠光外，與普通火
+苗全無二致。它不發熱，無需氧氣，你可以遮蓋或…","從被你接觸過的物體上，噴射出亮度同火把一樣的綠色火焰。除發散綠光外，與普通火
+苗全無二致。它不發熱，無需氧氣，你可以遮蓋或掩藏它，但不能熄滅或完全覆蓋。
+所有處在它周圍 30 英尺以內的不死生物獲得+1 驅散抗力，多個食屍鬼之光效果不可疊
+…"
+巨獸術,Giant Size,duration,,1 分鐘
+巨獸術,Giant Size,description_zh,"持續：1 分鐘
+施展此法術後，你會變成超大型、巨型或超巨型，取決於你的施法者等級。你的力量、
+敏捷、體質天生防禦等級、攻擊和防禦等級的體型調整值、面寬和觸及的改變見上表。（你
+施法者等级 体型 力量 敏捷 体质 天防 ＡＣ／攻击调整 面宽／…","施展此法術後，你會變成超大型、巨型或超巨型，取決於你的施法者等級。你的力量、
+敏捷、體質天生防禦等級、攻擊和防禦等級的體型調整值、面寬和觸及的改變見上表。（你
+施法者等级 体型 力量 敏捷 体质 天防 ＡＣ／攻击调整 面宽／触及
+１～１５ …"
+巨人之怒,Giant's Wrath,target_text,每 3 級 1 塊石頭持,每 3 級 1 塊石頭
+巨人之怒,Giant's Wrath,duration,,一輪/每等級
+巨人之怒,Giant's Wrath,saving_throw,,無
+巨人之怒,Giant's Wrath,spell_resistance,,無
+巨人之怒,Giant's Wrath,description_zh,"續時間：一輪/每等級豁
+免檢定：無
+法術抗力：無
+隨著你晃如巨人般撕吼一聲，你手上一部份的小石子在你扔出去之後變成巨石
+你對石塊注入變化系魔法的力量，石頭從你手上離開的時候會變成巨石，在法術持續期
+間，投擲石頭是個會引起借機攻擊的攻擊動作。…","隨著你晃如巨人般撕吼一聲，你手上一部份的小石子在你扔出去之後變成巨石
+你對石塊注入變化系魔法的力量，石頭從你手上離開的時候會變成巨石，在法術持續期
+間，投擲石頭是個會引起借機攻擊的攻擊動作。巨石的射程增量為 120 尺,並且你需要對目
+標作…"
+鏡變,Glass Strike,target_text,一個生物或 4 立方尺的物件持 續時間：一小時/每等級,一個生物或 4 立方尺的物件
+鏡變,Glass Strike,duration,,一小時/每等級
+守衛刻文,Glyph Of Warding,range_text,接觸 目標或區域：接觸的物品或至多每等級 5 平方英尺,接觸
+守衛刻文,Glyph Of Warding,target_text,,接觸的物品或至多每等級 5 平方英尺
+打擊魔像,Golem Strike,range_text,,個人
+打擊魔像,Golem Strike,area_text,個人,
+恩典,Grace,range_text,,個人
+恩典,Grace,area_text,個人,
+打擊死靈,Grave Strike,range_text,,個人
+打擊死靈,Grave Strike,area_text,個人,
+油膩術,Grease,range_text,近距（25 英尺+5 英尺/每 2 等級） 目標或區域：一個物品或一個 10 英尺邊長正方形,近距（25 英尺+5 英尺/每 2 等級）
+油膩術,Grease,target_text,,一個物品或一個 10 英尺邊長正方形
+導向射擊,Guided Shot,range_text,,個人
+導向射擊,Guided Shot,area_text,個人,
+加固,Hardening,spell_resistance,,有效（物品）
+加固,Hardening,description_zh,"抗力：有效（物品）
+角色可以增加物品的硬度。紙張更難撕裂，玻璃更難粉碎，木材更加耐久，諸如此類。
+每 2 施法者等級，目標可以增加 1 點硬度。硬度的提高只影響材料的堅固程度，並沒有其他效
+果。例如，12 級施法者通過加固影響長劍（硬度 1…","角色可以增加物品的硬度。紙張更難撕裂，玻璃更難粉碎，木材更加耐久，諸如此類。
+每 2 施法者等級，目標可以增加 1 點硬度。硬度的提高只影響材料的堅固程度，並沒有其他效
+果。例如，12 級施法者通過加固影響長劍（硬度 10），長劍在對抗擊破…"
+幽體轉化,Haunt Shift,range_text,,中
+幽體轉化,Haunt Shift,target_text,,40 英尺擴散區域內不死生物
+幽體轉化,Haunt Shift,duration,,瞬間
+幽體轉化,Haunt Shift,saving_throw,,意志無效
+幽體轉化,Haunt Shift,spell_resistance,,可
+幽體轉化,Haunt Shift,description_zh,"作用距離：中
+作用物件：40 英尺擴散區域內不死生物
+持續時間：瞬間
+豁免檢定：意志無效
+法術抗力：可
+此法術將虛體和實體的不死生物全部轉化成幽體（幽靈就是這種形態，見本書第 6 頁）。
+它能轉化 1d4HD 每施法者等級的不死生物（最高 …","此法術將虛體和實體的不死生物全部轉化成幽體（幽靈就是這種形態，見本書第 6 頁）。
+它能轉化 1d4HD 每施法者等級的不死生物（最高 20d4）。HD 最低的不死生物最先被轉化；
+HD 相同的個體則取離源發點最近的；HD 大於 8 的不被…"
+醫療坐騎,Heal Mount,components,言語，姿勢施,言語，姿勢
+醫療坐騎,Heal Mount,casting_time,,1 個標準動作
+醫療坐騎,Heal Mount,range_text,,接觸
+醫療坐騎,Heal Mount,target_text,,接觸到的自己的坐騎
+醫療坐騎,Heal Mount,duration,,立即
+醫療坐騎,Heal Mount,saving_throw,,意志，通過無效（無害）
+醫療坐騎,Heal Mount,spell_resistance,,可（無害）
+醫療坐騎,Heal Mount,description_zh,"法時間：1 個標準動作距
+離：接觸
+目標：接觸到的自己的坐騎
+持續時間：立即
+豁免檢定：意志，通過無效（無害）
+法術抗力：可（無害）
+該法術如同醫療術（heal），但僅僅作用于聖武士的特殊坐騎（通常是戰馬）.",該法術如同醫療術（heal），但僅僅作用于聖武士的特殊坐騎（通常是戰馬）.
+醫療學識,Healing Lorecall,components,V，S，M 施法動作：標準動作,V，S，M
+醫療學識,Healing Lorecall,casting_time,,標準動作
+天降爆電,Heavenly Lightning Storm,range_text,中距（100 呎+10 呎/每等級） 影響範圍：10 呎寬到近距（25 呎+5 呎/每兩等級）,中距（100 呎+10 呎/每等級）
+天降爆電,Heavenly Lightning Storm,area_text,,10 呎寬到近距（25 呎+5 呎/每兩等級）
+聖潔星辰,Holy Star,effect_text,保護性的星之能量持,保護性的星之能量
+聖潔星辰,Holy Star,duration,,3 輪（可解消）
+聖潔星辰,Holy Star,description_zh,"續時間：3 輪（可解消）
+通過對神祗的呼喚，你的肩膀將會環繞閃著光芒的能量微塵。儘管甚至只如一支蠟燭一般
+閃亮，但是這些微塵會給你發自內心的溫暖與令人放心的安全感。
+你製造出環繞在你肩膀上的，閃光的能量微塵，提供蠟燭一般的亮度。這個微塵有以…","通過對神祗的呼喚，你的肩膀將會環繞閃著光芒的能量微塵。儘管甚至只如一支蠟燭一般
+閃亮，但是這些微塵會給你發自內心的溫暖與令人放心的安全感。
+你製造出環繞在你肩膀上的，閃光的能量微塵，提供蠟燭一般的亮度。這個微塵有以下
+三種能力，你每輪可以用…"
+惡感纏舌,Horrible Taste,duration,10 分鐘/等級豁 免檢定：強韌，見下,10 分鐘/等級
+惡感纏舌,Horrible Taste,saving_throw,,強韌，見下
+凋死術,Horrid Wilting,target_text,彼此距離不超過 60 英尺的活物持 續時間：立即,彼此距離不超過 60 英尺的活物
+凋死術,Horrid Wilting,duration,,立即
+疾馳之岩,Hurtling Stone,range_text,,60 尺
+疾馳之岩,Hurtling Stone,area_text,60 尺 60 尺直線,60 尺直線
+催眠圖紋,Hypnotic Pattern,effect_text,半徑 10 英尺內散發著五彩光芒持 續時間：專注 + 2 輪,半徑 10 英尺內散發著五彩光芒
+催眠圖紋,Hypnotic Pattern,duration,,專注 + 2 輪
+冰風暴,Ice Storm,components,言語，姿勢，材料/法器施 法時間：1 個標準動作,言語，姿勢，材料/法器
+冰風暴,Ice Storm,casting_time,,1 個標準動作
+幻影陷阱,Illusory Pit,saving_throw,意志過則不相信法,意志過則不相信
+幻影陷阱,Illusory Pit,spell_resistance,,無
+幻影陷阱,Illusory Pit,description_zh,"術抗力：無
+你用手向下猛撞地面，並同時吟誦著法術的咒語。你指定的地面突然消失，並出現了一個
+難以置信的深淵。
+你創造出一個虛假的無底深淵，在其中或是進入法術範圍內的生物都必須進行意志檢定否
+則就會相信站立的地面已經變成了無底深淵。意志檢定失…","你用手向下猛撞地面，並同時吟誦著法術的咒語。你指定的地面突然消失，並出現了一個
+難以置信的深淵。
+你創造出一個虛假的無底深淵，在其中或是進入法術範圍內的生物都必須進行意志檢定否
+則就會相信站立的地面已經變成了無底深淵。意志檢定失敗的生物會直…"
+禁錮術,Imprisonment,components,言語，姿勢施,言語，姿勢
+禁錮術,Imprisonment,casting_time,,1 個標準動作
+禁錮術,Imprisonment,range_text,,接觸
+禁錮術,Imprisonment,target_text,,接觸到的生物
+禁錮術,Imprisonment,duration,,立即
+禁錮術,Imprisonment,saving_throw,,意志，通過無效；見下文
+禁錮術,Imprisonment,spell_resistance,,可
+禁錮術,Imprisonment,description_zh,"法時間：1 個標準動作距
+離：接觸
+目標：接觸到的生物
+持續時間：立即
+豁免檢定：意志，通過無效；見下文
+法術抗力：可
+當你施放禁錮術並接觸某生物時，目標進入假死狀態（詳見永恆靜滯（temporal stasis）），
+並被埋入遠離地表的小…","當你施放禁錮術並接觸某生物時，目標進入假死狀態（詳見永恆靜滯（temporal stasis）），
+並被埋入遠離地表的小球內。該生物會停留在該處直到有人在禁錮術生效的位置施放解錮術
+（freedom）為止。使用水晶球（crystal bal…"
+焚雲術,Incendiary Cloud,effect_text,擴散出寬 20 英尺高 20 英尺的雲持 續時間：一輪/級別,擴散出寬 20 英尺高 20 英尺的雲
+焚雲術,Incendiary Cloud,duration,,一輪/級別
+造成輕傷,Inflict Light Wounds,components,言語，姿勢施,言語，姿勢
+造成輕傷,Inflict Light Wounds,casting_time,,1 個標準動作
+造成輕傷,Inflict Light Wounds,range_text,,接觸
+造成輕傷,Inflict Light Wounds,target_text,,接觸到的生物
+造成輕傷,Inflict Light Wounds,duration,,立即
+造成輕傷,Inflict Light Wounds,saving_throw,,意志，通過則減半
+造成輕傷,Inflict Light Wounds,spell_resistance,,可
+造成輕傷,Inflict Light Wounds,description_zh,"法時間：1 個標準動作距
+離：接觸
+目標：接觸到的生物
+持續時間：立即
+豁免檢定：意志，通過則減半
+法術抗力：可
+當你的手放在生物身體上時，你引導負能量造成 1d8+每施法者等級 1 點（最多+5）傷
+害。
+由於不死生物是用負能量作為能源，…","當你的手放在生物身體上時，你引導負能量造成 1d8+每施法者等級 1 點（最多+5）傷
+害。
+由於不死生物是用負能量作為能源，因此該法術治療等量的傷害，而不是傷害它們。"
+精神錯亂,Insanity,components,言語，姿勢施 法時間：1 個標準動作,言語，姿勢
+精神錯亂,Insanity,casting_time,,1 個標準動作
+隱形法球,Invisibility Sphere,range_text,,接觸的人或物周圍的半徑 10 英尺球形彌漫區域
+隱形法球,Invisibility Sphere,area_text,接觸的人或物周圍的半徑 10 英尺球形彌漫區域,
+鋼之忍耐,Ironguts,saving_throw,意志過則無效法,意志過則無效
+鋼之忍耐,Ironguts,spell_resistance,,可
+鋼之忍耐,Ironguts,description_zh,"術抗力：可
+你低語著法術咒語並拔開瓶塞，瓶中裝有著用蠍毒、蟾蜍的毒水、蛇毒和爬行動物的腐
+腦混合的液體。有毒一體揮發成烏黑的雲霧圍繞在你的手上使你可以伸手觸碰你的目標。
+你使一個生物能夠更簡單的對抗毒素的效果。該生物全身會充滿著抗毒素並且在…","你低語著法術咒語並拔開瓶塞，瓶中裝有著用蠍毒、蟾蜍的毒水、蛇毒和爬行動物的腐
+腦混合的液體。有毒一體揮發成烏黑的雲霧圍繞在你的手上使你可以伸手觸碰你的目標。
+你使一個生物能夠更簡單的對抗毒素的效果。該生物全身會充滿著抗毒素並且在對抗所
+有種…"
+跳躍術,Jump,duration,1 分鐘/每等級（可解消） 豁免：意志，通過則無效（無害）,1 分鐘/每等級（可解消）
+跳躍術,Jump,saving_throw,,意志，通過則無效（無害）
+龍的蔑視輕拍,Kiss Of Draconic Defiance,area_text,40 英尺半徑，以你為中心彌漫。持,40 英尺半徑，以你為中心彌漫。
+龍的蔑視輕拍,Kiss Of Draconic Defiance,duration,,專注+1 回合，或直到消耗為止
+龍的蔑視輕拍,Kiss Of Draconic Defiance,saving_throw,,強韌，通過則無效；看下文 法術
+龍的蔑視輕拍,Kiss Of Draconic Defiance,spell_resistance,,可；看下文
+龍的蔑視輕拍,Kiss Of Draconic Defiance,description_zh,"續時間：專注+1 回合，或直到消耗為止豁
+免檢定：強韌，通過則無效；看下文 法術
+抗力：可；看下文
+發光的能量環在你的身體上旋轉，粉碎了他人的魔法能量。
+這個法術使你的身體向外放射出魔法干擾，使得法術範圍內的其他人更難施法。任何試
+圖在法術…","發光的能量環在你的身體上旋轉，粉碎了他人的魔法能量。
+這個法術使你的身體向外放射出魔法干擾，使得法術範圍內的其他人更難施法。任何試
+圖在法術範圍內施法的敵人必須成功通過強韌豁免；失敗就意味著失去該法術（如同它被施
+放了）且不造成任何效果。任…"
+力場之鞭,Lash Of Force,duration,一輪/每等級或直到法術消散豁 免檢定：無和反射檢定通過減半,一輪/每等級或直到法術消散
+力場之鞭,Lash Of Force,saving_throw,,無和反射檢定通過減半
+李歐蒙的兵營,Leomund’S Billet,range_text,,近距（25 尺+5 尺/每 2 等級）
+李歐蒙的兵營,Leomund’S Billet,area_text,近距（25 尺+5 尺/每 2 等級）,
+徘徊火焰,Lingering Flames,range_text,中距（100 英尺+10 英尺/每等級） 面積：20 英尺半徑擴散,中距（100 英尺+10 英尺/每等級）
+徘徊火焰,Lingering Flames,area_text,,20 英尺半徑擴散
+忠誠之誓,Loyal Vassal,target_text,接觸每 3 級一個自願的活物持,接觸每 3 級一個自願的活物
+忠誠之誓,Loyal Vassal,duration,,十分鐘/每等級（見下文 ）
+忠誠之誓,Loyal Vassal,saving_throw,,意志過則無效（無害）
+忠誠之誓,Loyal Vassal,spell_resistance,,有（無害）
+忠誠之誓,Loyal Vassal,description_zh,"續時間：十分鐘/每等級（見下文 ） 豁
+免檢定：意志過則無效（無害） 法
+術抗力：有（無害）
+一道神聖的話語發出，然後產生發光的銀符文包圍你的盟友的頭。符文很快消失，但他們
+保持了他們的決心。
+你保護受術者令他們在對抗影響心靈的法術和技能的…","一道神聖的話語發出，然後產生發光的銀符文包圍你的盟友的頭。符文很快消失，但他們
+保持了他們的決心。
+你保護受術者令他們在對抗影響心靈的法術和技能的豁免檢定得到 +3 神聖。此外，這
+法術防止受術者在非自願的情況下傷害你。在忠誠之誓效果影響下…"
+法師回憶術,Mage’s Lucubration,components,言語，姿勢施,言語，姿勢
+法師回憶術,Mage’s Lucubration,casting_time,,1 個標準動作
+法師回憶術,Mage’s Lucubration,range_text,,個人
+法師回憶術,Mage’s Lucubration,target_text,,你自己
+法師回憶術,Mage’s Lucubration,duration,,立即
+法師回憶術,Mage’s Lucubration,description_zh,"法時間：1 個標準動作距
+離：個人
+目標：你自己
+持續時間：立即
+你可以立即喚回最近 24 小時內使用過的一個法術，法術等級不超過 5 級。你必須在之
+前的期間內真正的施展過該法術。被喚回的法術儲存在你的心靈，就像一般已準備好的法術一樣。
+…","你可以立即喚回最近 24 小時內使用過的一個法術，法術等級不超過 5 級。你必須在之
+前的期間內真正的施展過該法術。被喚回的法術儲存在你的心靈，就像一般已準備好的法術一樣。
+要施展被喚回的法術時，如果該法術需要材料成分，你也必須準備好。如果…"
+魔法飛彈,Magic Missile,components,言語，姿勢施 法時間：1 個標準動作,言語，姿勢
+魔法飛彈,Magic Missile,casting_time,,1 個標準動作
+炎魂入體,Mantle Of The Fiery Spirit,range_text,,接觸
+炎魂入體,Mantle Of The Fiery Spirit,area_text,接觸,
+流星爆,Meteor Swarm,area_text,四個半徑 40 英尺的擴散範圍；見說明持 續時間：立即,四個半徑 40 英尺的擴散範圍；見說明
+流星爆,Meteor Swarm,duration,,立即
+假像術,Mislead,saving_throw,無；或意志，通過則不相信（若發生互動）；見說明法,無；或意志，通過則不相信（若發生互動）；見說明
+假像術,Mislead,spell_resistance,,無
+假像術,Mislead,description_zh,"術抗力：無
+你變為隱形（同高等隱形術（Greater Invisibility），為五官幻覺），同時出現一個跟你 一
+樣的幻影（同強效幻影（major image），為虛假幻覺）。之後你和你的分身可以分開移動。
+分身會出現在法術有效範圍內，…","你變為隱形（同高等隱形術（Greater Invisibility），為五官幻覺），同時出現一個跟你 一
+樣的幻影（同強效幻影（major image），為虛假幻覺）。之後你和你的分身可以分開移動。
+分身會出現在法術有效範圍內，並往你指定的…"
+修改記憶,Modify Memory,components,言語，姿勢施 法時間：1 輪；見說明,言語，姿勢
+修改記憶,Modify Memory,casting_time,,1 輪；見說明
+熔岩擊,Molten Strike,range_text,,遠距（400 尺+40 尺/每等級）
+熔岩擊,Molten Strike,area_text,遠距（400 尺+40 尺/每等級） 5 尺爆發,5 尺爆發
+殘酷奴役,Monstrous Thrall,saving_throw,意志過則無效法,意志過則無效
+殘酷奴役,Monstrous Thrall,spell_resistance,,可
+殘酷奴役,Monstrous Thrall,description_zh,"術抗力：可
+召來你個人力量來源的能量，你的心靈延伸到你的敵人之上並且得以完全的支配他。
+此法術功用類似完全支配（True Domination），但是受術生物可以是任何類型，並且在
+意志檢定失敗後將受到永久的支配。當受術者受到命令去進行一件…","召來你個人力量來源的能量，你的心靈延伸到你的敵人之上並且得以完全的支配他。
+此法術功用類似完全支配（True Domination），但是受術生物可以是任何類型，並且在
+意志檢定失敗後將受到永久的支配。當受術者受到命令去進行一件違反天性的行…"
+木乃伊製作術,Mummify,range_text,,接觸
+木乃伊製作術,Mummify,area_text,接觸,
+近在天邊,Near Horizon,range_text,,個人
+近在天邊,Near Horizon,area_text,個人,
+偵測腐囊,Necrotic Awareness,range_text,,60 英尺
+偵測腐囊,Necrotic Awareness,area_text,,錐狀彌散
+偵測腐囊,Necrotic Awareness,duration,,專注，最多 1 分鐘每等級（消解）
+偵測腐囊,Necrotic Awareness,saving_throw,,無
+偵測腐囊,Necrotic Awareness,spell_resistance,,不可
+偵測腐囊,Necrotic Awareness,description_zh,"作用距離：60 英尺
+作用範圍：錐狀彌散
+時效：專注，最多 1 分鐘每等級（消解）
+豁免檢定：無
+法術抗力：不可
+你能感應到腐囊（見同名法術，在後面）感染體的存在。能感應到的信息量由他們在你
+的感應範圍內呆的時間的長度決定。
+第 1 輪：有…","你能感應到腐囊（見同名法術，在後面）感染體的存在。能感應到的信息量由他們在你
+的感應範圍內呆的時間的長度決定。
+第 1 輪：有這種攜帶者接近或離開
+第 2 輪：這些攜帶者的數量
+第 3 輪：每個攜帶者的位置。如果他處在你的視線外，你可以感應…"
+腐囊腫脹,Necrotic Bloat,range_text,,中
+腐囊腫脹,Necrotic Bloat,target_text,,腐囊感染體
+腐囊腫脹,Necrotic Bloat,duration,,瞬間
+腐囊腫脹,Necrotic Bloat,saving_throw,,無
+腐囊腫脹,Necrotic Bloat,spell_resistance,,不可
+腐囊腫脹,Necrotic Bloat,description_zh,"作用距離：中
+作用物件：腐囊感染體
+時效：瞬間
+豁免檢定：無
+法術抗力：不可
+你使攜帶者身上的腐囊搏動並腫大。這一過程十分劇烈，將撕裂受害者的活體組織，擴
+大腐囊體積，造成極大的內部傷害。目標受到 1d6 每等級的傷害（最高 10d6），其…","你使攜帶者身上的腐囊搏動並腫大。這一過程十分劇烈，將撕裂受害者的活體組織，擴
+大腐囊體積，造成極大的內部傷害。目標受到 1d6 每等級的傷害（最高 10d6），其中一半為
+穢惡傷害（見《崇惡 之書 》），因為腐囊將漲到包裹住新生的死靈化組織…"
+腐囊爆裂,Necrotic Burst,range_text,,中
+腐囊爆裂,Necrotic Burst,target_text,,腐囊感染體
+腐囊爆裂,Necrotic Burst,duration,,瞬間
+腐囊爆裂,Necrotic Burst,saving_throw,,堅韌部分
+腐囊爆裂,Necrotic Burst,spell_resistance,,不可
+腐囊爆裂,Necrotic Burst,description_zh,"作用距離：中
+作用物件：腐囊感染體
+時效：瞬間
+豁免檢定：堅韌部分
+法術抗力：不可
+你使感染體身上的腐囊吞齧其正常組織，並爆炸性增大體積。如果受害者通過堅韌檢定，
+將受到 1d6 每等級（最高 15d6）傷害，一半為穢惡傷害。由腐囊造成的對…","你使感染體身上的腐囊吞齧其正常組織，並爆炸性增大體積。如果受害者通過堅韌檢定，
+將受到 1d6 每等級（最高 15d6）傷害，一半為穢惡傷害。由腐囊造成的對抗死靈系法術的
+豁免罰值也有效。
+如果檢定失敗，腐囊的生長將失去控制，直至殺死攜帶者…"
+壞死詛咒,Necrotic Curse,range_text,近距（25 英尺+5 英尺/2 等級） 面積：20 英尺半徑彌漫,近距（25 英尺+5 英尺/2 等級）
+壞死詛咒,Necrotic Curse,area_text,,20 英尺半徑彌漫
+腐敗囊腫,Necrotic Cyst,range_text,,接觸
+腐敗囊腫,Necrotic Cyst,target_text,,被觸活體生物
+腐敗囊腫,Necrotic Cyst,duration,,瞬間
+腐敗囊腫,Necrotic Cyst,saving_throw,,堅韌無效
+腐敗囊腫,Necrotic Cyst,spell_resistance,,可
+腐敗囊腫,Necrotic Cyst,description_zh,"作用距離：接觸
+作用物件：被觸活體生物
+時效：瞬間
+豁免檢定：堅韌無效
+法術抗力：可
+目標體內長出球狀囊腫，內包著液態或半液態的死靈機質。它看起來像一個（長在被你
+接觸到的部位的）輕微腫起，有時會非常的深，以至於腫起都沒有，讓受害者完全無法…","目標體內長出球狀囊腫，內包著液態或半液態的死靈機質。它看起來像一個（長在被你
+接觸到的部位的）輕微腫起，有時會非常的深，以至於腫起都沒有，讓受害者完全無法察覺。從
+此之後，不死生物和死靈系法術對於受害者將變得更為致命——腐囊可以與外界的死
+…"
+腐囊支配,Necrotic Domination,target_text,,腐囊感染體
+腐囊支配,Necrotic Domination,description_zh,"作用物件：腐囊感染體
+法術效果同“支配人類（Dominate Person）”，不同處在它能作用於任何值有腐囊的類
+人生物。
+施法器材：你必須擁有腐囊母體","法術效果同“支配人類（Dominate Person）”，不同處在它能作用於任何值有腐囊的類
+人生物。
+施法器材：你必須擁有腐囊母體"
+腐囊強化,Necrotic Empowerment,range_text,,個人
+腐囊強化,Necrotic Empowerment,target_text,,自身
+腐囊強化,Necrotic Empowerment,duration,,1 輪每等級
+腐囊強化,Necrotic Empowerment,description_zh,"作 用 距 離 ：個人
+作 用 物 件 ：自身
+時效：1 輪每等級
+你呼喚體內的腐囊母體，從它那裡獲得力量、精力、速度、及堅定的邪惡意志。法術時效
+內，你的敏捷、智力及感知獲得+8 的增強加值；你的皮膚明顯變粗變硬，使天然裝甲+8； 你
+的…","你呼喚體內的腐囊母體，從它那裡獲得力量、精力、速度、及堅定的邪惡意志。法術時效
+內，你的敏捷、智力及感知獲得+8 的增強加值；你的皮膚明顯變粗變硬，使天然裝甲+8； 你
+的堅韌豁免獲得+5 環境加值，同時獲得 100 點 臨 時 hp。
+法…"
+腐囊爆發,Necrotic Eruption,range_text,,中
+腐囊爆發,Necrotic Eruption,target_text,,腐囊感染體及其周圍 20 英尺內的生物
+腐囊爆發,Necrotic Eruption,duration,,瞬間
+腐囊爆發,Necrotic Eruption,saving_throw,,堅韌部分
+腐囊爆發,Necrotic Eruption,spell_resistance,,不可
+腐囊爆發,Necrotic Eruption,description_zh,"作用距離：中
+作用物件：腐囊感染體及其周圍 20 英尺內的生物
+時效：瞬間
+豁免檢定：堅韌部分
+法術抗力：不可
+你使感染體身上的腐囊吞齧其正常組織，並爆炸性增大體積。如果受害者通過堅韌檢定，
+將受到 1d6 每等級（最高 15d6）傷害，一…","你使感染體身上的腐囊吞齧其正常組織，並爆炸性增大體積。如果受害者通過堅韌檢定，
+將受到 1d6 每等級（最高 15d6）傷害，一半為穢惡傷害。由腐囊造成的對抗死靈系法術的
+豁免罰值也有效。
+如果檢定失敗，腐囊的生長將失去控制，使感染體爆體而…"
+探知腐囊,Necrotic Scrying,casting_time,1 標準動作 作用距離：無限,1 標準動作
+探知腐囊,Necrotic Scrying,range_text,,無限
+探知腐囊,Necrotic Scrying,effect_text,腐囊感染體成為你的魔法感知點 時效：1 分鐘每等級（消解）,腐囊感染體成為你的魔法感知點
+探知腐囊,Necrotic Scrying,duration,,1 分鐘每等級（消解）
+腐囊終結,Necrotic Termination,range_text,,中
+腐囊終結,Necrotic Termination,target_text,,腐囊感染體
+腐囊終結,Necrotic Termination,duration,,瞬間
+腐囊終結,Necrotic Termination,saving_throw,,堅韌部分
+腐囊終結,Necrotic Termination,spell_resistance,,不可
+腐囊終結,Necrotic Termination,description_zh,"作用距離：中
+作用物件：腐囊感染體
+時效：瞬間
+豁免檢定：堅韌部分
+法術抗力：不可
+你使腐囊感染體體內的腐囊吞齧其肉體及靈魂，並從而在物理上和精神上壯大。如果受
+害者通過堅韌檢定，將受到 1d6 每等級（最高 25d6）傷害，一半為穢惡傷害…","你使腐囊感染體體內的腐囊吞齧其肉體及靈魂，並從而在物理上和精神上壯大。如果受
+害者通過堅韌檢定，將受到 1d6 每等級（最高 25d6）傷害，一半為穢惡傷害。由腐囊造成
+的對抗死靈系法術的豁免罰值也有效。
+如果檢定失敗，腐囊的生長將失去控制…"
+腐囊腦瘤,Necrotic Tumor,range_text,,中
+腐囊腦瘤,Necrotic Tumor,target_text,,腐囊感染體
+腐囊腦瘤,Necrotic Tumor,duration,,每等級一天或永久
+腐囊腦瘤,Necrotic Tumor,saving_throw,,堅韌部分
+腐囊腦瘤,Necrotic Tumor,spell_resistance,,不可
+腐囊腦瘤,Necrotic Tumor,description_zh,"作用距離：中
+作用物件：腐囊感染體
+時效：每等級一天或永久
+豁免檢定：堅韌部分
+法術抗力：不可
+你使得腐囊感染體的部分腦組織被腐囊包裹住。即使感染體通過檢定（由腐囊帶來的罰
+值可生效），你仍能通過向他提出建議來影響他（限一、兩句話）。你的言…","你使得腐囊感染體的部分腦組織被腐囊包裹住。即使感染體通過檢定（由腐囊帶來的罰
+值可生效），你仍能通過向他提出建議來影響他（限一、兩句話）。你的言語必須聽來有道理。
+任何諸如讓他刺自己、撞到長矛上、自盡等明顯對他有害的建議將自動失敗。建議的行…"
+夜之撫,night caress,range_text,,接觸
+夜之撫,night caress,target_text,,被接觸的生物
+夜之撫,night caress,duration,,瞬間
+夜之撫,night caress,saving_throw,,堅韌部分
+夜之撫,night caress,spell_resistance,,可
+夜之撫,night caress,description_zh,"作用距離：接觸
+作用物件：被接觸的生物
+時效：瞬間
+豁免檢定：堅韌部分
+法術抗力：可
+你的手掌變得如同最深沉的夜一般漆黑，僅僅是輕微的觸摸也能給生物帶去巨大傷害。
+你的接觸攻擊造成 1d6 每等級（最高 15d6）的傷害，附加 1d6+2 …","你的手掌變得如同最深沉的夜一般漆黑，僅僅是輕微的觸摸也能給生物帶去巨大傷害。
+你的接觸攻擊造成 1d6 每等級（最高 15d6）的傷害，附加 1d6+2 的體質傷害。成功通過檢
+定則不受體質傷害。
+此法術對不死生物有特殊效果。它們不會受到傷…"
+噩夢地形,Nightmare Terrain,range_text,近距（25 英尺+5 英尺/2 等級） 面積:五個 10 立方英尺 + 10 立方英尺/等級 （S),近距（25 英尺+5 英尺/2 等級）
+噩夢地形,Nightmare Terrain,area_text,,五個 10 立方英尺 + 10 立方英尺/等級 （S)
+軟泥傀儡,Ooze Puppet,duration,24 小時/等級豁,24 小時/等級
+軟泥傀儡,Ooze Puppet,saving_throw,,堅韌通過則無效
+軟泥傀儡,Ooze Puppet,spell_resistance,,可
+軟泥傀儡,Ooze Puppet,description_zh,"免檢定：堅韌通過則無效法
+術抗力：可
+寥寥數語的吟唱，胳膊神奇的一揮，你的魔法無形的環繞著那只軟泥怪，使之聽命於你.
+你通過心靈遙感控制住目標軟泥怪，操縱它、強迫它按照你的要求進行移動和攻擊。你可
+以按照自己的想法強迫軟泥怪做任何在其能力範…","寥寥數語的吟唱，胳膊神奇的一揮，你的魔法無形的環繞著那只軟泥怪，使之聽命於你.
+你通過心靈遙感控制住目標軟泥怪，操縱它、強迫它按照你的要求進行移動和攻擊。你可
+以按照自己的想法強迫軟泥怪做任何在其能力範圍之內的事。控制軟泥怪行動一整輪對於你…"
+開關術,Open/Close,duration,立即 豁免：意志，通過則無效（物品）,立即
+開關術,Open/Close,saving_throw,,意志，通過則無效（物品）
+秩序之怒,Order’s Wrath,components,言語，姿勢施 法時間：1 個標準動作,言語，姿勢
+秩序之怒,Order’s Wrath,casting_time,,1 個標準動作
+梟之睿智,Owl’s Wisdom,duration,1 分鐘/施法者每等級 豁免：意志，通過則無效（無害）,1 分鐘/施法者每等級
+梟之睿智,Owl’s Wisdom,saving_throw,,意志，通過則無效（無害）
+黃昏幕布,Pall Of Twilight,range_text,,近距（25 英尺+5 英尺/2 等級）
+黃昏幕布,Pall Of Twilight,area_text,近距（25 英尺+5 英尺/2 等級） 面積：20 尺半徑擴散,20 尺半徑擴散
+幻影誘餌,Phantasmal Decoy,components,言語，姿勢施 法時間：1 個標準動作,言語，姿勢
+幻影誘餌,Phantasmal Decoy,casting_time,,1 個標準動作
+謎幻路途,Phantasmal Disorientation,components,言語，姿勢施 法時間：1 個標準動作,言語，姿勢
+謎幻路途,Phantasmal Disorientation,casting_time,,1 個標準動作
+魅影殺手,Phantasmal Killer,components,言語，姿勢施 法時間：1 個標準動作,言語，姿勢
+魅影殺手,Phantasmal Killer,casting_time,,1 個標準動作
+幽靈馴鹿,Phantom Stag,components,言語，姿勢施,言語，姿勢
+幽靈馴鹿,Phantom Stag,casting_time,,1 個標準動作
+幽靈馴鹿,Phantom Stag,range_text,,0 尺
+幽靈馴鹿,Phantom Stag,effect_text,,一匹半真實的，有著牡鹿外形的生物
+幽靈馴鹿,Phantom Stag,duration,,1 小時/每等級（可解消）
+幽靈馴鹿,Phantom Stag,saving_throw,,無；見下文
+幽靈馴鹿,Phantom Stag,spell_resistance,,不可
+幽靈馴鹿,Phantom Stag,description_zh,"法時間：1 個標準動作距
+離：0 尺
+效果：一匹半真實的，有著牡鹿外形的生物
+持續時間：1 小時/每等級（可解消）
+豁免檢定：無；見下文
+法術抗力：不可
+手指貼近唇邊呼出鹿的鳴叫，一頭有如煙影的大牡鹿在你眼前現身。
+施法者的咒語創造出一匹具…","手指貼近唇邊呼出鹿的鳴叫，一頭有如煙影的大牡鹿在你眼前現身。
+施法者的咒語創造出一匹具有質感的大型鹿形生物。只有施法者或其指定的個體可以騎
+乘它。魅影牡鹿的頭顱與軀體皆為漆黑，它有著銀色的鹿角，如虛似幻的煙色蹄子。它的蹄子
+不會發出任何聲音…"
+植物滋長,Plant Growth,range_text,見正文 目標或區域：見正文,見正文
+植物滋長,Plant Growth,target_text,,見正文
+虹光暴雨,Prismatic Deluge,range_text,中距（100 英尺+10 英尺/每等級） 面積：柱形（40 英 尺 半徑 80 英尺高),中距（100 英尺+10 英尺/每等級）
+虹光暴雨,Prismatic Deluge,area_text,,柱形（40 英 尺 半徑 80 英尺高)
+虹光噴射,Prismatic Spray,components,言語，姿勢施,言語，姿勢
+虹光噴射,Prismatic Spray,casting_time,,1 個標準動作
+虹光噴射,Prismatic Spray,range_text,,60 英尺
+虹光噴射,Prismatic Spray,area_text,,錐形爆發區域
+虹光噴射,Prismatic Spray,duration,,立即
+虹光噴射,Prismatic Spray,saving_throw,,見正文
+虹光噴射,Prismatic Spray,spell_resistance,,可
+虹光噴射,Prismatic Spray,description_zh,"法時間：1 個標準動作距
+離：60 英尺
+區域：錐形爆發區域
+持續時間：立即
+豁免檢定：見正文
+法術抗力：可
+這個法術能讓你手中噴出七道閃爍不定，互相混雜的多彩光束。每道光束具有不同的威
+力。法術區域內 8 或更少 HD 的生物會自動目盲 …","這個法術能讓你手中噴出七道閃爍不定，互相混雜的多彩光束。每道光束具有不同的威
+力。法術區域內 8 或更少 HD 的生物會自動目盲 2d4 輪。區域內的每個生物都會隨機的被一
+道或多道光束擊中，每道光束都有不同的額外效果。
+1d8 光束顏色 …"
+虹光法牆,Prismatic Wall,components,言語，姿勢施 法時間：1 個標準動作,言語，姿勢
+虹光法牆,Prismatic Wall,casting_time,,1 個標準動作
+思想探針,Probe Thoughts,spell_resistance,,可
+思想探針,Probe Thoughts,description_zh,"法術抗力；可
+你可以瞭解到目標所有的記憶和知識，包括那些埋藏的很深的記憶。你每輪能找到一個
+問題對於這個生物來說最好的回答。你也可以探測一個睡眠中的目標，在每次問題後，目標
+都可以通過一次意志鑒定（DC 相當於此法術 DC）來醒來。不願被探…","你可以瞭解到目標所有的記憶和知識，包括那些埋藏的很深的記憶。你每輪能找到一個
+問題對於這個生物來說最好的回答。你也可以探測一個睡眠中的目標，在每次問題後，目標
+都可以通過一次意志鑒定（DC 相當於此法術 DC）來醒來。不願被探測的生物除非受…"
+防護負能量傷害,Protection From Negative Energy,components,言語，姿勢施,言語，姿勢
+防護負能量傷害,Protection From Negative Energy,casting_time,,1 個標準動作
+防護負能量傷害,Protection From Negative Energy,range_text,,接觸
+防護負能量傷害,Protection From Negative Energy,effect_text,,施法者接觸的活物
+防護負能量傷害,Protection From Negative Energy,duration,,10 分鐘/每等級
+防護負能量傷害,Protection From Negative Energy,saving_throw,,意志避免（無害）
+防護負能量傷害,Protection From Negative Energy,spell_resistance,,可（無害）
+防護負能量傷害,Protection From Negative Energy,description_zh,"法時間：1 個標準動作距
+離：接觸
+效果：施法者接觸的活物持
+續時間：10 分鐘/每等級
+豁免檢定：意志避免（無害）
+法術抗力：可（無害）
+該法術能對負能量造成的傷害起到保護效果。受到法術保護的人在被負能量傷害時（例
+如造成傷害術）可以減少…","該法術能對負能量造成的傷害起到保護效果。受到法術保護的人在被負能量傷害時（例
+如造成傷害術）可以減少 10 點傷害。
+由負能量造成的其它非傷害性效果（例如能量吸取）依然正常作用。"
+防護正能量傷害,Protection From Positive Energy,components,言語，姿勢施,言語，姿勢
+防護正能量傷害,Protection From Positive Energy,casting_time,,1 個標準動作
+防護正能量傷害,Protection From Positive Energy,range_text,,接觸
+防護正能量傷害,Protection From Positive Energy,effect_text,,施法者接觸的不死生物
+防護正能量傷害,Protection From Positive Energy,duration,,10 分鐘/每等級
+防護正能量傷害,Protection From Positive Energy,saving_throw,,意志避免（無害）
+防護正能量傷害,Protection From Positive Energy,spell_resistance,,可（無害）
+防護正能量傷害,Protection From Positive Energy,description_zh,"法時間：1 個標準動作距
+離：接觸
+效果：施法者接觸的不死生物
+持續時間：10 分鐘/每等級豁
+免檢定：意志避免（無害）
+法術抗力：可（無害）
+該法術能對正能量造成的傷害起到保護效果。受到法術保護的人在被正能量傷害時（例
+如治療傷害術）可以…","該法術能對正能量造成的傷害起到保護效果。受到法術保護的人在被正能量傷害時（例
+如治療傷害術）可以減少 10 點傷害。
+由正能量造成的其它非傷害性效果（例如驅散檢定）依然正常作用。"
+學徒,Protege,components,V、S 施法動作：整輪動作,V、S
+學徒,Protege,casting_time,,整輪動作
+淨化食糧,Purify Food And Drink,components,言語，姿勢施,言語，姿勢
+淨化食糧,Purify Food And Drink,casting_time,,1 個標準動作
+淨化食糧,Purify Food And Drink,range_text,,10 英尺
+淨化食糧,Purify Food And Drink,target_text,,1 立方英尺/等級的被污染食物和飲水
+淨化食糧,Purify Food And Drink,duration,,立即
+淨化食糧,Purify Food And Drink,saving_throw,,意志通過則無效（物體）
+淨化食糧,Purify Food And Drink,spell_resistance,,可（物體）
+淨化食糧,Purify Food And Drink,description_zh,"法時間：1 個標準動作距
+離：10 英尺
+目標：1 立方英尺/等級的被污染食物和飲水
+持續時間：立即
+豁免檢定：意志通過則無效（物體）
+法術抗力：可（物體）
+這個法術能把變質、腐臭、有毒或遭受其他污染的食物和水淨化為可食用和飲用狀態。
+這個…","這個法術能把變質、腐臭、有毒或遭受其他污染的食物和水淨化為可食用和飲用狀態。
+這個法術不能阻止之後的自然腐敗或變質。邪水和類似意義的食物和飲料被淨化食糧處理後
+會失去作用，但是這個法術對任何類型生物或魔法藥劑都無效。
+注意：每加侖水重約 8…"
+輝煌之光,Radiance,duration,1 輪/每等級（解消）；見敘述豁 免檢定：無,1 輪/每等級（解消）；見敘述
+輝煌之光,Radiance,saving_throw,,無
+黑鬱金香花雨,Rain Of Black Tulips,range_text,遠距（400呎+40呎/每等級） 影響範圍：柱狀（半徑80呎，80呎高）,遠距（400呎+40呎/每等級）
+黑鬱金香花雨,Rain Of Black Tulips,area_text,,柱狀（半徑80呎，80呎高）
+灰燼時雨,Rain Of Ember,range_text,中距（100呎+10呎/每等級） 影響範圍：柱狀（半徑40呎，120呎高）,中距（100呎+10呎/每等級）
+灰燼時雨,Rain Of Ember,area_text,,柱狀（半徑40呎，120呎高）
+玫瑰花雨,Rain Of Roses,range_text,遠距（400 呎+40 呎/每等級） 影響範圍：柱狀（半徑 80 呎，80 呎高）,遠距（400 呎+40 呎/每等級）
+玫瑰花雨,Rain Of Roses,area_text,,柱狀（半徑 80 呎，80 呎高）
+衰弱射線,Ray Of Enfeeblement,components,言語，姿勢施 法時間：1 個標準動作,言語，姿勢
+衰弱射線,Ray Of Enfeeblement,casting_time,,1 個標準動作
+冰凍射線,Ray Of Frost,components,言語，姿勢施 法時間：1 個標準動作,言語，姿勢
+冰凍射線,Ray Of Frost,casting_time,,1 個標準動作
+移除氣味,Remove Scent,duration,10 分鐘/等級豁,10 分鐘/等級
+移除氣味,Remove Scent,saving_throw,,意志通過則無效
+移除氣味,Remove Scent,spell_resistance,,可
+移除氣味,Remove Scent,description_zh,"免檢定：意志通過則無效法
+術抗力：可
+該法術會遮蓋住所接觸生物或物體的氣味。靈敏嗅覺能力無法探測到受術生物。該法術
+也可以用來無效化某些生物散發惡臭的特性，如妖鬼。
+施法材料：1 小撮無味的蠟燭屑","該法術會遮蓋住所接觸生物或物體的氣味。靈敏嗅覺能力無法探測到受術生物。該法術
+也可以用來無效化某些生物散發惡臭的特性，如妖鬼。
+施法材料：1 小撮無味的蠟燭屑"
+驅離金石,Repel Metal Or Stone,components,言語，姿勢施,言語，姿勢
+驅離金石,Repel Metal Or Stone,casting_time,,1 個標準動作
+驅離金石,Repel Metal Or Stone,range_text,,60 英尺
+驅離金石,Repel Metal Or Stone,area_text,,自你而起 60 英尺線形
+驅離金石,Repel Metal Or Stone,duration,,1 輪/等級（可解消）
+驅離金石,Repel Metal Or Stone,saving_throw,,無
+驅離金石,Repel Metal Or Stone,spell_resistance,,不可
+驅離金石,Repel Metal Or Stone,description_zh,"法時間：1 個標準動作距
+離：60 英尺
+區域：自你而起 60 英尺線形
+持續時間： 1 輪/等級（可解消）
+豁免檢定：無
+法術抗力：不可
+和驅離木材（Repel Wood）相似，本法術製造出由你而起向前滾動的無形能量波。在
+法術路徑上的所…","和驅離木材（Repel Wood）相似，本法術製造出由你而起向前滾動的無形能量波。在
+法術路徑上的所有的金屬或石質物品都會被推離你直到法術距離的極限。被固定的直徑大於
+3 英寸的金屬或石質物品和重量超過 500 磅的未固定物品不會受到影響。…"
+樹脂焦油,Resinous Tar,range_text,,近距（25 英尺+5 英尺/2 等級） 區域或目標：一個物件或十尺的正方形區域
+樹脂焦油,Resinous Tar,area_text,近距（25 英尺+5 英尺/2 等級） 區域或目標：一個物件或十尺的正方形區域,
+響亮雷霆,Resounding Thunder,range_text,,中等（100 英尺+ 10 英尺/等級）
+響亮雷霆,Resounding Thunder,area_text,中等（100 英尺+ 10 英尺/等級） 面積：20 英尺半徑擴散,20 英尺半徑擴散
+宏偉之音,Resounding Voice,range_text,,接觸
+宏偉之音,Resounding Voice,area_text,接觸,
+公義的重擊,Righteous Smite,range_text,中距（100呎+10呎/每等級） 影響範圍：半徑20呎擴散範圍,中距（100呎+10呎/每等級）
+公義的重擊,Righteous Smite,area_text,,半徑20呎擴散範圍
+平安之所,Safe Clearing,components,,V，S
+海王之鱗,Scales Of The Sealord,range_text,,個人
+海王之鱗,Scales Of The Sealord,area_text,個人,
+閃光圖紋,Scintillating Pattern,effect_text,20 英尺半徑擴散範圍內多彩光芒持 續時間：專注+2 輪,20 英尺半徑擴散範圍內多彩光芒
+閃光圖紋,Scintillating Pattern,duration,,專注+2 輪
+高等亡靈之種,"Seed Of Undeath, Greater",area_text,,40 英尺半徑彌漫
+高等亡靈之種,"Seed Of Undeath, Greater",description_zh,"面積：40 英尺半徑彌漫
+在法術區域的每一個生物外觀變得如同屍體一樣，然後恢復正常。
+這個法術的能力，如同亡靈之種（Seed Of Undeath），但它適用於任何人形生物或動物
+在該地區的死亡時法術生效。
+在你施法之前的生物屍體，或死於法…","在法術區域的每一個生物外觀變得如同屍體一樣，然後恢復正常。
+這個法術的能力，如同亡靈之種（Seed Of Undeath），但它適用於任何人形生物或動物
+在該地區的死亡時法術生效。
+在你施法之前的生物屍體，或死於法術範圍外的生物屍體，不受法…"
+陰影形態,Shadow Form,components,V、S、M 施法動作：標準動作,V、S、M
+陰影形態,Shadow Form,casting_time,,標準動作
+陰影之手,Shadow Hand,components,V、S、M 施法動作：標準動作,V、S、M
+陰影之手,Shadow Hand,casting_time,,標準動作
+尖嘯爆發,Shrieking Blast,range_text,,中距（100 尺+10 尺/每等級）
+尖嘯爆發,Shrieking Blast,area_text,中距（100 尺+10 尺/每等級） 40 尺爆發,40 尺爆發
+壞敗邪惡,Sicken Evil,area_text,,半徑 20 英尺彌漫範圍
+壞敗邪惡,Sicken Evil,duration,,一分鐘/每等級（解消）
+壞敗邪惡,Sicken Evil,saving_throw,,無
+壞敗邪惡,Sicken Evil,spell_resistance,,可
+壞敗邪惡,Sicken Evil,description_zh,"影響範圍：半徑 20 英尺彌漫範圍持
+續時間：一分鐘/每等級（解消） 豁
+免檢定：無
+法術抗力：可
+你散出強烈的靈氣讓處於範圍內的邪惡生物處於生病的狀態。
+祭獻：1d4 點力量傷害。","你散出強烈的靈氣讓處於範圍內的邪惡生物處於生病的狀態。
+祭獻：1d4 點力量傷害。"
+狙擊手之眼,Sniper's Eye,components,V、S、F 施法動作：標準動作,V、S、F
+狙擊手之眼,Sniper's Eye,casting_time,,標準動作
+狙擊之箭,Sniper's Shot,components,V、S 施法動作：迅捷動作,V、S
+狙擊之箭,Sniper's Shot,casting_time,,迅捷動作
+柔石術,Soften Earth And Stone,area_text,10 立方英尺見方/等級；見正文持 續時間：立即,10 立方英尺見方/等級；見正文
+柔石術,Soften Earth And Stone,duration,,立即
+聲波武器,Sonic Weapon,components,V 施法動作：標準動作,V
+聲波武器,Sonic Weapon,casting_time,,標準動作
+幽靈之觸,Spectral Touch,components,言語，姿勢施,言語，姿勢
+幽靈之觸,Spectral Touch,casting_time,,1 個標準動作
+幽靈之觸,Spectral Touch,range_text,,接觸
+幽靈之觸,Spectral Touch,effect_text,,施法者或施法者接觸的目標（每等級多一個）
+幽靈之觸,Spectral Touch,duration,,1 輪/每等級（D）；看下文
+幽靈之觸,Spectral Touch,saving_throw,,強韌避免
+幽靈之觸,Spectral Touch,spell_resistance,,可
+幽靈之觸,Spectral Touch,description_zh,"法時間：1 個標準動作距
+離：接觸
+效果：施法者或施法者接觸的目標（每等級多一個）
+持續時間：1 輪/每等級（D）；看下文
+豁免檢定：強韌避免
+法術抗力：可
+你的手上充滿黑色劈啪做響的負界能量，你可以用手進行接觸攻擊，令接觸的活物生命
+力衰…","你的手上充滿黑色劈啪做響的負界能量，你可以用手進行接觸攻擊，令接觸的活物生命
+力衰退。每次接觸都會給目標造成一個負向等級並使你獲得 5 點暫時生命力。負向等級和暫
+時生命力持續 1 個小時 。目 標通過 強韌豁 免可 避免 負向 等級， 你…"
+幽靈武器,Spectral Weapon,components,V、S 施法動作：迅捷動作,V、S
+幽靈武器,Spectral Weapon,casting_time,,迅捷動作
+言語連接,Speechlink,components,V、S 施法動作：標準動作,V、S
+言語連接,Speechlink,casting_time,,標準動作
+法力增強,Spell Enhancer,target_text,你自己持,你自己
+法力增強,Spell Enhancer,duration,,1 輪
+法力增強,Spell Enhancer,description_zh,"續時間: 1 輪
+你說出一個與魔法的基本規則緊密聯繫的古代單詞並立刻開始施展下一個法術。
+這個法術會增強你施放的下一個法術，令其難以被目標抵抗。你這一輪施放的下一個法
+術+2 施法者等級，豁免 DC+1","你說出一個與魔法的基本規則緊密聯繫的古代單詞並立刻開始施展下一個法術。
+這個法術會增強你施放的下一個法術，令其難以被目標抵抗。你這一輪施放的下一個法
+術+2 施法者等級，豁免 DC+1"
+印法術,Spell Flower,components,言語，姿勢施,言語，姿勢
+印法術,Spell Flower,casting_time,,一個標準動作
+印法術,Spell Flower,range_text,,個人
+印法術,Spell Flower,target_text,,你自己
+印法術,Spell Flower,duration,,1 輪/等級
+印法術,Spell Flower,description_zh,"法時間: 一個標準動作距
+離: 個人
+目標: 你自己
+持續時間: 1 輪/等級
+你可以用自己身體的每只手臂保持一個接觸法術只要你不用這個肢體施放另一個法術
+或是接觸任何東西。你施放的每個接觸法術都必須放在不同的前肢上。至於該法術的持續時間，…","你可以用自己身體的每只手臂保持一個接觸法術只要你不用這個肢體施放另一個法術
+或是接觸任何東西。你施放的每個接觸法術都必須放在不同的前肢上。至於該法術的持續時間，
+任何你施放的接觸法術只會因為你用該前肢施放了另外一個法術或是觸碰了別的東西而解…"
+次級法術免疫,"Spell Immunity,Lesser",components,言語，姿勢施,言語，姿勢
+次級法術免疫,"Spell Immunity,Lesser",casting_time,,一個標準動作
+次級法術免疫,"Spell Immunity,Lesser",range_text,,接觸
+次級法術免疫,"Spell Immunity,Lesser",target_text,,被接觸的生物
+次級法術免疫,"Spell Immunity,Lesser",duration,,10 分鐘/等級
+次級法術免疫,"Spell Immunity,Lesser",saving_throw,,意志豁免（無害）
+次級法術免疫,"Spell Immunity,Lesser",spell_resistance,,可（無害）
+次級法術免疫,"Spell Immunity,Lesser",description_zh,"法時間: 一個標準動作距
+離: 接觸
+目標: 被接觸的生物持
+續時間: 10 分鐘/等級
+豁免檢定：意志豁免（無害）
+法術抗力：可（無害）
+這個法術保護一個生物免受一個 1 環或 2 環的法術影響，該生物得到針對特定法術的法術
+抗力。次級法…","這個法術保護一個生物免受一個 1 環或 2 環的法術影響，該生物得到針對特定法術的法術
+抗力。次級法術免疫不能保護生物免受無視法抗的法術影響，但是可以對抗類法術能力。它不能
+對抗超自然能力和特異能力，例如噴吐武器和凝視攻擊。
+只有一個特定法…"
+法術反轉,Spell Turning,components,言語，姿勢，材料/法器施 法時間：一個標準動作,言語，姿勢，材料/法器
+法術反轉,Spell Turning,casting_time,,一個標準動作
+畏懼法術,Spell Vulnerability,components,言語，姿勢施 法時間: 一整輪,言語，姿勢
+畏懼法術,Spell Vulnerability,casting_time,,一整輪
+蜘蛛之毒,Spider Poison,target_text,被接觸的活物持 續時間: 立即;見下文,被接觸的活物
+蜘蛛之毒,Spider Poison,duration,,立即;見下文
+蛛化術,Spiderform,range_text,個人目 標：你自己,個人
+蛛化術,Spiderform,target_text,,你自己
+靈體騎隊,Spiritual Cavalry,range_text,,中距（100 尺+10 尺/每等級）
+靈體騎隊,Spiritual Cavalry,area_text,中距（100 尺+10 尺/每等級）,
+靈體突擊者,Spiritual Charger,range_text,,中距（100 尺+10 尺/每等級）
+靈體突擊者,Spiritual Charger,area_text,中距（100 尺+10 尺/每等級）,
+滿足漫延,Spread Of Contentment,effect_text,每等級半徑 10 英尺擴散範圍持 續時間：一小時/每等級（解消）,每等級半徑 10 英尺擴散範圍
+滿足漫延,Spread Of Contentment,duration,,一小時/每等級（解消）
+高等關照術,"Status, Greater",range_text,,中距（100 尺+10 尺/每等級）
+高等關照術,"Status, Greater",area_text,中距（100 尺+10 尺/每等級）,
+粘連術,Stick,casting_time,一個標準動作距 離: 接觸,一個標準動作
+粘連術,Stick,range_text,,接觸
+偷竊成癮,Sticky Fingers,target_text,你自己持,你自己
+偷竊成癮,Sticky Fingers,duration,,1 輪
+偷竊成癮,Sticky Fingers,description_zh,"續時間: 1 輪
+這個法術給予你手上功夫技能檢定+10。",這個法術給予你手上功夫技能檢定+10。
+冰火風暴,Storm Of Fire And Ice,range_text,"遠距（400 英尺+40 英尺/每等級) 面積：柱形 （20 英尺半徑, 40 英尺高)",遠距（400 英尺+40 英尺/每等級)
+冰火風暴,Storm Of Fire And Ice,area_text,,"柱形 （20 英尺半徑, 40 英尺高)"
+風暴之怒,Stormrage,range_text,個人目 標: 你自己,個人
+風暴之怒,Stormrage,target_text,,你自己
+戰略襲擊,Strategic Charge,components,言語，法器施,言語，法器
+戰略襲擊,Strategic Charge,casting_time,,一個迅捷動作
+戰略襲擊,Strategic Charge,range_text,,個人
+戰略襲擊,Strategic Charge,target_text,,你自己
+戰略襲擊,Strategic Charge,duration,,1 輪/等級
+戰略襲擊,Strategic Charge,description_zh,"法時間: 一個迅捷動作距
+離:個人
+目標:你自己
+持續時間: 1 輪/等級
+你得到靈活移動專長（PH98），儘管你沒有滿足前置條件。",你得到靈活移動專長（PH98），儘管你沒有滿足前置條件。
+交換領域,Substitute Domain,casting_time,10 分鐘距 離：個人,10 分鐘
+交換領域,Substitute Domain,range_text,,個人
+擾亂異界特性,Subvert Planar Essence,components,,V，S，M/DF
+護命術,Surelife,components,,V，S，M
+護命術,Surelife,range_text,,個人
+護命術,Surelife,area_text,個人,
+戰術確析,Tactical Precision,components,言語，姿勢，材料， 施法動作：標準動作,言語，姿勢，材料，
+戰術確析,Tactical Precision,casting_time,,標準動作
+標靶射線,Targeting Ray,components,"V, S, F 施法動作：標準動作","V, S, F"
+標靶射線,Targeting Ray,casting_time,,標準動作
+心靈遙控,Telekinesis,components,言語，姿勢施 法時間：1 個標準動作,言語，姿勢
+心靈遙控,Telekinesis,casting_time,,1 個標準動作
+心電障壁,Telepathy Block,range_text,近距（25 呎+5 呎/每兩等級） 影響範圍：以單一生物、物體或地點為中心半徑 80 呎彌漫範圍,近距（25 呎+5 呎/每兩等級）
+心電障壁,Telepathy Block,area_text,,以單一生物、物體或地點為中心半徑 80 呎彌漫範圍
+心電竊聽,Telepathy Tap,range_text,個人 影響範圍：每等級半徑 10 呎彌漫範圍,個人
+心電竊聽,Telepathy Tap,area_text,,每等級半徑 10 呎彌漫範圍
+強化解除魔法,Tenacious Dispelling,range_text,,中等（100 英尺+10 呎/等級）
+強化解除魔法,Tenacious Dispelling,target_text,,一個生物或物件，或 20 尺半徑爆發
+強化解除魔法,Tenacious Dispelling,area_text,中等（100 英尺+10 呎/等級） 目標或區域：一個生物或物件，或 20 尺半徑爆發,
+雷鳴之域,Thunder Field,range_text,中距（100 呎+10 呎/每等級） 影響範圍：半徑 20 呎擴散範圍,中距（100 呎+10 呎/每等級）
+雷鳴之域,Thunder Field,area_text,,半徑 20 呎擴散範圍
+巨型雷雨雲,Towering Thunderhead,range_text,"遠距（400 英尺+40 英尺/每等級） 面積：柱形（40 英尺半徑, 60 英尺高）",遠距（400 英尺+40 英尺/每等級）
+巨型雷雨雲,Towering Thunderhead,area_text,,"柱形（40 英尺半徑, 60 英尺高）"
+毒舌術,Toxic Tongue,range_text,,個人
+毒舌術,Toxic Tongue,area_text,個人,
+木遁術,Transport Via Plants,components,言語，姿勢施,言語，姿勢
+木遁術,Transport Via Plants,casting_time,,1 個標準動作
+木遁術,Transport Via Plants,range_text,,無限制
+木遁術,Transport Via Plants,target_text,,你和被接觸到的物體或其他被接觸的自願生物
+木遁術,Transport Via Plants,duration,,一輪
+木遁術,Transport Via Plants,saving_throw,,無
+木遁術,Transport Via Plants,spell_resistance,,不可
+木遁術,Transport Via Plants,description_zh,"法時間：1 個標準動作距
+離：無限制
+目標：你和被接觸到的物體或其他被接觸的自願生物
+持續時間：一輪
+豁免檢定：無
+法術抗力：不可
+你可進入任何普通植物（中型或更大）並在一輪內傳送到一棵同類的植物內，不論兩
+者距離多遠。你進入的植物必須是活…","你可進入任何普通植物（中型或更大）並在一輪內傳送到一棵同類的植物內，不論兩
+者距離多遠。你進入的植物必須是活的。你不需要熟悉你將到達的植物，但它必須是活的。
+如果你不確定特定目標植物的位置，只需指出方向和距離，木遁術會將你移動到距離該點
+最…"
+藤蔓拌摔,Trip Vine,range_text,,中距（100 尺+10 尺/每等級）
+藤蔓拌摔,Trip Vine,area_text,中距（100 尺+10 尺/每等級） 1 個 10 尺方格/每等級,1 個 10 尺方格/每等級
+釋縛術,Unbinding,range_text,180 英尺 影響範圍：以你為中心半徑 180 英尺爆發範圍內,180 英尺
+釋縛術,Unbinding,area_text,,以你為中心半徑 180 英尺爆發範圍內
+死靈火炬,Undead Torch,components,Ｖ、Ｓ、Ｍ 施展時間：一個標準動作,Ｖ、Ｓ、Ｍ
+死靈火炬,Undead Torch,casting_time,,一個標準動作
+亡靈天敵,Undeath's Eternal Foe,components,Ｖ、Ｓ、ＤＦ 施展時間：一個標準動作,Ｖ、Ｓ、ＤＦ
+亡靈天敵,Undeath's Eternal Foe,casting_time,,一個標準動作
+地底之主,Undermaster,components,Ｖ、Ｍ 施展時間：一個標準動作,Ｖ、Ｍ
+地底之主,Undermaster,casting_time,,一個標準動作
+專注之歌,Undersong,components,,Ｖ
+專注之歌,Undersong,casting_time,,一個標準動作
+專注之歌,Undersong,range_text,,個人
+專注之歌,Undersong,target_text,,自己
+專注之歌,Undersong,duration,,10 分鐘/每等級
+專注之歌,Undersong,description_zh,"法書成分：Ｖ
+施展時間：一個標準動作
+距離：個人
+目標：自己
+持續時間：10 分鐘/每等級
+當你施展這個法術，一首輕柔而又熟悉的歌曲淌進你的意識。
+這個法術給你的意識帶去一首使你保持專注的歌。這歌並不會使你從任何工作中分心
+——相反，哼唱歌…","當你施展這個法術，一首輕柔而又熟悉的歌曲淌進你的意識。
+這個法術給你的意識帶去一首使你保持專注的歌。這歌並不會使你從任何工作中分心
+——相反，哼唱歌曲時你可以輕鬆地保持專注。在法術持續期間，你可以用表演檢定代替
+專注檢定。"
+隱匿陣營,Undetectable Alignment,range_text,,近距（25 英尺+5 英尺/2 等級）
+隱匿陣營,Undetectable Alignment,area_text,近距（25 英尺+5 英尺/2 等級）,
+波動內臟,Undulant Innards,components,語言，姿勢施 法時間：標準動作,語言，姿勢
+波動內臟,Undulant Innards,casting_time,,標準動作
+邪居,Unhallow,range_text,,接觸
+邪居,Unhallow,area_text,接觸 一接觸點為中心，半徑 40 英尺的彌漫範圍,一接觸點為中心，半徑 40 英尺的彌漫範圍
+邪影擊,Unholy Blight,components,言語，姿勢施 法時間：1 個標準動作,言語，姿勢
+邪影擊,Unholy Blight,casting_time,,1 個標準動作
+不潔風暴,Unholy Storm,casting_time,,一個標準動作
+不潔風暴,Unholy Storm,area_text,,柱狀（半徑 20 英 尺 高 20 英尺）
+不潔風暴,Unholy Storm,duration,,1 輪/每等級
+不潔風暴,Unholy Storm,saving_throw,,無
+不潔風暴,Unholy Storm,description_zh,"施展時間：一個標準動作
+影響範圍：柱狀（半徑 20 英 尺 高 20 英尺）
+持續時間：1 輪/每等級
+豁免檢定：無
+法書抗力：不可
+你喚起邪惡的力量，暴雨在你指定的地方傾盆而下，雨點污穢而灼人。
+一場大雨在你周圍落下。一旦雨被創造，它就會…","法書抗力：不可
+你喚起邪惡的力量，暴雨在你指定的地方傾盆而下，雨點污穢而灼人。
+一場大雨在你周圍落下。一旦雨被創造，它就會在指定的地方降下。這風暴阻撓了視
+線和聲音，因此雨中聆聽、偵查、搜索檢定會受到-4 減值。要射入、射出、穿過 這場風暴…"
+堅韌之根,Unyielding Roots,components,Ｖ、Ｓ、ＤＦ 施展時間：一個標準動作,Ｖ、Ｓ、ＤＦ
+堅韌之根,Unyielding Roots,casting_time,,一個標準動作
+上升氣流,Updraft,components,Ｖ、Ｓ、Ｍ 施展時間：一個迅捷動作,Ｖ、Ｓ、Ｍ
+上升氣流,Updraft,casting_time,,一個迅捷動作
+終極黑暗,Utterdark,components,,語言，姿勢，材料/法器
+終極黑暗,Utterdark,casting_time,,3 輪
+終極黑暗,Utterdark,range_text,,近距（25 尺+5 尺/2 每等級）
+終極黑暗,Utterdark,area_text,,100 尺/每等級半徑擴散
+終極黑暗,Utterdark,duration,,1 小時/每等級
+終極黑暗,Utterdark,saving_throw,,無
+終極黑暗,Utterdark,spell_resistance,,不可
+終極黑暗,Utterdark,description_zh,"術成分：語言，姿勢，材料/法器施
+法時間：3 輪
+距離：近距（25 尺+5 尺/2 每等級）
+區域：100 尺/每等級半徑擴散
+持續時間：1 小時/每等級
+豁免檢定：無
+法術抗力：不可
+終極黑暗以你為中心蔓延開來，製造出一片冰冷刺骨、令人作…","終極黑暗以你為中心蔓延開來，製造出一片冰冷刺骨、令人作嘔的魔法黑暗。這個黑暗
+類似深幽黑暗術所創造的黑暗，但是無法被魔法光明（儘管一個相等或更高等級的光明法術
+或類似效果可以在重疊區域暫時壓制終極黑暗，只要光明法術或效果持續，區域內就可以恢…"
+隱匿之紗,Veil,saving_throw,意志，通過則無效；見下文法,意志，通過則無效；見下文
+隱匿之紗,Veil,spell_resistance,,可，見下文
+隱匿之紗,Veil,description_zh,"術抗力：可，見下文
+你可以瞬間改變受術者的外觀，之後在法術持續時間內它將保持不變。你可以讓受術
+者變成任何你希望的東西。他的外觀、觸感和氣味都會發生相應的變化。若受術者死亡，
+則回復原樣。你必須先同過易容檢定才能複製出特定人物的樣貌。該法術…","你可以瞬間改變受術者的外觀，之後在法術持續時間內它將保持不變。你可以讓受術
+者變成任何你希望的東西。他的外觀、觸感和氣味都會發生相應的變化。若受術者死亡，
+則回復原樣。你必須先同過易容檢定才能複製出特定人物的樣貌。該法術可以讓你在檢定
+時獲…"
+陰影面紗,Veil Of Shadow,components,Ｖ、Ｓ 施展時間：一個標準動作,Ｖ、Ｓ
+陰影面紗,Veil Of Shadow,casting_time,,一個標準動作
+暈眩之域,Vertigo Field,range_text,中距（100 呎+10 呎/每等級） 影響範圍：半徑 20 呎擴散範圍,中距（100 呎+10 呎/每等級）
+暈眩之域,Vertigo Field,area_text,,半徑 20 呎擴散範圍
+次級回春術,"Vigor,Lesser",components,Ｖ、Ｓ 施展時間：一個標準動作,Ｖ、Ｓ
+次級回春術,"Vigor,Lesser",casting_time,,一個標準動作
+邪靈術,Vile Death,components,Ｖ、Ｓ、Ｍ、ＸＰ 施展時間：1 個小時,Ｖ、Ｓ、Ｍ、ＸＰ
+邪靈術,Vile Death,casting_time,,1 個小時
+蔓藤源泉,Vine Mine,components,Ｖ、Ｓ、Ｍ 施展時間：一個標準動作,Ｖ、Ｓ、Ｍ
+蔓藤源泉,Vine Mine,casting_time,,一個標準動作
+蔓藤源泉,Vine Mine,range_text,中距（100 英尺+10 英尺/每等級） 影響範圍：半徑 10 尺擴散,中距（100 英尺+10 英尺/每等級）
+蔓藤源泉,Vine Mine,area_text,,半徑 10 尺擴散
+打擊藤蔓,Vine Strike,components,V、DF 施法動作：迅捷動作,V、DF
+打擊藤蔓,Vine Strike,casting_time,,迅捷動作
+毒蛇群聚,Vipergout,components,,Ｖ，Ｓ，Ｍ
+毒蛇群聚,Vipergout,casting_time,,一個標準動作
+毒蛇群聚,Vipergout,range_text,,近距（25 英尺+5 英尺/每 2 等級）
+毒蛇群聚,Vipergout,effect_text,,1d4+3 個召喚生物
+毒蛇群聚,Vipergout,duration,,1 輪/等級
+毒蛇群聚,Vipergout,saving_throw,,無
+毒蛇群聚,Vipergout,spell_resistance,,可
+毒蛇群聚,Vipergout,description_zh,"法 術 成 分 ：Ｖ，Ｓ，Ｍ
+施展時間：一個標準動作
+距離：近距（25 英尺+5 英尺/每 2 等級）
+效果：1d4+3 個召喚生物
+持續時間：1 輪/等級
+豁免檢定：無
+法術抗力：可
+當你完成這個法術的時候，你感受到一陣劇烈的反胃。 一些…","當你完成這個法術的時候，你感受到一陣劇烈的反胃。 一些東西從你的喉嚨湧出，最
+終你嘔出一條條毒蛇。
+這個法術可以召喚出 1d4+3 條天界或者煉獄中型毒蛇。它們從你的口中竄出，去攻擊
+你的敵人。
+一條被這個法術召喚的天界毒蛇有強酸、寒冷、電…"
+次級神之面容,"Visage Of The Deity,Lesser",components,Ｖ、Ｓ、ＤＦ 施展時間：一個標準動作,Ｖ、Ｓ、ＤＦ
+次級神之面容,"Visage Of The Deity,Lesser",casting_time,,一個標準動作
+粘滯膠團,Viscid Glob,components,Ｖ、Ｓ、Ｍ 施展時間：一個標準動作,Ｖ、Ｓ、Ｍ
+粘滯膠團,Viscid Glob,casting_time,,一個標準動作
+光榮之視,Vision Of Glory,components,Ｖ、Ｓ、ＤＦ 施展時間：一個標準動作,Ｖ、Ｓ、ＤＦ
+光榮之視,Vision Of Glory,casting_time,,一個標準動作
+龍言術,Voice Of The Dragon,components,Ｖ、Ｓ 施展時間：一個標準動作,Ｖ、Ｓ
+龍言術,Voice Of The Dragon,casting_time,,一個標準動作
+利齒旋風,Vortex Of Teeth,components,Ｖ、Ｓ、Ｍ 施展時間：一個標準動作,Ｖ、Ｓ、Ｍ
+利齒旋風,Vortex Of Teeth,casting_time,,一個標準動作
+利齒旋風,Vortex Of Teeth,range_text,中距（100 英尺+10 英尺/每等級） 影響範圍：中空的圓柱體（半徑 40 英尺，20 英尺高，中心有半徑 5 英尺的安全區域）,中距（100 英尺+10 英尺/每等級）
+利齒旋風,Vortex Of Teeth,area_text,,中空的圓柱體（半徑 40 英尺，20 英尺高，中心有半徑 5 英尺的安全區域）
+畏懼傷害,Vulnerability,components,Ｖ、Ｓ 施展時間：一個標準動作,Ｖ、Ｓ
+畏懼傷害,Vulnerability,casting_time,,一個標準動作
+毀滅之嚎,Wail Of Doom,components,V 施法動作：標準動作,V
+毀滅之嚎,Wail Of Doom,casting_time,,標準動作
+肢體之牆,Wall Of Limbs,components,,V，S
+棘牆術,Wall Of Thorns,components,言語，姿勢施 法時間：1 個標準動作,言語，姿勢
+棘牆術,Wall Of Thorns,casting_time,,1 個標準動作
+戰爭嚎哭,War Cry,components,V、S 施法動作：迅捷動作,V、S
+戰爭嚎哭,War Cry,casting_time,,迅捷動作
+戰爭嚎哭,War Cry,range_text,,個人
+戰爭嚎哭,War Cry,area_text,個人,
+戰嚎,Warcry,range_text,30呎 影響範圍：錐狀爆發範圍,30呎
+戰嚎,Warcry,area_text,,錐狀爆發範圍
+曲木術,Warp Wood,components,言語，姿勢施 法時間：1 個標準動作,言語，姿勢
+曲木術,Warp Wood,casting_time,,1 個標準動作
+悲痛之濤,Wave Of Grief,duration,1 輪每等級豁,1 輪每等級
+悲痛之濤,Wave Of Grief,saving_throw,,意志過則無效
+悲痛之濤,Wave Of Grief,spell_resistance,,可
+悲痛之濤,Wave Of Grief,description_zh,"免檢定：意志過則無效法
+術抗力：可
+發出一聲悲痛的哀號，你施放出一道注滿了悲傷與憂鬱的魔法脈衝。
+所有在法術施放的錐形局域內的生物在攻擊，豁免，屬性，技能檢定上都會受到-3 的
+懲罰。
+施法材料：三滴眼淚。","發出一聲悲痛的哀號，你施放出一道注滿了悲傷與憂鬱的魔法脈衝。
+所有在法術施放的錐形局域內的生物在攻擊，豁免，屬性，技能檢定上都會受到-3 的
+懲罰。
+施法材料：三滴眼淚。"
+力竭波,Waves Of Exhaustion,components,言語，姿勢施,言語，姿勢
+力竭波,Waves Of Exhaustion,casting_time,,1 個標準動作
+力竭波,Waves Of Exhaustion,range_text,,60 英尺
+力竭波,Waves Of Exhaustion,area_text,,錐形爆發範圍
+力竭波,Waves Of Exhaustion,duration,,立即
+力竭波,Waves Of Exhaustion,saving_throw,,無
+力竭波,Waves Of Exhaustion,spell_resistance,,可
+力竭波,Waves Of Exhaustion,description_zh,"法時間：1 個標準動作距
+離：60 英尺
+區域：錐形爆發範圍
+持續時間：立即
+豁免檢定：無
+法術抗力：可
+負能量波會使得法術範圍內的所有活物力竭（ Exhausted）。本法術對已經陷入力竭的
+生物無效。","負能量波會使得法術範圍內的所有活物力竭（ Exhausted）。本法術對已經陷入力竭的
+生物無效。"
+疲乏波,Waves Of Fatigue,components,言語，姿勢施,言語，姿勢
+疲乏波,Waves Of Fatigue,casting_time,,1 個標準動作
+疲乏波,Waves Of Fatigue,range_text,,30 英尺
+疲乏波,Waves Of Fatigue,area_text,,錐形爆發範圍
+疲乏波,Waves Of Fatigue,duration,,立即
+疲乏波,Waves Of Fatigue,saving_throw,,無
+疲乏波,Waves Of Fatigue,spell_resistance,,可
+疲乏波,Waves Of Fatigue,description_zh,"法時間：1 個標準動作距
+離：30 英尺
+區域：錐形爆發範圍
+持續時間：立即
+豁免檢定：無
+法術抗力：可
+負能量波會使得法術範圍內的所有生物疲乏 （Fatigued）。本法術對已經陷入疲乏的生
+物無效。","負能量波會使得法術範圍內的所有生物疲乏 （Fatigued）。本法術對已經陷入疲乏的生
+物無效。"
+神性武器,Weapon Of The Deity,target_text,接觸到的武器持 續時間：1 輪每等級,接觸到的武器
+神性武器,Weapon Of The Deity,duration,,1 輪每等級
+蛛 網 術,Web,effect_text,半徑 20 英尺擴散範圍內的蜘蛛網 持續時間；10 分鐘/每等級,半徑 20 英尺擴散範圍內的蜘蛛網
+蛛 網 術,Web,duration,,10 分鐘/每等級
+迴旋飛刃,Whirling Blade,duration,立即 豁免：無,立即
+迴旋飛刃,Whirling Blade,saving_throw,,無
+旋風術,Whirlwind,effect_text,底寬 10 英尺，頂寬 30 英尺 ，高 30 英尺的旋風 持續時間；1 輪/每等級（可解消）,底寬 10 英尺，頂寬 30 英尺 ，高 30 英尺的旋風
+旋風術,Whirlwind,duration,,1 輪/每等級（可解消）
+束翼術,Wingbind,saving_throw,反射過則無效法,反射過則無效
+束翼術,Wingbind,spell_resistance,,可
+束翼術,Wingbind,description_zh,"術抗力：可
+飛行中的生物發出一聲驚訝的嗥叫然後垂直的落向地面，它的翅膀緊貼身體並且被一道
+亮綠色的網束縛著。
+力場網圍繞著目標，像是漁網一樣糾纏著目標。該法術的作用機理很像大地束縛（76
+頁），除了被束縛的生物會立即落向地面受到墜落傷害。
+…","飛行中的生物發出一聲驚訝的嗥叫然後垂直的落向地面，它的翅膀緊貼身體並且被一道
+亮綠色的網束縛著。
+力場網圍繞著目標，像是漁網一樣糾纏著目標。該法術的作用機理很像大地束縛（76
+頁），除了被束縛的生物會立即落向地面受到墜落傷害。
+被束縛的生物…"
+淩虐之觸,Wracking Touch,components,V、S 施法動作：標準動作,V、S
+淩虐之觸,Wracking Touch,casting_time,,標準動作
+鬼擊術,Wraithstrike,components,V、S 施法動作：迅捷動作,V、S
+鬼擊術,Wraithstrike,casting_time,,迅捷動作
+鬼擊術,Wraithstrike,range_text,,個人
+鬼擊術,Wraithstrike,area_text,個人,
+歐提路克壓制領域,原文：Otiluke's Impressing Field,area_text,,20 英尺半徑彌漫，以你為中心
+歐提路克壓制領域,原文：Otiluke's Impressing Field,duration,,10 分鐘/每等級 （可消解）
+歐提路克壓制領域,原文：Otiluke's Impressing Field,saving_throw,,無
+歐提路克壓制領域,原文：Otiluke's Impressing Field,spell_resistance,,無
+歐提路克壓制領域,原文：Otiluke's Impressing Field,description_zh,"面積：20 英尺半徑彌漫，以你為中心持
+續時間：10 分鐘/每等級 （可消解）
+豁免檢定：無
+法術抗力：無
+你的皮膚感到刺痛正如你處在強力魔法領域輻射區域內。
+當你施放這個法術時，指定一個法術學派或一個法術子學派（如 邪惡法術 Evil S…","你的皮膚感到刺痛正如你處在強力魔法領域輻射區域內。
+當你施放這個法術時，指定一個法術學派或一個法術子學派（如 邪惡法術 Evil Spells 或
+火法術 fire Spells）。該類型的法術在你的法術區域內受到壓制。任何試圖在（或進入）…"

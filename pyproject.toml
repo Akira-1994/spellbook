@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "spellbook"
-version = "0.3.1"
+version = "0.3.2"
 description = "Offline personal spellbook for browsing and editing A-Z spells"
 requires-python = ">=3.12"
 dependencies = [
@@ -30,7 +30,7 @@ spellbook = "spellbook.launcher:main"
 include = ["spellbook*"]
 
 [tool.setuptools.package-data]
-spellbook = ["taxonomy.json", "web/templates/*.html", "web/static/*"]
+spellbook = ["seed_fixes.json", "taxonomy.json", "web/templates/*.html", "web/static/*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

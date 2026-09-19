@@ -43,12 +43,35 @@ FIELD_LABELS = {
     "法數抗力": "spell_resistance",
     "法術炕力": "spell_resistance",
     "Spell Resistance": "spell_resistance",
+    # Alternative wordings used by different translators of the source PDF.
+    "法書成分": "components",
+    "施展時間": "casting_time",
+    "施放時間": "casting_time",
+    "施法動作": "casting_time",
+    "作用距離": "range_text",
+    "作用物件": "target_text",
+    "目標或區域": "target_text",
+    "作用範圍": "area_text",
+    "影響範圍": "area_text",
+    "面積": "area_text",
+    "時效": "duration",
+    "持續": "duration",
+    "豁免": "saving_throw",
+    "抗力": "spell_resistance",
 }
 
-FIELD_PATTERN = re.compile(
-    r"^\s*(" + "|".join(sorted(map(re.escape, FIELD_LABELS), key=len, reverse=True)) + r")\s*[：:]\s*(.*)$",
-    re.IGNORECASE,
+# A few entries use a semicolon instead of a colon, and some labels are typeset
+# with spaces between the characters ("法 術 成 分").
+FIELD_SEPARATOR = r"[：:；;]"
+_LABEL_ALTERNATIVES = "|".join(
+    r"\s*".join(map(re.escape, label)) if re.search(r"[\u4e00-\u9fff]", label) else re.escape(label)
+    for label in sorted(FIELD_LABELS, key=len, reverse=True)
 )
+FIELD_PATTERN = re.compile(r"^\s*(" + _LABEL_ALTERNATIVES + r")\s*" + FIELD_SEPARATOR + r"\s*(.*)$", re.IGNORECASE)
+# How far past a non-field line to look for the remaining fields, for tables
+# the PDF layout placed in the middle of the field block.
+FIELD_TABLE_LOOKAHEAD = 30
+RANGE_WORDS = re.compile(r"^(接觸|個人|近距|中距|中等|遠距|長距|無限|視線)")
 LETTER_PATTERN = re.compile(r"^\s*([A-Z])\s*[：:]\s*$")
 PAREN_PATTERN = re.compile(r"[（(]([^()（）]+)[）)]")
 SCHOOL_ZH_PATTERN = re.compile(r"^(?P<school>[^\[【（(]+?系)(?:[（(](?P<subschool>[^）)]+)[）)])?(?:\s*[\[【](?P<descriptors>[^\]】]+)[\]】])?\s*$")
@@ -129,6 +152,118 @@ def _field_match(line: str):
     return FIELD_PATTERN.match(line.strip())
 
 
+def field_key(match) -> str:
+    label = re.sub(r"\s+", "", match.group(1)).casefold()
+    return next(value for key, value in FIELD_LABELS.items() if key.replace(" ", "").casefold() == label or key.casefold() == match.group(1).casefold())
+
+
+_SPLITTABLE_LABELS = sorted(
+    (label for label in FIELD_LABELS if re.search(r"[\u4e00-\u9fff]", label) and len(label) > 1), key=len, reverse=True
+)
+
+
+def _rejoin_split_label(lines: list[str], index: int) -> None:
+    """Line wrapping sometimes splits a label: "…腐敗 8 環法" / "術成分：…".
+
+    Move the stranded head of the label from lines[index] back onto the next
+    line. Only called inside the field block, so description text is untouched.
+    """
+    if index + 1 >= len(lines):
+        return
+    current, following = lines[index].rstrip(), lines[index + 1].lstrip()
+    if _field_match(following):
+        return
+    for label in _SPLITTABLE_LABELS:
+        split = next(
+            (k for k in range(len(label) - 1, 0, -1)
+             if current.endswith(label[:k]) and re.match(re.escape(label[k:]) + r"\s*" + FIELD_SEPARATOR, following)),
+            None,
+        )
+        if split:
+            lines[index] = current[:-split]
+            lines[index + 1] = label[:split] + following
+            return
+
+
+def _looks_like_table(lines: Sequence[str]) -> bool:
+    """Table rows are short cells without sentence endings. Prose, a blank
+    line or the next spell's heading (a block can run into the following
+    spell) means the description has started instead."""
+    texts = [normalize_space(line) for line in lines]
+    if not texts or any(not text for text in texts):
+        return False
+    return not any(text.endswith(("。", "」", "）。")) or _looks_like_heading(text) for text in texts)
+
+
+def parse_fields(lines: Sequence[str]) -> tuple[dict[str, str], list[str]]:
+    """Parse the field block that starts at the level line.
+
+    Returns the fields and the remaining lines, which form the description.
+    Lines of a table that the PDF layout placed between fields are moved to
+    the start of the description.
+    """
+    lines = [line.rstrip() for line in lines]
+    fields: dict[str, str] = {}
+    displaced: list[str] = []
+    current_key = ""
+    index = 0
+    while index < len(lines):
+        _rejoin_split_label(lines, index)
+        text = normalize_space(lines[index])
+        match = _field_match(text)
+        if match:
+            key = field_key(match)
+            value = normalize_space(match.group(2))
+            # Some translators use 範圍 for range rather than area.
+            if key == "area_text" and "range_text" not in fields:
+                if RANGE_WORDS.match(value):
+                    key = "range_text"
+                elif "area_text" in fields:
+                    # "範圍：60 尺" followed by "區域：…": the first one was the range.
+                    fields["range_text"] = fields.pop("area_text")
+            if key in fields and key != current_key:
+                # A field seen earlier appears again: the description has begun
+                # (for example a sub-effect with its own duration).
+                break
+            current_key = key
+            fields[current_key] = normalize_space(" ".join(filter(None, [fields.get(current_key, ""), value])))
+            index += 1
+            continue
+        if not text:
+            index += 1
+            continue
+
+        # A wrapped field value is followed shortly by another recognized field.
+        next_field_found = False
+        for lookahead in range(index + 1, min(index + 4, len(lines))):
+            _rejoin_split_label(lines, lookahead)
+            candidate = normalize_space(lines[lookahead])
+            if not candidate:
+                continue
+            next_field_found = bool(_field_match(candidate))
+            break
+        if current_key and next_field_found:
+            fields[current_key] = normalize_space(" ".join(filter(None, [fields.get(current_key, ""), text])))
+            index += 1
+            continue
+
+        # A table inserted before the last fields: skip it if more, not yet
+        # seen fields follow soon. Spell resistance closes the field block.
+        if "spell_resistance" not in fields:
+            resume = next(
+                (j for j in range(index + 1, min(index + FIELD_TABLE_LOOKAHEAD, len(lines)))
+                 if (m := _field_match(normalize_space(lines[j]))) and field_key(m) not in fields),
+                None,
+            )
+            if resume is not None and _looks_like_table(lines[index:resume]):
+                displaced.extend(lines[index:resume])
+                current_key = ""
+                index = resume
+                continue
+        break
+    return fields, displaced + list(lines[index:])
+
+
 def _looks_like_heading(line: str) -> bool:
     text = normalize_space(line)
     if not text or len(text) > 180 or _field_match(text) or LETTER_PATTERN.match(text):
@@ -207,40 +342,8 @@ def _parse_block(alphabet: str, block: Sequence[LineRef], level_index_in_block: 
     school_lines = [normalize_space(item.text) for item in block[1:level_index_in_block] if item.text.strip()]
     school, subschool, descriptors = _parse_school(" ".join(school_lines))
 
-    fields: dict[str, str] = {}
-    current_key = ""
-    description_start = len(block)
-    index = level_index_in_block
-    while index < len(block):
-        text = normalize_space(block[index].text)
-        match = _field_match(text)
-        if match:
-            label = next(key for key in FIELD_LABELS if key.casefold() == match.group(1).casefold())
-            current_key = FIELD_LABELS[label]
-            value = normalize_space(match.group(2))
-            fields[current_key] = normalize_space(" ".join(filter(None, [fields.get(current_key, ""), value])))
-            index += 1
-            continue
-        if not text:
-            index += 1
-            continue
-
-        # A wrapped field value is followed shortly by another recognized field.
-        next_field_found = False
-        for lookahead in range(index + 1, min(index + 4, len(block))):
-            candidate = normalize_space(block[lookahead].text)
-            if not candidate:
-                continue
-            next_field_found = bool(_field_match(candidate))
-            break
-        if current_key and next_field_found:
-            fields[current_key] = normalize_space(" ".join(filter(None, [fields.get(current_key, ""), text])))
-            index += 1
-            continue
-
-        description_start = index
-        break
-    description_lines = [normalize_space(item.text) for item in block[description_start:] if item.text.strip() and not LETTER_PATTERN.match(item.text)]
+    fields, description_source = parse_fields([item.text for item in block[level_index_in_block:]])
+    description_lines = [normalize_space(text) for text in description_source if text.strip() and not LETTER_PATTERN.match(text)]
     description = "\n".join(description_lines).strip()
     description_en = description if _mostly_english(description) else ""
     description_zh = "" if description_en else description
@@ -303,7 +406,7 @@ def parse_pages(pages: Iterable[tuple[int, str]]) -> list[ParsedSpell]:
             current_letter = letter_match.group(1)
             continue
         match = _field_match(item.text)
-        if not match or FIELD_LABELS[next(key for key in FIELD_LABELS if key.casefold() == match.group(1).casefold())] != "levels":
+        if not match or field_key(match) != "levels":
             continue
         header_index = _find_header_index(lines, index)
         if header_index is None:

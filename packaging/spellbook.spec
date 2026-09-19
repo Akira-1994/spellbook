@@ -35,6 +35,7 @@ a = Analysis(
     datas=[
         (str(ROOT / "spellbook" / "web"), "spellbook/web"),
         (str(ROOT / "spellbook" / "taxonomy.json"), "spellbook"),
+        (str(ROOT / "spellbook" / "seed_fixes.json"), "spellbook"),
         (str(ROOT / "data" / "spellbook.sqlite"), "data"),
     ],
     hiddenimports=[
