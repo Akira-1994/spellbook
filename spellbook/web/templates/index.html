@@ -12,7 +12,7 @@
       <span class="folio-mark">SB</span>
       <div><p class="eyebrow">A–Z SPELL COMPENDIUM</p><h1>法術書</h1></div>
     </div>
-    <p class="masthead-note"><span class="status-dot">離線可用</span><span class="mono">v{{ version }}</span></p>
+    <div class="masthead-note"><span class="status-dot">離線可用</span><span class="mono">v{{ version }}</span><button id="quit-button" class="quit-button" type="button">結束程式</button></div>
   </header>
 
   <div id="offline-banner" class="offline-banner" role="alert" hidden>法術書程式已經關閉。請重新開啟 Spellbook.exe，再重新整理這個頁面。</div>
@@ -104,7 +104,7 @@
     <form method="dialog">
       <h2 id="confirm-title"></h2>
       <p id="confirm-body"></p>
-      <div class="dialog-actions"><button value="cancel" class="secondary">取消</button><button value="ok" class="primary">確定</button></div>
+      <div class="dialog-actions"><button type="button" value="cancel" class="secondary">取消</button><button type="button" value="ok" class="primary">確定</button></div>
     </form>
   </dialog>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>

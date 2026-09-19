@@ -12,6 +12,8 @@
   const REPLACED_BY = { edit: "編輯", rollback: "還原版本", restore_original: "還原原始內容" };
 
   const FILTER_STORAGE_KEY = "spellbook.filters";
+  // Identifies this tab to the app, which exits once every tab has closed.
+  const PAGE_ID = globalThis.crypto?.randomUUID?.() ?? `${Date.now()}-${Math.random().toString(16).slice(2)}`;
   const state = {
     items: [], hasMore: false, loadingMore: false, listToken: 0, total: 0, letter: "", current: null, editing: false, formOriginal: null,
     summary: null, schools: [], classes: [], filters: { schools: new Set(), classId: "", levels: new Set() },
@@ -70,9 +72,21 @@
     const dialog = $("#confirm-dialog");
     $("#confirm-title").textContent = title;
     $("#confirm-body").textContent = body;
-    dialog.returnValue = "";
     dialog.showModal();
-    return new Promise(resolve => dialog.addEventListener("close", () => resolve(dialog.returnValue === "ok"), { once: true }));
+    // Resolve from the button click itself: Chromium can defer the dialog's
+    // "close" event until the next paint, which never comes in a hidden window.
+    return new Promise(resolve => {
+      const finish = event => {
+        event.preventDefault();
+        const ok = event.type === "click" && event.currentTarget.value === "ok";
+        dialog.querySelectorAll("button").forEach(button => button.removeEventListener("click", finish));
+        dialog.removeEventListener("cancel", finish);
+        dialog.close();
+        resolve(ok);
+      };
+      dialog.querySelectorAll("button").forEach(button => button.addEventListener("click", finish));
+      dialog.addEventListener("cancel", finish);  // Esc
+    });
   }
 
   // ---- Index list -------------------------------------------------------
@@ -481,19 +495,43 @@
     });
   }
 
-  // Keeps the desktop launcher alive while a page is open, and tells the user
+  // Keeps the desktop app alive while this page is open, and tells the user
   // when the app has already exited.
   async function ping() {
+    if (state.quit) return;
     try {
-      const response = await fetch("/api/ping", { cache: "no-store" });
+      const response = await fetch(`/api/ping?page=${encodeURIComponent(PAGE_ID)}`, { cache: "no-store" });
       $("#offline-banner").hidden = response.ok;
     } catch { $("#offline-banner").hidden = false; }
   }
 
+  function sayGoodbye() {
+    if (state.quit) return;
+    const body = new Blob([JSON.stringify({ token: csrf, page: PAGE_ID })], { type: "text/plain" });
+    navigator.sendBeacon("/api/closing", body);
+  }
+
+  async function quitApp() {
+    const warning = state.editing && isDirty() ? "目前的編輯內容尚未儲存，結束後會遺失。" : "";
+    if (!(await confirmDialog("結束法術書？", `${warning}程式會關閉；之後要使用，請重新開啟 Spellbook.exe。`))) return;
+    try {
+      await api("/api/quit", { method: "POST" });
+    } catch (error) { toast(error.message, true); return; }
+    state.quit = true;
+    state.formOriginal = formValues();  // skip the unsaved-changes prompt on close
+    $("#offline-banner").textContent = "法術書已結束，可以關閉這個分頁。";
+    $("#offline-banner").hidden = false;
+    document.body.classList.add("app-quit");
+  }
+
   async function start() {
     bind();
+    ping();
     setInterval(ping, 30000);
     document.addEventListener("visibilitychange", () => { if (!document.hidden) ping(); });
+    window.addEventListener("pagehide", sayGoodbye);
+    window.addEventListener("pageshow", event => { if (event.persisted) ping(); });
+    $("#quit-button").addEventListener("click", quitApp);
     try {
       await Promise.all([loadSummary(), loadTaxonomy()]);
       restoreFilters();

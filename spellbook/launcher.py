@@ -21,11 +21,14 @@ import uvicorn
 
 from spellbook.app import create_app
 from spellbook.config import AppPaths
+from spellbook.lifecycle import Lifecycle
 
 
-# The page pings every 30 s. Background tabs may be throttled to about one
-# timer per minute, so allow several missed pings before shutting down.
+# Pages ping every 30 s, but background tabs may be throttled to about one
+# timer per minute, so the fallback allows several missed pings.
 IDLE_TIMEOUT_SECONDS = int(os.getenv("SPELLBOOK_IDLE_TIMEOUT", 5 * 60))
+# How long to wait after the last page closed, so a reload can reconnect.
+CLOSE_GRACE_SECONDS = int(os.getenv("SPELLBOOK_CLOSE_GRACE", 15))
 
 
 def _free_port() -> int:
@@ -84,15 +87,15 @@ def _reopen_running_instance(paths: AppPaths) -> bool:
     return False
 
 
-def _supervise(server: uvicorn.Server, app, address: str) -> None:
+def _supervise(server: uvicorn.Server, lifecycle: Lifecycle, address: str) -> None:
     while not server.started:
         if server.should_exit:
             return
         time.sleep(0.1)
     _open_browser(address)
     while not server.should_exit:
-        time.sleep(min(5, IDLE_TIMEOUT_SECONDS))
-        if time.monotonic() - app.state.last_activity > IDLE_TIMEOUT_SECONDS:
+        time.sleep(0.5)
+        if lifecycle.should_exit():
             server.should_exit = True
 
 
@@ -105,7 +108,8 @@ def main() -> None:
         return
     try:
         try:
-            app = create_app(paths)
+            lifecycle = Lifecycle(idle_timeout=IDLE_TIMEOUT_SECONDS, close_grace=CLOSE_GRACE_SECONDS)
+            app = create_app(paths, lifecycle)
         except Exception as exc:  # noqa: BLE001 - shown to the user instead of a silent exit
             _show_error(f"法術書無法啟動：\n{exc}")
             return
@@ -113,7 +117,7 @@ def main() -> None:
         address = f"http://127.0.0.1:{port}/"
         paths.server_file.write_text(json.dumps({"address": address, "pid": os.getpid()}), encoding="utf-8")
         server = uvicorn.Server(uvicorn.Config(app, host="127.0.0.1", port=port, log_level="warning"))
-        threading.Thread(target=_supervise, args=(server, app, address), daemon=True).start()
+        threading.Thread(target=_supervise, args=(server, lifecycle, address), daemon=True).start()
         server.run()
     finally:
         paths.server_file.unlink(missing_ok=True)
